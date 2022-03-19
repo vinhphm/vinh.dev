@@ -1,0 +1,12 @@
+[en]
+title = "Vinh Pham"
+weight = 1
+contentDir = "content/english"
+LanguageName = "EN"
+
+[vi]
+title = "Vinh Pham"
+description = "Gọi tôi là Vinh"
+weight = 2
+contentDir = "content/vietnamese"
+LanguageName = "VI"

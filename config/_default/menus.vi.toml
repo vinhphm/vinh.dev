@@ -1,0 +1,35 @@
+  [[main]]
+  name = "Trang chủ"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[main]]
+  name = "Bài viết"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[main]]
+  name = "Portfolio"
+  weight = 300
+  identifier = "portfolio"
+  url = "/portfolio/"
+
+  [[main]]
+  name = "Về tôi"
+  weight = 400
+  identifier = "about"
+  url = "/about/"
+
+  [[main]]
+  name = "Liên hệ"
+  weight = 500
+  identifier = "contact"
+  url = "/contact/"
+
+  [[footer]]
+  name = "imprint"
+  weight = 1
+  identifier = "imprint"
+  url = "/imprint/"
