@@ -1,7 +1,7 @@
 +++
 author = "Vinh Pham"
 title = "I Bought a Domain"
-date = "2022-03-19"
+date = "2022-03-19T20:00:00+07:00"
 description = "The biggest change I have made to my development progress so far"
 tags = [
     "domain",
@@ -27,4 +27,4 @@ Now, things have changed. Domains are now more affordable, and come with wide ra
 
 Now that I have a domain, I can start setting up mailbox with that domain, something I haven't done before. Google offers this with a price tag each month, but I don't like it. I prefer Outlook.com, but since I don't have Microsoft 365 subscription, I can't use Outlook.com custom domain feature. Fortunately, I currently have iCloud+ so I can set it up with Apple's iCloud custom domain feature.
 
-Now back to the blog, I can start pointing it to my Github Page. But that soon will make me realize something, another change I have to make...
+Now back to the blog, I can start pointing it to my Github Pages. But that soon will make me realize something, another change I have to make...

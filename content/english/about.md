@@ -1,25 +1,11 @@
 +++
 title = "About"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "Hugo Authors"
+description = "Vinh"
+date = "2022-03-19T20:00:00+07:00"
+aliases = ["about-me", "about-vinh", "contact"]
+author = "Vinh Pham"
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache License 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+I am Vinh. I have studied Networking and Telecommunications at the University of Information Technology -Vietnam National University (HCMC) for 5 years. After that, I have over 3 years of experience working as ITsupport, system administrator, and programming in my time working for companies like Hitachi Vantara Vietnam, LINKBYNET, and recently, PwC.
 
-Hugo makes use of a variety of open source projects including:
-
-- https://github.com/yuin/goldmark
-- https://github.com/alecthomas/chroma
-- https://github.com/muesli/smartcrop
-- https://github.com/spf13/cobra
-- https://github.com/spf13/viper
-
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+I have always loved IT, learning new things from it and sometimes sharing it with other people. In my free time, Ieven write a little bit on the Medium platform. There will be a lot I have to learn and I don't mind a good challengeas long as it helps me archive my goals and develop my career.
