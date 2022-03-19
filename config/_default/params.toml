@@ -1,8 +1,8 @@
 
 title = "Vinh Pham"
 author = "Vinh Pham"
-#copyright = "2020-2021"
-description = "Call me Vinh"
+
+description = "A person who love coding and eating noodles"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
@@ -13,8 +13,10 @@ customJs = []
 mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
+
 # Form Spree Contact Form
-#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+contactFormAction = "https://formspree.io/f/mjvlojbj"
+
 # Google Fonts
 #googleFonts = ["Indie+Flower", "Roboto:ital,wght@0,100;0,400;0,700;1,400"]
 # Google Site Verify
@@ -29,7 +31,7 @@ listDateFormat = "2/1/2006"
 # postSectionName = "blog"
 
 [utterances]
-repo = "githubuser/reponame"
+repo = "vinhphm/vinh-dev"
 issueTerm = "pathname"
 theme= "preferred-color-scheme"
 
@@ -65,8 +67,13 @@ title = "GitHub"
 url = "https://github.com/vinhphm"
 
 [[socialIcons]]
+icon = "fab fa-twitter"
+title = "Twitter"
+url = "https://twitter.com/vinhphh"
+
+[[socialIcons]]
 icon = "fab fa-instagram"
-title = "instagram"
+title = "Instagram"
 url = "https://www.instagram.com/vinh.phm"
 
 [[socialIcons]]
