@@ -18,7 +18,7 @@ doNotLoadAnimations = false
 contactFormAction = "https://formspree.io/f/mjvlojbj"
 
 # Google Fonts
-#googleFonts = ["Indie+Flower", "Roboto:ital,wght@0,100;0,400;0,700;1,400"]
+#googleFonts = ["Inter"]
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 singleDateFormat = "2/1/2006"

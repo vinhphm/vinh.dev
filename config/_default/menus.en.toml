@@ -27,7 +27,3 @@
   weight = 500
   identifier = "contact"
   url = "/contact/"
-
-  [[footer]]
-  name = "Some rights reserved"
-  weight = 1
