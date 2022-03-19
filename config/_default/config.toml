@@ -2,11 +2,6 @@ baseURL = 'https://vinh.dev/'
 languageCode = 'en-us'
 title = 'Vinh Pham'
 
-# theme as hugo module
-theme = "github.com/lxndrblz/anatole"
-# theme as git submodule
-#theme = "anatole"
-
 summarylength = 10
 enableEmoji = true
 enableRobotsTXT = true
