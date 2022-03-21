@@ -1,12 +1,13 @@
 [en]
-title = "Vinh Pham"
+title = "Vinh"
 weight = 1
 contentDir = "content/english"
 LanguageName = "EN"
 
 [vi]
-title = "Vinh Pham"
-description = "Gọi tôi là Vinh"
+title = "Vinh"
+description = """Gọi tôi là Vinh.
+Một đứa thích khám phá, cũng lại thích ăn mì."""
 weight = 2
 contentDir = "content/vietnamese"
 LanguageName = "VI"

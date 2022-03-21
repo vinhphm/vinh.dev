@@ -1,8 +1,10 @@
 
-title = "Vinh Pham"
+title = "Vinh"
 author = "Vinh Pham"
 
-description = "A person who love coding and eating noodles"
+description = """
+Call me Vinh.
+A person who love exploring and eating noodles."""
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
