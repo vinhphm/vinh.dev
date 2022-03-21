@@ -1,6 +1,6 @@
 +++
 author = "Vinh Pham"
-title = "Switched from GitHub Pages to Cloudflare Pages"
+title = "Migrated from GitHub Pages to Cloudflare Pages"
 date = "2022-03-19T23:00:00+07:00"
 description = "The biggest change I have made to my development progress so far"
 tags = [
