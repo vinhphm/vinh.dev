@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Vinh.Dev',
   author: 'Vinh Pham',
-  headerTitle: 'Vinh',
+  headerTitle: 'Vinh.Dev',
   description: 'Call me Vinh, a man who love exploring and eating noodles.',
   language: 'en-us',
   theme: 'system', // system, dark or light
@@ -70,9 +70,9 @@ const siteMetadata = {
       label: '', // label (optional): Comment 💬
       // theme example: github-light, github-dark, preferred-color-scheme
       // github-dark-orange, icy-dark, dark-blue, photon-dark, boxy-light
-      theme: 'github-light',
+      theme: 'preferred-color-scheme',
       // theme when dark mode
-      darkTheme: 'github-dark',
+      darkTheme: 'preferred-color-scheme',
     },
     disqusConfig: {
       // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
