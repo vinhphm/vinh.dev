@@ -26,7 +26,7 @@ const siteMetadata = {
     plausibleDataDomain: '',
     simpleAnalytics: false,
     umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
-    googleAnalyticsId: '',
+    googleAnalyticsId: 'G-CHV278CV52',
   },
   newsletter: {
     // supports mailchimp, buttondown, convertkit
