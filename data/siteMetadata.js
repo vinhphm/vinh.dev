@@ -6,7 +6,7 @@ const siteMetadata = {
   author: 'Vinh Pham',
   headerTitle: { en: 'Vinh.Dev', vi: 'Vinh.Dev' },
   description: {
-    en: 'A Web Developer that code for passion and design for fun.',
+    en: 'A Web Developer who codes for passion and designs for fun.',
     vi: 'Anh bạn lập trình viên code vì đam mê và design vì sở thích.',
   },
   language: 'en-us',
