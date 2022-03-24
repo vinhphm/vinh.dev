@@ -19,7 +19,7 @@ Bash uses a few startup files to configure the shell environment for users. It w
 
 Create `~/.bash_profile` file. The `.bash_profile` contains commands for setting the shell's environment variables. Since the shell is interactive, the `~/.bashrc` file is not sourced. Copy the following content to the file:
 
-```bash
+```bash:~/.bash_profile
 # Source the ~/.bashrc file if it exists
 if [ -f ~/.bashrc ]
 then
@@ -31,7 +31,7 @@ fi
 
 Create `~/.bashrc` file. The .bashrc file contains commands that are specific to the Bash shell. It is the best place for aliases and bash-related functions. Copy the following content to the file:
 
-```bash
+```bash:~/.bashrc
 # Git aliases
 alias gs='git status -sb'
 alias gcc='git checkout'
@@ -106,9 +106,9 @@ shopt -s histappend histverify
 
 ## Git Bash prompt
 
-The Git Bash prompt is set by a shell script called git-prompt.sh and can be found in the `c/Program\ Files/Git/etc/profile.d` directory. Notice that in lines 8-10, a custom ~/.config/git/git-prompt.sh file will be sourced, if it exists. This is our chance to override the default settings.
+The Git Bash prompt is set by a shell script called `git-prompt.sh` and can be found in the `c/Program\ Files/Git/etc/profile.d` directory. Notice that in lines 8-10, a custom `~/.config/git/git-prompt.sh` file will be sourced, if it exists. This is our chance to override the default settings.
 
-```bash
+```bash:git-prompt.sh
 # lines omitted
 if test -f ~/.config/git/git-prompt.sh
 then
@@ -121,7 +121,7 @@ fi
 
 So let's create `~/.config/git/git-prompt.sh` file. The `git-prompt.sh` file contains commands for setting the title of the Git Bash terminal and the Bash prompt string. This is where you decide how your prompt will look like. Here is an example setting:
 
-```bash
+```bash:~/.config/git/git-prompt.sh
 # Custom prompt settings
 PROMPT_DIRTRIM=4                         # Shorten deep paths in the prompt
 PS1='\[\033]0;Git | Bash v\v | \W\007\]' # set window title
@@ -167,7 +167,7 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 
 Create `~/.inputrc` file, where you will able to configure command history, directory display, and keyboard bindings using the built-in GNU Readline library.
 
-```bash
+```bash:~/.inputrc
 # Disable beeps & bells, and do not display control characters.
 set bell-style none
 set echo-control-characters off
@@ -231,7 +231,7 @@ The _git-completion_ and _git-prompt_ scripts can be found in the following dire
 
 To use the scripts append the following lines to the `~/.bashrc` file.
 
-```bash
+```bash:~/.bashrc
 # Enable tab completion for Git commands
 source ~/.git-completion.bash
 # Change bash prompt to display current Git branch and status

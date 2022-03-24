@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: {
-    en: 'Vinh Pham – Web Developer',
-    vi: 'Vinh Pham – Lập trình viên',
+    en: 'Vinh Pham – Thoughts, ideas, and creations',
+    vi: 'Vinh Phạm – Những suy nghĩ, ý tưởng và sáng tạo',
   },
   author: 'Vinh Pham',
   headerTitle: { en: 'Vinh.Dev', vi: 'Vinh.Dev' },
