@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 
-// Adapted from https://github.com/hashicorp/next-remote-watch
+// Adapated from https://github.com/hashicorp/next-remote-watch
 // A copy of next-remote-watch with an additional ws reload emitter.
 // The app listens to the event and triggers a client-side router refresh
 // see components/ClientReload.js
 
+const http = require('http')
+const spawn = require('child_process').spawn
+const path = require('path')
+const { parse } = require('url')
 const chalk = require('chalk')
 const chokidar = require('chokidar')
 const program = require('commander')
-const http = require('http')
 const SocketIO = require('socket.io')
 const express = require('express')
-const spawn = require('child_process').spawn
 const next = require('next')
-const path = require('path')
-const { parse } = require('url')
 
 const pkg = require('../package.json')
 

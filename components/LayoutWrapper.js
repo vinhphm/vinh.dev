@@ -1,53 +1,27 @@
-import siteMetadata from '@/data/siteMetadata'
-import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
-import Link from './Link'
+/* eslint-disable jsx-a11y/no-onchange */
 import SectionContainer from './SectionContainer'
+import Header from './Header'
 import Footer from './Footer'
-import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
+import LeftDarkGradient from './background/left-dark-gradient.svg'
+import RightDarkGradient from './background/right-dark-gradient.svg'
 
 const LayoutWrapper = ({ children }) => {
   return (
-    <SectionContainer>
-      <div className="flex h-screen flex-col justify-between">
-        <header className="flex items-center justify-between py-10">
-          <div>
-            <Link href="/" aria-label={siteMetadata.headerTitle}>
-              <div className="flex items-center justify-between">
-                <div className="mr-3">
-                  <Logo />
-                </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )}
-              </div>
-            </Link>
-          </div>
-          <div className="flex items-center text-base leading-5">
-            <div className="hidden sm:block">
-              {headerNavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
-                >
-                  {link.title}
-                </Link>
-              ))}
-            </div>
-            <ThemeSwitch />
-            <MobileNav />
-          </div>
-        </header>
-        <main className="mb-auto">{children}</main>
-        <Footer />
-      </div>
-    </SectionContainer>
+    <>
+      <Header />
+      <SectionContainer>
+        <div className="flex min-h-screen flex-col justify-between">
+          <main className="mb-auto">{children}</main>
+          <Footer />
+        </div>
+        <div className="fixed -bottom-11 -left-28 -z-10 h-full w-full opacity-60 sm:-bottom-0 sm:-left-64">
+          <LeftDarkGradient />
+        </div>
+        <div className="fixed -top-96 right-64 -z-10 h-full w-full opacity-60 sm:-right-96">
+          <RightDarkGradient />
+        </div>
+      </SectionContainer>
+    </>
   )
 }
 

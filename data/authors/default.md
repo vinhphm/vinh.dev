@@ -1,7 +1,7 @@
 ---
-name: Vinh Pham
+name: Vinh Pham (Finn)
 avatar: /static/images/avatar.jpg
-occupation: Web Developer
+occupation: Web Developer/ Designer
 company: PwC (Vietnam)
 email: vinh@vinh.dev
 twitter: https://twitter.com/vinhphh

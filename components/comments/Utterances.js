@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
+import useTranslation from 'next-translate/useTranslation'
 import siteMetadata from '@/data/siteMetadata'
 
 const Utterances = ({ issueTerm }) => {
+  const { t } = useTranslation()
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const { theme, resolvedTheme } = useTheme()
   const commentsTheme =
@@ -43,8 +45,8 @@ const Utterances = ({ issueTerm }) => {
   // Added `relative` to fix a weird bug with `utterances-frame` position
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
-      <div className="utterances-frame relative" id={COMMENTS_ID} />
+      {enableLoadComments && <button onClick={LoadComments}>{t('common:comment')}</button>}
+      <div className="relative utterances-frame" id={COMMENTS_ID} />
     </div>
   )
 }

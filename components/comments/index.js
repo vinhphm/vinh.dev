@@ -1,5 +1,5 @@
-import siteMetadata from '@/data/siteMetadata'
 import dynamic from 'next/dynamic'
+import siteMetadata from '@/data/siteMetadata'
 
 const UtterancesComponent = dynamic(
   () => {
@@ -22,8 +22,6 @@ const DisqusComponent = dynamic(
 
 const Comments = ({ frontMatter }) => {
   let term
-  const comment = siteMetadata?.comment
-  if (!comment || Object.keys(comment).length === 0) return <></>
   switch (
     siteMetadata.comment.giscusConfig.mapping ||
     siteMetadata.comment.utterancesConfig.issueTerm

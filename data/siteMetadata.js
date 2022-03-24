@@ -1,10 +1,15 @@
 const siteMetadata = {
-  title: 'Vinh.Dev',
+  title: {
+    en: 'Vinh Pham – Web Developer',
+    vi: 'Vinh Pham – Lập trình viên',
+  },
   author: 'Vinh Pham',
-  headerTitle: 'Vinh.Dev',
-  description: 'Call me Vinh, a man who love exploring and eating noodles.',
+  headerTitle: { en: 'Vinh.Dev', vi: 'Vinh.Dev' },
+  description: {
+    en: 'A Web Developer that code for passion and design for fun. Also love eating noodles',
+    vi: 'Một lập trình code vì đam mê và design vì thích.',
+  },
   language: 'en-us',
-  theme: 'system', // system, dark or light
   siteUrl: 'https://vinh.dev',
   siteRepo: 'https://github.com/vinhphm/vinh-dev',
   siteLogo: '/static/images/logo.png',
@@ -13,27 +18,21 @@ const siteMetadata = {
   email: 'vinh@vinh.dev',
   github: 'https://github.com/vinhphm',
   twitter: 'https://twitter.com/vinhphh',
-  facebook: 'https://facebook.com/vinhphh',
-  // youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com/in/vinhphm',
+  linkedin: 'https://www.linkedin.com/in/vinhphm/',
   locale: 'en-US',
   analytics: {
-    // If you want to use an analytics provider you have to add it to the
-    // content security policy in the `next.config.js` file.
     // supports plausible, simpleAnalytics, umami or googleAnalytics
-    plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    simpleAnalytics: false, // true or false
+    plausibleDataDomain: '',
+    simpleAnalytics: false,
     umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
-    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+    googleAnalyticsId: '',
   },
   newsletter: {
-    // supports mailchimp, buttondown, convertkit, klaviyo, revue
+    // supports mailchimp, buttondown, convertkit
     // Please add your .env file and modify it according to your selection
     provider: 'buttondown',
   },
   comment: {
-    // If you want to use a commenting system other than giscus you have to add it to the
-    // content security policy in the `next.config.js` file.
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
     provider: 'utterances', // supported providers: giscus, utterances, disqus
@@ -51,10 +50,6 @@ const siteMetadata = {
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
       theme: 'light',
-      // Place the comment box above the comments. options: bottom, top
-      inputPosition: 'bottom',
-      // Choose the language giscus will be displayed in. options: en, es, zh-CN, zh-TW, ko, ja etc
-      lang: 'en',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`

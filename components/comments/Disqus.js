@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
+import useTranslation from 'next-translate/useTranslation'
 import siteMetadata from '@/data/siteMetadata'
 
 const Disqus = ({ frontMatter }) => {
+  const { t } = useTranslation()
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
-
   const COMMENTS_ID = 'disqus_thread'
 
   function LoadComments() {
@@ -16,7 +17,7 @@ const Disqus = ({ frontMatter }) => {
     }
     if (window.DISQUS === undefined) {
       const script = document.createElement('script')
-      script.src = 'https://' + siteMetadata.comment.disqusConfig.shortname + '.disqus.com/embed.js'
+      script.src = 'https://' + siteMetadata.comment.disqus.shortname + '.disqus.com/embed.js'
       script.setAttribute('data-timestamp', +new Date())
       script.setAttribute('crossorigin', 'anonymous')
       script.async = true
@@ -28,7 +29,7 @@ const Disqus = ({ frontMatter }) => {
 
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
+      {enableLoadComments && <button onClick={LoadComments}>{t('common:comment')}</button>}
       <div className="disqus-frame" id={COMMENTS_ID} />
     </div>
   )
