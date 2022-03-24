@@ -5,6 +5,7 @@ occupation: Web Developer/ Designer
 company: PwC (Vietnam)
 email: vinh@vinh.dev
 twitter: https://twitter.com/vinhphh
+facebook: https://www.facebook.com/vinhphh
 linkedin: https://www.linkedin.com/in/vinhphm/
 github: https://github.com/vinhphm
 ---
