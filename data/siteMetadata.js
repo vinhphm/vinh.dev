@@ -6,8 +6,8 @@ const siteMetadata = {
   author: 'Vinh Pham',
   headerTitle: { en: 'Vinh.Dev', vi: 'Vinh.Dev' },
   description: {
-    en: 'A Web Developer that code for passion and design for fun. Also love eating noodles',
-    vi: 'Một lập trình code vì đam mê và design vì thích.',
+    en: 'A Web Developer that code for passion and design for fun.',
+    vi: 'Anh bạn lập trình viên code vì đam mê và design vì sở thích.',
   },
   language: 'en-us',
   siteUrl: 'https://vinh.dev',
@@ -18,6 +18,7 @@ const siteMetadata = {
   email: 'vinh@vinh.dev',
   github: 'https://github.com/vinhphm',
   twitter: 'https://twitter.com/vinhphh',
+  facebook: 'https://facebook.com/vinhphh',
   linkedin: 'https://www.linkedin.com/in/vinhphm/',
   locale: 'en-US',
   analytics: {
