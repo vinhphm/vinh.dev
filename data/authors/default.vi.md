@@ -44,7 +44,7 @@ Vào thời gian rảnh, Mình thường nghe nhạc, đi xem phim hoặc cày s
 
 ### 2007
 
-- Nhiều người sẽ bắt đầu đam mê thiết kế của họ với các phần mềm nổi tiếng như Adobe Photoshop, Adobe Illustrator hay CorelDRAW. Nhưng đối với mình, mình chỉ được dạy học Microsoft Office ở trường, dù nó chủ yếu là dùng cho các tác vụ văn phòng, mình luôn dùng PowerPoint như một phần mềm để thiết kế những thứ linh tinh.
+- Tìm thấy đam mê thiết kế đồ họa.
 
 ### 2006
 

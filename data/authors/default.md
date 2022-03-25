@@ -44,7 +44,7 @@ In my free time, I enjoy listening to music or watching movies and series. I als
 
 ### 2007
 
-- Most people would start their design passion on some well-known tools such as Adobe Photoshop, Adobe Illustrator or CorelDRAW. But for me, I was taught to use Microsoft Office at school, while it mainly served for the purpose of office management, I found myself love using PowerPoint as a tool to designing things.
+- Found my interest in graphic design.
 
 ### 2006
 
