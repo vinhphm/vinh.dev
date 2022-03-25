@@ -1,7 +1,7 @@
 ---
-name: Phạm Trọng Vinh
+name: Vinh Phạm
 avatar: /static/images/avatar.jpg
-occupation: Lập trình viên/ Thiết kế web
+occupation: Lập trình viên/ Thiết kế đồ họa
 company: PwC (Vietnam)
 email: vinh@vinh.dev
 twitter: https://twitter.com/vinhphh
@@ -10,9 +10,9 @@ linkedin: https://www.linkedin.com/in/vinhphm/
 github: https://github.com/vinhphm
 ---
 
-Xin chào, mình là Vinh. Mình là một lập trình viên và làm designer tay trái. Mình đã có cơ hội làm việc với nhiều thư viện như: React, Angular, Svelte, với hơn 3 năm kinh nghiệm.
+Xin chào, tôi là Vinh. Một anh bạn lập trình viên và làm designer tay trái. Tôi đã có cơ hội làm việc với nhiều thư viện như: React, Angular, Svelte, với hơn 3 năm kinh nghiệm.
 
-Vào thời gian rảnh, Mình thường nghe nhạc, đi xem phim hoặc cày series. Mình cũng thích ăn mì và các loại món nước, đặc biệt là các món truyền thống Việt Nam.
+Vào thời gian rảnh, tôi thường nghe nhạc, đi xem phim hoặc cày series. Tôi cũng thích ăn mì và các loại món nước, đặc biệt là các món truyền thống Việt Nam.
 
 ## Dòng thời gian
 

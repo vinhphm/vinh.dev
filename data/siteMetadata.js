@@ -36,7 +36,7 @@ const siteMetadata = {
   comment: {
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
-    provider: 'utterances', // supported providers: giscus, utterances, disqus
+    provider: 'giscus', // supported providers: giscus, utterances, disqus
     giscusConfig: {
       // Visit the link below, and follow the steps in the 'configuration' section
       // https://giscus.app/
