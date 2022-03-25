@@ -1,15 +1,15 @@
 import useTranslation from 'next-translate/useTranslation'
 import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata'
-import ListLearningLayout from '@/layouts/ListLearningLayout'
+import ListNotesLayout from '@/layouts/ListNotesLayout'
 import { PageSEO } from '@/components/SEO'
 
 export const POSTS_PER_PAGE = 1
 
 export async function getStaticProps({ locale, defaultLocale, locales }) {
   const otherLocale = locale !== defaultLocale ? locale : ''
-  const posts = await getAllFilesFrontMatter('learning', otherLocale)
-  const post = await getFileBySlug('learning', posts[0].slug, otherLocale)
+  const posts = await getAllFilesFrontMatter('notes', otherLocale)
+  const post = await getFileBySlug('notes', posts[0].slug, otherLocale)
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
     currentPage: 1,
@@ -21,7 +21,7 @@ export async function getStaticProps({ locale, defaultLocale, locales }) {
   }
 }
 
-export default function Learning({
+export default function Notes({
   posts,
   post,
   initialDisplayPosts,
@@ -33,16 +33,16 @@ export default function Learning({
   return (
     <>
       <PageSEO
-        title={`${t('common:learning')} - ${siteMetadata.author}`}
+        title={`${t('common:notes')} - ${siteMetadata.author}`}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <ListLearningLayout
+      <ListNotesLayout
         posts={posts}
         post={post}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title={t('common:learning')}
+        title={t('common:notes')}
       />
     </>
   )

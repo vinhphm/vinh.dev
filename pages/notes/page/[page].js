@@ -1,16 +1,16 @@
 import useTranslation from 'next-translate/useTranslation'
-import { POSTS_PER_PAGE } from '../../learning'
+import { POSTS_PER_PAGE } from '../../notes'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
-import ListLearningLayout from '@/layouts/ListLearningLayout'
+import ListNotesLayout from '@/layouts/ListNotesLayout'
 
 export async function getStaticPaths({ locales, defaultLocale }) {
   const paths = (
     await Promise.all(
       locales.map(async (locale) => {
         const otherLocale = locale !== defaultLocale ? locale : ''
-        const totalPosts = await getAllFilesFrontMatter('learning', otherLocale) // don't forget to useotherLocale
+        const totalPosts = await getAllFilesFrontMatter('notes', otherLocale) // don't forget to useotherLocale
         const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
         return Array.from({ length: totalPages }, (_, i) => [(i + 1).toString(), locale])
       })
@@ -36,9 +36,9 @@ export async function getStaticProps(context) {
     locale,
   } = context
   const otherLocale = locale !== defaultLocale ? locale : ''
-  const posts = await getAllFilesFrontMatter('learning', otherLocale)
+  const posts = await getAllFilesFrontMatter('notes', otherLocale)
   const pageNumber = parseInt(page)
-  const post = await getFileBySlug('learning', posts[pageNumber - 1].slug, otherLocale)
+  const post = await getFileBySlug('notes', posts[pageNumber - 1].slug, otherLocale)
   const initialDisplayPosts = posts.slice(
     POSTS_PER_PAGE * (pageNumber - 1),
     POSTS_PER_PAGE * pageNumber
@@ -52,7 +52,7 @@ export async function getStaticProps(context) {
   const availableLocales = []
   await locales.forEach(async (ilocal) => {
     const otherLocale = ilocal !== defaultLocale ? ilocal : ''
-    const iAllPosts = await getAllFilesFrontMatter('learning', otherLocale)
+    const iAllPosts = await getAllFilesFrontMatter('notes', otherLocale)
     iAllPosts.forEach(() => {
       if (
         pageNumber <= Math.ceil(iAllPosts.length / POSTS_PER_PAGE) &&
@@ -90,12 +90,12 @@ export default function PostPage({
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <ListLearningLayout
+      <ListNotesLayout
         posts={posts}
         post={post}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title={t('common:learning')}
+        title={t('common:notes')}
       />
     </>
   )

@@ -20,7 +20,7 @@ const HeadingTwo = (props) => {
   )
 }
 
-export default function ListLearningLayout({
+export default function ListNotesLayout({
   posts,
   post,
   title,
@@ -48,7 +48,7 @@ export default function ListLearningLayout({
             {title}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {t('learning:subtitle')}
+            {t('notes:subtitle')}
           </p>
         </div>
         <ul>
@@ -76,7 +76,7 @@ export default function ListLearningLayout({
         <Pagination
           currentPage={pagination.currentPage}
           totalPages={pagination.totalPages}
-          pageSlug={'learning'}
+          pageSlug={'notes'}
         />
       )}
     </>
