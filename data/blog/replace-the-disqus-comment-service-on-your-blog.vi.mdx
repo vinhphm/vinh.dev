@@ -1,0 +1,75 @@
+---
+title: Bạn nên đổi nền tảng comment Disqus sang nền tảng khác
+date: '2022-03-25'
+tags: ['comments', 'disqus', 'blog', 'github', 'giscus', 'utterances']
+draft: false
+summary: Có nhiều hệ thống mã nguồn mở dựa trên GitHub tốt hơn nhiều... Một trong số đó là Giscus.
+images: []
+layout: PostSimple
+---
+
+Khi mình lần đầu tạo blog bằng Jekyll và GitHub Pages vào năm 2017, có thể thấy lúc đó dường như hầu hết mọi theme của Jekyll đều sử dụng [Disqus](https://disqus.com/) để làm dịch vụ lưu trữ comment cho trang blog. Vào lúc đó, nó ~~được cho~~ là dịch vụ quản lí comment hàng đầu cho web của người dùng cá nhân và doanh nghiệp nhỏ. Bạn có thể thấy nó xuất hiện ở khắp mọi nơi và đây là vài lí do vì sao: được tích hợp khắp mọi nơi, nhiều phương thức đăng nhập, dễ dàng thiết lập, bảng điều khiển trực quan, khung comment gọn gàng, bộ lọc spam xuất sắc, những tính năng kết nối content nâng cao,... Nhưng rồi sau đó, Disqus "lật kèo" và bắt đầu thêm quảng cáo vào khung comment. Ngay tại thời điểm viết bài, Disqus yêu cầu người đăng ký thuê bao với một khoảng giá ~~phải chăng~~ $11 (tương đương ~250,000₫) một tháng cho một trang web để loại bỏ quảng cáo[^1]:
+
+[^1]: Disqus: https://blog.disqus.com/our-plans-for-2017
+
+> For an inexpensive monthly fee publishers will be able to completely remove ads and take advantage of all of Disqus’ basic features and functionality.
+
+Sự thay đổi này ảnh hưởng đến phần lớn người dùng cá nhân và doanh nghiệp nhỏ phụ thuộc vào Disqus để quản lý phần comment của trang web, trong đó có mình. May thay, nếu nhóm người xem bạn nhắm đến là người dùng GitHub thì giờ đã có rất nhiều phương án mã nguồn mở để giúp bạn bỏ luôn Disqus.
+
+## Tại sao nên bỏ Disqus? 🧐
+
+- **Quảng cáo mang tính chất spam:** Disqus đưa quảng cáo vô tội dạ. Chúng thường chiếm phần lớn diện tích trang và thường là mồi nhử hoặc là tin giả. Và chúng ta thì không thể kiểm soát được.
+- **Vấn đề về hiệu năng:** Disqus làm chậm thời gian load trang. Đa phần là do tác vụ đồng bộ comment qua lại giữa máy tính người dùng và server, ngoài còn gọi thêm script từ bên thứ ba để load quảng cáo.
+- **Vấn đề về tính riêng tư:** Disqus tạo thêm vấn đề cho trang web của bạn khi buộc người dùng đăng nhập bằng tài khoản mạng xã hội để viết comment. Mà điều này chắc chắn sẽ khơi dậy lo ngại về tính riêng tư của người dùng.
+
+## Những giải pháp thay thế
+
+Okay, nói như vậy nghe cũng đủ sợ rồi. Vậy chúng ta có những sự lựa chọn nào khác?
+
+| Tên                                 | Mô tả                                                                                                                                                                                                               |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [giscus](https://giscus.app/)       | Lựa chọn yêu thích của mình. Nó dựa trên tính năng mới của GitHub là Discussions, đồng nghĩa nó hỗ trợ việc trả lời comment của nhau và nhiều thứ hay ho khác nữa.                                                  |
+| [utterances](https://utteranc.es/)  | Một tiện ích comment nhỏ gọn dựa trên GitHub Issues. Nó hẳn là giải pháp thay thế đang được dùng nhiều nhất. Nhưng mà thời gian về sau, trang Issues của bạn có thể ngập tràn lẫn lộn với comment, rất khó quản lí. |
+| [Gitalk](https://gitalk.github.io/) | Một component hiện đại dựa trên GitHub Issues và Preact. Nó hỗ trợ vài chức năng siêu ngầu như chế độ không xao lãng giống Facebook, hotkeys và tự nhận ngôn ngữ.                                                   |
+
+**Lưu ý:** Những giải pháp dựa trên GitHub chỉ lý tưởng với nhóm người dùng là developer vốn đã có sẵn tài khoản GitHub.
+
+## Bắt đầu thiết lập Giscus
+
+Blog của mình dựa trên nền tảng Next.js nhưng [giscus](https://giscus.app/) vẫn hoạt động được trên hầu hết các giải pháp blog ngoài kia. Nó tận dụng GitHub Discussions làm không gian lưu trữ. Điểm cộng của Giscus so với các giải pháp comment dựa trên GitHub là trang Discussions phù hợp hơn cho dạng comment. Ví dụ, nó hỗ trợ trả lời lẫn nhau trong comment, nhiều lựa chọn về reactions cũng như dễ kiểm soát hơn. Hơn nữa, nó nhẹ, dễ thiết lập và bảo mật. Với Giscus thì ta không cần lo lắng về mốc limit của GitHub API, quản lý code phần server, tự liên kết bài đăng với từng issue hay bắt người dùng phải rời trang để comment.
+
+Để thiết lập Giscus thì repo GitHub phải thoả mãn ba điều sau:
+
+1. Repo ở chế độ [công khai](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/setting-repository-visibility#making-a-repository-public)
+2. App [giscus](https://giscus.app/) đã được cài vào repository
+3. Tính năng Discussions đã [mở](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository)
+
+Để chèn **giscus**, chỉ cần thêm đoạn code dưới đây vào nơi bạn muốn hiển thị comment:
+
+```html {3-6} showLineNumbers
+<script
+  src="https://giscus.app/client.js"
+  data-repo="REPOSITORY_NAME"
+  data-repo-id="REPOSITORY_ID"
+  data-category="CATEGORY_NAME"
+  data-category-id="CATEGORY_ID"
+  data-mapping="pathname"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="en"
+  crossorigin="anonymous"
+  async
+></script>
+```
+
+Một vài biến bạn cần lưu ý:
+
+- `REPOSITORY_NAME`: Tên repository. Ví dụ `giscus/giscus`.
+- `CATEGORY_NAME`: Tên category. Ví dụ `Anouncements`.
+- `REPOSITORY_ID` và `CATEGORY_ID`: Hai ID này bạn sẽ không thể tìm thấy trên giao diện của GitHub. Mình thấy trang chủ cũng chưa giải thích rõ phần này. Để có được hai ID này, bạn phải [cài **giscus** vào repository](https://github.com/apps/giscus) trước. Rồi quay trở lại trang [giscus](https://giscus.app/), nhập tên repository và chọn category từ danh sách đổi xuống. Lúc đó bạn mới thấy hai ID này ở phần cuối của form.
+
+## Kết
+
+Và đó là lý do mình bỏ Discus và dùng **giscus**. Mình nghĩ bạn cũng nên như vậy.

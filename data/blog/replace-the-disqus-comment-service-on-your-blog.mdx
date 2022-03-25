@@ -1,5 +1,5 @@
 ---
-title: Replace the Disqus comment system on your blog
+title: Replace the Disqus comment service on your blog
 date: '2022-03-25'
 tags: ['comments', 'disqus', 'blog', 'github', 'giscus', 'utterances']
 draft: false
@@ -16,10 +16,10 @@ When I first started my personal blog with Jekyll and GitHub Pages in 2017, I ca
 
 This change affects a large number of indivisual bloggers and small businesses that rely on Disqus to handle their visitors’ comments, including me. Fortunately, if your target audience is GitHub users, there are now great open-source alternatives out there to help you get rid of Disqus.
 
-## Why replacing Disqus?
+## Why replacing Disqus? 🧐
 
 - **Spammy ads:** Disqus ads are just intrusive. They cover a large portion of the screen and tend to be either click bait or fake news. And we have no control over them.
-- **Performance issues:** Disqus is know to degrade page load time. This is mostly due to the syncing of comments back and forth with the server, and calling third party scripts when loading ads.
+- **Performance issues:** Disqus is known to degrade page load time. This is mostly due to the syncing of comments back and forth with the server, and calling third party scripts when loading ads.
 - **Privacy concerns:** Disqus introduces an additional layer of complexity to your website by forcing visitors to log in with their social media accounts when commenting. This obviously opens the door to privacy issues.
 
 ## The replacements
@@ -46,7 +46,7 @@ To set up Giscus, the GitHub repo has to meet only three requirement:
 
 To insert **giscus**, just add the following code where you want the comments to be displayed.
 
-```html {2-5} showLineNumbers
+```html {3-6} showLineNumbers
 <script
   src="https://giscus.app/client.js"
   data-repo="REPOSITORY_NAME"
