@@ -97,7 +97,7 @@ const NoiseSphere = ({ theme }) => {
 
 const HeroEffect = () => {
   const [mounted, setMounted] = useState(false)
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme: theme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -115,13 +115,13 @@ const HeroEffect = () => {
         className="brightness-100 hue-rotate-53 invert saturate-1000 dark:filter-none"
       >
         <Suspense fallback={null} r3f>
-          <NoiseSphere theme={theme !== 'system' ? theme : resolvedTheme} />
+          <NoiseSphere theme={theme} />
           <Preload all />
         </Suspense>
         <EffectComposer>
           <Bloom luminanceThreshold={0.8} />
           <ChromaticAberration />
-          {(theme === 'light' || resolvedTheme === 'light') && (
+          {theme === 'light' && (
             <>
               <ColorAverage blendFunction={BlendFunction.ALPHA} />
               <Sepia intensity={1.0} blendFunction={BlendFunction.SCREEN} />

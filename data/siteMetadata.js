@@ -10,7 +10,7 @@ const siteMetadata = {
     vi: 'Anh bạn lập trình viên code vì đam mê và design vì sở thích.',
   },
   language: 'en-us',
-  theme: 'dark', // system, dark or light
+  theme: 'system', // system, dark or light
   siteUrl: 'https://vinh.dev',
   siteRepo: 'https://github.com/vinhphm/vinh-dev',
   siteLogo: '/static/images/logo.png',
