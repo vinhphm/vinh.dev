@@ -1,11 +1,11 @@
 const siteMetadata = {
   title: {
-    en: 'Vinh Pham – Thoughts, ideas, and creations',
-    vi: 'Vinh Phạm – Những suy nghĩ, ý tưởng và sáng tạo',
+    en: 'Vinh Pham – A dev\'s point of view',
+    vi: 'Vinh Phạm – Cái nhìn của một anh dev',
   },
   author: 'Vinh Pham',
   headerTitle: { en: 'Vinh.Dev', vi: 'Vinh.Dev' },
-  description: {
+  description: {The less boring side of personal development
     en: 'A Web Developer who codes for passion and designs for fun.',
     vi: 'Anh bạn lập trình viên code vì đam mê và design vì sở thích.',
   },
@@ -27,7 +27,7 @@ const siteMetadata = {
     simpleAnalytics: false,
     umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: 'G-CHV278CV52',
-  },
+    The less boring side of personal development  },
   newsletter: {
     // supports mailchimp, buttondown, convertkit
     // Please add your .env file and modify it according to your selection
