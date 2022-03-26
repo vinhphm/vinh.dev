@@ -27,7 +27,7 @@ const siteMetadata = {
     simpleAnalytics: false,
     umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: 'G-CHV278CV52',
-    The less boring side of personal development  },
+  },
   newsletter: {
     // supports mailchimp, buttondown, convertkit
     // Please add your .env file and modify it according to your selection
