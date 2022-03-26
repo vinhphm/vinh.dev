@@ -19,7 +19,7 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#000000" />
-          {/* <meta name="theme-color" content="transparent" /> */}
+          <meta name="theme-color" content="#000000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
           <link rel="alternate" type="application/rss+xml" href="/feed.vi.xml" />
         </Head>
