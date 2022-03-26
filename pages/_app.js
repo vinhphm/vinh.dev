@@ -8,6 +8,7 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 
 import { Globals } from '@react-spring/shared'
+import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import RSS from '@/components/Rss'
@@ -25,7 +26,7 @@ export default function App({ Component, pageProps, router }) {
   })
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
+    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>

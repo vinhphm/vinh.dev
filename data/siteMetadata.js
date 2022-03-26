@@ -1,6 +1,6 @@
 const siteMetadata = {
   title: {
-    en: 'Vinh Pham – A dev\'s point of view',
+    en: "Vinh Pham – A dev's point of view",
     vi: 'Vinh Phạm – Cái nhìn của một anh dev',
   },
   author: 'Vinh Pham',
@@ -10,6 +10,7 @@ const siteMetadata = {
     vi: 'Anh bạn lập trình viên code vì đam mê và design vì sở thích.',
   },
   language: 'en-us',
+  theme: 'system', // system, dark or light
   siteUrl: 'https://vinh.dev',
   siteRepo: 'https://github.com/vinhphm/vinh-dev',
   siteLogo: '/static/images/logo.png',
@@ -48,6 +49,8 @@ const siteMetadata = {
       reactions: '0', // Emoji reactions: 1 = enable / 0 = disable
       // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
       metadata: '0',
+      // Place the comment box above the comments. options: bottom, top
+      inputPosition: 'bottom',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
       theme: 'light',
