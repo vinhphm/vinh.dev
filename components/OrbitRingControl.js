@@ -1,9 +1,8 @@
 import { Suspense, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera, Preload, Stars } from '@react-three/drei'
-import UnchartedRingModel from './UnchartedRingModel'
 
-const UnchartedRing = () => {
+const OrbitRingControl = () => {
   const cameraRef = useRef()
 
   useFrame(({ clock }) => {
@@ -23,7 +22,7 @@ const UnchartedRing = () => {
       <PerspectiveCamera ref={cameraRef} rotation={[0.4, 0, 0]} position={[0, 0, 0]}>
         <Stars radius={0.05} depth={2.4} count={200} factor={0.06} saturation={1000} fade />
         <Suspense fallback={null} r3f>
-          <UnchartedRingModel position={[0, 0.4, 0]} />
+          {/* <3DModel position={[0, 0.4, 0]} /> */}
           <Preload all />
         </Suspense>
       </PerspectiveCamera>
@@ -31,4 +30,4 @@ const UnchartedRing = () => {
   )
 }
 
-export default UnchartedRing
+export default OrbitRingControl

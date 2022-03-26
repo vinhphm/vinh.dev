@@ -10,7 +10,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 import Card from '@/components/Card'
 
 const HeroEffect = dynamic(() => import('@/components/HeroEffect'), { ssr: false })
-const UnchartedRing = dynamic(() => import('@/components/UnchartedRing'), { ssr: false })
+const OrbitRing = dynamic(() => import('@/components/OrbitRing'), { ssr: false })
 
 const MAX_DISPLAY = 3
 
@@ -36,7 +36,7 @@ export default function Home({ posts, locale, availableLocales }) {
           <HeroEffect />
         </div>
         <div className="h-52">
-          <UnchartedRing />
+          <OrbitRing />
         </div>
         <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl xl:text-6xl md:leading-14">
           {t('common:hi')} <span className="animate-fade-text">V</span>

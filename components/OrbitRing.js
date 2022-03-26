@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { AdaptiveEvents } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import UnchartedRingControl from './UnchartedRingControl'
+import OrbitRingControl from './OrbitRingControl'
 
-const UnchartedRing = () => {
+const OrbitRing = () => {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -15,11 +15,11 @@ const UnchartedRing = () => {
   return (
     <div className="h-52">
       <Canvas mode="concurrent" camera={{ fov: 40, near: 0.1, far: 1000, position: [0, 0, 6] }}>
-        <UnchartedRingControl />
+        <OrbitRingControl />
         <AdaptiveEvents />
       </Canvas>
     </div>
   )
 }
 
-export default UnchartedRing
+export default OrbitRing
