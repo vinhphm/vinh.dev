@@ -97,7 +97,7 @@ const NoiseSphere = ({ theme }) => {
 
 const HeroEffect = () => {
   const [mounted, setMounted] = useState(false)
-  const { theme } = useTheme()
+  const { resolvedTheme: theme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
