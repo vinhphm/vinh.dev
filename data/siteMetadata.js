@@ -5,7 +5,7 @@ const siteMetadata = {
   },
   author: 'Vinh Pham',
   headerTitle: { en: 'Vinh.Dev', vi: 'Vinh.Dev' },
-  description: {The less boring side of personal development
+  description: {
     en: 'A Web Developer who codes for passion and designs for fun.',
     vi: 'Anh bạn lập trình viên code vì đam mê và design vì sở thích.',
   },
