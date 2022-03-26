@@ -72,14 +72,14 @@ const nextConfig = {
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'context'],
   },
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/(.*)',
-  //       headers: securityHeaders,
-  //     },
-  //   ]
-  // },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ]
+  },
   webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -97,15 +97,15 @@ const nextConfig = {
       sideEffects: true,
     })
 
-    if (!dev && !isServer) {
-      // Replace React with Preact only in client production build
-      Object.assign(config.resolve.alias, {
-        'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
+    // if (!dev && !isServer) {
+    //   // Replace React with Preact only in client production build
+    //   Object.assign(config.resolve.alias, {
+    //     'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
+    //     react: 'preact/compat',
+    //     'react-dom/test-utils': 'preact/test-utils',
+    //     'react-dom': 'preact/compat',
+    //   })
+    // }
 
     return config
   },
