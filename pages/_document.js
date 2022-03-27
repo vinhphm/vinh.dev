@@ -18,8 +18,8 @@ class MyDocument extends Document {
             href="/static/favicons/favicon-16x16.png"
           />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
-          <meta name="msapplication-TileColor" content="#8b5cf6" />
-          <meta name="theme-color" content="#8b5cf6" id="theme-color" />
+          <meta name="msapplication-TileColor" content="#000000" />
+          <meta name="theme-color" content="#000000" id="theme-color" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
           <link rel="alternate" type="application/rss+xml" href="/feed.vi.xml" />
         </Head>
