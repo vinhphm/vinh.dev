@@ -4,16 +4,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const withPlugins = require('next-compose-plugins')
 
-const withTM = require('next-transpile-modules')([
-  'three',
-  'react-spring',
-  '@react-spring/three',
-  '@react-spring/web',
-  '@react-three/fiber',
-  '@react-three/postprocessing',
-  '@react-three/drei',
-])
-
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
@@ -101,4 +91,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withPlugins([[nextTranslate], [withBundleAnalyzer], [withTM]], nextConfig)
+module.exports = withPlugins([[nextTranslate], [withBundleAnalyzer]], nextConfig)
