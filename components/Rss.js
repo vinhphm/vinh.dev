@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 
 const Rss = () => {
   const { locale, defaultLocale } = useRouter()

@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import Link from '@/components/Link'
 
 export default function FourZeroFour() {

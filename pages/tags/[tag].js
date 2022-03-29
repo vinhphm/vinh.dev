@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { TagSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import ListLayout from '@/layouts/ListLayout'
 import generateRss from '@/lib/generate-rss'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
