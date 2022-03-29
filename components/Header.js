@@ -86,7 +86,7 @@ export default function Header() {
               <ThemeSwitch />
             </div>
           </div>
-          <div className="sm:hidden">
+          <div className="sm:hidden flex items-center">
             <button
               type="button"
               className="ml-1 mr-1 h-8 w-8 rounded"
