@@ -30,7 +30,7 @@ Vào thời gian rảnh, tôi thường nghe nhạc, đi xem phim hoặc cày se
 
 ### 2017
 
-- Làm việc tại [Hitachi Vantara Vietnam](https://www.globalcybersoft.com/) (từng được biết là Globab CyberSoft Vietnam) với vị trí Software Engineer Intern.
+- Làm việc tại [Hitachi Vantara Vietnam](https://www.globalcybersoft.com/) (từng được biết là Global CyberSoft Vietnam) với vị trí Software Engineer Intern.
 
 ### 2013
 

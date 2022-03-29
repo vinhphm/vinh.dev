@@ -30,7 +30,7 @@ In my free time, I enjoy listening to music or watching movies and series. I als
 
 ### 2017
 
-- Joined [Hitachi Vantara Vietnam](https://www.globalcybersoft.com/) (known as Globab CyberSoft Vietnam at the time) as a Software Engineer Intern.
+- Joined [Hitachi Vantara Vietnam](https://www.globalcybersoft.com/) (known as Global CyberSoft Vietnam at the time) as a Software Engineer Intern.
 
 ### 2013
 
