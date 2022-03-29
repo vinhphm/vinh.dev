@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 import useTranslation from 'next-translate/useTranslation'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 
 const Giscus = ({ mapping }) => {
   const { t, lang } = useTranslation()

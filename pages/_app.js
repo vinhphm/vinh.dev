@@ -8,7 +8,7 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 
 import { Globals } from '@react-spring/shared'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import RSS from '@/components/Rss'

@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 import { POSTS_PER_PAGE } from '../../notes'
 import { PageSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
 import ListNotesLayout from '@/layouts/ListNotesLayout'
 

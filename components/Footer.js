@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Link from './Link'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import SocialIcon from '@/components/social-icons'
 import NowPlaying from '@/components/NowPlaying'
 

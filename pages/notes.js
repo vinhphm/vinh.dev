@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation'
 import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import ListNotesLayout from '@/layouts/ListNotesLayout'
 import { PageSEO } from '@/components/SEO'
 

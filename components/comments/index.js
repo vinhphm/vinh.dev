@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 
 const UtterancesComponent = dynamic(
   () => {
