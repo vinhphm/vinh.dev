@@ -176,9 +176,9 @@ module.exports = {
             'h4,h5,h6': {
               color: theme('colors.gray.100'),
             },
-            code: {
-              backgroundColor: theme('colors.gray.800'),
-            },
+            // code: {
+            //   backgroundColor: theme('colors.gray.800'),
+            // },
             details: {
               backgroundColor: theme('colors.gray.800'),
             },
