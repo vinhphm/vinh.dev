@@ -26,8 +26,8 @@ module.exports = {
       spacing: {
         '9/16': '56.25%',
         0.75: '0.1875rem',
-        'content-sm': 'calc(100vh - 15.5rem)',
-        content: 'calc(100vh - 15rem)',
+        'content-sm': 'calc(100vh - 4.5rem)',
+        content: 'calc(100vh - 4rem)',
       },
       lineHeight: {
         11: '2.75rem',
@@ -51,8 +51,18 @@ module.exports = {
         'gradient-3-end': '#2D00F7',
       },
       colors: {
-        primary: colors.violet,
-        gray: colors.slate,
+        primary: {
+          100: '#FDD1D9',
+          200: '#FBA4BC',
+          300: '#F575A5',
+          400: '#EB519B',
+          500: '#DE1D8D',
+          600: '#BE1588',
+          700: '#9F0E7F',
+          800: '#800972',
+          900: '#6A0568',
+        },
+        gray: colors.neutral,
         violet: {
           ...colors.violet,
           30: '#f9f4fc',

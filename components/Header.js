@@ -48,9 +48,7 @@ export default function Header() {
     <>
       <header
         className={`sticky w-full bg-transparent ${
-          isTop
-            ? 'border-none'
-            : 'border-b border-gray-200 dark:border-gray-800 dark:bg-violet-1000'
+          isTop ? 'border-none' : 'border-b border-gray-200 dark:border-gray-800 dark:bg-black'
         } top-0 z-40 flex items-center justify-between bg-white bg-opacity-30 backdrop-blur-lg firefox:bg-opacity-100 dark:bg-opacity-30 dark:firefox:bg-opacity-100`}
       >
         <nav className="mx-auto flex w-full max-w-3xl items-center justify-between px-2 py-2 xl:px-0">

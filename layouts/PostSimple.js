@@ -38,7 +38,7 @@ export default function PostLayout({
       <article>
         <div>
           <header>
-            <div className="pb-10 space-y-1 text-center">
+            <div className="py-10 space-y-1 text-center">
               <dl>
                 <div>
                   <dt className="sr-only">{t('common:pub')}</dt>

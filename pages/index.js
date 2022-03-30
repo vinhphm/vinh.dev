@@ -48,30 +48,32 @@ export default function Home({ posts, locale, availableLocales }) {
               </span>
             </span>
             <span
-              data-content="Showcase."
+              data-content="Develop."
               className="relative block before:content-[attr(data-content)] dark:before:content-[attr(data-content)] before:w-full before:block before:absolute before:top-0 before:bottom-0 before:left-0 before:px-2 before:text-center before:text-black dark:before:text-white before:animate-gradient-background-2"
             >
               <span className="px-2 text-transparent bg-clip-text bg-gradient-to-br from-gradient-2-start to-gradient-2-end animate-gradient-foreground-2">
-                Showcase.
+                Develop.
               </span>
             </span>
             <span
-              data-content="Portfolio."
+              data-content="Showcase."
               className="relative block before:content-[attr(data-content)] dark:before:content-[attr(data-content)] before:w-full before:block before:absolute before:top-0 before:bottom-0 before:left-0 before:px-2 before:text-center before:text-black dark:before:text-white before:animate-gradient-background-3"
             >
               <span className="px-2 text-transparent bg-clip-text bg-gradient-to-br from-gradient-3-start to-gradient-3-end animate-gradient-foreground-3">
-                Portfolio.
+                Showcase.
               </span>
             </span>
           </h1>
+          <div className="space-y-2 md:space-y-5">
+            <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl xl:text-6xl md:leading-14">
+              {t('common:hi')} <span className="animate-fade-text">V</span>
+              <span>inh</span> <span className="animate-fade-text">Pham</span>
+            </h1>
+            <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
+              {t('common:mini-bio')}
+            </p>
+          </div>
         </div>
-        <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl xl:text-6xl md:leading-14">
-          {t('common:hi')} <span className="animate-fade-text">V</span>
-          <span>inh</span> <span className="animate-fade-text">Pham</span>
-        </h1>
-        <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
-          {t('common:mini-bio')}
-        </p>
       </div>
       <div>
         <div>
