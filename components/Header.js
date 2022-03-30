@@ -47,7 +47,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed w-full bg-transparent ${
+        className={`sticky w-full bg-transparent ${
           isTop
             ? 'border-none'
             : 'border-b border-gray-200 dark:border-gray-800 dark:bg-violet-1000'

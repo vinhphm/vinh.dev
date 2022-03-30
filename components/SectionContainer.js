@@ -1,5 +1,7 @@
 export default function SectionContainer({ children }) {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col px-4 pt-16 sm:pt-20 xl:px-0">{children}</div>
+    <div className="max-w-2xl px-4 mx-auto sm:px-6 xl:max-w-3xl xl:px-0 flex flex-col gap-10 sm:gap-14">
+      {children}
+    </div>
   )
 }

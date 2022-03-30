@@ -26,8 +26,8 @@ module.exports = {
       spacing: {
         '9/16': '56.25%',
         0.75: '0.1875rem',
-        'content-sm': 'calc(100vh - 4.5rem)',
-        content: 'calc(100vh - 4rem)',
+        'content-sm': 'calc(100vh - 15.5rem)',
+        content: 'calc(100vh - 15rem)',
       },
       lineHeight: {
         11: '2.75rem',
