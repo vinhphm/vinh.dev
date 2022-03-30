@@ -7,9 +7,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import NewsletterForm from '@/components/NewsletterForm'
 import Card from '@/components/Card'
-
-// const HeroEffect = dynamic(() => import('@/components/HeroEffect'), { ssr: false })
-// const OrbitRing = dynamic(() => import('@/components/OrbitRing'), { ssr: false })
+import Hero from '@/components/Hero'
 
 const MAX_DISPLAY = 3
 
@@ -30,50 +28,8 @@ export default function Home({ posts, locale, availableLocales }) {
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <div className="relative pb-12 pt-2 text-center sm:pb-14 sm:pt-3">
-        {/* <div className="absolute inset-x-0 top-0 -z-20 m-auto h-full">
-          <HeroEffect />
-        </div>
-        <div className="h-52">
-          <OrbitRing />
-        </div> */}
-        <div className="flex flex-col justify-around w-full h-content sm:h-content-sm">
-          <h1 className="my-28 sm:my-10 text-center select-none text-6xl sm:text-8.5xl leading-none tracking-tightest font-extrabold">
-            <span
-              data-content="Blog."
-              className="relative block before:content-[attr(data-content)] dark:before:content-[attr(data-content)] before:w-full before:block before:absolute before:top-0 before:bottom-0 before:left-0 before:px-2 before:text-center before:text-black dark:before:text-white before:animate-gradient-background-1"
-            >
-              <span className="px-2 text-transparent bg-clip-text bg-gradient-to-br from-gradient-1-start to-gradient-1-end animate-gradient-foreground-1">
-                Blog.
-              </span>
-            </span>
-            <span
-              data-content="Develop."
-              className="relative block before:content-[attr(data-content)] dark:before:content-[attr(data-content)] before:w-full before:block before:absolute before:top-0 before:bottom-0 before:left-0 before:px-2 before:text-center before:text-black dark:before:text-white before:animate-gradient-background-2"
-            >
-              <span className="px-2 text-transparent bg-clip-text bg-gradient-to-br from-gradient-2-start to-gradient-2-end animate-gradient-foreground-2">
-                Develop.
-              </span>
-            </span>
-            <span
-              data-content="Showcase."
-              className="relative block before:content-[attr(data-content)] dark:before:content-[attr(data-content)] before:w-full before:block before:absolute before:top-0 before:bottom-0 before:left-0 before:px-2 before:text-center before:text-black dark:before:text-white before:animate-gradient-background-3"
-            >
-              <span className="px-2 text-transparent bg-clip-text bg-gradient-to-br from-gradient-3-start to-gradient-3-end animate-gradient-foreground-3">
-                Showcase.
-              </span>
-            </span>
-          </h1>
-          <div className="space-y-2 md:space-y-5">
-            <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl xl:text-6xl md:leading-14">
-              {t('common:hi')} <span className="animate-fade-text">V</span>
-              <span>inh</span> <span className="animate-fade-text">Pham</span>
-            </h1>
-            <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
-              {t('common:mini-bio')}
-            </p>
-          </div>
-        </div>
+      <div className="relative pb-12 text-center sm:pb-14">
+        <Hero />
       </div>
       <div>
         <div>
