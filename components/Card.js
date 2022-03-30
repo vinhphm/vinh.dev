@@ -44,7 +44,7 @@ const Card = ({
             }}
             className={`${
               onlyImg && 'w-32 h-32'
-            } will-change-transform overflow-hidden relative rounded-md bg-violet-30 dark:bg-violet-950
+            } will-change-transform overflow-hidden relative rounded-md bg-gray-50 dark:bg-gray-900
           after:absolute after:inset-0 after:z-10 after:bg-cover after:bg-no-repeat after:opacity-0 after:pointer-events-none
           after:mix-blend-hard-light after:will-change-auto after:bg-texture-pattern after:transition-opacity after:duration-500
           hover:after:opacity-100 hover:after:animate-hue-animation h-full z-20`}
