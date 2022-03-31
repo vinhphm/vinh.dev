@@ -108,7 +108,7 @@ export default function PostLayout({
               <Comments frontMatter={frontMatter} />
             </div>
             <footer>
-              <div className="divide-transparent text-sm font-medium leading-5xl:col-start-1 xl:row-start-2 xl:divide-y">
+              <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
                 {tags && (
                   <div className="py-4 xl:py-8">
                     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">

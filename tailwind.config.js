@@ -291,7 +291,6 @@ module.exports = {
         'fade-text': '10s ease-in-out 3s 1 normal forwards running fade-away',
         shrink: 'shrink ease-in-out 1.5s infinite',
         expand: 'expand ease-in-out 1.5s infinite',
-        'hue-animation': 'bg-hue-animation 10s infinite',
         'gradient-background-1': 'gradient-background-1 8s infinite',
         'gradient-foreground-1': 'gradient-foreground-1 8s infinite',
         'gradient-background-2': 'gradient-background-2 8s infinite',
