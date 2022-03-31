@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 import siteMetadata from '@/data/siteMetadata.mjs'
 import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
+import ExternalCard from '@/components/ExternalCard'
 import { PageSEO } from '@/components/SEO'
 import PageTitle from '@/components/PageTitle'
 
@@ -25,13 +25,12 @@ export default function Projects({ locale, availableLocales }) {
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
             {projectsData[locale]?.map((d) => (
-              <Card
+              <ExternalCard
                 key={d.title}
                 title={d.title}
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                className="p-4"
               />
             ))}
           </div>

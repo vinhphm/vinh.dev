@@ -6,7 +6,7 @@ import siteMetadata from '@/data/siteMetadata.mjs'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import NewsletterForm from '@/components/NewsletterForm'
-import Card from '@/components/Card'
+import InternalCard from '@/components/InternalCard'
 import Hero from '@/components/Hero'
 
 const MAX_DISPLAY = 3
@@ -28,24 +28,48 @@ export default function Home({ posts, locale, availableLocales }) {
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <div className="relative pb-12 text-center sm:pb-14">
+      <div className="text-center">
         <Hero />
       </div>
       <div>
         <div>
-          <div className="pb-2 w-full flex flex-wrap">
-            <Card
-              title={t('common:notes')}
-              description={t('notes:description')}
-              href={'/notes'}
-              className="py-4 md:px-4"
-            />
-            <Card
-              title={t('common:about')}
-              description={t('common:about-description')}
-              href={'/about'}
-              className="py-4 md:px-4"
-            />
+          <div className="py-8 grid grid-cols-1 grid-rows-2 grid-flow-row sm:grid-rows-1 sm:grid-cols-2 justify-between gap-4">
+            <InternalCard href={`/notes`} title={t('common:notes')}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-book-open"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              {t('notes:description')}
+            </InternalCard>
+            <InternalCard href={`/about`} title={t('common:about')}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-user"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              {t('common:about-description')}
+            </InternalCard>
           </div>
           <ul className="divide-y divide-transparent md:px-4">
             {!posts.length && 'No posts found.'}
