@@ -5,8 +5,18 @@ import { PageSEO } from '@/components/SEO'
 import PageTitle from '@/components/PageTitle'
 
 export default function AuthorLayout({ children, frontMatter, availableLocales }) {
-  const { name, avatar, occupation, company, email, twitter, facebook, linkedin, github } =
-    frontMatter
+  const {
+    name,
+    avatar,
+    occupation,
+    location,
+    company,
+    email,
+    twitter,
+    facebook,
+    linkedin,
+    github,
+  } = frontMatter
   const { t } = useTranslation()
 
   return (
@@ -28,7 +38,8 @@ export default function AuthorLayout({ children, frontMatter, availableLocales }
             <span role="img" aria-label="location">
               📍
             </span>
-            HCMC, Vietnam
+            &nbsp;
+            {location}
           </div>
           <div className="flex pt-6 space-x-3">
             <SocialIcon kind="mail" href={`mailto:${email}`} />
