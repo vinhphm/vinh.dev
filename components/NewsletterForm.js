@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 
 import useTranslation from 'next-translate/useTranslation'
+import Button from './Button'
 import siteMetadata from '@/data/siteMetadata.mjs'
 
 const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
@@ -56,15 +57,15 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
           />
         </div>
         <div className="flex w-full mt-2 rounded-md shadow-sm sm:mt-0 sm:ml-3">
-          <button
-            className={`py-2 sm:py-0 w-full bg-neutral-900 dark:bg-neutral-100 px-4 rounded-md font-medium text-white dark:text-black ${
-              subscribed ? 'cursor-default' : 'hover:bg-neutral-700 dark:hover:bg-neutral-400'
-            } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 dark:ring-offset-black`}
+          <Button
+            className={
+              subscribed ? 'cursor-default' : 'hover:bg-neutral-700 dark:hover:bg-neutral-300'
+            }
             type="submit"
             disabled={subscribed}
           >
             {subscribed ? t('newsletter:buttonSuccess') : t('newsletter:buttonDefault')}
-          </button>
+          </Button>
         </div>
       </form>
       {error && (
