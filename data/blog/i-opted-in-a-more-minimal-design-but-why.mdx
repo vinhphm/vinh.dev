@@ -1,0 +1,31 @@
+---
+title: I opted in a more minimal design, but why?
+date: '2022-03-31'
+tags: ['minimal', 'simple', 'Next.js', 'design', 'web', 'story']
+draft: false
+summary: I stop using all the fancy Three.js components, gradient SVG background in my new Next.js for a simpler design and it feels so much better. Let me you why.
+images: ['/static/images/2022/old-design.png', '/static/images/2022/current-design.png']
+layout: PostSimple
+---
+
+If you had visited my website a week ago, you might noticed that my website had a different look then. It was a bit fancy and sure enough, eye-catching. But I decided to go with a simpler design because here are the few things that I noticed:
+
+- The site took a bit long to load at the first time.
+- It also took a big chunk of system resources.
+- Animation experiences are not the same on various devices.
+
+All of these three things were due to one reason: I added so much stuff in it. From my starting point of [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) which I can say is a great starter which has just enough of what your blog needs, to my next inspiration from [Marcelo](https://twitter.com/marceloavf)'s site which is a whole visual package for a blog. I had added Three.js scene, hue background animation for card design, gradient SVG background. Those things made my **First Contentful Paint (FCP)** score looked terible. That all traded for visual experience. Here was how it look:
+
+![Vinh.Dev old design](/static/images/2022/old-design.png)
+
+Sure thing it will impress clients, head-hunters, and even your own readers at the first glance. But consider how my site is still quite new, there aren't many readers yet. I don't those three bad experiences above drive them away for good.
+
+I started with running analyzer on my site to find out which parts of my site were taking a lot of resources. I also used [WebPageTest](https://www.webpagetest.org) to measure my site's performance in various devices and locations around the world.
+
+After a quick look at the results, I found out that the gradient SVG background was causing the animation performance to be very bad, especially in middle and low-end devices. I also found out that the Three.js scene was preventing the page to faster at the first time, and using Three.js, meaning that I cannot use Preact for production for smaller package as it is not compatible with Three.js.
+
+I finally got rid of them all and revamped my site again. Here is how it looks now:
+
+![Vinh.Dev new design](/static/images/2022/current-design.png)
+
+There are probably new changes in the future, but I'm glad that I could improve site a bit now. It's going from 1.8s to load to just 0.5s now. Now I call that is progress. Thanks, [Thang Vu](https://twitter.com/thanghvu) for the inspiration on the new design.
