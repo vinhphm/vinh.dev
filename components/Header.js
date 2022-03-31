@@ -47,24 +47,43 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed w-full bg-transparent ${
-          isTop
-            ? 'border-none'
-            : 'border-b border-gray-200 dark:border-gray-800 dark:bg-violet-1000'
-        } top-0 z-40 flex items-center justify-between bg-white bg-opacity-30 backdrop-blur-lg firefox:bg-opacity-100 dark:bg-opacity-30 dark:firefox:bg-opacity-100`}
+        className={`w-full sticky z-40 top-0 flex items-center justify-between ${
+          isTop ? 'border-none' : 'border-b border-gray-200 dark:border-gray-800'
+        } bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 backdrop-filter backdrop-saturate-150 backdrop-blur-lg firefox:bg-opacity-100 dark:firefox:bg-opacity-100`}
       >
-        <nav className="mx-auto flex w-full max-w-3xl items-center justify-between px-2 py-2 xl:px-0">
+        <nav className="mx-auto flex w-full max-w-3xl items-center justify-between px-4 py-2 sm:px-6 xl:px-0">
           <div className="flex w-full items-center justify-between text-base leading-5">
-            <div className="hidden sm:block">
+            <div className="hidden sm:block sm:space-x-8">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
+                  title={t(`headerNavLinks:${link.title.toLowerCase()}`)}
                   href={link.href}
-                  className="p-2 font-medium text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 xl:first:pl-0 sm:py-4 sm:px-3"
+                  className="font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
                 >
                   {t(`headerNavLinks:${link.title.toLowerCase()}`)}
                 </Link>
               ))}
+            </div>
+            <div className="sm:hidden flex items-center">
+              <button
+                type="button"
+                className="flex cursor-pointer bg-transparent w-8 h-8 rounded"
+                onClick={onToggleNav}
+                aria-label="Toggle Menu"
+              >
+                <svg viewBox="0 0 100 100" className="w-8 h-8 text-gray-900 dark:text-gray-100">
+                  <path
+                    className={`${navShow ? 'opened' : ''} line line1`}
+                    d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+                  />
+                  <path className={`${navShow ? 'opened' : ''} line line2`} d="M 20,50 H 80" />
+                  <path
+                    className={`${navShow ? 'opened' : ''} line line3`}
+                    d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+                  />
+                </svg>
+              </button>
             </div>
             <div className="flex">
               {locales.map((e, index) => (
@@ -85,35 +104,6 @@ export default function Header() {
               ))}
               <ThemeSwitch />
             </div>
-          </div>
-          <div className="sm:hidden flex items-center">
-            <button
-              type="button"
-              className="ml-1 mr-1 h-8 w-8 rounded"
-              aria-label="Toggle Menu"
-              onClick={onToggleNav}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
-              >
-                {navShow ? (
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                ) : (
-                  <path
-                    fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  />
-                )}
-              </svg>
-            </button>
           </div>
         </nav>
       </header>

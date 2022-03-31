@@ -2,6 +2,7 @@
 name: Vinh Pham
 avatar: /static/images/avatar.jpg
 occupation: Web Developer/ Designer
+location: Ho Chi Minh City, Vietnam
 company: PwC (Vietnam)
 email: vinh@vinh.dev
 twitter: https://twitter.com/vinhphh

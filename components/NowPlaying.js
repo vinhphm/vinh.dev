@@ -23,6 +23,7 @@ export default function NowPlaying() {
             className="max-w-max truncate text-sm hover:text-spotify-green"
             href={data.songUrl}
             title={data.title}
+            showIcon={false}
           >
             {data.title}
           </Link>

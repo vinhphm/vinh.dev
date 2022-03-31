@@ -2,6 +2,7 @@
 name: Vinh Phạm
 avatar: /static/images/avatar.jpg
 occupation: Lập trình viên/ Thiết kế đồ họa
+location: Hồ Chí Minh, Việt Nam
 company: PwC (Vietnam)
 email: vinh@vinh.dev
 twitter: https://twitter.com/vinhphh

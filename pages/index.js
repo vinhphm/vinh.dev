@@ -1,5 +1,4 @@
 import useTranslation from 'next-translate/useTranslation'
-import dynamic from 'next/dynamic'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
@@ -7,10 +6,8 @@ import siteMetadata from '@/data/siteMetadata.mjs'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import NewsletterForm from '@/components/NewsletterForm'
-import Card from '@/components/Card'
-
-const HeroEffect = dynamic(() => import('@/components/HeroEffect'), { ssr: false })
-const OrbitRing = dynamic(() => import('@/components/OrbitRing'), { ssr: false })
+import InternalCard from '@/components/InternalCard'
+import Hero from '@/components/Hero'
 
 const MAX_DISPLAY = 3
 
@@ -31,36 +28,48 @@ export default function Home({ posts, locale, availableLocales }) {
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <div className="relative pb-12 pt-2 text-center sm:pb-14 sm:pt-3">
-        <div className="absolute inset-x-0 top-0 -z-20 m-auto h-full">
-          <HeroEffect />
-        </div>
-        <div className="h-52">
-          <OrbitRing />
-        </div>
-        <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl xl:text-6xl md:leading-14">
-          {t('common:hi')} <span className="animate-fade-text">V</span>
-          <span>inh</span> <span className="animate-fade-text">Pham</span>
-        </h1>
-        <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
-          {t('common:mini-bio')}
-        </p>
+      <div className="text-center">
+        <Hero />
       </div>
       <div>
         <div>
-          <div className="pb-2 w-full flex flex-wrap">
-            <Card
-              title={t('common:notes')}
-              description={t('notes:description')}
-              href={'/notes'}
-              className="py-4 md:px-4"
-            />
-            <Card
-              title={t('common:about')}
-              description={t('common:about-description')}
-              href={'/about'}
-              className="py-4 md:px-4"
-            />
+          <div className="py-8 grid grid-cols-1 grid-rows-2 grid-flow-row sm:grid-rows-1 sm:grid-cols-2 justify-between gap-4">
+            <InternalCard href={`/notes`} title={t('common:notes')}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-book-open"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              {t('notes:description')}
+            </InternalCard>
+            <InternalCard href={`/about`} title={t('common:about')}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-user"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              {t('common:about-description')}
+            </InternalCard>
           </div>
           <ul className="divide-y divide-transparent md:px-4">
             {!posts.length && 'No posts found.'}

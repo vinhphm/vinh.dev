@@ -29,7 +29,7 @@ const ScrollTopAndComment = () => {
         aria-label="Scroll To Comment"
         type="button"
         onClick={handleScrollToComment}
-        className="p-2 text-gray-500 transition-all bg-gray-200 rounded-full dark:text-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-300"
+        className="p-2 text-gray-500 transition-all bg-neutral-200 rounded-full dark:text-gray-400 dark:bg-neutral-700 dark:hover:bg-neutral-600 hover:bg-neutral-300"
       >
         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
           <path
@@ -43,7 +43,7 @@ const ScrollTopAndComment = () => {
         aria-label="Scroll To Top"
         type="button"
         onClick={handleScrollTop}
-        className="p-2 text-gray-500 transition-all bg-gray-200 rounded-full dark:text-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-300"
+        className="p-2 text-gray-500 transition-all bg-neutral-200 rounded-full dark:text-gray-400 dark:bg-neutral-700 dark:hover:bg-neutral-600 hover:bg-neutral-300"
       >
         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
           <path

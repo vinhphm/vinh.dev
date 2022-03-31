@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vinh.dev/feed.xml
-Sitemap: https://vinh.dev/feed.vi.xml
+Sitemap: https://vinh.dev/sitemap.xml
