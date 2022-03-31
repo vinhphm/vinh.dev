@@ -14,6 +14,9 @@ export const defaultProperties = {
       transform: 'rotate(40deg)',
     },
     lines: {
+      transform: 'rotate(-45deg)',
+      transformOrigin: 'center',
+      transformBox: 'fill-box',
       opacity: 0,
     },
   },
@@ -29,6 +32,9 @@ export const defaultProperties = {
       transform: 'rotate(90deg)',
     },
     lines: {
+      transform: 'rotate(45deg)',
+      transformOrigin: 'center',
+      transformBox: 'fill-box',
       opacity: 1,
     },
   },
