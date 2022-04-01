@@ -37,9 +37,6 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
-      backgroundImage: {
-        'texture-pattern': "url('/static/images/right-dark-gradient.svg')",
-      },
       fontFamily: {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
@@ -107,11 +104,13 @@ module.exports = {
               color: theme('colors.neutral.900'),
             },
             pre: {
-              backgroundColor: theme('colors.black'),
+              backgroundColor: theme('colors.white'),
+              borderWidth: '1px',
+              borderColor: theme('colors.neutral.200'),
             },
             code: {
               color: theme('colors.neutral.900'),
-              backgroundColor: theme('colors.gray.100'),
+              backgroundColor: theme('colors.neutral.200'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
@@ -175,12 +174,13 @@ module.exports = {
               color: theme('colors.neutral.100'),
             },
             pre: {
+              backgroundColor: theme('colors.black'),
               borderWidth: '1px',
               borderColor: theme('colors.neutral.700'),
             },
             code: {
               color: theme('colors.neutral.100'),
-              backgroundColor: theme('colors.black'),
+              backgroundColor: theme('colors.neutral.800'),
             },
             details: {
               backgroundColor: theme('colors.neutral.800'),
