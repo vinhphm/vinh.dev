@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-padding-top: 5rem;
+}
+
+.prose .anchor {
+  @apply absolute invisible;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible no-underline;
+}
+
+.prose .anchor:after {
+  @apply text-gray-300 dark:text-gray-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible no-underline;
+}
+
 /* hamburger menu button: https://css-tricks.com/line-animated-hamburger-menu/ */
 .line {
   fill: none;
