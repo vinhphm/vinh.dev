@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
+const { black } = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
@@ -105,6 +106,9 @@ module.exports = {
             'h4,h5,h6': {
               color: theme('colors.neutral.900'),
             },
+            pre: {
+              backgroundColor: theme('colors.black'),
+            },
             code: {
               color: theme('colors.neutral.900'),
               backgroundColor: theme('colors.gray.100'),
@@ -170,9 +174,13 @@ module.exports = {
             'h4,h5,h6': {
               color: theme('colors.neutral.100'),
             },
+            pre: {
+              borderWidth: '1px',
+              borderColor: theme('colors.neutral.700'),
+            },
             code: {
               color: theme('colors.neutral.100'),
-              backgroundColor: theme('colors.gray.800'),
+              backgroundColor: theme('colors.black'),
             },
             details: {
               backgroundColor: theme('colors.neutral.800'),
