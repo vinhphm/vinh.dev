@@ -54,7 +54,7 @@ const securityHeaders = [
 ]
 
 const nextConfig = {
-  compress: true,
+  swcMinify: true,
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
