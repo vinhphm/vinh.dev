@@ -107,6 +107,12 @@ module.exports = {
             'code::after': {
               content: 'none',
             },
+            'blockquote > p::before': {
+              content: 'none',
+            },
+            'blockquote > p::after': {
+              content: 'none',
+            },
             details: {
               backgroundColor: theme('colors.neutral.100'),
               paddingLeft: '4px',
