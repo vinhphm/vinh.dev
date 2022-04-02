@@ -68,7 +68,7 @@ export default function Header() {
             <div className="sm:hidden flex items-center">
               <button
                 type="button"
-                className="flex cursor-pointer bg-transparent w-8 h-8 rounded"
+                className="ml-[-0.40rem] flex cursor-pointer bg-transparent w-8 h-8 rounded"
                 onClick={onToggleNav}
                 aria-label="Toggle Menu"
               >
@@ -88,7 +88,7 @@ export default function Header() {
                 </svg>
               </button>
             </div>
-            <div className="flex">
+            <div className="flex mr-[-0.50rem]">
               {locales.map((e, index) => (
                 <span key={e}>
                   <button
