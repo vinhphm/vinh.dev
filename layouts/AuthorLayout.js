@@ -33,8 +33,8 @@ export default function AuthorLayout({ children, frontMatter, availableLocales }
         <div className="flex flex-col items-center xl:items-start pt-8 xl:sticky xl:top-12">
           <Image src={avatar} width={192} height={192} className="rounded-full xl:rounded-lg" />
           <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
-          <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
-          <div className="text-gray-500 dark:text-gray-400">
+          <div className="text-neutral-500 dark:text-neutral-400">{occupation}</div>
+          <div className="text-neutral-500 dark:text-neutral-400">
             <span role="img" aria-label="location">
               📍
             </span>

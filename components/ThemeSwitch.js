@@ -20,7 +20,7 @@ const ThemeSwitch = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="text-gray-900 dark:text-gray-100 w-5 h-5"
+        className="text-neutral-900 dark:text-neutral-100 w-5 h-5"
       >
         {/* {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
           <path

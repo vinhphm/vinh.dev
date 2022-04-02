@@ -42,7 +42,7 @@ export default function PostLayout({
               <dl>
                 <div>
                   <dt className="sr-only">{t('common:pub')}</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <dd className="text-base font-medium leading-6 text-neutral-500 dark:text-neutral-400">
                     <time dateTime={date}>{formatDate(date, locale)}</time>
                   </dd>
                 </div>
@@ -59,7 +59,7 @@ export default function PostLayout({
             <div className="divide-y divide-transparent xl:pb-0 xl:col-span-3 xl:row-span-2">
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
             </div>
-            <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
+            <div className="pt-6 pb-6 text-sm text-neutral-700 dark:text-neutral-300">
               <Link href={discussUrl(slug)} rel="nofollow">
                 {t('common:twitter')}
               </Link>

@@ -103,20 +103,6 @@ module.exports = {
             'h4,h5,h6': {
               color: theme('colors.neutral.900'),
             },
-            pre: {
-              backgroundColor: theme('colors.white'),
-              borderWidth: '1px',
-              borderColor: theme('colors.neutral.200'),
-            },
-            code: {
-              color: theme('colors.neutral.900'),
-              backgroundColor: theme('colors.neutral.200'),
-              paddingLeft: '4px',
-              paddingRight: '4px',
-              paddingTop: '2px',
-              paddingBottom: '2px',
-              borderRadius: '0.25rem',
-            },
             'code::before': {
               content: 'none',
             },
@@ -172,15 +158,6 @@ module.exports = {
             },
             'h4,h5,h6': {
               color: theme('colors.neutral.100'),
-            },
-            pre: {
-              backgroundColor: theme('colors.black'),
-              borderWidth: '1px',
-              borderColor: theme('colors.neutral.700'),
-            },
-            code: {
-              color: theme('colors.neutral.100'),
-              backgroundColor: theme('colors.neutral.800'),
             },
             details: {
               backgroundColor: theme('colors.neutral.800'),

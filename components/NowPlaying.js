@@ -28,10 +28,12 @@ export default function NowPlaying() {
             {data.title}
           </Link>
         ) : (
-          <p className="text-sm text-gray-500 dark:text-gray-400">{t('common:not-playing')}</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            {t('common:not-playing')}
+          </p>
         )}
-        <span className="mx-2 text-sm text-gray-500 dark:text-gray-400 sm:block">{'–'}</span>
-        <p className="max-w-max truncate text-sm text-gray-500 dark:text-gray-400">
+        <span className="mx-2 text-sm text-neutral-500 dark:text-neutral-400 sm:block">{'–'}</span>
+        <p className="max-w-max truncate text-sm text-neutral-500 dark:text-neutral-400">
           {data?.artist ?? 'Spotify'}
         </p>
       </div>

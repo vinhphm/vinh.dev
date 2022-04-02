@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="mb-3 flex">
           <NowPlaying />
         </div>
-        <div className="mb-8 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <div className="mb-8 flex space-x-2 text-sm text-neutral-500 dark:text-neutral-400">
           <div>{siteMetadata.author}</div>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>

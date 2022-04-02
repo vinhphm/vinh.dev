@@ -28,7 +28,7 @@ const Disqus = ({ frontMatter }) => {
   }
 
   return (
-    <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
+    <div className="pt-6 pb-6 text-center text-neutral-700 dark:text-neutral-300">
       {enableLoadComments && <button onClick={LoadComments}>{t('common:comment')}</button>}
       <div className="disqus-frame" id={COMMENTS_ID} />
     </div>

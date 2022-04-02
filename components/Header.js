@@ -48,7 +48,7 @@ export default function Header() {
     <>
       <header
         className={`w-full sticky z-40 top-0 flex items-center justify-between ${
-          isTop ? 'border-none' : 'border-b border-gray-200 dark:border-gray-800'
+          isTop ? 'border-none' : 'border-b border-neutral-200 dark:border-neutral-800'
         } bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 backdrop-filter backdrop-saturate-150 backdrop-blur-lg firefox:bg-opacity-100 dark:firefox:bg-opacity-100`}
       >
         <nav className="mx-auto flex w-full max-w-3xl items-center justify-between px-4 py-2 sm:px-6 xl:px-0">
@@ -59,7 +59,7 @@ export default function Header() {
                   key={link.title}
                   title={t(`headerNavLinks:${link.title.toLowerCase()}`)}
                   href={link.href}
-                  className="font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                  className="font-medium text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white"
                 >
                   {t(`headerNavLinks:${link.title.toLowerCase()}`)}
                 </Link>
@@ -72,7 +72,10 @@ export default function Header() {
                 onClick={onToggleNav}
                 aria-label="Toggle Menu"
               >
-                <svg viewBox="0 0 100 100" className="w-8 h-8 text-gray-900 dark:text-gray-100">
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-8 h-8 text-neutral-900 dark:text-neutral-100"
+                >
                   <path
                     className={`${navShow ? 'opened' : ''} line line1`}
                     d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -93,12 +96,12 @@ export default function Header() {
                     type="button"
                     value={locale}
                     onClick={() => changeLanguage(e)}
-                    className="inline-block cursor-pointer p-2 font-medium text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 sm:py-4"
+                    className="inline-block cursor-pointer p-2 font-medium text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100 sm:py-4"
                   >
                     {e}
                   </button>
                   {index === 0 && (
-                    <span className="py-1 text-gray-300 dark:text-gray-700 sm:py-4">/</span>
+                    <span className="py-1 text-neutral-300 dark:text-neutral-700 sm:py-4">/</span>
                   )}
                 </span>
               ))}

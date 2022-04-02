@@ -79,7 +79,7 @@ export default function Home({ posts, locale, availableLocales }) {
                     <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                       <dl>
                         <dt className="sr-only">{t('common:pub')}</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <dd className="text-base font-medium leading-6 text-neutral-500 dark:text-neutral-400">
                           <time dateTime={date}>{formatDate(date, locale)}</time>
                         </dd>
                       </dl>
@@ -89,7 +89,7 @@ export default function Home({ posts, locale, availableLocales }) {
                             <h2 className="text-2xl font-bold leading-8 tracking-tight">
                               <Link
                                 href={`/blog/${slug}`}
-                                className="text-gray-900 dark:text-gray-100"
+                                className="text-neutral-900 dark:text-neutral-100"
                               >
                                 {title}
                               </Link>
@@ -100,7 +100,7 @@ export default function Home({ posts, locale, availableLocales }) {
                               ))}
                             </div>
                           </div>
-                          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                          <div className="prose max-w-none text-neutral-500 dark:text-neutral-400">
                             {summary}
                           </div>
                         </div>

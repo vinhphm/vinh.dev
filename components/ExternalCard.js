@@ -9,7 +9,7 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
       className="p-4 md:w-1/2 md max-w-[34rem]"
       showIcon={false}
     >
-      <div className="h-full overflow-hidden border-2 border-gray-200 rounded-md dark:border-gray-800 hover:border-primary-600 dark:hover:border-primary-400">
+      <div className="h-full overflow-hidden border-2 border-neutral-200 rounded-md dark:border-neutral-800 hover:border-primary-600 dark:hover:border-primary-400">
         <Image
           alt={title}
           src={imgSrc}
@@ -34,16 +34,20 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
               </g>
             </svg>
           </h4>
-          <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">{description}</p>
+          <p className="mb-3 prose text-neutral-500 max-w-none dark:text-neutral-400">
+            {description}
+          </p>
           {tags && (
-            <div className="mt-4 text-xs text-gray-700 dark:text-gray-300">{tags.join(' | ')}</div>
+            <div className="mt-4 text-xs text-neutral-700 dark:text-neutral-300">
+              {tags.join(' | ')}
+            </div>
           )}
         </div>
       </div>
     </Link>
   ) : (
     <div className="p-4 md:w-1/2 md max-w-[34rem]">
-      <div className="h-full overflow-hidden border-2 border-gray-200 rounded-md dark:border-gray-800 ">
+      <div className="h-full overflow-hidden border-2 border-neutral-200 rounded-md dark:border-neutral-800 ">
         <Image
           alt={title}
           src={imgSrc}
@@ -55,11 +59,13 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
           <h4 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-black dark:text-white">
             {title}
           </h4>
-          <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
+          <p className="mb-3 prose text-neutral-500 max-w-none dark:text-neutral-400">
             (Coming soon) {description}
           </p>
           {tags && (
-            <div className="mt-4 text-xs text-gray-700 dark:text-gray-300">{tags.join(' | ')}</div>
+            <div className="mt-4 text-xs text-neutral-700 dark:text-neutral-300">
+              {tags.join(' | ')}
+            </div>
           )}
         </div>
       </div>

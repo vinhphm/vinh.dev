@@ -46,7 +46,7 @@ export default function ListNotesLayout({
       <div className="divide-y divide-transparent">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <PageTitle>{title}</PageTitle>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          <p className="text-lg leading-7 text-neutral-500 dark:text-neutral-400">
             {t('notes:subtitle')}
           </p>
         </div>
