@@ -5,18 +5,8 @@ import { PageSEO } from '@/components/SEO'
 import PageTitle from '@/components/PageTitle'
 
 export default function AuthorLayout({ children, frontMatter, availableLocales }) {
-  const {
-    name,
-    avatar,
-    occupation,
-    location,
-    company,
-    email,
-    twitter,
-    facebook,
-    linkedin,
-    github,
-  } = frontMatter
+  const { name, avatar, occupation, location, email, twitter, facebook, linkedin, github } =
+    frontMatter
   const { t } = useTranslation()
 
   return (
