@@ -46,7 +46,7 @@ const CustomLink = ({
   }
 
   if (isAnchorLink) {
-    return <a className="anchor" href={href} {...rest} />
+    return <a className={`anchor ${className ? className : ''}`} href={href} {...rest} />
   }
 
   return (
