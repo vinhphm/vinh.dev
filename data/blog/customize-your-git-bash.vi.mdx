@@ -1,23 +1,23 @@
 ---
-title: Customize Git Bash shell to make it yours
+title: Tuỳ chỉnh lại Git Bash để trông bớt nhàm chán hơn
 date: '2022-03-22 23:00 +0700'
-summary: Imagine you have to you Git Bash but don't like how it looks...
-tags: ['git', 'bash', 'shell', 'customize']
+summary: Tưởng tượng bạn phải dùng Git Bash mà lại không thích giao diện của nó tí nào...
+tags: ['git', 'bash', 'shell']
 draft: false
 image: []
 layout: PostSimple
 canonicalUrl: customize-git-bash-shell
 ---
 
-If you are a web developer but work mainly on Windows environment like me, you may have known about Git Bash. It's based on MinGW64 (Minimalist GNU for Windows x64). It serves well for its purpose but sometimes it's kind of boring. Due to the need to maintain backward compatibility, newer features of Bash are rarely enabled by default. WSL is good replacement but it need configurations on the system level. Not very handy if you work in a limited access system. So back to Git Bash, no worries, we can tweak it a little bit to enhance the experience. In this tutorial, I will assume that you installed Git for Windows and (optionally) Windows Terminal.
+Nếu bạn là web developer mà phải làm việc chủ yếu trên máy Windows thì chắc ít nhiều gì bạn cũng biết tới Git Bash. Nó vốn dĩ dựa trên MinGW64 (Minimalist GNU for Windows x64). Chức năng thì nó cũng tạm chấp nhận được rồi nhưng đôi lúc nhìn vào thì sẽ có phần hơi chán. Vì phải duy trì tương thích với những thành phần cũ, nên những chức năng mới của Bash ít có khi nào được mặc định bật lên. WSL là giải pháp thay thế hoàn hảo nhưng mà setup dưới quyền admin. Không phù hợp lắm nếu bạn phải làm trên máy công ty. Vậy quay trở lại Git Bash, không sao, chúng ta có thể tuỳ chỉnh nó chút ít để nâng tầm trải nghiệm 🤌. Trong bài hướng dẫn này, mình sẽ cho rằng bạn đã cài Git for Windows (và tốt hơn nữa, Windows Terminal).
 
-# Customize startup files
+# Tuỳ biến các file startup
 
-Bash uses a few startup files to configure the shell environment for users. It will source files like `~/.bash_profile`, `~/.bash_login`, and `~/.profile` in the order given. The first readable file that exists is sourced.
+Bash sử dụng một số file config để tuỳ chỉnh môi trường shell cho người dùng. Nó sẽ truy vấn các file theo thứ tự `~/.bash_profile`, `~/.bash_login` rồi đến `~/.profile`. File đầu tiên tồn tại sẽ được để lấy config.
 
 ## Bash profiles
 
-Create `~/.bash_profile` file. The `.bash_profile` contains commands for setting the shell's environment variables. Since the shell is interactive, the `~/.bashrc` file is not sourced. Copy the following content to the file:
+Vậy ta cần tạo file `~/.bash_profile`. File `.bash_profile` chứa các commands để thiết lập các biến môi trường. Vì shell đang là interactive nên file `~/.bashrc` đang không được truy vấn. Copy nội dung đưới đây vào file `~/.bash_profile`:
 
 ```bash:~/.bash_profile
 # Source the ~/.bashrc file if it exists
@@ -29,7 +29,7 @@ fi
 
 ## Bash shell script
 
-Create `~/.bashrc` file. The `.bashrc` file contains commands that are specific to the Bash shell. It is the best place for aliases and bash-related functions. Copy the following content to the file:
+Tạo file `~/.bashrc`. File `.bashrc` chứa các commands dành riêng cho Bash shell. Đây là nơi tốt nhất để trỏ alias và chứa các function liên quan đến bash. Copy nội dung dưới đây vào file:
 
 ```bash:~/.bashrc
 # Git aliases
@@ -106,7 +106,7 @@ shopt -s histappend histverify
 
 ## Git Bash prompt
 
-The Git Bash prompt is set by a shell script called `git-prompt.sh` and can be found in the `c/Program\ Files/Git/etc/profile.d` directory. Notice that in lines 8-10, a custom `~/.config/git/git-prompt.sh` file will be sourced, if it exists. This is our chance to override the default settings.
+Git Bash prompt được cài đặt bởi một đoạn shell script tên là `git-prompt.sh` và nó có thể được tìm thấy trong thư mục `c/Program\ Files/Git/etc/profile.d`. Để ý ở dòng 8-10, một file `~/.config/git/git-prompt.sh` tuỳ chỉnh sẽ được truy vấn nếu có tồn tại. Đây là cơ hội của chúng ta để ghi đè lại các thiết lập mặc định.
 
 ```bash:git-prompt.sh
 # lines omitted
@@ -119,17 +119,17 @@ fi
 # lines omitted
 ```
 
-So let's create `~/.config/git/git-prompt.sh` file. The `git-prompt.sh` file contains commands for setting the title of the Git Bash terminal and the Bash prompt string. This is where you decide how your prompt will look like. Here is an example setting:
+Vậy nên chúng ta sẽ tạo file `~/.config/git/git-prompt.sh`. File `git-prompt.sh` chứa các âu lệnh để đặt title cho terminal Git Bash và thay đổi đoạn string prompt mặc định. Đây là nơi bạn quyết định Git Bash sẽ trông như thế nào. Dưới đây là một ví dụ:
 
 ```bash:~/.config/git/git-prompt.sh
 # Custom prompt settings
-PROMPT_DIRTRIM=4                         # Shorten deep paths in the prompt
-PS1='\[\033]0;Git | Bash v\v | \W\007\]' # set window title
-PS1="$PS1"'\n'                           # new line
-PS1="$PS1"'\[\033[30;45m\] [\A] '        # black text, magenta, 24h time
-PS1="$PS1"'\[\033[30;42m\] \u '          # black text, green, user
-#PS1="$PS1"'\[\033[30;42m\]@\h '          # black text, green, @host
-PS1="$PS1"'\[\033[30;43m\] \w '          # black text, yellow, working director
+PROMPT_DIRTRIM=4                         # làm ngắn lại độ sâu hiển thị trong prompt
+PS1='\[\033]0;Git | Bash v\v | \W\007\]' # đặt title cho terminal Git Bash
+PS1="$PS1"'\n'                           # dòng nới
+PS1="$PS1"'\[\033[30;45m\] [\A] '        # chữ đen, nền magenta, giờ theo kiểu 24h
+PS1="$PS1"'\[\033[30;42m\] \u '          # chữ đen, nền xanh lá, tên user
+#PS1="$PS1"'\[\033[30;42m\]@\h '          # chữ đen, nền xanh lá, @host
+PS1="$PS1"'\[\033[30;43m\] \w '          # chữ đen, nền vàng, thư mục hiện tại
 if test -z "$WINELOADERNOEXEC"
 then
     GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
@@ -140,12 +140,12 @@ then
     then
         . "$COMPLETION_PATH/git-completion.bash"
         . "$COMPLETION_PATH/git-prompt.sh"
-        PS1="$PS1"'\[\033[97;46m\]'  # white text, cyan
+        PS1="$PS1"'\[\033[97;46m\]'  # chữ trắng, nền cyan
         PS1="$PS1"'`__git_ps1`'      # bash function
     fi
 fi
-PS1="$PS1"'\[\033[0m\]'        # change color
-PS1="$PS1"'\n'                 # new line
+PS1="$PS1"'\[\033[0m\]'        # đổi màu
+PS1="$PS1"'\n'                 # dòng mới
 PS1="$PS1"'$ '                 # prompt: always $
 
 # Git status options
@@ -163,9 +163,9 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM="auto"
 ```
 
-## User configuration
+## Cài đặt người dùng
 
-Create `~/.inputrc` file, where you will able to configure command history, directory display, and keyboard bindings using the built-in GNU Readline library.
+Tạo file `~/.inputrc`, nơi bạn sẽ cài đặt lịch sử câu lệnh, các hiển thị thư mục, và phím tắt sử dụng thư viên GNU Readline sẵn có.
 
 ```bash:~/.inputrc
 # Disable beeps & bells, and do not display control characters.
@@ -208,28 +208,28 @@ set mark-symlinked-directories on
 "\e[B": history-search-forward
 ```
 
-Here are some shortcuts provided by the Readline library:
+Dưới đây là một vài phím tắt mà thư viện Readline hỗ trợ:
 
-| Keyboard shortcut | Description                                 |
-| ----------------- | ------------------------------------------- |
-| Control-A         | Go to beginning of line.                    |
-| Control-E         | Go to the end of the line.                  |
-| Alt-B             | Go back one word.                           |
-| Alt-F             | Go forward on word.                         |
-| Alt-Backspace     | Delete backward one word.                   |
-| Alt-D             | Delete forward one word.                    |
-| Control-R         | Search back through history.                |
-| Control-R         | Cycle backward through history.             |
-| Control-Shift-R   | Cycle forward through history.              |
-| Alt-.             | Append an argument of the previous command. |
+| Phím tắt        | Mô tả                             |
+| --------------- | --------------------------------- |
+| Control-A       | Đưa trỏ đến đầu dòng.             |
+| Control-E       | Đưa trỏ đến cuối dùng.            |
+| Alt-B           | Đưa trỏ về trước một từ.          |
+| Alt-F           | Đưa trỏ về sau một từ.            |
+| Alt-Backspace   | Xoá đằng trước một từ.            |
+| Alt-D           | Xoá đằng sau một từ.              |
+| Control-R       | Tìm trong lịch sử.                |
+| Control-R       | Cuộn về trước trong lịch sử.      |
+| Control-Shift-R | Cuộn về sau trong lịch sử.        |
+| Alt-.           | Thêm argument của câu lệnh trước. |
 
-# Bash utilities
+# Các utility của Bash
 
-Some Bash utilities are also included with Git for Windows and may be used to enhance your Git experience if the default behavior is not desired. These utilities will need to be configured in each independent development environment. Check out the [Pro Git Book](https://git-scm.com/book/cs/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash) for more information.
+Vài Bash utilities cũng được đi kèm với Git for Windows và có thể được dùng để nâng tầm trải nghiệm Git nếu như mặc định là chưa đủ đối với bạn. Các utility cần được cài đặt lại mỗi lần mở. Tham khảo [Pro Git Book](https://git-scm.com/book/cs/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash) để xem thông tin về phần này.
 
-The _git-completion_ and _git-prompt_ scripts can be found in the following directory: `/c/Program\ Files/Git/mingw64/share/git/completion/`. Copy the `git-completion.bash` and `git-prompt.sh` to your home directory.
+Script _git-completion_ và _git-prompt_ có thể được tìm thấy ở: `/c/Program\ Files/Git/mingw64/share/git/completion/`. Copy `git-completion.bash` và `git-prompt.sh` vào thư mực home/user của bạn.
 
-To use the scripts append the following lines to the `~/.bashrc` file.
+Để sử dụng hai script trên, thêm các dòng sau vào `~/.bashrc`:
 
 ```bash:~/.bashrc
 # Enable tab completion for Git commands
@@ -238,4 +238,4 @@ source ~/.git-completion.bash
 source ~/.git-prompt.sh
 ```
 
-Thanks to [@Blikoor](https://dev.to/blikoor/customize-git-bash-shell-498l).
+Bài gốc của [@Blikoor](https://dev.to/blikoor/customize-git-bash-shell-498l).

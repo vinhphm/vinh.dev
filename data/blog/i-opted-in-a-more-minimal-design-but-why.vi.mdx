@@ -1,0 +1,31 @@
+---
+title: Mình đã chuyển sang một thiết kế đơn giản hơn, nhưng vì sao?
+date: '2022-03-31'
+tags: ['đơn giản', 'tối giản', 'Next.js', 'thiết kế', 'web', 'chia sẻ']
+draft: false
+summary: Mình đã từ bỏ các component "cool ngầu" như Three.js, nền SVG với hiệu ứng gradient cho trang web cá nhân Next.js để đổi lấy một giao diện đơn giản hơn và cuối cùng mình cũng thấy nhẹ nhõm. Nghe mình nói lí do vì sao nhé.
+images: ['/static/images/2022/old-design.png', '/static/images/2022/current-design.png']
+layout: PostSimple
+---
+
+Nếu bạn là số ít những người quen có vào xem trang web của mình vào tuần trước hẳn là bạn sẽ thấy nó rất khác so với hiện tại. Phiên bản trước cực kì lung linh, bắt mắt. Nhưng rồi mình quyết định bỏ vì mình nhận thấy vài điều sau:
+
+- Lần load đầu của trang hơi chậm.
+- Khi đang ở lướt trang web thì nó tiêu tốn khá nhiều tài nguyên.
+- Trải nghiệm hiệu ứng chuyển động trên trang web không giống nhau giữa các loại thiết bị.
+
+Mấy điều này đều bắt nguồn từ một nguyên do: Mình tham nên cho nhiều thứ vào quá. Từ template ban đầu là [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) vốn đã tuyệt vời, có đủ những thứ mà mọi người có thể nghĩ đến, cho đến nguồn cảm hứng tiếp theo từ trang web siêu lung linh của [Marcelo](https://twitter.com/marceloavf). Mình đã cho vào scene Three.js (một thư viên đồ hoạ 3D trên nền web), hiệu ứng chuyển màu cho component card, hình nên gradient SVG. Những thứ này làm điểm **First Contentful Paint (FCP)** trang web của mình trông rất tệ. Tất cả để đổi lấy cái đẹp. Nó đã từng trông như thế này đây:
+
+![Vinh.Dev cũ](/static/images/2022/old-design.png)
+
+Tất nhiên nó sẽ thu hút khách hàng tiềm năng, nhà tuyển dụng, hay thậm chí là độc giả ở cái nhìn đầu tiên. Nhưng mà khi nghĩ đến việc web mình còn mới, không có mấy người xem. Mình không muốn ba thứ trên làm người ta đi mất và không quay trở lại.
+
+Mình bắt đầu chạy analyze để tìm phần nào chiếm nhiều tài nguyên nhất. Mình cũng dùng [WebPageTest](https://www.webpagetest.org) để test thử tốc độ load trang trên nhiều thiết bị và địa điểm khác nhau trên toàn thế giới.
+
+Sau một hồi, mình thấy là hình nền gradient SVG làm hiệu ứng chuyển động cũng như đổi theme bị chậm, nhất là trên các thiết bị tầm trung và giá rẻ. Mình cũng thấy là scene của Three.js làm page không load nhanh ở lần đầu được, và hơn nữa khi dùng Three.js, là mình không thể đổi sang Preact để xuất ra bản production để có được package nhỏ hơn vì Preact không tương thích với Three.js.
+
+Sau khi bỏ hết các thứ trên thì giờ nó trông như thế này đây:
+
+![Vinh.Dev mới](/static/images/2022/current-design.png)
+
+Vẫn còn sẽ có nhiều thay đổi nữa trong tương lai, nhưng mình cũng mừng vì đã cải thiện được trang web hơn một chút ít. Từ 1.8 giây để load xuống chỉ còn 0.5 giây. Cảm ơn [Thang Vu](https://twitter.com/thanghvu) vì một số cảm ứng cho lần làm lại này của mình.
