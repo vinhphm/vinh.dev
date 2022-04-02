@@ -2,7 +2,6 @@ import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata.mjs'
 import formatDate from '@/lib/utils/formatDate'
@@ -28,7 +27,7 @@ export default function PostLayout({
   const { locale } = useRouter()
 
   return (
-    <SectionContainer>
+    <>
       <BlogSEO
         availableLocales={availableLocales}
         url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`}
@@ -94,6 +93,6 @@ export default function PostLayout({
           </div>
         </div>
       </article>
-    </SectionContainer>
+    </>
   )
 }

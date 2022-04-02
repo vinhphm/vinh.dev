@@ -51,7 +51,7 @@ export default function Header() {
           isTop ? 'border-none' : 'border-b border-neutral-200 dark:border-neutral-800'
         } bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 backdrop-filter backdrop-saturate-150 backdrop-blur-lg firefox:bg-opacity-100 dark:firefox:bg-opacity-100`}
       >
-        <nav className="mx-auto flex w-full max-w-2xl items-center justify-between px-4 py-2 sm:px-6 xl:max-w-3xl xl:px-0">
+        <nav className="mx-auto flex w-full max-w-2xl items-center justify-between px-8 py-2 sm:px-6 xl:max-w-3xl xl:px-0">
           <div className="flex w-full items-center justify-between text-base leading-5">
             <div className="hidden sm:block sm:space-x-8">
               {headerNavLinks.map((link) => (
@@ -68,7 +68,7 @@ export default function Header() {
             <div className="sm:hidden flex items-center">
               <button
                 type="button"
-                className="flex cursor-pointer bg-transparent w-8 h-8 rounded"
+                className="ml-[-0.40rem] flex cursor-pointer bg-transparent w-8 h-8 rounded"
                 onClick={onToggleNav}
                 aria-label="Toggle Menu"
               >
@@ -88,7 +88,7 @@ export default function Header() {
                 </svg>
               </button>
             </div>
-            <div className="flex">
+            <div className="flex mr-[-0.50rem]">
               {locales.map((e, index) => (
                 <span key={e}>
                   <button
