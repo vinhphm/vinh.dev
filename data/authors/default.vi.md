@@ -11,9 +11,26 @@ linkedin: https://www.linkedin.com/in/vinhphm/
 github: https://github.com/vinhphm
 ---
 
-Xin chào, tôi là Vinh. Một anh bạn lập trình viên và làm designer tay trái. Tôi đã có cơ hội làm việc với nhiều thư viện như: React, Angular, Svelte, với hơn 3 năm kinh nghiệm.
+# Về trang web này
 
-Vào thời gian rảnh, tôi thường nghe nhạc, đi xem phim hoặc cày series. Tôi cũng thích ăn mì và các loại món nước, đặc biệt là các món truyền thống Việt Nam.
+Qua nhiều năm, tôi đã tạo ra nhiều trang blog khác nhau nhưng hầu như đều không có nhiều thời gian để đầu tư tập trung cho các trang blog này hay có dịp phát triển lâu dài. Với **Vinh.Dev**, tôi muốn thay đổi điều đó và để có cái gì đó của riêng mình trên thế giới internet. Trang này sẽ hoạt động như một trang blog, nơi tôi chia sẻ suy nghĩ, code và những kinh nghiệm của mình. Những ý kiến, suy nghĩ trên trang này đều là của riêng tôi. Trang cũng hoạt động như một trang portfolio, nơi tôi chia sẻ những dự án cá nhân.
+
+## Cảm ơn
+
+Tôi chân thành cảm ơn những con người tuyệt vời dưới đây đã giúp tôi học hỏi và phát triển trang web này:
+
+- [@timlrx](https://github.com/timlrx) cho bộ template [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) không thể tuyệt vời hơn.
+- [@leerob](https://github.com/leerob) cho tính năng Spotify.
+- [@ThangHuuVu](https://github.com/ThangHuuVu) cho nguồn cảm hứng thiết kế của trang web.
+- [@marceloavf](https://github.com/marceloavf) cho tính năng i18n đa ngôn ngữ.
+
+---
+
+# Về tôi
+
+- Tôi là một anh bạn kĩ sư phần mềm có hướng thiên về front-end và làm designer tay trái. Tôi đã có cơ hội làm việc với nhiều thư viện như: React, Angular, Svelte, với hơn 3 năm kinh nghiệm.
+- Vào thời gian rảnh, tôi thường nghe nhạc, đi xem phim hoặc cày series. Tôi cũng thích ăn mì và các loại món nước, đặc biệt là các món truyền thống Việt Nam.
+- Cách gọi xưng hô: anh/anh ấy.
 
 ## Dòng thời gian
 

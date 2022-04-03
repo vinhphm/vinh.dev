@@ -11,9 +11,26 @@ linkedin: https://www.linkedin.com/in/vinhphm/
 github: https://github.com/vinhphm
 ---
 
-Hi, I'm Vinh. I'm a web developer and hobbyist designer. I've worked with several technologies, including: React, Angular, Svelte, with 3+ years of experience.
+# About this site
 
-In my free time, I enjoy listening to music or watching movies and series. I also like noodles and Vietnamese cuisine.
+Over the years, I have created a lot of blogs but never seems to have much time to invest on those or stick around for long. With **Vinh.Dev**, I want to change that, and to have a little something of mine on the internet. This site functions as a blog, where I share my thoughts, code, and my experiences. Opinions are my own. It also functions as a portfolio, where I showcase my work.
+
+## Credits
+
+I learn how to build this site from these most awesome people from the community:
+
+- [@timlrx](https://github.com/timlrx) for incredible the [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog).
+- [@leerob](https://github.com/leerob) for the Spotify implementation.
+- [@ThangHuuVu](https://github.com/ThangHuuVu) for inspiring the UI and design of this site.
+- [@marceloavf](https://github.com/marceloavf) for the i18n implementation.
+
+---
+
+# About me
+
+- I'm a software engineer with focus on front-end engineering and also a hobbyist designer. I've worked with several technologies, including: React, Angular, Svelte, with 3+ years of experience.
+- In my free time, I enjoy listening to music or watching movies and series. I also like noodles and Vietnamese cuisine.
+- Pronoun: he/him.
 
 ## Timeline
 
