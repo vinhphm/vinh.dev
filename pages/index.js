@@ -59,63 +59,13 @@ export default function Home({ posts, locale, availableLocales }) {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
             </svg>
             {t('common:about-description')}
           </InternalCard>
         </div>
         <div className="py-4">
-          {/* <h2 className="text-xl font-extrabold leading-5 tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">{t('common:latest')}</h2>
-          <p className="text-neutral-600 dark:text-neutral-400 mb-4">{t('common:latest-description')}</p>
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary } = frontMatter
-            return (
-              <div className="w-full border-b border-neutral-200 dark:border-neutral-700 py-3">
-                <div className="flex flex-col sm:flex-row justify-between items-baseline">
-                  <div className="flex items-center">
-                    <div>
-                      <h3 className="text-lg text-left font-bold w-full text-neutral-800 dark:text-neutral-100">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-neutral-900 dark:text-neutral-100"
-                        >
-                          {title}
-                        </Link>
-                      </h3>
-                      <div className="prose py-1 text-sm max-w-none text-neutral-500 dark:text-neutral-400">
-                        {summary}&nbsp;
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read "${title}"`}
-                        >
-                          {t('common:more')} &rarr;
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center mt-2 sm:mt-0 w-full sm:w-auto justify-between">
-                    <p className="text-neutral-500 dark:text-neutral-400 text-left sm:text-right w-32 md:mb-0 mr-2 ml-10 sm:ml-0">
-                      <time dateTime={date}>{formatDate(date, locale)}</time>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-          {posts.length > MAX_DISPLAY && (
-            <div className="pt-2 flex justify-end text-base font-medium leading-6">
-              <Link
-                href="/blog"
-                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                aria-label="all posts"
-              >
-                {t('common:all')} &rarr;
-              </Link>
-            </div>
-          )} */}
           <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
             <div className="space-y-2 pt-3 pb-4 md:space-y-3">
               <h2 className="text-xl font-extrabold leading-5 tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
