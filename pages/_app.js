@@ -7,7 +7,6 @@ import '@fontsource/inter/variable-full.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 
-import { Globals } from '@react-spring/shared'
 import siteMetadata from '@/data/siteMetadata.mjs'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
@@ -18,13 +17,6 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps, router }) {
-  // https://github.com/pmndrs/react-spring/issues/1586
-  console.warn = function () {}
-
-  Globals.assign({
-    frameLoop: 'always',
-  })
-
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
