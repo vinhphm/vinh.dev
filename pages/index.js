@@ -100,11 +100,6 @@ export default function Home({ posts, locale, availableLocales }) {
                                   {title}
                                 </Link>
                               </h3>
-                              {/* <div className="text-sm flex flex-wrap">
-                                {tags.map((tag) => (
-                                  <Tag key={tag} text={tag} />
-                                ))}
-                              </div> */}
                             </div>
                             <div className="prose text-sm max-w-none text-neutral-500 dark:text-neutral-400">
                               {summary}
