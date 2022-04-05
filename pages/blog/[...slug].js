@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { useTranslate } from 'next-translate'
+import useTranslation from 'next-translate/useTranslation'
 import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
@@ -61,7 +61,7 @@ export async function getStaticProps({ defaultLocale, locales, locale, params })
 }
 
 export default function Blog({ post, authorDetails, prev, next, availableLocales }) {
-  const { t } = useTranslate()
+  const { t } = useTranslation()
   const { mdxSource, toc, frontMatter } = post
   return (
     <>
