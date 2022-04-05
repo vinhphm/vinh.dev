@@ -8,7 +8,7 @@ import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/main/data/blog/${fileName}`
+const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/main/data/snippets/${fileName}`
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `${siteMetadata.siteUrl}/snippets/${slug}`
@@ -23,7 +23,7 @@ export default function Snippet({ frontMatter, availableLocales, children }) {
     <>
       <BlogSEO
         availableLocales={availableLocales}
-        url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`}
+        url={`${siteMetadata.siteUrl}/snippets/${frontMatter.slug}`}
         {...frontMatter}
       />
       <ScrollTopAndComment />
