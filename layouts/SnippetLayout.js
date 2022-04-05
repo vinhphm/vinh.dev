@@ -14,7 +14,7 @@ const discussUrl = (slug) =>
     `${siteMetadata.siteUrl}/snippets/${slug}`
   )}`
 
-export default function SnippetPostLayout({ frontMatter, next, prev, availableLocales, children }) {
+export default function SnippetLayout({ frontMatter, availableLocales, children }) {
   const { slug, fileName, date, title, type } = frontMatter
   const { t } = useTranslation()
   const { locale } = useRouter()
