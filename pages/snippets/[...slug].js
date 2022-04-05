@@ -2,7 +2,7 @@ import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getFileBySlug, getFiles } from '@/lib/mdx'
 
-const DEFAULT_LAYOUT = 'PostSimple'
+const DEFAULT_LAYOUT = 'SnippetLayout'
 
 export async function getStaticPaths() {
   const snippets = getFiles('snippets')

@@ -3,7 +3,7 @@ import { POSTS_PER_PAGE } from '../../snippets'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata.mjs'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import SnippetsLayout from '@/layouts/SnippetsLayout'
+import SnippetsList from '@/layouts/SnippetsList'
 
 export async function getStaticPaths({ locales, defaultLocale }) {
   const paths = (
@@ -87,7 +87,7 @@ export default function SnippetsPage({
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <SnippetsLayout
+      <SnippetsList
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}

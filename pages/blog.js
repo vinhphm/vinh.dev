@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata.mjs'
-import ListLayout from '@/layouts/ListLayout'
+import BlogsList from '@/layouts/BlogsList'
 import { PageSEO } from '@/components/SEO'
 
 export const POSTS_PER_PAGE = 5
@@ -29,7 +29,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination, locale, a
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <ListLayout
+      <BlogsList
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}

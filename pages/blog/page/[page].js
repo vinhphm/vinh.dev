@@ -3,7 +3,7 @@ import { POSTS_PER_PAGE } from '../../blog'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata.mjs'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import ListLayout from '@/layouts/ListLayout'
+import BlogsList from '@/layouts/BlogsList'
 
 export async function getStaticPaths({ locales, defaultLocale }) {
   const paths = (
@@ -87,7 +87,7 @@ export default function PostPage({
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <ListLayout
+      <BlogsList
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}

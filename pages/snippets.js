@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata.mjs'
-import SnippetsLayout from '@/layouts/SnippetsLayout'
+import SnippetsList from '@/layouts/SnippetsList'
 import { PageSEO } from '@/components/SEO'
 
 export const POSTS_PER_PAGE = 10
@@ -35,7 +35,7 @@ export default function Snippets({
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <SnippetsLayout
+      <SnippetsList
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}

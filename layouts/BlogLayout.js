@@ -7,6 +7,8 @@ import siteMetadata from '@/data/siteMetadata.mjs'
 import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import Image from '@/components/Image'
+import Tag from '@/components/Tag'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/main/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -14,7 +16,7 @@ const discussUrl = (slug) =>
     `${siteMetadata.siteUrl}/blog/${slug}`
   )}`
 
-export default function PostLayout({
+export default function BlogPostLayout({
   frontMatter,
   authorDetails,
   next,
@@ -22,7 +24,7 @@ export default function PostLayout({
   availableLocales,
   children,
 }) {
-  const { slug, fileName, date, title } = frontMatter
+  const { slug, fileName, date, title, tags } = frontMatter
   const { t } = useTranslation()
   const { locale } = useRouter()
 
@@ -49,6 +51,30 @@ export default function PostLayout({
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
+              <dl className="pt-6">
+                <dt className="sr-only">{t('common:authors')}</dt>
+                <dd>
+                  <ul className="flex justify-center space-x-8 sm:space-x-12">
+                    {authorDetails.map((author) => (
+                      <li className="flex items-center space-x-2" key={author.name}>
+                        {author.avatar && (
+                          <Image
+                            src={author.avatar}
+                            width="24px"
+                            height="24px"
+                            alt="avatar"
+                            className="h-10 w-10 rounded-full"
+                          />
+                        )}
+                        <dl className="whitespace-nowrap text-sm font-medium leading-5">
+                          <dt className="sr-only">{t('common:name')}</dt>
+                          <dd className="text-neutral-500 dark:text-neutral-400">{author.name}</dd>
+                        </dl>
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
+              </dl>
             </div>
           </header>
           <div
@@ -67,6 +93,18 @@ export default function PostLayout({
             </div>
             <Comments frontMatter={frontMatter} />
             <footer>
+              {tags && (
+                <div className="py-4 xl:py-8">
+                  <h2 className="text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                    Tags
+                  </h2>
+                  <div className="flex flex-wrap">
+                    {tags.map((tag) => (
+                      <Tag key={tag} text={tag} />
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && (
                   <div className="pt-4 xl:pt-8">
