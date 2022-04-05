@@ -30,7 +30,7 @@ export default function Home({ posts, locale, availableLocales }) {
       <Hero />
       <div>
         <div className="py-8 grid grid-cols-1 grid-rows-2 grid-flow-row sm:grid-rows-1 sm:grid-cols-2 justify-between gap-4">
-          <InternalCard href={`/notes`} title={t('common:notes')}>
+          <InternalCard href={`/snippets`} title={t('common:snippets')}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -45,7 +45,7 @@ export default function Home({ posts, locale, availableLocales }) {
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
             </svg>
-            {t('notes:description')}
+            {t('snippets:description')}
           </InternalCard>
           <InternalCard href={`/about`} title={t('common:about')}>
             <svg

@@ -1,15 +1,14 @@
 import useTranslation from 'next-translate/useTranslation'
-import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata.mjs'
-import ListNotesLayout from '@/layouts/ListNotesLayout'
+import SnippetsLayout from '@/layouts/SnippetsLayout'
 import { PageSEO } from '@/components/SEO'
 
-export const POSTS_PER_PAGE = 1
+export const POSTS_PER_PAGE = 10
 
 export async function getStaticProps({ locale, defaultLocale, locales }) {
   const otherLocale = locale !== defaultLocale ? locale : ''
-  const posts = await getAllFilesFrontMatter('notes', otherLocale)
-  const post = await getFileBySlug('notes', posts[0].slug, otherLocale)
+  const posts = await getAllFilesFrontMatter('snippets', otherLocale)
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
     currentPage: 1,
@@ -17,13 +16,12 @@ export async function getStaticProps({ locale, defaultLocale, locales }) {
   }
 
   return {
-    props: { initialDisplayPosts, posts, post, pagination, locale, availableLocales: locales },
+    props: { initialDisplayPosts, posts, pagination, locale, availableLocales: locales },
   }
 }
 
-export default function Notes({
+export default function Snippets({
   posts,
-  post,
   initialDisplayPosts,
   pagination,
   locale,
@@ -33,16 +31,15 @@ export default function Notes({
   return (
     <>
       <PageSEO
-        title={`${t('common:notes')} - ${siteMetadata.author}`}
+        title={`${t('common:snippets')} - ${siteMetadata.author}`}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <ListNotesLayout
+      <SnippetsLayout
         posts={posts}
-        post={post}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title={t('common:notes')}
+        title={t('common:snippets')}
       />
     </>
   )
