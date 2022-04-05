@@ -6,7 +6,7 @@ const withPlugins = require('next-compose-plugins')
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app googletagmanager.com;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
