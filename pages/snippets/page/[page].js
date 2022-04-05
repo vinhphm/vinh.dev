@@ -1,16 +1,16 @@
 import useTranslation from 'next-translate/useTranslation'
-import { POSTS_PER_PAGE } from '../../notes'
+import { POSTS_PER_PAGE } from '../../snippets'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata.mjs'
-import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
-import ListNotesLayout from '@/layouts/ListNotesLayout'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
+import SnippetsLayout from '@/layouts/SnippetsLayout'
 
 export async function getStaticPaths({ locales, defaultLocale }) {
   const paths = (
     await Promise.all(
       locales.map(async (locale) => {
         const otherLocale = locale !== defaultLocale ? locale : ''
-        const totalPosts = await getAllFilesFrontMatter('notes', otherLocale) // don't forget to useotherLocale
+        const totalPosts = await getAllFilesFrontMatter('snippets', otherLocale) // don't forget to useotherLocale
         const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
         return Array.from({ length: totalPages }, (_, i) => [(i + 1).toString(), locale])
       })
@@ -36,9 +36,8 @@ export async function getStaticProps(context) {
     locale,
   } = context
   const otherLocale = locale !== defaultLocale ? locale : ''
-  const posts = await getAllFilesFrontMatter('notes', otherLocale)
+  const posts = await getAllFilesFrontMatter('blog', otherLocale)
   const pageNumber = parseInt(page)
-  const post = await getFileBySlug('notes', posts[pageNumber - 1].slug, otherLocale)
   const initialDisplayPosts = posts.slice(
     POSTS_PER_PAGE * (pageNumber - 1),
     POSTS_PER_PAGE * pageNumber
@@ -52,7 +51,7 @@ export async function getStaticProps(context) {
   const availableLocales = []
   await locales.forEach(async (ilocal) => {
     const otherLocale = ilocal !== defaultLocale ? ilocal : ''
-    const iAllPosts = await getAllFilesFrontMatter('notes', otherLocale)
+    const iAllPosts = await getAllFilesFrontMatter('blog', otherLocale)
     iAllPosts.forEach(() => {
       if (
         pageNumber <= Math.ceil(iAllPosts.length / POSTS_PER_PAGE) &&
@@ -65,7 +64,6 @@ export async function getStaticProps(context) {
   return {
     props: {
       posts,
-      post,
       initialDisplayPosts,
       pagination,
       locale,
@@ -74,9 +72,8 @@ export async function getStaticProps(context) {
   }
 }
 
-export default function PostPage({
+export default function SnippetsPage({
   posts,
-  post,
   initialDisplayPosts,
   pagination,
   locale,
@@ -90,12 +87,11 @@ export default function PostPage({
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <ListNotesLayout
+      <SnippetsLayout
         posts={posts}
-        post={post}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title={t('common:notes')}
+        title={t('common:all')}
       />
     </>
   )

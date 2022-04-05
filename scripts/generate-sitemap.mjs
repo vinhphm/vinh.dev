@@ -10,6 +10,8 @@ import i18nConfig from '../i18n.json'
     'pages/*.js',
     'data/blog/**/*.mdx',
     'data/blog/**/*.md',
+    'data/snippets/**/*.mdx',
+    'data/snippets/**/*.md',
     'public/tags/**/*.xml',
     '!pages/_*.js',
     '!pages/api',
@@ -41,6 +43,7 @@ import i18nConfig from '../i18n.json'
         page
           .replace('pages/', '/')
           .replace('data/blog', '/blog')
+          .replace('data/snippets', '/snippets')
           .replace('public/', '/')
           .replace('.js', '')
           .replace('.mdx', '')
@@ -73,6 +76,7 @@ import i18nConfig from '../i18n.json'
                 if (
                   path.includes(`/404.js`) ||
                   path.includes(`/blog/[...slug].js`) ||
+                  path.includes(`/snippets/[...slug].js`) ||
                   alreadyPresent
                 ) {
                   // Not sure about the [...slug] condition...
