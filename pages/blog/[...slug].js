@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { useTranslate } from 'next-translate'
 import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
@@ -60,6 +61,7 @@ export async function getStaticProps({ defaultLocale, locales, locale, params })
 }
 
 export default function Blog({ post, authorDetails, prev, next, availableLocales }) {
+  const { t } = useTranslate()
   const { mdxSource, toc, frontMatter } = post
   return (
     <>
@@ -77,7 +79,7 @@ export default function Blog({ post, authorDetails, prev, next, availableLocales
       ) : (
         <div className="mt-24 text-center">
           <PageTitle>
-            Under Construction{' '}
+            {t('common:construction')}&nbsp;
             <span role="img" aria-label="roadwork sign">
               🚧
             </span>
