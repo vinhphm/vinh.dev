@@ -5,7 +5,7 @@ import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
 
-const DEFAULT_LAYOUT = 'SnippetLayout'
+const DEFAULT_LAYOUT = 'Snippet'
 
 export async function getStaticPaths({ locales, defaultLocale }) {
   const localesPost = locales

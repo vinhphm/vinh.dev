@@ -4,7 +4,7 @@ import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
 import PageTitle from '@/components/PageTitle'
 
-export default function AuthorLayout({ children, frontMatter, availableLocales }) {
+export default function Author({ children, frontMatter, availableLocales }) {
   const { name, avatar, occupation, location, email, twitter, facebook, linkedin, github } =
     frontMatter
   const { t } = useTranslation()
