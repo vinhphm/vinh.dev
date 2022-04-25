@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 import useTranslation from 'next-translate/useTranslation'
 import siteMetadata from '@/data/siteMetadata.mjs'
 
-const Giscus = ({ mapping }) => {
+const Giscus = () => {
   const { t, lang } = useTranslation()
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const { theme, resolvedTheme } = useTheme()
@@ -20,8 +20,16 @@ const Giscus = ({ mapping }) => {
   const LoadComments = useCallback(() => {
     setEnabledLoadComments(false)
 
-    const { repo, repositoryId, category, categoryId, reactions, metadata, inputPosition } =
-      siteMetadata?.comment?.giscusConfig || {}
+    const {
+      repo,
+      repositoryId,
+      category,
+      categoryId,
+      mapping,
+      reactions,
+      metadata,
+      inputPosition,
+    } = siteMetadata?.comment?.giscusConfig || {}
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
@@ -45,7 +53,7 @@ const Giscus = ({ mapping }) => {
       const comments = document.getElementById(COMMENTS_ID)
       if (comments) comments.innerHTML = ''
     }
-  }, [commentsTheme, lang, mapping])
+  }, [commentsTheme, lang])
 
   // Reload on theme change
   useEffect(() => {
