@@ -26,6 +26,7 @@
     "next-translate": "^1.4.0",
     "preact": "^10.7.1",
     "react": "^17.0.2",
+    "react-device-detect": "^2.2.2",
     "react-dom": "^17.0.2",
     "react-spring": "^9.4.4",
     "reading-time": "1.5.0",
