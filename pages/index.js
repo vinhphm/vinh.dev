@@ -66,61 +66,31 @@ export default function Home({ posts, locale, availableLocales }) {
           </InternalCard>
         </div>
         <div className="py-4">
-          <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
+          <div>
             <div className="space-y-2 pt-3 pb-4 md:space-y-3">
-              <h2 className="text-xl font-extrabold leading-5 tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
+              <h1 className="text-xl font-extrabold leading-5 tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
                 {t('common:latest')}
-              </h2>
+              </h1>
               <p className="leading-7 text-neutral-500 dark:text-neutral-400">
                 {t('common:latest-description')}
               </p>
             </div>
-            <ul className="divide-y divide-neutral-200 dark:divide-neutral-700">
+            <div className="py-4 grid grid-cols-1 grid-rows-3 grid-flow-row sm:grid-rows-1 sm:grid-cols-2 xl:grid-cols-3 justify-between gap-4">
               {!posts.length && 'No posts found.'}
               {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
                 const { slug, date, title, summary } = frontMatter
                 return (
-                  <li key={slug} className="py-4">
-                    <article>
-                      <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                        <dl>
-                          <dt className="sr-only">Published on</dt>
-                          <dd className="text-base font-medium leading-6 text-neutral-500 dark:text-neutral-400">
-                            <time dateTime={date}>{formatDate(date, locale)}</time>
-                          </dd>
-                        </dl>
-                        <div className="space-y-3 xl:col-span-3">
-                          <div className="space-y-2">
-                            <div>
-                              <h3 className="text-lg font-bold leading-8 tracking-tight">
-                                <Link
-                                  href={`/blog/${slug}`}
-                                  className="text-neutral-900 dark:text-neutral-100"
-                                >
-                                  {title}
-                                </Link>
-                              </h3>
-                            </div>
-                            <div className="prose text-sm max-w-none text-neutral-500 dark:text-neutral-400">
-                              {summary}
-                            </div>
-                          </div>
-                          <div className="text-sm font-medium leading-6">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                              aria-label={`Read "${title}"`}
-                            >
-                              Read more &rarr;
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </li>
+                  <InternalCard key={slug} href={`/blog/${slug}`} title={title}>
+                    <div className="divide-solid divide-y divide-neutral-200 dark:divide-neutral-700">
+                      <p>{summary}</p>
+                      <p className="my-0 pt-2 text-neutral-500 dark:text-neutral-400">
+                        <time dateTime={date}>{formatDate(date, locale)}</time>
+                      </p>
+                    </div>
+                  </InternalCard>
                 )
               })}
-            </ul>
+            </div>
           </div>
           {posts.length > MAX_DISPLAY && (
             <div className="flex justify-end text-base font-medium leading-6">
