@@ -78,6 +78,7 @@ module.exports = {
           css: {
             color: theme('colors.neutral.700'),
             a: {
+              fontWeight: 'bold',
               textDecoration: 'underline',
               textDecorationColor: `${theme('colors.neutral.500')} !important`,
               textUnderlineOffset: '0.25em',
@@ -145,7 +146,6 @@ module.exports = {
             a: {
               color: theme('colors.neutral.100'),
               textDecoration: 'underline',
-              textDecorationColor: `${theme('colors.neutral.500')} !important`,
               textUnderlineOffset: '0.25em',
               '&:hover': {
                 textDecorationColor: `${theme('colors.primary.400')} !important`,
