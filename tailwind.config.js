@@ -82,6 +82,7 @@ module.exports = {
               textDecoration: 'underline',
               textDecorationColor: `${theme('colors.neutral.500')} !important`,
               textUnderlineOffset: '0.25em',
+              textDecorationThickness: '.0625em',
               '&:hover': {
                 textDecorationColor: `${theme('colors.primary.600')} !important`,
                 textDecorationThickness: '0.125em',
@@ -147,6 +148,7 @@ module.exports = {
               color: theme('colors.neutral.100'),
               textDecoration: 'underline',
               textUnderlineOffset: '0.25em',
+              textDecorationThickness: '.0625em',
               '&:hover': {
                 textDecorationColor: `${theme('colors.primary.400')} !important`,
                 textDecorationThickness: '0.125em',
