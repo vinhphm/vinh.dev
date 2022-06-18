@@ -24,7 +24,7 @@ export default function BlogPostLayout({
   availableLocales,
   children,
 }) {
-  const { slug, fileName, date, title, tags } = frontMatter
+  const { slug, fileName, date, title, images, tags } = frontMatter
   const { t } = useTranslation()
   const { locale } = useRouter()
 
