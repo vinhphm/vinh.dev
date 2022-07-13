@@ -1,8 +1,8 @@
-import { writeFileSync } from 'fs';
-import { globby } from 'globby';
-import prettier from 'prettier';
+import { writeFileSync } from 'fs'
+import { globby } from 'globby'
+import prettier from 'prettier'
 import siteMetadata  from '../data/siteMetadata.mjs'
-import i18nConfig from '../i18n.json'
+import i18nConfig from '../i18n.json' assert { type: 'json' }
 
 ;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')

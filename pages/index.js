@@ -93,13 +93,13 @@ export default function Home({ posts, locale, availableLocales }) {
             </div>
           </div>
           {posts.length > MAX_DISPLAY && (
-            <div className="flex justify-end text-base font-medium leading-6">
+            <div className="pt-4 flex justify-start text-base font-medium leading-6">
               <Link
                 href="/blog"
                 className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 aria-label="all posts"
               >
-                All Posts &rarr;
+                {t('common:all')} &rarr;
               </Link>
             </div>
           )}

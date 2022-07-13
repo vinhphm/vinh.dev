@@ -26,7 +26,8 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/static/favicons/favicon.ico" />
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="msapplication-config" content="/static/favicons/browserconfig.xml" />
-          <meta name="theme-color" content="#000000" id="theme-color" />
+          <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+          <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
           <link rel="alternate" type="application/rss+xml" href="/feed.vi.xml" />
         </Head>
