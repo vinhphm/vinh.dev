@@ -9,7 +9,7 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Vinh Pham',
+  name: 'Vinh.Dev',
   domain: 'vinh.dev',
   author: 'Vinh Pham',
 
