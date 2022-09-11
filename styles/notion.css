@@ -12,6 +12,10 @@
   --notion-header-height: 54px;
 }
 
+.notion > * {
+  padding: unset;
+}
+
 .notion-page {
   padding-bottom: calc(max(5vh, 32px)) !important;
   line-height: 1.65;
@@ -354,7 +358,7 @@
 
 .notion-header {
   background: hsla(0, 0%, 100%, 0.8);
-  backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(150%) blur(16px);
 }
 
 .dark-mode .notion-header {

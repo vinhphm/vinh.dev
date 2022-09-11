@@ -19,6 +19,9 @@ import 'styles/notion.css'
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
 
+// Inter font
+import '@fontsource/inter/variable-full.css'
+
 import * as React from 'react'
 import * as Fathom from 'fathom-client'
 import type { AppProps } from 'next/app'

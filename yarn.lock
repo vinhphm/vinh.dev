@@ -37,6 +37,11 @@
     "@use-it/event-listener" "^0.1.2"
     "use-persisted-state" "^0.3.0"
 
+"@fontsource/inter@^4.5.12":
+  "integrity" "sha512-bGKk4/8tube/nCk8hav0ZDBVbzJzc7m0Vt4xF5p15IN4YImwGdtKG38Oq5bU8xHNS+VfvbFFCepgQNj7Pr/Lvg=="
+  "resolved" "https://registry.npmjs.org/@fontsource/inter/-/inter-4.5.12.tgz"
+  "version" "4.5.12"
+
 "@humanwhocodes/config-array@^0.9.2":
   "integrity" "sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.9.5.tgz"
@@ -2340,7 +2345,7 @@
   dependencies:
     "commander" "^8.0.0"
 
-"keyv@npm:@keyvhq/core@~1.6.6":
+"keyv@^4.0.0":
   "integrity" "sha512-NQtjFKsZXLYs3SWbeYATdwwJ1fZtzwrV+9YM4Y9JPGGQqLI0q6gyY2sEWI4RvrKBGJ1AXCJPQNXOPr8oAWdEDw=="
   "resolved" "https://registry.npmjs.org/@keyvhq/core/-/core-1.6.14.tgz"
   "version" "1.6.14"
@@ -3148,7 +3153,7 @@
   "resolved" "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
   "version" "2.1.1"
 
-"puppeteer-core@6.0.0":
+"puppeteer-core@6.0.0", "puppeteer-core@6.0.x":
   "integrity" "sha512-Mm4lVSM8CJUrHSLt2zHjlW9B2D5B3JRbkbmxzGaGTauaB9gTrM+r7gk88xfRWuaBy81pRG+nTtCBdMPzO7pjqg=="
   "resolved" "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-6.0.0.tgz"
   "version" "6.0.0"
