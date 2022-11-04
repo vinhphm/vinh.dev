@@ -1,90 +1,64 @@
-import fs from 'fs'
-import useTranslation from 'next-translate/useTranslation'
+import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import { sortedBlogPost, coreContent } from 'pliny/utils/contentlayer'
+import { allBlogs, allAuthors } from 'contentlayer/generated'
 import PageTitle from '@/components/PageTitle'
-import generateRss from '@/lib/generate-rss'
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-
-const DEFAULT_LAYOUT = 'Blog'
-
-export async function getStaticPaths({ locales, defaultLocale }) {
-  const localesPost = locales
-    .map((locale) => {
-      const otherLocale = locale !== defaultLocale ? locale : ''
-      const posts = getFiles('blog', otherLocale)
-      return posts.map((post) => [post, locale])
-    })
-    .flat()
-
+import { MDXComponents } from '@/components/MDXComponents'
+const DEFAULT_LAYOUT = 'PostLayout'
+export async function getStaticPaths() {
   return {
-    paths: localesPost.map(([p, l]) => ({
+    paths: allBlogs.map((p) => ({
       params: {
-        slug: formatSlug(p).split('/'),
+        slug: p.slug.split('/'),
       },
-      locale: l,
     })),
     fallback: false,
   }
 }
-
-export async function getStaticProps({ defaultLocale, locales, locale, params }) {
-  const otherLocale = locale !== defaultLocale ? locale : ''
-  const allPosts = await getAllFilesFrontMatter('blog', otherLocale)
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
-  const prev = allPosts[postIndex + 1] || null
-  const next = allPosts[postIndex - 1] || null
-  const post = await getFileBySlug('blog', params.slug.join('/'), otherLocale)
-  const authorList = post.frontMatter.authors || ['default']
-  const authorPromise = authorList.map(async (author) => {
-    const authorResults = await getFileBySlug('authors', [author], otherLocale)
-    return authorResults.frontMatter
+export const getStaticProps = async ({ params }) => {
+  const slug = params.slug.join('/')
+  const sortedPosts = sortedBlogPost(allBlogs)
+  const postIndex = sortedPosts.findIndex((p) => p.slug === slug)
+  const prevContent = sortedPosts[postIndex + 1] || null
+  const prev = prevContent ? coreContent(prevContent) : null
+  const nextContent = sortedPosts[postIndex - 1] || null
+  const next = nextContent ? coreContent(nextContent) : null
+  const post = sortedPosts.find((p) => p.slug === slug)
+  const authorList = post.authors || ['default']
+  const authorDetails = authorList.map((author) => {
+    const authorResults = allAuthors.find((p) => p.slug === author)
+    return coreContent(authorResults)
   })
-  const authorDetails = await Promise.all(authorPromise)
-
-  // rss
-  if (allPosts.length > 0) {
-    const rss = generateRss(allPosts, locale, defaultLocale)
-    fs.writeFileSync(`./public/feed${otherLocale === '' ? '' : `.${otherLocale}`}.xml`, rss)
+  return {
+    props: {
+      post,
+      authorDetails,
+      prev,
+      next,
+    },
   }
-
-  // Checking if available in other locale for SEO
-  const availableLocales = []
-  await locales.forEach(async (ilocal) => {
-    const otherLocale = ilocal !== defaultLocale ? ilocal : ''
-    const iAllPosts = await getAllFilesFrontMatter('blog', otherLocale)
-    iAllPosts.map((ipost) => {
-      if (ipost.slug === post.frontMatter.slug && ipost.slug !== '') availableLocales.push(ilocal)
-    })
-  })
-
-  return { props: { post, authorDetails, prev, next, availableLocales } }
 }
-
-export default function Blog({ post, authorDetails, prev, next, availableLocales }) {
-  const { t } = useTranslation()
-  const { mdxSource, toc, frontMatter } = post
+export default function BlogPostPage({ post, authorDetails, prev, next }) {
   return (
     <>
-      {frontMatter.draft !== true ? (
-        <MDXLayoutRenderer
-          layout={frontMatter.layout || DEFAULT_LAYOUT}
-          toc={toc}
-          mdxSource={mdxSource}
-          frontMatter={frontMatter}
-          authorDetails={authorDetails}
-          prev={prev}
-          next={next}
-          availableLocales={availableLocales}
-        />
-      ) : (
+      {'draft' in post && post.draft === true ? (
         <div className="mt-24 text-center">
           <PageTitle>
-            {t('common:construction')}&nbsp;
+            Under Construction{' '}
             <span role="img" aria-label="roadwork sign">
               🚧
             </span>
           </PageTitle>
         </div>
+      ) : (
+        <MDXLayoutRenderer
+          layout={post.layout || DEFAULT_LAYOUT}
+          content={post}
+          MDXComponents={MDXComponents}
+          toc={post.toc}
+          authorDetails={authorDetails}
+          prev={prev}
+          next={next}
+        />
       )}
     </>
   )

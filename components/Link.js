@@ -1,81 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { useRouter } from 'next/router'
 import Link from 'next/link'
-import React, { Children } from 'react'
-
-const ActiveLink = ({ children, activeClassName, ...props }) => {
-  const { asPath } = useRouter()
-  const child = Children.only(children)
-  const childClassName = child.props.className || ''
-
-  const className =
-    asPath === props.href || asPath === props.as
-      ? `${childClassName} ${activeClassName}`.trim()
-      : childClassName
-
-  return (
-    <Link {...props}>
-      {React.cloneElement(child, {
-        className: className || null,
-      })}
-    </Link>
-  )
-}
-
-const CustomLink = ({
-  href,
-  isActive,
-  activeClassName,
-  className,
-  showIcon = true,
-  children,
-  ...rest
-}) => {
+const CustomLink = ({ href, ...rest }) => {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
-  const BaseLink = isActive ? ActiveLink : Link
-
   if (isInternalLink) {
     return (
-      <BaseLink href={href} activeClassName={activeClassName}>
-        <a className={className} {...rest}>
-          {children}
-        </a>
-      </BaseLink>
+      <Link href={href}>
+        <a {...rest} />
+      </Link>
     )
   }
-
   if (isAnchorLink) {
-    return <a className={className} href={href} {...rest} />
+    return <a href={href} {...rest} />
   }
-
-  return (
-    <Link href={href}>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`items-center ${className ? className : ''}`}
-        {...rest}
-      >
-        {children}
-        {showIcon && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            className="ml-0.5 h-4 w-4 inline-block fill-current"
-          >
-            <g data-name="Layer 2">
-              <g data-name="external-link">
-                <rect width="24" height="24" opacity="0" />
-                <path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z" />
-                <path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z" />
-              </g>
-            </g>
-          </svg>
-        )}
-      </a>
-    </Link>
-  )
+  return <a target="_blank" rel="noopener noreferrer" href={href} {...rest} />
 }
-
 export default CustomLink

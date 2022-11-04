@@ -1,0 +1,51 @@
+{
+  "title": "Introducing Multi-part Posts with Nested Routing",
+  "date": "2021-05-02T00:00:00.000Z",
+  "tags": ["multi-author", "next-js", "feature"],
+  "draft": false,
+  "summary": "The blog template supports posts in nested sub-folders. This can be used to group posts of similar content e.g. a multi-part course. This post is itself an example of a nested route!",
+  "body": {
+    "raw": "\n# Nested Routes\n\nThe blog template supports posts in nested sub-folders. This helps in organisation and can be used to group posts of similar content e.g. a multi-part series. This post is itself an example of a nested route! It's located in the `/data/blog/nested-route` folder.\n\n## How\n\nSimplify create multiple folders inside the main `/data/blog` folder and add your `.md`/`.mdx` files to them. You can even create something like `/data/blog/nested-route/deeply-nested-route/my-post.md`\n\nWe use Next.js catch all routes to handle the routing and path creations.\n\n## Use Cases\n\nHere are some reasons to use nested routes\n\n- More logical content organisation (blogs will still be displayed based on the created date)\n- Multi-part posts\n- Different sub-routes for each author\n- Internationalization (though it would be recommended to use [Next.js built-in i8n routing](https://nextjs.org/docs/advanced-features/i18n-routing))\n\n## Note\n\n- The previous/next post links at bottom of the template are currently sorted by date. One could explore modifying the template to refer the reader to the previous/next post in the series, rather than by date.\n",
+    "code": "var Component=(()=>{var h=Object.create;var i=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var g=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),b=(n,e)=>{for(var s in e)i(n,s,{get:e[s],enumerable:!0})},r=(n,e,s,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of p(e))!f.call(n,o)&&o!==s&&i(n,o,{get:()=>e[o],enumerable:!(a=u(e,o))||a.enumerable});return n};var x=(n,e,s)=>(s=n!=null?h(m(n)):{},r(e||!n||!n.__esModule?i(s,\"default\",{value:n,enumerable:!0}):s,n)),j=n=>r(i({},\"__esModule\",{value:!0}),n);var l=g((_,d)=>{d.exports=_jsx_runtime});var I={};b(I,{default:()=>w,frontmatter:()=>y});var t=x(l()),y={title:\"Introducing Multi-part Posts with Nested Routing\",date:\"2021-05-02\",tags:[\"multi-author\",\"next-js\",\"feature\"],draft:!1,summary:\"The blog template supports posts in nested sub-folders. This can be used to group posts of similar content e.g. a multi-part course. This post is itself an example of a nested route!\"};function c(n){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",p:\"p\",code:\"code\",h2:\"h2\",ul:\"ul\",li:\"li\"},n.components);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(e.h1,{id:\"nested-routes\",children:[(0,t.jsx)(e.a,{href:\"#nested-routes\",\"aria-hidden\":\"true\",tabIndex:\"-1\",children:(0,t.jsx)(e.span,{className:\"icon icon-link\"})}),\"Nested Routes\"]}),(0,t.jsxs)(e.p,{children:[\"The blog template supports posts in nested sub-folders. This helps in organisation and can be used to group posts of similar content e.g. a multi-part series. This post is itself an example of a nested route! It's located in the \",(0,t.jsx)(e.code,{children:\"/data/blog/nested-route\"}),\" folder.\"]}),(0,t.jsxs)(e.h2,{id:\"how\",children:[(0,t.jsx)(e.a,{href:\"#how\",\"aria-hidden\":\"true\",tabIndex:\"-1\",children:(0,t.jsx)(e.span,{className:\"icon icon-link\"})}),\"How\"]}),(0,t.jsxs)(e.p,{children:[\"Simplify create multiple folders inside the main \",(0,t.jsx)(e.code,{children:\"/data/blog\"}),\" folder and add your \",(0,t.jsx)(e.code,{children:\".md\"}),\"/\",(0,t.jsx)(e.code,{children:\".mdx\"}),\" files to them. You can even create something like \",(0,t.jsx)(e.code,{children:\"/data/blog/nested-route/deeply-nested-route/my-post.md\"})]}),(0,t.jsx)(e.p,{children:\"We use Next.js catch all routes to handle the routing and path creations.\"}),(0,t.jsxs)(e.h2,{id:\"use-cases\",children:[(0,t.jsx)(e.a,{href:\"#use-cases\",\"aria-hidden\":\"true\",tabIndex:\"-1\",children:(0,t.jsx)(e.span,{className:\"icon icon-link\"})}),\"Use Cases\"]}),(0,t.jsx)(e.p,{children:\"Here are some reasons to use nested routes\"}),(0,t.jsxs)(e.ul,{children:[(0,t.jsx)(e.li,{children:\"More logical content organisation (blogs will still be displayed based on the created date)\"}),(0,t.jsx)(e.li,{children:\"Multi-part posts\"}),(0,t.jsx)(e.li,{children:\"Different sub-routes for each author\"}),(0,t.jsxs)(e.li,{children:[\"Internationalization (though it would be recommended to use \",(0,t.jsx)(e.a,{href:\"https://nextjs.org/docs/advanced-features/i18n-routing\",children:\"Next.js built-in i8n routing\"}),\")\"]})]}),(0,t.jsxs)(e.h2,{id:\"note\",children:[(0,t.jsx)(e.a,{href:\"#note\",\"aria-hidden\":\"true\",tabIndex:\"-1\",children:(0,t.jsx)(e.span,{className:\"icon icon-link\"})}),\"Note\"]}),(0,t.jsx)(e.ul,{children:(0,t.jsx)(e.li,{children:\"The previous/next post links at bottom of the template are currently sorted by date. One could explore modifying the template to refer the reader to the previous/next post in the series, rather than by date.\"})})]})}function N(n={}){let{wrapper:e}=n.components||{};return e?(0,t.jsx)(e,Object.assign({},n,{children:(0,t.jsx)(c,n)})):c(n)}var w=N;return j(I);})();\n;return Component;"
+  },
+  "_id": "blog/nested-route/introducing-multi-part-posts-with-nested-routing.mdx",
+  "_raw": {
+    "sourceFilePath": "blog/nested-route/introducing-multi-part-posts-with-nested-routing.mdx",
+    "sourceFileName": "introducing-multi-part-posts-with-nested-routing.mdx",
+    "sourceFileDir": "blog/nested-route",
+    "contentType": "mdx",
+    "flattenedPath": "blog/nested-route/introducing-multi-part-posts-with-nested-routing"
+  },
+  "type": "Blog",
+  "readingTime": {
+    "text": "1 min read",
+    "minutes": 0.845,
+    "time": 50700,
+    "words": 169
+  },
+  "slug": "nested-route/introducing-multi-part-posts-with-nested-routing",
+  "path": "blog/nested-route/introducing-multi-part-posts-with-nested-routing",
+  "filePath": "blog/nested-route/introducing-multi-part-posts-with-nested-routing.mdx",
+  "toc": [
+    {
+      "value": "Nested Routes",
+      "url": "#nested-routes",
+      "depth": 1
+    },
+    {
+      "value": "How",
+      "url": "#how",
+      "depth": 2
+    },
+    {
+      "value": "Use Cases",
+      "url": "#use-cases",
+      "depth": 2
+    },
+    {
+      "value": "Note",
+      "url": "#note",
+      "depth": 2
+    }
+  ]
+}

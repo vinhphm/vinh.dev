@@ -7,8 +7,7 @@
       "@/layouts/*": ["layouts/*"],
       "@/lib/*": ["lib/*"],
       "@/css/*": ["css/*"],
-      "@/context/*": ["context/*"],
-      "@/*": ["/*"]
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   }
 }
