@@ -6,14 +6,14 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
     <Link
       href={href}
       aria-label={`Link to ${title}`}
-      className="p-4 md:w-1/2 md max-w-[34rem]"
+      className="md max-w-[34rem] p-4 md:w-1/2"
       showIcon={false}
     >
-      <div className="h-full overflow-hidden border-2 border-neutral-200 rounded-md dark:border-neutral-800 hover:border-primary-600 dark:hover:border-primary-400">
+      <div className="h-full overflow-hidden rounded-md border-2 border-neutral-200 hover:border-primary-600 dark:border-neutral-800 dark:hover:border-primary-400">
         <Image
           alt={title}
           src={imgSrc}
-          className="object-cover object-center border-b border-solid lg:h-48 md:h-36"
+          className="border-b border-solid object-cover object-center md:h-36 lg:h-48"
           width={544}
           height={306}
         />
@@ -23,7 +23,7 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              className="ml-0.5 h-4 w-4 inline-block fill-current"
+              className="ml-0.5 inline-block h-4 w-4 fill-current"
             >
               <g data-name="Layer 2">
                 <g data-name="external-link">
@@ -34,7 +34,7 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
               </g>
             </svg>
           </h4>
-          <p className="mb-3 prose text-neutral-500 max-w-none dark:text-neutral-400">
+          <p className="prose mb-3 max-w-none text-neutral-500 dark:text-neutral-400">
             {description}
           </p>
           {tags && (
@@ -46,12 +46,12 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
       </div>
     </Link>
   ) : (
-    <div className="p-4 md:w-1/2 md max-w-[34rem]">
-      <div className="h-full overflow-hidden border-2 border-neutral-200 rounded-md dark:border-neutral-800 ">
+    <div className="md max-w-[34rem] p-4 md:w-1/2">
+      <div className="h-full overflow-hidden rounded-md border-2 border-neutral-200 dark:border-neutral-800 ">
         <Image
           alt={title}
           src={imgSrc}
-          className="object-cover object-center border-b border-solid lg:h-48 md:h-36"
+          className="border-b border-solid object-cover object-center md:h-36 lg:h-48"
           width={544}
           height={306}
         />
@@ -59,7 +59,7 @@ const Card = ({ title, description, imgSrc, href, tags, showLink = true }) =>
           <h4 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-black dark:text-white">
             {title}
           </h4>
-          <p className="mb-3 prose text-neutral-500 max-w-none dark:text-neutral-400">
+          <p className="prose mb-3 max-w-none text-neutral-500 dark:text-neutral-400">
             (Coming soon) {description}
           </p>
           {tags && (

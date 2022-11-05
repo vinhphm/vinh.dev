@@ -62,7 +62,7 @@ const CustomLink = ({
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className="ml-0.5 h-4 w-4 inline-block fill-current"
+            className="ml-0.5 inline-block h-4 w-4 fill-current"
           >
             <g data-name="Layer 2">
               <g data-name="external-link">

@@ -1,14 +1,12 @@
 import { useRef, useState } from 'react'
 
-import useTranslation from 'next-translate/useTranslation'
 import Button from './Button'
-import siteMetadata from '@/data/siteMetadata.mjs'
+import siteMetadata from '@/data/siteMetadata'
 
 const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
   const inputEl = useRef(null)
   const [error, setError] = useState(false)
   const [subscribed, setSubscribed] = useState(false)
-  const { t } = useTranslation()
 
   const subscribe = async (e) => {
     e.preventDefault()
@@ -42,36 +40,34 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
       <form className="flex flex-col sm:flex-row" onSubmit={subscribe}>
         <div>
           <label className="sr-only" htmlFor="email-input">
-            {t('newsletter:mail')}
+            Email address
           </label>
           <input
             autoComplete="email"
-            className="px-4 rounded-md w-72 dark:bg-black focus:outline-none focus:ring-2 focus:border-transparent focus:ring-primary-600"
+            className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
             id="email-input"
             name="email"
-            placeholder={
-              subscribed ? t('newsletter:placeholderSucces') : t('newsletter:placeholderDefault')
-            }
+            placeholder={subscribed ? "You're subscribed !  🎉" : 'Enter your email'}
             ref={inputEl}
             required
             type="email"
             disabled={subscribed}
           />
         </div>
-        <div className="flex w-full mt-2 rounded-md shadow-sm sm:mt-0 sm:ml-3">
+        <div className="mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3">
           <Button
-            className={`py-2 sm:py-0 w-full px-4 ${subscribed ? 'cursor-default' : ''}
+            className={`w-full py-2 px-4 sm:py-0 ${subscribed ? 'cursor-default' : ''}
             `}
             type="submit"
             disabled={subscribed}
           >
-            {subscribed ? t('newsletter:buttonSuccess') : t('newsletter:buttonDefault')}
+            {subscribed ? 'Thank you!' : 'Sign up'}
           </Button>
         </div>
       </form>
       {error && (
-        <div className="pt-2 text-sm text-red-500 w-72 sm:w-96 dark:text-red-400">
-          {t('newsletter:messageError')}
+        <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">
+          Your e-mail adress is invalid or you are already subscribed!
         </div>
       )}
     </div>
@@ -82,7 +78,7 @@ export default NewsletterForm
 
 export const BlogNewsletterForm = ({ title }) => (
   <div className="flex items-center justify-center">
-    <div className="p-6 bg-neutral-100 dark:bg-neutral-800 sm:px-14 sm:py-8">
+    <div className="bg-neutral-100 p-6 dark:bg-neutral-800 sm:px-14 sm:py-8">
       <NewsletterForm title={title} />
     </div>
   </div>

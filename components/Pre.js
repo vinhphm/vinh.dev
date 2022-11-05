@@ -26,9 +26,9 @@ const Pre = (props) => {
         <button
           aria-label="Copy code"
           type="button"
-          className={`absolute right-2 top-2 w-8 h-8 p-1 rounded border-2 bg-neutral-50 dark:bg-neutral-900 ${
+          className={`absolute right-2 top-2 h-8 w-8 rounded border-2 bg-neutral-50 p-1 dark:bg-neutral-900 ${
             copied
-              ? 'focus:outline-none focus:border-green-400 border-green-400'
+              ? 'border-green-400 focus:border-green-400 focus:outline-none'
               : 'border-neutral-300 dark:border-neutral-700'
           }`}
           onClick={onCopy}

@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import useTranslation from 'next-translate/useTranslation'
-import { useRouter } from 'next/router'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
@@ -23,15 +21,8 @@ function useIsScrollTop() {
 }
 
 export default function Header() {
-  const { t } = useTranslation()
-  const router = useRouter()
   const [navShow, setNavShow] = useState(false)
-  const { locale, locales, defaultLocale } = router
   const isTop = useIsScrollTop()
-
-  const changeLanguage = (locale) => {
-    router.push(router.asPath, router.asPath, { locale })
-  }
 
   const onToggleNav = () => {
     setNavShow((status) => {
@@ -47,9 +38,9 @@ export default function Header() {
   return (
     <>
       <header
-        className={`w-full sticky z-40 top-0 flex items-center justify-between ${
+        className={`sticky top-0 z-40 flex w-full items-center justify-between ${
           isTop ? 'border-none' : 'border-b border-neutral-200 dark:border-neutral-800'
-        } bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 backdrop-filter backdrop-saturate-150 backdrop-blur-lg firefox:bg-opacity-100 dark:firefox:bg-opacity-100`}
+        } bg-white bg-opacity-30 backdrop-blur-lg backdrop-saturate-150 backdrop-filter firefox:bg-opacity-100 dark:bg-black dark:bg-opacity-30 dark:firefox:bg-opacity-100`}
       >
         <nav className="mx-auto flex w-full max-w-2xl items-center justify-between px-8 py-2 sm:px-6 xl:max-w-3xl xl:px-0">
           <div className="flex w-full items-center justify-between text-base leading-5">
@@ -57,24 +48,24 @@ export default function Header() {
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
-                  title={t(`headerNavLinks:${link.title.toLowerCase()}`)}
+                  title={link.title}
                   href={link.href}
-                  className="font-medium text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white"
+                  className="font-medium text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white"
                 >
-                  {t(`headerNavLinks:${link.title.toLowerCase()}`)}
+                  {link.title}
                 </Link>
               ))}
             </div>
-            <div className="sm:hidden flex items-center">
+            <div className="flex items-center sm:hidden">
               <button
                 type="button"
-                className="ml-[-0.40rem] flex cursor-pointer bg-transparent w-8 h-8 rounded"
+                className="ml-[-0.40rem] flex h-8 w-8 cursor-pointer rounded bg-transparent"
                 onClick={onToggleNav}
                 aria-label="Toggle Menu"
               >
                 <svg
                   viewBox="0 0 100 100"
-                  className="w-8 h-8 text-neutral-900 dark:text-neutral-100"
+                  className="h-8 w-8 text-neutral-900 dark:text-neutral-100"
                 >
                   <path
                     className={`${navShow ? 'opened' : ''} line line1`}
@@ -88,23 +79,7 @@ export default function Header() {
                 </svg>
               </button>
             </div>
-            <div className="flex mr-[-0.50rem]">
-              {locales.map((e, index) => (
-                <span key={e}>
-                  <button
-                    aria-label={`Change to ${e}`}
-                    type="button"
-                    value={locale}
-                    onClick={() => changeLanguage(e)}
-                    className="inline-block cursor-pointer p-2 font-medium text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100 sm:py-4"
-                  >
-                    {e}
-                  </button>
-                  {index === 0 && (
-                    <span className="py-1 text-neutral-300 dark:text-neutral-700 sm:py-4">/</span>
-                  )}
-                </span>
-              ))}
+            <div className="mr-[-0.50rem] flex">
               <ThemeSwitch />
             </div>
           </div>

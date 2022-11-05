@@ -1,6 +1,6 @@
 /* Code title styles */
 .remark-code-title {
-  @apply rounded-t border-x border-t border-neutral-200 dark:border-neutral-700 bg-white dark:bg-black px-5 py-3 font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300;
+  @apply rounded-t border-x border-t border-neutral-200 bg-white px-5 py-3 font-mono text-sm font-bold text-neutral-700 dark:border-neutral-700 dark:bg-black dark:text-neutral-300;
 }
 
 .remark-code-title + div > pre {
@@ -13,7 +13,7 @@
 }
 
 .code-line {
-  @apply -mx-4 block border-l-4 border-transparent pl-4 pr-4 bg-white dark:bg-black text-neutral-700 dark:text-neutral-300;
+  @apply -mx-4 block border-l-4 border-transparent bg-white pl-4 pr-4 text-neutral-700 dark:bg-black dark:text-neutral-300;
 }
 
 .code-line.inserted {
@@ -25,7 +25,7 @@
 }
 
 .highlight-line {
-  @apply -mx-4 border-l-4 border-primary-500 bg-neutral-100 dark:bg-neutral-900 bg-opacity-50;
+  @apply -mx-4 border-l-4 border-primary-500 bg-neutral-100 bg-opacity-50 dark:bg-neutral-900;
 }
 
 .line-number::before {

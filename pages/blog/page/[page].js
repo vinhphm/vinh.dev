@@ -1,42 +1,33 @@
-import useTranslation from 'next-translate/useTranslation'
-import { POSTS_PER_PAGE } from '../../blog'
+import { allCoreContent, sortedBlogPost } from 'pliny/utils/contentlayer'
+import { allBlogs } from 'contentlayer/generated'
+import { POSTS_PER_PAGE } from '../index'
 import { PageSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata.mjs'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import BlogsList from '@/layouts/BlogsList'
+import siteMetadata from '@/data/siteMetadata'
+import BlogListLayout from '@/layouts/BlogListLayout'
 
-export async function getStaticPaths({ locales, defaultLocale }) {
-  const paths = (
-    await Promise.all(
-      locales.map(async (locale) => {
-        const otherLocale = locale !== defaultLocale ? locale : ''
-        const totalPosts = await getAllFilesFrontMatter('blog', otherLocale) // don't forget to useotherLocale
-        const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
-        return Array.from({ length: totalPages }, (_, i) => [(i + 1).toString(), locale])
-      })
-    )
-  ).flat()
-
-  return {
-    paths: paths.map(([page, locale]) => ({
+export const getStaticPaths = async () => {
+  const totalPosts = allBlogs
+  const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
+  const paths = Array.from(
+    {
+      length: totalPages,
+    },
+    (_, i) => ({
       params: {
-        page,
+        page: (i + 1).toString(),
       },
-      locale,
-    })),
+    })
+  )
+  return {
+    paths,
     fallback: false,
   }
 }
-
-export async function getStaticProps(context) {
+export const getStaticProps = async (context) => {
   const {
     params: { page },
-    defaultLocale,
-    locales,
-    locale,
   } = context
-  const otherLocale = locale !== defaultLocale ? locale : ''
-  const posts = await getAllFilesFrontMatter('blog', otherLocale)
+  const posts = sortedBlogPost(allBlogs)
   const pageNumber = parseInt(page)
   const initialDisplayPosts = posts.slice(
     POSTS_PER_PAGE * (pageNumber - 1),
@@ -46,52 +37,23 @@ export async function getStaticProps(context) {
     currentPage: pageNumber,
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
-
-  // Checking if available in other locale for SEO
-  const availableLocales = []
-  await locales.forEach(async (ilocal) => {
-    const otherLocale = ilocal !== defaultLocale ? ilocal : ''
-    const iAllPosts = await getAllFilesFrontMatter('blog', otherLocale)
-    iAllPosts.forEach(() => {
-      if (
-        pageNumber <= Math.ceil(iAllPosts.length / POSTS_PER_PAGE) &&
-        !availableLocales.includes(ilocal)
-      )
-        availableLocales.push(ilocal)
-    })
-  })
-
   return {
     props: {
-      posts,
-      initialDisplayPosts,
+      initialDisplayPosts: allCoreContent(initialDisplayPosts),
+      posts: allCoreContent(posts),
       pagination,
-      locale,
-      availableLocales,
     },
   }
 }
-
-export default function PostPage({
-  posts,
-  initialDisplayPosts,
-  pagination,
-  locale,
-  availableLocales,
-}) {
-  const { t } = useTranslation()
+export default function PostPage({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
-      <PageSEO
-        title={siteMetadata.title[locale]}
-        description={siteMetadata.description[locale]}
-        availableLocales={availableLocales}
-      />
-      <BlogsList
+      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <BlogListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title={t('common:all')}
+        title="All Posts"
       />
     </>
   )

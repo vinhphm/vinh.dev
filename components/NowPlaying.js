@@ -1,11 +1,9 @@
 import useSWR from 'swr'
-import useTranslation from 'next-translate/useTranslation'
 import MusicEqualizer from './MusicEqualizer'
 import Link from './Link'
 import fetcher from '@/lib/fetcher'
 
 export default function NowPlaying() {
-  const { t } = useTranslation()
   const { data } = useSWR('/api/now-playing', fetcher)
 
   return (
@@ -28,9 +26,7 @@ export default function NowPlaying() {
             {data.title}
           </Link>
         ) : (
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            {t('common:not-playing')}
-          </p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">Not playing</p>
         )}
         <span className="mx-2 text-sm text-neutral-500 dark:text-neutral-400 sm:block">{'–'}</span>
         <p className="max-w-max truncate text-sm text-neutral-500 dark:text-neutral-400">
