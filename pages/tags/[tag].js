@@ -3,7 +3,8 @@ import { getAllTags, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
 import { TagSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import BlogListLayout from '@/layouts/BlogListLayout'
+
 export async function getStaticPaths() {
   const tags = await getAllTags(allBlogs)
   return {
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
+
 export const getStaticProps = async (context) => {
   const tag = context.params.tag
   const filteredPosts = allCoreContent(
@@ -38,7 +40,7 @@ export default function Tag({ posts, tag }) {
         title={`${tag} - ${siteMetadata.title}`}
         description={`${tag} tags - ${siteMetadata.author}`}
       />
-      <ListLayout posts={posts} title={title} />
+      <BlogListLayout posts={posts} title={title} />
     </>
   )
 }
