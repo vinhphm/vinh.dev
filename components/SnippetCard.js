@@ -13,7 +13,9 @@ const SnippetCard = ({ type, title, summary, slug }) => {
         <h3 className="overflow-hidden overflow-ellipsis whitespace-nowrap text-lg font-bold leading-8 tracking-tight lg:text-2xl">
           {title}
         </h3>
-        <p className="text-md mt-2 text-gray-700 dark:text-gray-400 lg:text-base">{summary}</p>
+        <p className="text-md mt-2 text-neutral-700 dark:text-neutral-400 lg:text-base">
+          {summary}
+        </p>
       </div>
     </Link>
   )
