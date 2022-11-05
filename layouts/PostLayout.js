@@ -3,7 +3,6 @@ import { Comments } from 'pliny/comments'
 import { formatDate } from 'pliny/utils/formatDate'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
@@ -11,7 +10,7 @@ export default function PostLayout({ content, next, prev, children }) {
   const [loadComments, setLoadComments] = useState(false)
   const { path, slug, date, title } = content
   return (
-    <SectionContainer>
+    <>
       <BlogSEO url={`${siteMetadata.siteUrl}/${path}`} {...content} />
       <ScrollTopAndComment />
       <article>
@@ -75,6 +74,6 @@ export default function PostLayout({ content, next, prev, children }) {
           </div>
         </div>
       </article>
-    </SectionContainer>
+    </>
   )
 }
