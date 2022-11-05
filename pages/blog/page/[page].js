@@ -3,7 +3,8 @@ import { allBlogs } from 'contentlayer/generated'
 import { POSTS_PER_PAGE } from '../index'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import BlogListLayout from '@/layouts/BlogListLayout'
+
 export const getStaticPaths = async () => {
   const totalPosts = allBlogs
   const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
@@ -48,7 +49,7 @@ export default function PostPage({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <ListLayout
+      <BlogListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}

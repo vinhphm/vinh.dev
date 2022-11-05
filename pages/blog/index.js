@@ -1,7 +1,7 @@
 import { sortedBlogPost, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import BlogListLayout from '@/layouts/BlogListLayout'
 import { PageSEO } from '@/components/SEO'
 export const POSTS_PER_PAGE = 5
 export const getStaticProps = async () => {
@@ -23,7 +23,7 @@ export default function BlogPage({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
       <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
+      <BlogListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}

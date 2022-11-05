@@ -42,7 +42,7 @@ export default function Home({ posts }) {
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
             </svg>
-            Snippets Description
+            Where I share snippets I've been collecting.
           </InternalCard>
           <InternalCard href={`/about`} title="About">
             <svg
@@ -59,7 +59,7 @@ export default function Home({ posts }) {
               <circle cx="12" cy="12" r="4"></circle>
               <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
             </svg>
-            About description
+            Learn about this website and me.
           </InternalCard>
         </div>
         <div className="py-4">

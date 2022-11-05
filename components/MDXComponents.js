@@ -1,8 +1,8 @@
 /* eslint-disable react/display-name */
 import React from 'react'
 import { TOCInline } from 'pliny/ui/TOCInline'
-import { Pre } from 'pliny/ui/Pre'
-import { BlogNewsletterForm } from 'pliny/ui/NewsletterForm'
+import Pre from './Pre'
+import { BlogNewsletterForm } from './NewsletterForm'
 import Image from './Image'
 import CustomLink from './Link'
 export const Wrapper = ({ layout, content, ...rest }) => {

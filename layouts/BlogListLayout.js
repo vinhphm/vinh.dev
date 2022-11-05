@@ -41,7 +41,7 @@ function Pagination({ totalPages, currentPage }) {
     </div>
   )
 }
-export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
+export default function BlogListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((post) => {
     const searchContent = post.title + post.summary + post.tags.join(' ')
