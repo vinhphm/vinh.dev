@@ -1,11 +1,42 @@
-# My "Next" Site at [vinh.dev](https://vinh.dev)
+# Spotlight
 
-## Tech stack
+Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
-This blog is hosted on [Vercel](https://vercel.com/), built with [Next.js](https://nextjs.org/) ([Preact](https://preactjs.com/) for production) and [Tailwind CSS](https://tailwindcss.com/) using **Tailwind Nextjs Starter Blog**.
+## Getting started
 
-A huge thanks to [Timothy Lin](https://twitter.com/timlrxx) for the minimal, lightweight, and super easy-to-customize blog starter and also to [Marcelo Formentão](https://twitter.com/marceloavf) for the customized theme design. This blog still uses a lot of components from Marcelo's and I can't say thank you enough to him for this to serve as a starting point for my own blog and for me to learn how to use Next.js.
+To get started with this template, first install the npm dependencies:
 
-## Images
+```bash
+npm install
+```
 
-All images in this blog are from [Unsplash](https://unsplash.com/), [imgur](https://imgur.com) and [GIPHY](https://giphy.com/) - Thanks for the free resources!
+Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
+
+```
+NEXT_PUBLIC_SITE_URL=https://example.com
+```
+
+Next, run the development server:
+
+```bash
+npm run dev
+```
+
+Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+
+## Customizing
+
+You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+
+## License
+
+This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+
+## Learn more
+
+To learn more about the technologies used in this site template, see the following resources:
+
+- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
+- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
+- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
+- [MDX](https://mdxjs.com) - the MDX documentation
