@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://vinh.dev/sitemap.xml
