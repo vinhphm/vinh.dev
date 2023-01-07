@@ -27,7 +27,7 @@ export default function Home({ posts }) {
       <Hero />
       <div>
         <div className="grid grid-flow-row grid-cols-1 grid-rows-2 justify-between gap-4 py-8 sm:grid-cols-2 sm:grid-rows-1">
-          <InternalCard href={`/snippets`} title="Snippets Notebook">
+          <InternalCard href={`/projects`} title="My works">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -42,7 +42,7 @@ export default function Home({ posts }) {
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
             </svg>
-            Where I share snippets I've been collecting.
+            Things I have been working on on my spare time.
           </InternalCard>
           <InternalCard href={`/about`} title="About">
             <svg
