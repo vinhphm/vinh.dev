@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+//const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./src/**/*.{js,jsx}'],
   darkMode: 'class',
   plugins: [require('@tailwindcss/typography')],
   theme: {
-    fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
-    },
+//    fontFamily: {
+//        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+//    },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],
