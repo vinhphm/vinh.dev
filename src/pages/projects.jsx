@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoVD from '@/images/logos/vinh-dev.png'
+import logoVD from '@/images/logos/vinh-dev.svg'
 
 const projects = [
   {
