@@ -5,7 +5,7 @@ import { Header } from '@/components/Header'
 
 import '@/styles/tailwind.css'
 import 'focus-visible'
-//import '@fontsource/inter/variable.css'
+import '@fontsource/inter/variable.css'
 
 function usePrevious(value) {
   let ref = useRef()
