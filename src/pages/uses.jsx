@@ -42,20 +42,26 @@ export default function Uses() {
         <div className="space-y-20">
           <ToolsSection title="Workstation">
             <Tool title="14” MacBook Pro, M1 Pro, 16GB RAM (2021)">
-              I was using an Intel-based 16” MacBook Pro prior to this and the
-              difference is night and day. I’ve never heard the fans turn on a
-              single time, even under the incredibly heavy loads I put it
-              through with our various launch simulations.
+              I was using a Dell Vostro series notebook which is Intel-based
+              prior to this and the difference is night and day. I’ve never
+              heard the fans turn on a single time, even under the incredibly
+              heavy loads I put it through with my various VMs and build
+              processes.
             </Tool>
             <Tool title="Apple Magic Mouse 2">
               Something about all the gestures makes me feel like a wizard with
               special powers. I really like feeling like a wizard with special
-              powers.
+              powers. But I also like how the tradition mouse works, so Apple's
+              Magic Mouse seems like a best fit for my case.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
             <Tool title="Visual Studio Code">
               Can't miss it, of course.
+            </Tool>
+            <Tool title="JetBrains Fleet">
+              JetBrains Fleet is a fantastic editor. Though in preview stage,
+              it shows much potential to be a good rival to Visual Studio Code.
             </Tool>
             <Tool title="iTerm2">
               I’m honestly not even sure what features I get with this that
