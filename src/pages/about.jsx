@@ -78,7 +78,7 @@ export default function About() {
               <p>
                 Something I loved more than computers as a kid was drawing.
                 When I was 8, I got picked for a gifted drawing class from my
-                primary school. At the time, I wasn't exactly sure how things are
+                primary school. At the time, I wasn&#39;t exactly sure how things are
                 considered beautiful, most of time I just went with my gut, my
                 teacher said I had an eye for what is good and what is not.
               </p>

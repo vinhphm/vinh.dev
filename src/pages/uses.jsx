@@ -51,13 +51,13 @@ export default function Uses() {
             <Tool title="Apple Magic Mouse 2">
               Something about all the gestures makes me feel like a wizard with
               special powers. I really like feeling like a wizard with special
-              powers. But I also like how the tradition mouse works, so Apple's
+              powers. But I also like how the tradition mouse works, so Apple&#39;s
               Magic Mouse seems like a best fit for my case.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
             <Tool title="Visual Studio Code">
-              Can't miss it, of course.
+              Can&#39;t miss it, of course.
             </Tool>
             <Tool title="JetBrains Fleet">
               JetBrains Fleet is a fantastic editor. Though in preview stage,
