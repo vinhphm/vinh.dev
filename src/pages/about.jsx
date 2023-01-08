@@ -17,9 +17,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-rose-500 dark:text-zinc-200 dark:hover:text-rose-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-rose-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -65,21 +65,23 @@ export default function About() {
               future.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-              {/*
               <p>
-                I’ve loved making things for as long as I can remember, and
-                wrote my first program when I was 13 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+                I’ve loved making things for as long as I can remember.
+                Ever since I got the chance to learn about computers in my
+                secondary school, it opened a whole new world for me to explore
+                and create. I told my mom it would be great investment for the
+                future and soon after, she bought me a computer rig so that I
+                continue with my passion. Even though it started from small things
+                like Microsoft Word, Excel, PowerPoint, Pascal,... it helps me a
+                lot to become me today.
               </p>
               <p>
-                The only thing I loved more than computers as a kid was drawing.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                Something I loved more than computers as a kid was drawing.
+                When I was 8, I got picked for a gifted drawing class from my
+                primary school. At the time, I wasn't exactly sure how things are
+                considered beautiful, most of time I just went with my gut, my
+                teacher said I had an eye for what is good and what is not.
               </p>
-              */}
               <p>
                 Over the years, I have created a lot of blogs but never seems to
                 have much time to invest on those or stick around for long. With
