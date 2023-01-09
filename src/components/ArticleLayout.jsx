@@ -1,5 +1,5 @@
 import Head from 'next/head'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 import { Container } from '@/components/Container'
 import { formatDate } from '@/lib/formatDate'
@@ -24,7 +24,7 @@ export function ArticleLayout({
   isRssFeed = false,
   previousPathname,
 }) {
-  // let router = useRouter()
+  let router = useRouter()
 
   if (isRssFeed) {
     return children
@@ -33,13 +33,13 @@ export function ArticleLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Spencer Sharp`}</title>
+        <title>{`${meta.title} - Vinh Pham`}</title>
         <meta name="description" content={meta.description} />
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
-            {/* {previousPathname && (
+            {previousPathname && (
               <button
                 type="button"
                 onClick={() => router.back()}
@@ -48,7 +48,7 @@ export function ArticleLayout({
               >
                 <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
               </button>
-            )} */}
+            )}
             <article>
               <header className="flex flex-col">
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
