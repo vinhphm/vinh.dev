@@ -75,5 +75,5 @@ export function ArticleLayout({
     return children
   }
 
-  return <Article children={children} {...props} />
+  return <Article {...props} >{children}</Article>
 }
