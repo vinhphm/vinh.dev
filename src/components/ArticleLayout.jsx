@@ -24,7 +24,9 @@ export function ArticleLayout({
   isRssFeed = false,
   previousPathname,
 }) {
-  let router = useRouter()
+  if (!isRssFeed) {
+    let router = useRouter()
+  }
 
   if (isRssFeed) {
     return children
@@ -39,7 +41,7 @@ export function ArticleLayout({
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
-            {/* {previousPathname && (
+            {previousPathname && !isRssFeed && (
               <button
                 type="button"
                 onClick={() => router.back()}
@@ -48,7 +50,7 @@ export function ArticleLayout({
               >
                 <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
               </button>
-            )} */}
+            )}
             <article>
               <header className="flex flex-col">
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
