@@ -1,6 +1,12 @@
-# Spotlight
+# My "Next" Site at [vinh.dev](https://vinh.dev)
 
-Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+## Tech stack
+
+This blog is hosted on [Vercel](https://vercel.com/), built with [Next.js](https://nextjs.org/)and [Tailwind CSS](https://tailwindcss.com/).
+
+## Images
+
+All images in this blog are from [Unsplash](https://unsplash.com/), [imgur](https://imgur.com) and [GIPHY](https://giphy.com/) - Thanks for the free resources!
 
 ## Getting started
 
