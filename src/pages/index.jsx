@@ -127,7 +127,7 @@ function Newsletter() {
     });
 
     const { error } = await res.json()
-    if (errorState) {
+    if (error) {
       setMessage('Your e-mail address is invalid or you are already subscribed!')
       return
     }
