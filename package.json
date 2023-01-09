@@ -11,6 +11,7 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "^1.7.7",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
@@ -22,7 +23,6 @@
     "fast-glob": "^3.2.12",
     "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
-    "isomorphic-unfetch": "^4.0.2",
     "next": "^13.1.1",
     "postcss-focus-visible": "^7.1.0",
     "react": "18.2.0",

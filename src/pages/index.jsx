@@ -116,8 +116,14 @@ function Newsletter() {
 
   const subscribe = async (e) => {
     e.preventDefault()
-    const email = inputEl.current.value;
-    const res = await fetch(`/api/newsletter?email=${email}`, {
+    
+    const res = await fetch('/api/subscribe', {
+      body: JSON.stringify({
+        email: inputEl.current.value
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
       method: 'POST'
     });
 
