@@ -110,32 +110,23 @@ function SocialLink({ icon: Icon, ...props }) {
 
 function Newsletter() {
   const inputEl = useRef(null)
-  const [error, setError] = useState(false)
   const [message, setMessage] = useState('')
   const router = useRouter()
 
   const subscribe = async (e) => {
     e.preventDefault()
-
-    const res = await fetch(`/api/newsletter`, {
-      body: JSON.stringify({
-        email: inputEl.current.value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    })
+    const email = inputEl.current.value;
+    const res = await fetch(`/api/newsletter?email=${email}`, {
+      method: 'POST'
+    });
 
     const { error } = await res.json()
     if (error) {
-      setError(true)
       setMessage('Your e-mail address is invalid or you are already subscribed!')
       return
     }
 
     inputEl.current.value = ''
-    setError(false)
     router.push('/thank-you')
   }
 
