@@ -110,7 +110,6 @@ function SocialLink({ icon: Icon, ...props }) {
 
 function Newsletter() {
   const inputEl = useRef(null)
-  const [error, setError] = useState(false)
   const [message, setMessage] = useState('')
   const router = useRouter()
 
@@ -128,13 +127,13 @@ function Newsletter() {
     });
 
     const { error } = await res.json()
-    if (error) {
+    if (errorState) {
       setMessage('Your e-mail address is invalid or you are already subscribed!')
       return
     }
 
     inputEl.current.value = ''
-    setError(false)
+    setMessage('')
     router.push('/thank-you')
   }
 
@@ -165,7 +164,7 @@ function Newsletter() {
           Join
         </Button>
       </div>
-      {error && (
+      {message && (
         <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>
       )}
     </form>
