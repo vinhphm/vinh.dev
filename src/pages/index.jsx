@@ -110,6 +110,7 @@ function SocialLink({ icon: Icon, ...props }) {
 
 function Newsletter() {
   const inputEl = useRef(null)
+  const [error, setError] = useState(false)
   const [message, setMessage] = useState('')
   const router = useRouter()
 
@@ -127,6 +128,7 @@ function Newsletter() {
     }
 
     inputEl.current.value = ''
+    setError(false)
     router.push('/thank-you')
   }
 
