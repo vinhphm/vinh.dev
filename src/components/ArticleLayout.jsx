@@ -18,22 +18,17 @@ function ArrowLeftIcon(props) {
   )
 }
 
-export function ArticleLayout({
+function Article({
   children,
   meta,
-  isRssFeed = false,
   previousPathname,
 }) {
   let router = useRouter()
 
-  if (isRssFeed) {
-    return children
-  }
-
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Spencer Sharp`}</title>
+        <title>{`${meta.title} - Vinh Pham`}</title>
         <meta name="description" content={meta.description} />
       </Head>
       <Container className="mt-16 lg:mt-32">
@@ -62,11 +57,23 @@ export function ArticleLayout({
                   <span className="ml-3">{formatDate(meta.date)}</span>
                 </time>
               </header>
-              <Prose className="mt-8">{children}</Prose>
+                <Prose className="mt-8">{children}</Prose>
             </article>
           </div>
         </div>
       </Container>
     </>
   )
+}
+
+export function ArticleLayout({
+  children,
+  isRssFeed = false,
+  ...props
+}) {
+  if (isRssFeed) {
+    return children
+  }
+
+  return <Article {...props} >{children}</Article>
 }
