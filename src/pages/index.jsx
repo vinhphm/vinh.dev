@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import clsx from 'clsx'
+import { useRef, useState } from "react"
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -107,9 +109,39 @@ function SocialLink({ icon: Icon, ...props }) {
 }
 
 function Newsletter() {
+  const inputEl = useRef(null)
+  const [error, setError] = useState(false)
+  const [message, setMessage] = useState('')
+  const router = useRouter()
+
+  const subscribe = async (e) => {
+    e.preventDefault()
+
+    const res = await fetch(`/api/newsletter`, {
+      body: JSON.stringify({
+        email: inputEl.current.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    })
+
+    const { error } = await res.json()
+    if (error) {
+      setError(true)
+      setMessage('Your e-mail address is invalid or you are already subscribed!')
+      return
+    }
+
+    inputEl.current.value = ''
+    setError(false)
+    router.push('/thank-you')
+  }
+
   return (
     <form
-      action="/thank-you"
+      onSubmit={subscribe}
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -121,6 +153,9 @@ function Newsletter() {
       </p>
       <div className="mt-6 flex">
         <input
+          id="email-input"
+          name="email"
+          ref={inputEl}
           type="email"
           placeholder="Email address"
           aria-label="Email address"
@@ -131,6 +166,9 @@ function Newsletter() {
           Join
         </Button>
       </div>
+      {error && (
+        <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>
+      )}
     </form>
   )
 }
