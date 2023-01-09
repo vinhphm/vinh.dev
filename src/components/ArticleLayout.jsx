@@ -18,17 +18,11 @@ function ArrowLeftIcon(props) {
   )
 }
 
-export function ArticleLayout({
+function Article({
   children,
   meta,
-  isRssFeed = false,
   previousPathname,
 }) {
-
-  if (isRssFeed) {
-    return children
-  }
-
   let router = useRouter()
 
   return (
@@ -70,4 +64,16 @@ export function ArticleLayout({
       </Container>
     </>
   )
+}
+
+export function ArticleLayout({
+  children,
+  isRssFeed = false,
+  ...props
+}) {
+  if (isRssFeed) {
+    return children
+  }
+
+  return <Article children={children} {...props} />
 }
