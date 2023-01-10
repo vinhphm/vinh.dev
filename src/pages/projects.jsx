@@ -3,23 +3,23 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoVD from '@/images/logos/vinh-dev.svg'
-import logoVDLegacy from '@/images/logos/vinh-dev-legacy.svg'
+import logoVinhDev from '@/images/logos/vinh-dev.svg'
+import logoVinhDevLegacy from '@/images/logos/vinh-dev-legacy.svg'
 
 const projects = [
   {
     name: 'Vinh.Dev',
     description:
-      'My personal website to test things out with Next.js and Tailwind CSS',
+      'My personal website to share things out with the world, built with Next.js and Tailwind CSS.',
     link: { href: 'https://vinh.dev', label: 'vinh.dev' },
-    logo: logoVD,
+    logo: logoVinhDev,
   },
   {
     name: 'Vinh.Dev Legacy',
     description:
-      'Legacy version of this website with a different look and feel',
-    link: { href: 'https://github.com/vinhphm/vinh-dev-archive', label: 'Find it on GitHub' },
-    logo: logoVDLegacy,
+      'Previous version of this website with a different look and feel. This is also te first version I use Next.js and Tailwind CSS.',
+    link: { href: 'https://vinh-dev-legacy.vercel.app', label: 'vinh-dev-legacy.vercel.app' },
+    logo: logoVinhDevLegacy,
   }
 ]
 
