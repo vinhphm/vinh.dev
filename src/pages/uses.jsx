@@ -37,7 +37,9 @@ export default function Uses() {
       </Head>
       <SimpleLayout
         title="Software I use, gadgets I love, and other things I recommend."
-        intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+        intro="I get asked a lot about the things I use to build software, stay 
+        productive, or buy to fool myself into thinking I’m being productive when 
+        I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
@@ -51,13 +53,13 @@ export default function Uses() {
             <Tool title="Apple Magic Mouse 2">
               Something about all the gestures makes me feel like a wizard with
               special powers. I really like feeling like a wizard with special
-              powers. But I also like how the tradition mouse works, so Apple&#39;s
+              powers. But I also like how the tradition mouse works, so Apple’s
               Magic Mouse seems like a best fit for my case.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
             <Tool title="Visual Studio Code">
-              Can&#39;t miss it, of course.
+              Can’t miss it, of course.
             </Tool>
             <Tool title="JetBrains Fleet">
               JetBrains Fleet is a fantastic editor. Though in preview stage,
