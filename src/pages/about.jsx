@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -66,29 +66,34 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’ve loved making things for as long as I can remember.
-                Ever since I got the chance to learn about computers in my
-                secondary school, it opened a whole new world for me to explore
-                and create. I told my mom it would be great investment for the
-                future and soon after, she bought me a computer rig so that I
-                continue with my passion. Even though it started from small things
-                like Microsoft Word, Excel, PowerPoint, Pascal,... it helps me a
-                lot to become me today.
+                I’ve loved making things for as long as I can remember. Ever
+                since I got the chance to learn about computers in secondary
+                school, it opened a whole new world for me to explore and
+                create. I told my mom it would be an excellent investment for
+                the future, and soon after, she bought me a computer rig so that
+                I continue with my passion. Even though it started with small
+                things like Microsoft Word, Excel, PowerPoint, and Pascal,... it
+                helped me a lot to become me today.
               </p>
               <p>
-                Something I loved more than computers as a kid was drawing.
-                When I was 8, I got picked for a gifted drawing class from my
-                primary school. At the time, I wasn&#39;t exactly sure how things are
-                considered beautiful, most of time I just went with my gut, my
-                teacher said I had an eye for what is good and what is not.
+                Something I loved more than computers as a kid was drawing. When
+                I was 8, I got picked for a gifted drawing class at my primary
+                school. I wasn’t exactly sure how things were considered
+                beautiful at the time. Most of the time, I just went with my
+                gut. My teacher said I had an eye for what was good and what was
+                not.
               </p>
+
               <p>
-                Over the years, I have created a lot of blogs but never seems to
-                have much time to invest on those or stick around for long. With
-                Vinh.Dev, I want to change that, and to have a little something
-                of mine on the internet. This site functions as a blog, where I
-                share my thoughts, code, and my experiences. Opinions are my own.
-                It also functions as a portfolio, where I showcase my work.
+                Today, I’m a software developer and an explorer with a passion
+                for design. I still have many things to learn, but that does not
+                stop me from sharing things I know now. I’ve created a lot of
+                blogs. But I never seem to have much time to invest in those or
+                stick around for a long. With Vinh.Dev, I want to change that
+                and have something of mine on the internet. This site is a blog
+                where I share my thoughts, code, and experiences, and my
+                opinions are my own. It also functions as a portfolio, where I
+                showcase my work.
               </p>
             </div>
           </div>
@@ -97,13 +102,25 @@ export default function About() {
               <SocialLink href="https://twitter.com/vinhphh" icon={TwitterIcon}>
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="https://instagram.com/vinh.phm" icon={InstagramIcon} className="mt-4">
+              <SocialLink
+                href="https://instagram.com/vinh.phm"
+                icon={InstagramIcon}
+                className="mt-4"
+              >
                 Follow on Instagram
               </SocialLink>
-              <SocialLink href="https://github.com/vinhphm" icon={GitHubIcon} className="mt-4">
+              <SocialLink
+                href="https://github.com/vinhphm"
+                icon={GitHubIcon}
+                className="mt-4"
+              >
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://linkedin.com/in/vinhphm" icon={LinkedInIcon} className="mt-4">
+              <SocialLink
+                href="https://linkedin.com/in/vinhphm"
+                icon={LinkedInIcon}
+                className="mt-4"
+              >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
