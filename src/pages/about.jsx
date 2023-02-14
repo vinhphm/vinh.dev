@@ -66,34 +66,31 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’ve loved making things for as long as I can remember. Ever
-                since I got the chance to learn about computers in secondary
-                school, it opened a whole new world for me to explore and
-                create. I told my mom it would be an excellent investment for
-                the future, and soon after, she bought me a computer rig so that
-                I continue with my passion. Even though it started with small
-                things like Microsoft Word, Excel, PowerPoint, and Pascal,... it
-                helped me a lot to become me today.
+                I have always loved making things. Since I learned about
+                computers in secondary school, I have been fascinated by the
+                possibilities of creating and exploring with technology. I
+                convinced my mom that it was a worthwhile investment for my
+                future, and she bought me a computer rig to pursue my passion.
+                Although I started with simple tools like Microsoft Word, Excel,
+                PowerPoint, and Pascal, they helped me develop the skills that I
+                have today.
               </p>
               <p>
-                Something I loved more than computers as a kid was drawing. When
-                I was 8, I got picked for a gifted drawing class at my primary
-                school. I wasn’t exactly sure how things were considered
-                beautiful at the time. Most of the time, I just went with my
-                gut. My teacher said I had an eye for what was good and what was
-                not.
+                Another thing that I loved more than computers as a kid was
+                drawing. When I was 8, I was selected for a gifted drawing class
+                at my primary school. I did not have a clear sense of aesthetics
+                back then. I just followed my intuition. My teacher said I had a
+                good eye for what looked good and what did not.
               </p>
-
               <p>
-                Today, I’m a software developer and an explorer with a passion
-                for design. I still have many things to learn, but that does not
-                stop me from sharing things I know now. I’ve created a lot of
-                blogs. But I never seem to have much time to invest in those or
-                stick around for a long. With Vinh.Dev, I want to change that
-                and have something of mine on the internet. This site is a blog
-                where I share my thoughts, code, and experiences, and my
-                opinions are my own. It also functions as a portfolio, where I
-                showcase my work.
+                Now, I am a software developer and an explorer with a passion
+                for design. I still have a lot to learn, but that does not stop
+                me from sharing what I know. I have created many blogs, but I
+                never had enough time to maintain them or stay consistent. With
+                Vinh.Dev, I want to change that and have my own presence on the
+                internet. This site is a blog where I share my thoughts, code,
+                and experiences, and my opinions are mine alone. It also serves
+                as a portfolio, where I showcase my work.
               </p>
             </div>
           </div>
