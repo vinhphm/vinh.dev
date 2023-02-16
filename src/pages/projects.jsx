@@ -5,6 +5,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoVinhDev from '@/images/logos/vinh-dev.svg'
 import logoVinhDevLegacy from '@/images/logos/vinh-dev-legacy.svg'
+import logoVPaste from '@/images/logos/v-paste.ico'
 
 const projects = [
   {
@@ -20,6 +21,13 @@ const projects = [
       'Previous version of this website with a different look and feel. This is also te first version I use Next.js and Tailwind CSS.',
     link: { href: 'https://vinh-dev-legacy.vercel.app', label: 'vinh-dev-legacy.vercel.app' },
     logo: logoVinhDevLegacy,
+  },
+  {
+    name: 'Paste',
+    description:
+      'A minimal plain text storage service powered by Fresh framework, Deno, and Supabase.',
+    link: { href: 'https://paste.vinh.dev', label: 'paste.vinh.dev' },
+    logo: logoVPaste,
   }
 ]
 
