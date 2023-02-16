@@ -1,0 +1,43 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import freshAndDeno from './fresh-deno.svg'
+
+export const meta = {
+  author: 'Vinh Pham',
+  date: '2023-02-17',
+  title: 'Why Developing with Fresh and Deno is Simply Better',
+  description:
+  'If you are a web developer, you might have heard of Fresh and Deno, two new tools that aim to make your life easier and more productive. But what are they, and why should you use them? In this blog post, I will explain why developing with Fresh and Deno is simply better than using traditional tools like Node.js and npm.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+If you are a web developer, you might have heard of Fresh and Deno, two new tools that aim to make your life easier and more productive. But what are they, and why should you use them? In this blog post, I will explain why developing with Fresh and Deno is simply better than using traditional tools like Node.js and npm.
+
+## What are Fresh and Deno?
+
+<center><Image src={freshAndDeno} alt="Fresh and Deno" /></center>
+
+Fresh is a framework for building modern web applications with Deno. It provides features like hot reloading, code splitting, server-side rendering, routing, authentication, testing, and more. Fresh is inspired by Next.js, but it is designed to work seamlessly with Deno.
+
+Deno is a runtime for JavaScript and TypeScript that is secure by default and supports modern features like ES modules, top-level await, and native HTTP/2. Deno was created by Ryan Dahl, the original creator of Node.js, who wanted to fix some of the design flaws of Node.js.
+
+## Why are they better?
+
+Here are some reasons why developing with Fresh and Deno is better than using traditional tools like Node.js and npm:
+
+- **Security**: Deno does not allow access to the file system, network, or environment variables unless explicitly granted by the user. This prevents malicious code from running on your machine or stealing your data. Node.js allows any code to access these resources by default.
+- **Simplicity**: Deno does not use a package manager like npm. Instead, it uses URLs to import modules from any source. This means you don't have to deal with package.json files, node_modules folders, or dependency conflicts. You can also use TypeScript without any configuration or transpilation.
+- **Speed**: Deno uses a single executable file that contains everything you need to run your code. It also caches modules locally for faster loading. Node.js requires installing multiple dependencies and compiling native modules for each platform.
+- **Modern**: Deno supports the latest JavaScript features like ES modules, top-level await, optional chaining, nullish coalescing operator etc., as well as TypeScript out of the box. Node.js requires using third-party tools like Babel or TypeScript to use these features.
+- **Productive**: Fresh provides a fast development experience with hot reloading (no need to refresh the browser), code splitting (no need to bundle everything into one file), server-side rendering (no need to wait for client-side hydration), routing (no need to set up express or koa), authentication (no need to implement JWT or OAuth), testing (no need to install jest or mocha), etc.
+
+## How do I get started?
+
+If you want to get started with Fresh and Deno today here's what you need:
+- Install [Deno](https://deno.land/#installation) on your machine
+- Create a new project with `deno run -A -r https://fresh.deno.dev my-project`
+- Run `deno task start` in your project folder
+- Enjoy!
+
+I hope this blog post has convinced you why developing with Fresh and Deno is simply better than using traditional tools like Node.js and npm. For me, I have already tried Fresh and Deno and couldn't be more fascinated. I even created a small service named **Paste** at [paste.vinh.dev](https://paste.vinh.dev). If you want to learn more about Fresh and Deno, you can check out the [Fresh section on Deno's official blog](https://deno.com/blog?tag=fresh) where you can find the latest news, tutorials, and showcases of Fresh projects. Happy coding!
