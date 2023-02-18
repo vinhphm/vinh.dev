@@ -11,6 +11,7 @@ import {
   LinkedInIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import NowPlaying from '@/components/NowPlaying'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -96,7 +97,12 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.com/vinhphh" icon={TwitterIcon}>
+              <NowPlaying />
+              <SocialLink
+                href="https://twitter.com/vinhphh"
+                icon={TwitterIcon}
+                className="mt-4"
+              >
                 Follow on Twitter
               </SocialLink>
               <SocialLink

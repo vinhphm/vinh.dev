@@ -24,6 +24,12 @@ module.exports = {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
     },
+    extend: {
+      colors: {
+        'spotify-logo-green': '#1ED760',
+        'spotify-green': '#1DB954',
+      },
+    },
     typography: (theme) => ({
       invert: {
         css: {

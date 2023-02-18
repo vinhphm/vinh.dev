@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import NowPlaying from '@/components/NowPlaying'
 
 function RecommendSection({ children, ...props }) {
   return (
