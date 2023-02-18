@@ -7,7 +7,7 @@ module.exports = {
   plugins: [require('@tailwindcss/typography')],
   theme: {
     fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
+      sans: ['var(--font-inter)', ...fontFamily.sans],
     },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
@@ -25,6 +25,9 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      spacing: {
+        0.75: '0.1875rem',
+      },
       colors: {
         'spotify-logo-green': '#1ED760',
         'spotify-green': '#1DB954',
@@ -310,5 +313,27 @@ module.exports = {
         },
       },
     }),
+    keyframes: {
+      shrink: {
+        '0% , 100%': {
+          height: '0.75rem',
+        },
+        '50%': {
+          height: '0.375rem',
+        },
+      },
+      expand: {
+        '0% , 100%': {
+          height: '0.375rem',
+        },
+        '50%': {
+          height: '0.75rem',
+        },
+      },
+    },
+    animation: {
+      shrink: 'shrink ease-in-out 1.5s infinite',
+      expand: 'expand ease-in-out 1.5s infinite',
+    },
   },
 }
