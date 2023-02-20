@@ -16,7 +16,7 @@ const projects = [
     logo: logoVinhDev,
   },
   {
-    name: 'Vinh.Dev Legacy',
+    name: 'Legacy Vinh.Dev',
     description:
       'Previous version of this website with a different look and feel. This is also te first version I use Next.js and Tailwind CSS.',
     link: { href: 'https://vinh-dev-legacy.vercel.app', label: 'vinh-dev-legacy.vercel.app' },

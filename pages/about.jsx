@@ -99,13 +99,6 @@ export default function About() {
             <ul role="list">
               <NowPlaying />
               <SocialLink
-                href="https://twitter.com/vinhphh"
-                icon={TwitterIcon}
-                className="mt-4"
-              >
-                Follow on Twitter
-              </SocialLink>
-              <SocialLink
                 href="https://instagram.com/vinh.phm"
                 icon={InstagramIcon}
                 className="mt-4"
@@ -118,6 +111,13 @@ export default function About() {
                 className="mt-4"
               >
                 Follow on GitHub
+              </SocialLink>
+              <SocialLink
+                href="https://twitter.com/vinhphh"
+                icon={TwitterIcon}
+                className="mt-4"
+              >
+                Follow on Twitter
               </SocialLink>
               <SocialLink
                 href="https://linkedin.com/in/vinhphm"
