@@ -1,0 +1,131 @@
+import { ArticleLayout } from 'components/ArticleLayout'
+import Image from 'next/image'
+import currentPlaying from './spotify-current-playing.png'
+import clientIdSecret from './client-id-secret.png'
+
+export const meta = {
+  author: 'Vinh Pham',
+  date: '2023-02-19',
+  title: 'The DIY Guide to Generating Refresh Tokens for Spotify API Calls',
+  description:
+  'If you need to embed Spotify content on your website, you will need a refresh token for the API calls. Some websites offer a simple interface for this, but they may expose your data. Here is how you can do it yourself.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Are you a web developer who loves music? Do you want to spice up your website with some awesome Spotify content? Maybe you want to show off your favorite playlists, albums, or tracks. Or maybe you want to create a custom music player that streams songs from Spotify. In my case, I put a simple current playing widget on my website:
+
+<center><Image src={currentPlaying} alt="Spotify Current Playing" /></center>
+
+To do this, you will need to use the Spotify Web API, which is a set of endpoints that let you access and manipulate Spotify data. But there's a catch. The Spotify Web API requires authentication and authorization from both you and your users. This means that you will need to get an access token and a refresh token for each user who wants to use your website.
+
+An access token is a short-lived credential that lets you make requests to the Spotify Web API on behalf of a user. A refresh token is a long-lived credential that lets you renew the access token when it expires. You will need both tokens to ensure that your website can always access the Spotify data that you need.
+
+Sounds complicated, right? Don't worry. There are some websites out there that can help you generate refresh tokens for the Spotify Web API with an easy-to-use interface. All you have to do is enter your client ID and client secret (which you can get from the Spotify Developer Dashboard), authorize your application with your Spotify account, and copy the refresh token that is generated for you.
+
+Sounds easy, right? Well, not so fast. These websites may not be trustworthy or secure. They may leak your data or misuse your tokens without your consent or knowledge. They may also violate the Spotify Developer Terms of Service or Privacy Policy.
+
+So what's the solution? How can you generate refresh tokens for the Spotify Web API without risking your data or breaking any rules? The answer is simple: do it yourself!
+
+In this blog post, I will show you how you can generate refresh tokens for the Spotify Web API using only your browser and a few lines of code. All you need is:
+
+- A registered application on the Spotify Developer Dashboard
+- A web browser with developer tools enabled
+- Node.js
+
+Ready? Let's get started!
+
+## Prepare your Spotify's application
+Assumed you already have a registered application on the [Spotify Developer Dashboard](https://developer.spotify.com), you will need to save the **Client ID** and **Client Secret** from the Overview page somewhere safe for the next step.
+
+They will look like this:
+<center><Image src={clientIdSecret} alt="Spotify Current Playing" /></center>
+
+You will also need to change the **Redirect URIs** in the application settings to `http://localhost:3000/callback`.
+
+## Know the appropriate scopes
+The scopes you need depend on the API you want to use. Each API has a specific scope that grants access to it. You can find a list of scopes and their corresponding APIs [here](https://developer.spotify.com/documentation/general/guides/authorization/scopes/).
+
+## Create a local server to get the generated refresh token
+1. Save the code snippet below as `get-token.js`
+```javascript
+const express = require("express");
+const axios = require("axios");
+const cors = require("cors");
+
+const app = express();
+app.use(cors());
+
+CLIENT_ID = "<your client id>";
+CLIENT_SECRET = "<your client secret>";
+REDIRECT_URI = "http://localhost:3000/callback"; // my case is 'http://localhost:3000/callback'
+SCOPE = ["user-read-currently-playing"]; // add the scopes you will need for your API calls
+
+app.get("/login", (request, response) => {
+  const redirect_url = `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${SCOPE}&state=123456&redirect_uri=${REDIRECT_URI}&prompt=consent`;
+  response.redirect(redirect_url);
+});
+
+app.get("/callback", async (request, response) => {
+  const code = request.query["code"];
+  await axios
+    .post(
+      (url = "https://accounts.spotify.com/api/token"),
+      (data = new URLSearchParams({
+        grant_type: "authorization_code",
+        redirect_uri: REDIRECT_URI,
+        code: code,
+      })),
+      (config = {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        params: {
+          grant_type: "client_credentials",
+        },
+        auth: {
+          username: CLIENT_ID,
+          password: CLIENT_SECRET,
+        },
+      })
+    )
+    .then((resp1) => {
+      axios
+        .post(
+          (url = "https://accounts.spotify.com/api/token"),
+          (data = new URLSearchParams({
+            grant_type: "refresh_token",
+            refresh_token: resp1.data.refresh_token,
+            access_token: resp1.data.access_token,
+          })),
+          (config = {
+            auth: {
+              username: CLIENT_ID,
+              password: CLIENT_SECRET,
+            },
+          })
+        )
+        .then((resp2) => {
+          return response.send(JSON.stringify([resp1.data, resp2.data]));
+        });
+    });
+});
+// your port of REDIRECT_URI
+app.listen(3000, () => {
+  console.log("Listening on :3000");
+});
+```
+
+2. Go to the directory where your save your `get-token.js`. Run the following command:
+```shell
+npm install express axios cors
+```
+
+3. Run the local server:
+```shell
+node get-token.js
+```
+
+4. Open your browser and enter this address `http://localhost:3000/login`. You will get your tokens as an array result from two API calls: the first one is to get access token and refresh token, the second one to grant the refresh token.
+
+There you go. You finally have your refresh token for your website. You can continue implement Spotify to your website now. Happy coding!

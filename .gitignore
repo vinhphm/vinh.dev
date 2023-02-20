@@ -3,4 +3,5 @@ node_modules/
 .fleet/
 .next/
 .vscode/
+.env
 .env.local
