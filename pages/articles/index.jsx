@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head'
 
 import { Card } from 'components/Card'
@@ -5,9 +6,26 @@ import { SimpleLayout } from 'components/SimpleLayout'
 import { getAllArticles } from 'lib/getAllArticles'
 import { formatDate } from 'lib/formatDate'
 
-function Article({ article }) {
+export const POSTS_PER_PAGE = 5
+
+function Article({ article, newLimit, isLast }) {
+  const cardRef = useRef()
+
+  useEffect(() => {
+    if (!cardRef?.current) return
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (isLast && entry.isIntersecting) {
+        newLimit()
+        observer.unobserve(entry.target)
+      }
+    })
+
+    observer.observe(cardRef.current)
+  }, [isLast])
+
   return (
-    <article className="md:grid md:grid-cols-4 md:items-baseline">
+    <article className="md:grid md:grid-cols-4 md:items-baseline" ref={cardRef}>
       <Card className="md:col-span-3">
         <Card.Title href={`/articles/${article.slug}`}>
           {article.title}
@@ -35,6 +53,20 @@ function Article({ article }) {
 }
 
 export default function ArticlesIndex({ articles }) {
+  const [currentArticles, setCurrentArticles] = useState(
+    articles.slice(0, POSTS_PER_PAGE)
+  )
+  const [page, setPage] = useState(1)
+
+  const addNewPage = () => {
+    const additionArticles = articles.slice(0, POSTS_PER_PAGE * page)
+    setCurrentArticles(additionArticles)
+  }
+
+  useEffect(() => {
+    addNewPage()
+  }, [page])
+
   return (
     <>
       <Head>
@@ -50,8 +82,13 @@ export default function ArticlesIndex({ articles }) {
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
+            {currentArticles.map((article, index) => (
+              <Article
+                key={article.slug}
+                article={article}
+                isLast={index === currentArticles.length - 1}
+                newLimit={() => setPage(page + 1)}
+              />
             ))}
           </div>
         </div>
