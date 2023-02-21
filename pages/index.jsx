@@ -281,7 +281,7 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Vinh Pham - Software developer, explorer, and amateur designer
+          Vinh Pham - Coding with style and substance
         </title>
         <meta
           name="description"
