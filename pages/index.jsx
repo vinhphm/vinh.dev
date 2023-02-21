@@ -285,7 +285,7 @@ export default function Home({ articles }) {
         </title>
         <meta
           name="description"
-          content="I’m Vinh, a software developer based in Ho Chi Minh City."
+          content="Vinh Pham (Vinh.Dev) - Coding with style and substance"
         />
       </Head>
       <Container className="mt-9">
