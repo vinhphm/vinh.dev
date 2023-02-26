@@ -50,6 +50,11 @@ export default function Uses() {
               heavy loads I put it through with my various VMs and build
               processes.
             </Tool>
+            <Tool title="Logitech MX Anywhere 2S">
+              A perfect mix of functionality and mobility. I like so many things
+              about it, and I know there is already a third generation model,
+              but I am not ready to give up on the vertical scroll yet.
+            </Tool>
             <Tool title="Apple Magic Mouse 2">
               Something about all the gestures makes me feel like a wizard with
               special powers. I really like feeling like a wizard with special
@@ -58,12 +63,10 @@ export default function Uses() {
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
-            <Tool title="Visual Studio Code">
-              Can’t miss it, of course.
-            </Tool>
+            <Tool title="Visual Studio Code">Can’t miss it, of course.</Tool>
             <Tool title="JetBrains Fleet">
-              JetBrains Fleet is a fantastic editor. Though in preview stage,
-              it shows much potential to be a good rival to Visual Studio Code.
+              JetBrains Fleet is a fantastic editor. Though in preview stage, it
+              shows much potential to be a good rival to Visual Studio Code.
             </Tool>
             <Tool title="iTerm2">
               I’m honestly not even sure what features I get with this that
@@ -78,7 +81,6 @@ export default function Uses() {
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productivity">
-
             <Tool title="Focus">
               Simple tool for blocking distracting websites when I need to just
               do the work and get some momentum going.
