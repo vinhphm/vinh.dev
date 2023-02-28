@@ -18,6 +18,7 @@
     "@next/font": "^13.1.6",
     "@next/mdx": "^13.1.6",
     "@tailwindcss/typography": "^0.5.9",
+    "@vercel/analytics": "^0.1.10",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
     "fast-glob": "^3.2.12",
