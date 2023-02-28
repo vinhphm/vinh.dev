@@ -1,9 +1,9 @@
-import Image from "next/image"
+import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
-import { useRef, useState } from "react"
+import { useRef, useState } from 'react'
 
 import { Button } from 'components/Button'
 import { Card } from 'components/Card'
@@ -118,17 +118,19 @@ function Newsletter() {
 
     const res = await fetch('/api/newsletter', {
       body: JSON.stringify({
-        email: inputEl.current.value
+        email: inputEl.current.value,
       }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      method: 'POST'
-    });
+      method: 'POST',
+    })
 
     const { error } = await res.json()
     if (error) {
-      setMessage('Your e-mail address is invalid or you are already subscribed!')
+      setMessage(
+        'Your e-mail address is invalid or you are already subscribed!'
+      )
       return
     }
 
@@ -165,7 +167,9 @@ function Newsletter() {
         </Button>
       </div>
       {message && (
-        <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>
+        <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">
+          {message}
+        </div>
       )}
     </form>
   )
@@ -268,6 +272,7 @@ function Photos() {
               alt="Featured photo"
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
+              priority
             />
           </div>
         ))}
@@ -280,9 +285,7 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>
-          Vinh Pham - Coding with style and substance
-        </title>
+        <title>Vinh Pham - Coding with style and substance</title>
         <meta
           name="description"
           content="Vinh Pham (Vinh.Dev) - Coding with style and substance"
