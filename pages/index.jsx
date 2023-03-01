@@ -16,7 +16,7 @@ import {
 } from 'components/SocialIcons'
 import cableCabin from 'images/photos/cable-cabin.jpg'
 import planeWindow from 'images/photos/plane-window.jpg'
-import macbookPro from 'images/photos/macbook-Pro.jpg'
+import macbookPro from 'images/photos/macbook-pro.jpg'
 import phuquocSunset from 'images/photos/phuquoc-sunset.jpg'
 import coffeeShop from 'images/photos/coffee-shop.jpg'
 import logoPwC from 'images/logos/pwc.svg'
