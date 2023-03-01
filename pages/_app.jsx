@@ -9,7 +9,7 @@ import 'styles/tailwind.css'
 import 'focus-visible'
 
 const inter = Inter({
-  subsets: ['latin', 'vietnamese'],
+  subsets: ['latin'],
   variable: '--font-inter',
 })
 
