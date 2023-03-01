@@ -291,7 +291,7 @@ function Photos() {
               alt="Featured photo"
               placeholder="blur"
               blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                shimmer(640, 1080)
+                shimmer(640, 853)
               )}`}
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
