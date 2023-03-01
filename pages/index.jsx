@@ -273,7 +273,7 @@ function Photos() {
               placeholder="blur"
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
-              loading="eager"
+              priority
             />
           </div>
         ))}
