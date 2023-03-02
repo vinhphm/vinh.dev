@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
 import { Footer } from 'components/Footer'
