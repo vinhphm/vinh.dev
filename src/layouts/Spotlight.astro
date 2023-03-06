@@ -42,8 +42,6 @@ const { href, origin } = Astro.url
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Vinh Pham" />
 
-    <link rel="preload" as="font" href={interVariable} type="font/woff2" />
-
     <script>
       let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
 
@@ -83,6 +81,9 @@ const { href, origin } = Astro.url
         updateMode()
       }
     </script>
+
+    <link rel="preload" as="font" href={interVariable} type="font/woff2" />
+
     <link href="/favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
