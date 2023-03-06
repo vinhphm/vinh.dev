@@ -59,6 +59,13 @@ export default defineConfig({
     }),
     preact({ compat: true }),
   ],
+  markdown: {
+    shikiConfig: {
+      theme: "vitesse-dark",
+      wrap: true,
+    },
+    extendDefaultPlugins: true,
+  },
   output: "server",
   adapter: vercel(),
   vite: {

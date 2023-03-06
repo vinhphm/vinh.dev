@@ -1,5 +1,4 @@
 ---
-import "@/styles/base.css"
 import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
 
@@ -15,7 +14,7 @@ const { href, origin } = Astro.url
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <!-- <title>{[title, "Vinh Pham"].filter(Boolean).join(" - ")}</title> -->
+    <title>{title}</title>
     <meta name="description" content={description} />
 
     <meta property="og:description" content={description} />
