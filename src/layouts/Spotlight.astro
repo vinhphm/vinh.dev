@@ -4,7 +4,7 @@ import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
 
 const {
-  title = "Home",
+  title = "Vinh Pham - Coding with style and substance",
   description = "Vinh Pham (Vinh.Dev) - Coding with style and substance",
 } = Astro.props
 const { href, origin } = Astro.url
@@ -15,10 +15,10 @@ const { href, origin } = Astro.url
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>{[title, "Vinh Pham"].filter(Boolean).join(" - ")}</title>
+    <!-- <title>{[title, "Vinh Pham"].filter(Boolean).join(" - ")}</title> -->
     <meta name="description" content={description} />
 
-    <!-- <meta property="og:description" content={description} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={href} />
     <meta property="og:locale" content="en_US" />
@@ -28,10 +28,10 @@ const { href, origin } = Astro.url
       content={`${origin}/api/og.png?title=${encodeURIComponent(title)}`}
     />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" /> -->
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
-    <!-- <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={href} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
@@ -40,7 +40,7 @@ const { href, origin } = Astro.url
       content={`${origin}/api/og.png?title=${encodeURIComponent(title)}`}
     />
     <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Vinh Pham" /> -->
+    <meta name="twitter:data1" content="Vinh Pham" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
