@@ -1,0 +1,23 @@
+---
+// import * as components from "@/components/MDX";
+import Layout from "@/layouts/Article.astro"
+import type { CollectionEntry } from "astro:content"
+import { getEntryBySlug } from "astro:content"
+
+interface Props {
+  article: CollectionEntry<"articles">
+}
+
+const { slug } = Astro.params
+
+const article = (await getEntryBySlug(
+  "articles",
+  slug as string
+)) as CollectionEntry<"articles">
+
+const { Content } = await article.render()
+---
+
+<Layout article={article}>
+  <Content />
+</Layout>

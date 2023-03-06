@@ -1,0 +1,23 @@
+---
+const { href } = Astro.props
+const isActive = Astro.url.pathname === href
+---
+
+<li>
+  <a
+    href={href}
+    class:list={[
+      "relative block px-3 py-2 transition",
+      isActive
+        ? "text-rose-500 dark:text-rose-400"
+        : "hover:text-rose-500 dark:hover:text-rose-400",
+    ]}
+  >
+    <slot />
+    {
+      isActive && (
+        <span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-rose-500/0 via-rose-500/40 to-rose-500/0 dark:from-rose-400/0 dark:via-rose-400/40 dark:to-rose-400/0" />
+      )
+    }
+  </a>
+</li>

@@ -1,0 +1,136 @@
+---
+// import '@fontsource/inter/variable-full.css';
+import Footer from "@/components/Footer.astro"
+import Header from "@/components/Header.astro"
+
+const {
+  title = "Home",
+  description = "Vinh Pham (Vinh.Dev) - Coding with style and substance",
+} = Astro.props
+const { href, origin } = Astro.url
+---
+
+<html class="h-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{[title, "Vinh Pham"].filter(Boolean).join(" - ")}</title>
+    <meta name="description" content={description} />
+
+    <!-- <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={href} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="vinh.dev" />
+    <meta
+      property="og:image"
+      content={`${origin}/api/og.png?title=${encodeURIComponent(title)}`}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" /> -->
+
+    <!-- Twitter -->
+    <!-- <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={href} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content={`${origin}/api/og.png?title=${encodeURIComponent(title)}`}
+    />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Vinh Pham" /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+
+      updateMode()
+      darkModeMediaQuery.addEventListener(
+        "change",
+        updateModeWithoutTransitions
+      )
+      window.addEventListener("storage", updateModeWithoutTransitions)
+
+      function updateMode() {
+        let isSystemDarkMode = darkModeMediaQuery.matches
+        let isDarkMode =
+          window.localStorage.isDarkMode === "true" ||
+          (!("isDarkMode" in window.localStorage) && isSystemDarkMode)
+
+        if (isDarkMode) {
+          document.documentElement.classList.add("dark")
+        } else {
+          document.documentElement.classList.remove("dark")
+        }
+
+        if (isDarkMode === isSystemDarkMode) {
+          delete window.localStorage.isDarkMode
+        }
+      }
+
+      function disableTransitionsTemporarily() {
+        document.documentElement.classList.add("[&_*]:!transition-none")
+        window.setTimeout(() => {
+          document.documentElement.classList.remove("[&_*]:!transition-none")
+        }, 0)
+      }
+
+      function updateModeWithoutTransitions() {
+        disableTransitionsTemporarily()
+        updateMode()
+      }
+    </script>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+  <body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
+    <div class="fixed inset-0 flex justify-center sm:px-8">
+      <div class="flex w-full max-w-7xl lg:px-8">
+        <div
+          class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <Header />
+
+      <main>
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
+
+    <script is:inline>
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+          .forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              entry.intersectionRatio
+              entry.target.dataset.appear = ""
+              entry.target.style.setProperty(
+                "--animation-delay",
+                i + 1 / Math.sqrt(i + 1)
+              )
+
+              observer.disconnect()
+            }
+          })
+      })
+
+      document
+        .querySelector("main")
+        .querySelectorAll("h1,h2,h3,h4,h5,h6,a,li,blockquote,p,time,img")
+        .forEach(element => observer.observe(element))
+    </script>
+  </body>
+</html>

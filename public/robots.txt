@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /thank-you
+Allow: /
+
+Sitemap: /sitemap-index.xml

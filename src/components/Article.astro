@@ -1,0 +1,27 @@
+---
+import { Card } from "@/components/Card"
+import { formatDate } from "@/lib/formatDate"
+import type { CollectionEntry } from "astro:content"
+import * as timeago from "timeago.js"
+
+interface Props {
+  article: CollectionEntry<"articles">
+}
+
+const { article } = Astro.props
+---
+
+<Card as="article">
+  <Card.Title href={`/articles/${article.slug}`}>
+    {article.data.title}
+  </Card.Title>
+  <Card.Eyebrow
+    as="time"
+    dateTime={formatDate(article.data.date)}
+    title={formatDate(article.data.date)}
+    decorate
+  >
+    {formatDate(article.data.date)} ({timeago.format(article.data.date)})
+  </Card.Eyebrow>
+  <Card.Description>{article.data.summary}</Card.Description>
+</Card>

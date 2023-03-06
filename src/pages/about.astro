@@ -1,0 +1,112 @@
+---
+import { Picture } from "@astrojs/image/components"
+import Container from "@/components/Container.astro"
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+  TwitterIcon,
+  InstagramIcon,
+} from "@/components/Icons"
+import SocialLink from "@/components/SocialLink.astro"
+import NowPlaying from "@/components/NowPlaying.astro"
+import Layout from "@/layouts/Spotlight.astro"
+---
+
+<Layout
+  title="About"
+  description="I’m Vinh Pham. I live in Ho Chi Minh City, where I build the future."
+>
+  <Container className="mt-16 sm:mt-32">
+    <div
+      class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+    >
+      <div class="lg:pl-20">
+        <div class="max-w-xs px-2.5 lg:max-w-none">
+          <Picture
+            alt=""
+            class="bg-zinc-100 dark:bg-zinc-800 aspect-square rotate-3 rounded-2xl object-cover"
+            sizes="(min-width: 1024px) 32rem, 20rem"
+            src={import("@/images/portrait.jpg")}
+            widths={[800, 600]}
+          />
+        </div>
+      </div>
+      <div class="lg:order-first lg:row-span-2">
+        <h1
+          class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+        >
+          I’m Vinh Pham. I live in Ho Chi Minh City, where I build the future.
+        </h1>
+        <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <p>
+            I have always loved making things. Since I learned about computers
+            in secondary school, I have been fascinated by the possibilities of
+            creating and exploring with technology. I convinced my mom that it
+            was a worthwhile investment for my future, and she bought me a
+            computer rig to pursue my passion. Although I started with simple
+            tools like Microsoft Word, Excel, PowerPoint, and Pascal, they
+            helped me develop the skills that I have today.
+          </p>
+          <p>
+            Another thing that I loved more than computers as a kid was drawing.
+            When I was 8, I was selected for a gifted drawing class at my
+            primary school. I did not have a clear sense of aesthetics back
+            then. I just followed my intuition. My teacher said I had a good eye
+            for what looked good and what did not.
+          </p>
+          <p>
+            Now, I am a software developer and an explorer with a passion for
+            design. I still have a lot to learn, but that does not stop me from
+            sharing what I know. I have created many blogs, but I never had
+            enough time to maintain them or stay consistent. With Vinh.Dev, I
+            want to change that and have my own presence on the internet. This
+            site is a blog where I share my thoughts, code, and experiences, and
+            my opinions are mine alone. It also serves as a portfolio, where I
+            showcase my work.
+          </p>
+        </div>
+      </div>
+      <div class="lg:pl-20">
+        <ul role="list">
+          <!-- <NowPlaying /> -->
+          <SocialLink
+            href="https://instagram.com/vinh.phm"
+            icon={InstagramIcon}
+            className="mt-4"
+          >
+            Follow on Instagram
+          </SocialLink>
+          <SocialLink
+            href="https://github.com/vinhphm"
+            icon={GitHubIcon}
+            className="mt-4"
+          >
+            Follow on GitHub
+          </SocialLink>
+          <SocialLink
+            href="https://twitter.com/vinhphh"
+            icon={TwitterIcon}
+            className="mt-4"
+          >
+            Follow on Twitter
+          </SocialLink>
+          <SocialLink
+            href="https://linkedin.com/in/vinhphm"
+            icon={LinkedInIcon}
+            className="mt-4"
+          >
+            Follow on LinkedIn
+          </SocialLink>
+          <SocialLink
+            href="mailto:vinh@vinh.dev"
+            icon={MailIcon}
+            className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+          >
+            vinh@vinh.dev
+          </SocialLink>
+        </ul>
+      </div>
+    </div>
+  </Container>
+</Layout>
