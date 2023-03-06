@@ -1,0 +1,13 @@
+---
+import { Card } from "@/components/Card"
+const { title, description, sub, cta, href } = Astro.props
+---
+
+<Card as="article">
+  <Card.Title as="h3" href={href}>
+    {title}
+  </Card.Title>
+  <Card.Eyebrow decorate>{sub}</Card.Eyebrow>
+  <Card.Description>{description}</Card.Description>
+  <Card.Cta>{cta}</Card.Cta>
+</Card>

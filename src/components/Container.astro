@@ -1,0 +1,14 @@
+---
+import InnerContainer from "./Container/Inner.astro"
+import OuterContainer from "./Container/Outer.astro"
+
+export { InnerContainer, OuterContainer }
+
+const { props } = Astro
+---
+
+<OuterContainer {...props}>
+  <InnerContainer>
+    <slot />
+  </InnerContainer>
+</OuterContainer>
