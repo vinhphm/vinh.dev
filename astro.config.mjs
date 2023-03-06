@@ -22,8 +22,9 @@ const pages = Object.keys(import.meta.glob("./src/pages/**/*.astro"))
       // Remove extension
       .split(".astro")
       .shift()
-      // Remove "/index" suffix even if left empty
-      .replace(/\/index$/, "")
+      // Remove "/index" suffix
+      .split(".astro")
+      .shift()
   )
   // Remove dynamic pages
   .filter(page => !page.includes("["))
