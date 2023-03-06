@@ -141,7 +141,7 @@ export const get = async ({ url, site }) => {
             backgroundClip: "text",
           }}
         >
-          ericclemmons.com
+          vinh.dev
         </div>
       </div>
     `,
