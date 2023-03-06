@@ -9,7 +9,7 @@ import {
   InstagramIcon,
 } from "@/components/Icons"
 import SocialLink from "@/components/SocialLink.astro"
-import NowPlaying from "@/components/NowPlaying.astro"
+import NowPlaying from "@/components/NowPlaying"
 import Layout from "@/layouts/Spotlight.astro"
 ---
 
@@ -69,7 +69,7 @@ import Layout from "@/layouts/Spotlight.astro"
       </div>
       <div class="lg:pl-20">
         <ul role="list">
-          <!-- <NowPlaying client:only /> -->
+          <!-- <NowPlaying client:only="preact" /> -->
           <SocialLink
             href="https://instagram.com/vinh.phm"
             icon={InstagramIcon}

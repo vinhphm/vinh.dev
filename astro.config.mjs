@@ -62,7 +62,6 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "vitesse-dark",
-      wrap: true,
     },
     extendDefaultPlugins: true,
   },

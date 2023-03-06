@@ -7,7 +7,6 @@ import {
   TwitterIcon,
   InstagramIcon,
 } from "@/components/Icons"
-import Newsletter from "@/components/Newsletter.astro"
 import Photos from "@/components/Photos.astro"
 import Article from "@/components/Article.astro"
 import Resume from "@/components/Resume.astro"
@@ -63,7 +62,6 @@ const articles = (await getCollection("articles"))
         {articles.map(article => <Article article={article} />)}
       </div>
       <div class="space-y-10 lg:pl-16 xl:pl-24">
-        <Newsletter />
         <Resume />
       </div>
     </div>
