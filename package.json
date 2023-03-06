@@ -21,6 +21,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "@astrojs/vercel": "^3.0.0",
+    "@fontsource/inter": "^4.5.15",
     "@headlessui/react": "^1.7.7",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@tailwindcss/typography": "^0.5.9",
