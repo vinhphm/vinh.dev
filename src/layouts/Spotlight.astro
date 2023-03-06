@@ -12,6 +12,12 @@ const { href, origin } = Astro.url
 
 <html class="h-full antialiased" lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
     <script strategy="beforeInteractive">
       let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
 
@@ -50,12 +56,6 @@ const { href, origin } = Astro.url
         updateMode()
       }
     </script>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-
-    <title>{title}</title>
-    <meta name="description" content={description} />
 
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
