@@ -1,5 +1,6 @@
 ---
 import "@fontsource/inter/variable.css"
+import interVariable from "@fontsource/inter/files/inter-latin-variable-wghtOnly-normal.woff2"
 import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
 
@@ -48,6 +49,7 @@ const { href, origin } = Astro.url
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     /> -->
+    <link rel="preload" as="font" href={interVariable} type="font/woff2" />
 
     <script>
       let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
