@@ -73,7 +73,6 @@ export default defineConfig({
         },
       ],
     ],
-    extendDefaultPlugins: true,
   },
   output: "server",
   adapter: vercel(),

@@ -1,6 +1,6 @@
 {
   "name": "vinh-dev",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,32 +15,32 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/image": "^0.13.0",
-    "@astrojs/mdx": "^0.15.0",
-    "@astrojs/preact": "^2.0.0",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^3.0.0",
-    "@astrojs/vercel": "^3.0.0",
+    "@astrojs/image": "^0.15.1",
+    "@astrojs/mdx": "^0.17.2",
+    "@astrojs/preact": "^2.0.3",
+    "@astrojs/sitemap": "^1.1.0",
+    "@astrojs/tailwind": "^3.0.1",
+    "@astrojs/vercel": "^3.1.4",
     "@fontsource/inter": "^4.5.15",
-    "@headlessui/react": "^1.7.7",
+    "@headlessui/react": "^1.7.13",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.0.0",
+    "astro": "^2.0.18",
     "clsx": "^1.2.1",
     "htm": "^3.1.1",
-    "preact": "^10.11.3",
+    "preact": "^10.13.0",
     "react": "npm:@preact/compat@^17.1.2",
     "react-dom": "npm:@preact/compat@^17.1.2",
     "rehype-external-links": "^2.0.1",
-    "satori": "0.1.1",
+    "satori": "0.4.1",
     "sharp": "^0.31.3",
-    "swr": "^2.0.4",
-    "tailwindcss": "^3.2.4",
+    "swr": "^2.1.0",
+    "tailwindcss": "^3.2.7",
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@types/sharp": "^0.31.1",
     "astro-eslint-parser": "^0.11.0",
     "eslint": "^8.35.0",
@@ -49,7 +49,7 @@
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.8.0",
-    "prettier-plugin-tailwindcss": "^0.2.2"
+    "prettier-plugin-tailwindcss": "^0.2.4"
   },
   "lint-staged": {
     "*": [
