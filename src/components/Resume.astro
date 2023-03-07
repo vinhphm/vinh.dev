@@ -4,8 +4,15 @@ import logoPwC from "@/images/logos/pwc.svg"
 import logoAccenture from "@/images/logos/accenture.svg"
 import logoHitachi from "@/images/logos/hitachi.svg"
 import { BriefcaseIcon } from "@/components/Icons"
+interface Position {
+  company: string
+  title: string
+  logo: string
+  start: any
+  end: any
+}
 
-const resume = [
+const resume: Position[] = [
   {
     company: "PwC (Vietnam)",
     title: "Software Engineer",
@@ -40,7 +47,7 @@ const resume = [
   </h2>
   <ol class="mt-6 space-y-4">
     {
-      resume.map((role, roleIndex) => (
+      resume.map((role: Position, roleIndex) => (
         <li class="flex gap-4">
           <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5  dark:bg-white dark:ring-0">
             <img src={role.logo} alt="" class="h-7 w-7 object-contain" />
