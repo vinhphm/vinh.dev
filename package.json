@@ -55,5 +55,8 @@
     "*": [
       "prettier --plugin-search-dir=. --write"
     ]
+  },
+  "engines": {
+    "node": "19.7.0"
   }
 }
