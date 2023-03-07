@@ -1,0 +1,101 @@
+---
+import { Card } from "@/components/Card"
+import Layout from "@/layouts/Simple.astro"
+import { formatDate } from "@/lib/formatDate"
+import { ArrowLeftIcon, ArrowRightIcon } from "@components/Icons"
+import LinkButton from "@components/LinkButton.astro"
+import type { CollectionEntry } from "astro:content"
+import * as timeago from "timeago.js"
+
+export interface Props {
+  pageNum: number
+  totalPages: number
+  articles: CollectionEntry<"articles">[]
+}
+const { pageNum, totalPages, articles } = Astro.props
+const prev = pageNum > 1 ? "" : "disabled"
+const next = pageNum < totalPages ? "" : "disabled"
+---
+
+<Layout
+  title="Articles"
+  description="All of my long-form thoughts on programming, product design, and more, collected in chronological order."
+>
+  <Fragment slot="title">
+    Writing on software developing, world exploring, and the design industry.
+  </Fragment>
+
+  <Fragment slot="intro">
+    All of my long-form thoughts on programming, product design, and more,
+    collected in chronological order.
+  </Fragment>
+
+  <div
+    class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+  >
+    <div class="flex max-w-3xl flex-col space-y-16">
+      {
+        articles.map(article => (
+          <article class="md:grid md:grid-cols-4 md:items-baseline">
+            <Card className="md:col-span-3">
+              <Card.Title href={`/articles/${article.slug}`}>
+                {article.data.title}
+              </Card.Title>
+              <Card.Eyebrow
+                as="time"
+                className="md:hidden"
+                dateTime={formatDate(article.data.date)}
+                decorate
+                title={formatDate(article.data.date)}
+              >
+                {timeago.format(article.data.date)}
+              </Card.Eyebrow>
+              <Card.Description>{article.data.summary}</Card.Description>
+            </Card>
+            <Card.Eyebrow
+              as="time"
+              className="mt-1 hidden md:block"
+              dateTime={formatDate(article.data.date)}
+              title={formatDate(article.data.date)}
+            >
+              {timeago.format(article.data.date)}
+            </Card.Eyebrow>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+  {
+    totalPages > 1 && (
+      <nav class="mt-16 flex justify-center" aria-label="Pagination">
+        <LinkButton
+          disabled={prev === "disabled"}
+          href={`/articles${pageNum - 1 !== 1 ? "/page/" + (pageNum - 1) : ""}`}
+          className={`mr-4 w-28 select-none ${prev}`}
+          ariaLabel="Previous"
+        >
+          <ArrowLeftIcon className="mr-1 h-auto w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+          Previous
+        </LinkButton>
+        <LinkButton
+          disabled={next === "disabled"}
+          href={`/articles/page/${pageNum + 1}`}
+          className={`mr-4 w-28 select-none ${next}`}
+          ariaLabel="Next"
+        >
+          Next
+          <ArrowRightIcon className="ml-1 h-auto w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+        </LinkButton>
+      </nav>
+    )
+  }
+</Layout>
+
+<style>
+  .disabled {
+    @apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;
+  }
+  .disabled-svg {
+    @apply group-hover:!fill-skin-base;
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+import { SITE } from "@config"
+import Articles from "@layouts/Articles.astro"
+import { getArticles } from "@lib/getArticles"
+import getPageNumbers from "@lib/getPageByNumber"
+
+const { slug } = Astro.params
+
+const articles = await getArticles()
+const totalPages = getPageNumbers(articles.length)
+const currentPage =
+  slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
+    ? Number(slug)
+    : 0
+const lastPost = currentPage * SITE.postPerPage
+const startPost = lastPost - SITE.postPerPage
+const paginatedArticles = articles.slice(startPost, lastPost)
+---
+
+<Articles
+  articles={paginatedArticles}
+  pageNum={currentPage}
+  totalPages={totalPages.length}
+/>

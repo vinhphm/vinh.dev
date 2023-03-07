@@ -1,5 +1,15 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
@@ -26,6 +36,20 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      textColor: {
+        skin: {
+          base: withOpacity("--color-text-base"),
+          accent: withOpacity("--color-accent"),
+          inverted: withOpacity("--color-fill"),
+        },
+      },
+      fill: {
+        skin: {
+          base: withOpacity("--color-text-base"),
+          accent: withOpacity("--color-accent"),
+        },
+        transparent: "transparent",
+      },
       spacing: {
         0.75: '0.1875rem',
       },
