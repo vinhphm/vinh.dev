@@ -24,7 +24,7 @@ const pages = Object.keys(import.meta.glob("./src/pages/**/*.astro"))
       .split(".astro")
       .shift()
       // Remove "/index" suffix
-      .split(".astro")
+      .split("/index")
       .shift()
   )
   // Remove dynamic pages
