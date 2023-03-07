@@ -1,4 +1,5 @@
 ---
+import "@fontsource/inter/variable.css"
 import interVariable from "@fontsource/inter/files/inter-latin-variable-wghtOnly-normal.woff2"
 import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
@@ -81,7 +82,13 @@ const { href, origin } = Astro.url
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Vinh Pham" />
 
-    <link rel="prefetch" href={interVariable} as="font" type="font/woff2" />
+    <link
+      rel="prefetch"
+      href={interVariable}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <link href="/favicon.ico" rel="icon" type="image/x-icon" />
   </head>
