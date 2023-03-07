@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 import vercel from "@astrojs/vercel/serverless"
 import { defineConfig } from "astro/config"
+import rehypeExternalLinks from "rehype-external-links"
 
 const site = process.env.PUBLIC_VERCEL_URL
   ? `https://${process.env.PUBLIC_VERCEL_URL}/`
@@ -63,6 +64,15 @@ export default defineConfig({
     shikiConfig: {
       theme: "vitesse-dark",
     },
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: "_blank",
+          rel: "noopener",
+        },
+      ],
+    ],
     extendDefaultPlugins: true,
   },
   output: "server",

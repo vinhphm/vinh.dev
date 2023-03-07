@@ -31,6 +31,7 @@
     "preact": "^10.11.3",
     "react": "npm:@preact/compat@^17.1.2",
     "react-dom": "npm:@preact/compat@^17.1.2",
+    "rehype-external-links": "^2.0.1",
     "satori": "0.1.1",
     "sharp": "^0.31.3",
     "swr": "^2.0.4",

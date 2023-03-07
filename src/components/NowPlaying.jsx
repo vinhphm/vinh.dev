@@ -7,7 +7,9 @@ export default function NowPlaying() {
 
   return (
     <a
-      className="group flex items-center font-medium "
+      className="group flex items-center font-medium"
+      target="_blank"
+      rel="noopener"
       href={
         data?.isPlaying && data?.songUrl
           ? data.songUrl

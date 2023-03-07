@@ -4,7 +4,7 @@ const { title, description, sub, cta, href } = Astro.props
 ---
 
 <Card as="article">
-  <Card.Title as="h3" href={href}>
+  <Card.Title as="h3" href={href} target="_blank" rel="noopener">
     {title}
   </Card.Title>
   <Card.Eyebrow decorate>{sub}</Card.Eyebrow>
