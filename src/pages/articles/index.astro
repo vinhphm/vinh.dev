@@ -1,8 +1,8 @@
 ---
-import { getArticles } from "@/lib/getArticles"
-import { SITE } from "@config"
-import Articles from "@layouts/Articles.astro"
-import getPageNumbers from "@lib/getPageByNumber"
+import { getArticles } from '@/lib/getArticles'
+import { SITE } from '@config'
+import Articles from '@layouts/Articles.astro'
+import getPageNumbers from '@lib/getPageByNumber'
 
 const articles = await getArticles()
 const totalPages = getPageNumbers(articles.length)

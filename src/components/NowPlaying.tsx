@@ -1,9 +1,9 @@
-import useSWR from "swr"
-import MusicEqualizer from "./MusicEqualizer"
-import fetcher from "@/lib/fetcher"
+import useSWR from 'swr'
+import MusicEqualizer from './MusicEqualizer'
+import fetcher from '@/lib/fetcher'
 
 export default function NowPlaying() {
-  const { data } = useSWR("/api/now-playing.json", fetcher)
+  const { data } = useSWR('/api/now-playing.json', fetcher)
 
   return (
     <a
@@ -13,7 +13,7 @@ export default function NowPlaying() {
       href={
         data?.isPlaying && data?.songUrl
           ? data.songUrl
-          : "https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4"
+          : 'https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4'
       }
     >
       <svg
@@ -37,10 +37,10 @@ export default function NowPlaying() {
           </p>
         )}
         <span className="mx-2 text-sm text-zinc-400 dark:text-zinc-500">
-          {"–"}
+          {'–'}
         </span>
         <p className="max-w-max truncate text-sm text-zinc-400 dark:text-zinc-500">
-          {data?.artist ?? "Spotify"}
+          {data?.artist ?? 'Spotify'}
         </p>
       </div>
     </a>

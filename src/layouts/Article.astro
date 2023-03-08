@@ -1,15 +1,15 @@
 ---
-import Container from "@/components/Container.astro"
-import { ArrowLeftIcon } from "@/components/Icons"
-import Prose from "@/components/Prose.astro"
-import Layout from "@/layouts/Base.astro"
-import { formatDate } from "@/lib/formatDate"
-import { getArticles } from "@/lib/getArticles"
-import type { CollectionEntry } from "astro:content"
-import * as timeago from "timeago.js"
+import Container from '@/components/Container.astro'
+import { ArrowLeftIcon } from '@/components/Icons'
+import Prose from '@/components/Prose.astro'
+import Layout from '@/layouts/Base.astro'
+import { formatDate } from '@/lib/formatDate'
+import { getArticles } from '@/lib/getArticles'
+import type { CollectionEntry } from 'astro:content'
+import * as timeago from 'timeago.js'
 
 interface Props {
-  article: CollectionEntry<"articles">
+  article: CollectionEntry<'articles'>
 }
 
 const { props } = Astro

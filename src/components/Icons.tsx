@@ -1,4 +1,4 @@
-import type { Props } from "astro"
+import type { Props } from 'astro'
 
 export function MailIcon(props: Props) {
   return (

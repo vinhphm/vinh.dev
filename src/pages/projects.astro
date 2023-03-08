@@ -1,11 +1,11 @@
 ---
-import { Image } from "@astrojs/image/components"
-import { Card } from "@/components/Card"
-import LinkIcon from "@/components/LinkIcon.astro"
-import logoVinhDev from "@/images/logos/vinh-dev.svg"
-import logoVinhDevLegacy from "@/images/logos/vinh-dev-legacy.svg"
-import logoVPaste from "@/images/logos/v-paste.png"
-import Layout from "@/layouts/Simple.astro"
+import { Image } from '@astrojs/image/components'
+import { Card } from '@/components/Card'
+import LinkIcon from '@/components/LinkIcon.astro'
+import logoVinhDev from '@/images/logos/vinh-dev.svg'
+import logoVinhDevLegacy from '@/images/logos/vinh-dev-legacy.svg'
+import logoVPaste from '@/images/logos/v-paste.png'
+import Layout from '@/layouts/Simple.astro'
 
 interface Project {
   name: string
@@ -16,27 +16,27 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "Vinh.Dev",
+    name: 'Vinh.Dev',
     description:
-      "My personal website to share things out with the world, built with Next.js and Tailwind CSS.",
-    link: { href: "https://vinh.dev", label: "vinh.dev" },
+      'My personal website to share things out with the world, built with Next.js and Tailwind CSS.',
+    link: { href: 'https://vinh.dev', label: 'vinh.dev' },
     logo: logoVinhDev,
   },
   {
-    name: "Legacy Vinh.Dev",
+    name: 'Legacy Vinh.Dev',
     description:
-      "Previous version of this website with a different look and feel. This is also te first version I use Next.js and Tailwind CSS.",
+      'Previous version of this website with a different look and feel. This is also te first version I use Next.js and Tailwind CSS.',
     link: {
-      href: "https://vinh-dev-legacy.vercel.app",
-      label: "vinh-dev-legacy.vercel.app",
+      href: 'https://vinh-dev-legacy.vercel.app',
+      label: 'vinh-dev-legacy.vercel.app',
     },
     logo: logoVinhDevLegacy,
   },
   {
-    name: "Paste",
+    name: 'Paste',
     description:
-      "A minimal plain text storage service powered by Fresh framework, Deno, and Supabase.",
-    link: { href: "https://paste.vinh.dev", label: "paste.vinh.dev" },
+      'A minimal plain text storage service powered by Fresh framework, Deno, and Supabase.',
+    link: { href: 'https://paste.vinh.dev', label: 'paste.vinh.dev' },
     logo: logoVPaste,
   },
 ]

@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import clsx from 'clsx'
 
 type Props = {
   className?: string
@@ -21,13 +21,13 @@ function ChevronRightIcon(props: Props) {
 }
 
 export function Card({
-  as: Component = "div",
+  as: Component = 'div',
   className = undefined,
   children,
 }: Props) {
   return (
     <Component
-      className={clsx(className, "group relative flex flex-col items-start")}
+      className={clsx(className, 'group relative flex flex-col items-start')}
     >
       {children}
     </Component>
@@ -47,7 +47,7 @@ Card.Link = function CardLink({ children, ...props }: Props) {
 }
 
 Card.Title = function CardTitle({
-  as: Component = "h2",
+  as: Component = 'h2',
   href,
   children,
   ...props
@@ -86,7 +86,7 @@ Card.Cta = function CardCta({ children }: Props) {
 }
 
 Card.Eyebrow = function CardEyebrow({
-  as: Component = "p",
+  as: Component = 'p',
   decorate = false,
   className = undefined,
   children,
@@ -96,8 +96,8 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={clsx(
         className,
-        "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
-        decorate && "pl-3.5"
+        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500',
+        decorate && 'pl-3.5'
       )}
       {...props}
     >

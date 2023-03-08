@@ -1,10 +1,10 @@
 ---
-import { Image } from "@astrojs/image/components"
-import Button from "@/components/Button.astro"
-import logoPwC from "@/images/logos/pwc.svg"
-import logoAccenture from "@/images/logos/accenture.svg"
-import logoHitachi from "@/images/logos/hitachi.svg"
-import { BriefcaseIcon } from "@/components/Icons"
+import { Image } from '@astrojs/image/components'
+import Button from '@/components/Button.astro'
+import logoPwC from '@/images/logos/pwc.svg'
+import logoAccenture from '@/images/logos/accenture.svg'
+import logoHitachi from '@/images/logos/hitachi.svg'
+import { BriefcaseIcon } from '@/components/Icons'
 interface Position {
   company: string
   title: string
@@ -15,28 +15,28 @@ interface Position {
 
 const resume: Position[] = [
   {
-    company: "PwC (Vietnam)",
-    title: "Software Engineer",
+    company: 'PwC (Vietnam)',
+    title: 'Software Engineer',
     logo: logoPwC,
-    start: "2020",
+    start: '2020',
     end: {
-      label: "Present",
+      label: 'Present',
       dateTime: new Date().getFullYear(),
     },
   },
   {
-    company: "LINKBYNET/Accenture",
-    title: "System Administrator",
+    company: 'LINKBYNET/Accenture',
+    title: 'System Administrator',
     logo: logoAccenture,
-    start: "2017",
-    end: "2020",
+    start: '2017',
+    end: '2020',
   },
   {
-    company: "Hitachi Ventura Vietnam",
-    title: "Software Engineer Intern",
+    company: 'Hitachi Ventura Vietnam',
+    title: 'Software Engineer Intern',
     logo: logoHitachi,
-    start: "2017",
-    end: "2017",
+    start: '2017',
+    end: '2017',
   },
 ]
 ---
@@ -71,8 +71,8 @@ const resume: Position[] = [
             >
               <time datetime={role.start.dateTime ?? role.start}>
                 {role.start.label ?? role.start}
-              </time>{" "}
-              <span aria-hidden="true">—</span>{" "}
+              </time>{' '}
+              <span aria-hidden="true">—</span>{' '}
               <time datetime={role.end.dateTime ?? role.end}>
                 {role.end.label ?? role.end}
               </time>

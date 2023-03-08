@@ -7,10 +7,10 @@ const isActive = Astro.url.pathname === href
   <a
     href={href}
     class:list={[
-      "relative block px-3 py-2 transition",
+      'relative block px-3 py-2 transition',
       isActive
-        ? "text-red-500 dark:text-red-400"
-        : "hover:text-red-500 dark:hover:text-red-400",
+        ? 'text-red-500 dark:text-red-400'
+        : 'hover:text-red-500 dark:hover:text-red-400',
     ]}
   >
     <slot />

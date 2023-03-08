@@ -1,11 +1,11 @@
 ---
-import { Card } from "@/components/Card"
-import { formatDate } from "@/lib/formatDate"
-import type { CollectionEntry } from "astro:content"
-import * as timeago from "timeago.js"
+import { Card } from '@/components/Card'
+import { formatDate } from '@/lib/formatDate'
+import type { CollectionEntry } from 'astro:content'
+import * as timeago from 'timeago.js'
 
 interface Props {
-  article: CollectionEntry<"articles">
+  article: CollectionEntry<'articles'>
 }
 
 const { article } = Astro.props

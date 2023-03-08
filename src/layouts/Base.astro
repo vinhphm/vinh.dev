@@ -1,13 +1,13 @@
 ---
-import "@fontsource/inter/variable.css"
-import interVariable from "@fontsource/inter/files/inter-latin-variable-wghtOnly-normal.woff2"
-import Footer from "@/components/Footer.astro"
-import Header from "@/components/Header.astro"
+import '@fontsource/inter/variable.css'
+import interVariable from '@fontsource/inter/files/inter-latin-variable-wghtOnly-normal.woff2'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
 
 const {
-  title = "Vinh Pham - Coding with style and substance",
-  description = "Coding with style and substance on Vinh.Dev",
-  author = "Vinh Pham",
+  title = 'Vinh Pham - Coding with style and substance',
+  description = 'Coding with style and substance on Vinh.Dev',
+  author = 'Vinh Pham',
 } = Astro.props
 ---
 
@@ -22,25 +22,25 @@ const {
     <meta name="author" content={author} />
 
     <script strategy="beforeInteractive">
-      let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+      let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
       updateMode()
 
       darkModeMediaQuery.addEventListener(
-        "change",
+        'change',
         updateModeWithoutTransitions
       )
-      window.addEventListener("storage", updateModeWithoutTransitions)
+      window.addEventListener('storage', updateModeWithoutTransitions)
 
       function updateMode() {
         let isSystemDarkMode = darkModeMediaQuery.matches
         let isDarkMode =
-          window.localStorage.isDarkMode === "true" ||
-          (!("isDarkMode" in window.localStorage) && isSystemDarkMode)
+          window.localStorage.isDarkMode === 'true' ||
+          (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
         if (isDarkMode) {
-          document.documentElement.classList.add("dark")
+          document.documentElement.classList.add('dark')
         } else {
-          document.documentElement.classList.remove("dark")
+          document.documentElement.classList.remove('dark')
         }
         if (isDarkMode === isSystemDarkMode) {
           delete window.localStorage.isDarkMode
@@ -48,9 +48,9 @@ const {
       }
 
       function disableTransitionsTemporarily() {
-        document.documentElement.classList.add("[&_*]:!transition-none")
+        document.documentElement.classList.add('[&_*]:!transition-none')
         window.setTimeout(() => {
-          document.documentElement.classList.remove("[&_*]:!transition-none")
+          document.documentElement.classList.remove('[&_*]:!transition-none')
         }, 0)
       }
 
@@ -96,9 +96,9 @@ const {
           .forEach((entry, i) => {
             if (entry.isIntersecting) {
               entry.intersectionRatio
-              entry.target.dataset.appear = ""
+              entry.target.dataset.appear = ''
               entry.target.style.setProperty(
-                "--animation-delay",
+                '--animation-delay',
                 i + 1 / Math.sqrt(i + 1)
               )
 
@@ -108,8 +108,8 @@ const {
       })
 
       document
-        .querySelector("main")
-        .querySelectorAll("h1,h2,h3,h4,h5,h6,a,li,blockquote,p,time,img")
+        .querySelector('main')
+        .querySelectorAll('h1,h2,h3,h4,h5,h6,a,li,blockquote,p,time,img')
         .forEach(element => observer.observe(element))
     </script>
   </body>

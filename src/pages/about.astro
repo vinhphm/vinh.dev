@@ -1,16 +1,16 @@
 ---
-import { Picture } from "@astrojs/image/components"
-import Container from "@/components/Container.astro"
+import { Picture } from '@astrojs/image/components'
+import Container from '@/components/Container.astro'
 import {
   GitHubIcon,
   LinkedInIcon,
   MailIcon,
   TwitterIcon,
   InstagramIcon,
-} from "@/components/Icons"
-import SocialLink from "@/components/SocialLink.astro"
-import NowPlaying from "@/components/NowPlaying"
-import Layout from "@/layouts/Base.astro"
+} from '@/components/Icons'
+import SocialLink from '@/components/SocialLink.astro'
+import NowPlaying from '@/components/NowPlaying'
+import Layout from '@/layouts/Base.astro'
 ---
 
 <Layout
@@ -25,9 +25,9 @@ import Layout from "@/layouts/Base.astro"
         <div class="max-w-xs px-2.5 lg:max-w-none">
           <Picture
             alt=""
-            class="bg-zinc-100 dark:bg-zinc-800 aspect-square rotate-3 rounded-2xl object-cover"
+            class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             sizes="(min-width: 512px) 32rem, 20rem"
-            src={import("@/images/portrait.jpg")}
+            src={import('@/images/portrait.jpg')}
             widths={[800, 600]}
           />
         </div>

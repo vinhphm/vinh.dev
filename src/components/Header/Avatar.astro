@@ -1,5 +1,5 @@
 ---
-import avatar from "@/images/avatar.jpg"
+import avatar from '@/images/avatar.jpg'
 
 const { props } = Astro
 const { className, large = false } = props
@@ -9,15 +9,15 @@ const { className, large = false } = props
   {...props}
   href="/"
   aria-label="Home"
-  class:list={[className, "pointer-events-auto"]}
+  class:list={[className, 'pointer-events-auto']}
 >
   <img
     src={avatar.src}
     alt=""
-    width={large ? "4rem" : "2.25rem"}
+    width={large ? '4rem' : '2.25rem'}
     class:list={[
-      "rounded-full bg-zinc-100 object-cover ring ring-white dark:bg-zinc-800 dark:ring-black",
-      large ? "h-16 w-16" : "h-9 w-9",
+      'rounded-full bg-zinc-100 object-cover ring ring-white dark:bg-zinc-800 dark:ring-black',
+      large ? 'h-16 w-16' : 'h-9 w-9',
     ]}
   />
 </a>

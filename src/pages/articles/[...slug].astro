@@ -1,19 +1,19 @@
 ---
 // import * as components from "@/components/MDX";
-import Layout from "@/layouts/Article.astro"
-import type { CollectionEntry } from "astro:content"
-import { getEntryBySlug } from "astro:content"
+import Layout from '@/layouts/Article.astro'
+import type { CollectionEntry } from 'astro:content'
+import { getEntryBySlug } from 'astro:content'
 
 interface Props {
-  article: CollectionEntry<"articles">
+  article: CollectionEntry<'articles'>
 }
 
 const { slug } = Astro.params
 
 const article = (await getEntryBySlug(
-  "articles",
+  'articles',
   slug as string
-)) as CollectionEntry<"articles">
+)) as CollectionEntry<'articles'>
 
 const { Content } = await article.render()
 ---
