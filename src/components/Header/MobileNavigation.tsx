@@ -2,7 +2,12 @@ import { ChevronDownIcon, CloseIcon } from "@/components/Icons"
 import { Popover, Transition } from "@headlessui/react"
 import { Fragment } from "react"
 
-function MobileNavItem({ href, children }) {
+type Props = {
+  href?: string
+  [x: string]: any
+}
+
+function MobileNavItem({ href, children }: Props) {
   return (
     <li>
       <Popover.Button as="a" href={href} className="block py-2">
@@ -12,7 +17,7 @@ function MobileNavItem({ href, children }) {
   )
 }
 
-export function MobileNavigation(props) {
+export function MobileNavigation(props: Props) {
   return (
     <Popover {...props}>
       <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">

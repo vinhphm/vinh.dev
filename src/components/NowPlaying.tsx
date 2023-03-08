@@ -1,5 +1,5 @@
 import useSWR from "swr"
-import MusicEqualizer from "./MusicEqualizer.jsx"
+import MusicEqualizer from "./MusicEqualizer"
 import fetcher from "@/lib/fetcher"
 
 export default function NowPlaying() {

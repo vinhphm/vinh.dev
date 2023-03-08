@@ -1,6 +1,13 @@
 import clsx from "clsx"
 
-function ChevronRightIcon(props) {
+type Props = {
+  className?: string
+  href?: string
+  decorate?: boolean
+  [x: string]: any
+}
+
+function ChevronRightIcon(props: Props) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -17,7 +24,7 @@ export function Card({
   as: Component = "div",
   className = undefined,
   children,
-}) {
+}: Props) {
   return (
     <Component
       className={clsx(className, "group relative flex flex-col items-start")}
@@ -27,7 +34,7 @@ export function Card({
   )
 }
 
-Card.Link = function CardLink({ children, ...props }) {
+Card.Link = function CardLink({ children, ...props }: Props) {
   return (
     <>
       <div class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
@@ -44,7 +51,7 @@ Card.Title = function CardTitle({
   href,
   children,
   ...props
-}) {
+}: Props) {
   return (
     <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       {href ? (
@@ -58,7 +65,7 @@ Card.Title = function CardTitle({
   )
 }
 
-Card.Description = function CardDescription({ children }) {
+Card.Description = function CardDescription({ children }: Props) {
   return (
     <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       {children}
@@ -66,7 +73,7 @@ Card.Description = function CardDescription({ children }) {
   )
 }
 
-Card.Cta = function CardCta({ children }) {
+Card.Cta = function CardCta({ children }: Props) {
   return (
     <div
       aria-hidden="true"
@@ -84,7 +91,7 @@ Card.Eyebrow = function CardEyebrow({
   className = undefined,
   children,
   ...props
-}) {
+}: Props) {
   return (
     <Component
       className={clsx(
