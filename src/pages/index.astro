@@ -11,9 +11,10 @@ import Photos from '@/components/Photos.astro'
 import Article from '@/components/Article.astro'
 import Resume from '@/components/Resume.astro'
 import Layout from '@/layouts/Base.astro'
-import { getArticles } from '@lib/getArticles'
+import { getCollection } from 'astro:content'
 
-const articles = (await await getArticles())
+const articles = (await getCollection('articles'))
+  .sort((a, z) => z.data.date.getTime() - a.data.date.getTime())
   .slice(0, 4)
 ---
 

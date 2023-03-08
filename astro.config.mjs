@@ -1,3 +1,4 @@
+import image from '@astrojs/image'
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
@@ -48,15 +49,15 @@ const hexLoader = {
 // https://astro.build/config
 export default defineConfig({
   site,
-  experimental: {
-    assets: true,
-  },
   integrations: [
     tailwind(),
     sitemap({
       customPages,
     }),
     mdx(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp',
+    }),
     preact({ compat: true }),
   ],
   markdown: {

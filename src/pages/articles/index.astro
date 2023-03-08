@@ -1,7 +1,7 @@
 ---
+import { getArticles } from '@/lib/getArticles'
 import { SITE } from '@config'
 import Articles from '@layouts/Articles.astro'
-import { getArticles } from '@/lib/getArticles'
 import getPageNumbers from '@lib/getPageByNumber'
 
 const articles = await getArticles()
