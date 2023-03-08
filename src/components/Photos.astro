@@ -1,10 +1,10 @@
 ---
-import cableCabin from '@/images/photos/cable-cabin.jpg'
-import planeWindow from '@/images/photos/plane-window.jpg'
-import macbookPro from '@/images/photos/macbook-pro.jpg'
-import phuquocSunset from '@/images/photos/phuquoc-sunset.jpg'
-import coffeeShop from '@/images/photos/coffee-shop.jpg'
-import { Picture } from '@astrojs/image/components'
+import cableCabin from '@/assets/images/photos/cable-cabin.jpg'
+import planeWindow from '@/assets/images/photos/plane-window.jpg'
+import macbookPro from '@/assets/images/photos/macbook-pro.jpg'
+import phuquocSunset from '@/assets/images/photos/phuquoc-sunset.jpg'
+import coffeeShop from '@/assets/images/photos/coffee-shop.jpg'
+import { Image } from 'astro:assets'
 
 const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 ---
@@ -22,13 +22,11 @@ const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
               rotations[imageIndex % rotations.length],
             ]}
           >
-            <Picture
+            <Image
               alt=""
-              aspectRatio="9:10"
               class="absolute inset-0 h-full w-full object-cover"
               sizes="(min-width: 640px) 18rem, 11rem"
-              src={image.src}
-              widths={[576, 352]}
+              src={image}
             />
           </div>
         )
