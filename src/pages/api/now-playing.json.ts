@@ -15,7 +15,7 @@ export const get = async () => {
     const isPlaying = nowPlaying.is_playing
     const title = nowPlaying.item.name
     const artist = nowPlaying.item.artists
-      .map(_artist => _artist.name)
+      .map((_artist: any) => _artist.name)
       .join(', ')
     const songUrl = nowPlaying.item.external_urls.spotify
 
