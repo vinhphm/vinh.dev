@@ -6,9 +6,9 @@ import Header from "@/components/Header.astro"
 
 const {
   title = "Vinh Pham - Coding with style and substance",
-  description = "Vinh Pham (Vinh.Dev) - Coding with style and substance",
+  description = "Coding with style and substance on Vinh.Dev",
+  author = "Vinh Pham",
 } = Astro.props
-const { href, origin } = Astro.url
 ---
 
 <html class="h-full antialiased" lang="en">
@@ -17,7 +17,9 @@ const { href, origin } = Astro.url
     <meta name="viewport" content="width=device-width" />
 
     <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="author" content={author} />
 
     <script strategy="beforeInteractive">
       let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")

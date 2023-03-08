@@ -1,20 +1,20 @@
 ---
-import { Card } from "@/components/Card"
-import Layout from "@/layouts/Simple.astro"
-import { formatDate } from "@/lib/formatDate"
-import { ArrowLeftIcon, ArrowRightIcon } from "@components/Icons"
-import LinkButton from "@components/LinkButton.astro"
-import type { CollectionEntry } from "astro:content"
-import * as timeago from "timeago.js"
+import { Card } from '@/components/Card'
+import Layout from '@/layouts/Simple.astro'
+import { formatDate } from '@/lib/formatDate'
+import { ArrowLeftIcon, ArrowRightIcon } from '@components/Icons'
+import LinkButton from '@components/LinkButton.astro'
+import type { CollectionEntry } from 'astro:content'
+import * as timeago from 'timeago.js'
 
 export interface Props {
   pageNum: number
   totalPages: number
-  articles: CollectionEntry<"articles">[]
+  articles: CollectionEntry<'articles'>[]
 }
 const { pageNum, totalPages, articles } = Astro.props
-const prev = pageNum > 1 ? "" : "disabled"
-const next = pageNum < totalPages ? "" : "disabled"
+const prev = pageNum > 1 ? '' : 'disabled'
+const next = pageNum < totalPages ? '' : 'disabled'
 ---
 
 <Layout
@@ -69,8 +69,8 @@ const next = pageNum < totalPages ? "" : "disabled"
     totalPages > 1 && (
       <nav class="mt-16 flex justify-center" aria-label="Pagination">
         <LinkButton
-          disabled={prev === "disabled"}
-          href={`/articles${pageNum - 1 !== 1 ? "/page/" + (pageNum - 1) : ""}`}
+          disabled={prev === 'disabled'}
+          href={`/articles${pageNum - 1 !== 1 ? '/page/' + (pageNum - 1) : ''}`}
           className={`mr-4 w-28 select-none ${prev}`}
           ariaLabel="Newer"
         >
@@ -78,7 +78,7 @@ const next = pageNum < totalPages ? "" : "disabled"
           Newer
         </LinkButton>
         <LinkButton
-          disabled={next === "disabled"}
+          disabled={next === 'disabled'}
           href={`/articles/page/${pageNum + 1}`}
           className={`mr-4 w-28 select-none ${next}`}
           ariaLabel="Older"
