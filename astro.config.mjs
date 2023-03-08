@@ -3,6 +3,7 @@ import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import vercel from '@astrojs/vercel/serverless'
+import netlify from '@astrojs/netlify/functions'
 import { defineConfig } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
 
@@ -75,9 +76,7 @@ export default defineConfig({
     ],
   },
   output: 'server',
-  adapter: vercel({
-    analytics: true,
-  }),
+  adapter: netlify(),
   vite: {
     plugins: [hexLoader],
   },
