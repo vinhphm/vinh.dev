@@ -51,6 +51,9 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
+  image: {
+    service: 'astro/assets/services/sharp',
+  },
   integrations: [
     tailwind(),
     sitemap({
@@ -60,9 +63,7 @@ export default defineConfig({
     preact({ compat: true }),
   ],
   markdown: {
-    shikiConfig: {
-      theme: 'github-dark',
-    },
+    syntaxHighlight: 'prism',
     rehypePlugins: [
       [
         rehypeExternalLinks,
