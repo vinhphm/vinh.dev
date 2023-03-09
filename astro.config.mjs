@@ -2,7 +2,7 @@ import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import cloudflare from '@astrojs/cloudflare'
+import vercel from '@astrojs/vercel/serverless'
 import { defineConfig } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
 
@@ -75,7 +75,9 @@ export default defineConfig({
     ],
   },
   output: 'server',
-  adapter: cloudflare(),
+  adapter: vercel({
+    analytics: true,
+  }),
   vite: {
     plugins: [hexLoader],
   },
