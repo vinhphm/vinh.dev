@@ -61,9 +61,7 @@ export default defineConfig({
     preact({ compat: true }),
   ],
   markdown: {
-    shikiConfig: {
-      theme: 'github-dark',
-    },
+    syntaxHighlight: 'prism',
     rehypePlugins: [
       [
         rehypeExternalLinks,
@@ -75,7 +73,9 @@ export default defineConfig({
     ],
   },
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    analytics: true,
+  }),
   vite: {
     plugins: [hexLoader],
   },
