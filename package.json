@@ -15,6 +15,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^6.2.0",
     "@astrojs/mdx": "^0.18.0",
     "@astrojs/preact": "^2.1.0",
     "@astrojs/sitemap": "^1.2.0",
