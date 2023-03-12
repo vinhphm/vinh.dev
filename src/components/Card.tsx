@@ -77,9 +77,11 @@ Card.Cta = function CardCta({ children }: Props) {
   return (
     <div
       aria-hidden="true"
-      class="relative z-10 mt-4 flex items-center text-sm font-medium text-red-500"
+      class="relative z-10 mt-4 flex items-center text-sm font-medium text-zinc-800 dark:text-zinc-100"
     >
-      {children}
+      <span class="decoration-red-500 decoration-[0.125rem] underline-offset-[0.125rem] group-hover:underline">
+        {children}
+      </span>
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
     </div>
   )
