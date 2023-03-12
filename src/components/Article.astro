@@ -24,4 +24,5 @@ const { article } = Astro.props
     {formatDate(article.data.date)} ({timeago.format(article.data.date)})
   </Card.Eyebrow>
   <Card.Description>{article.data.summary}</Card.Description>
+  <Card.Cta>Read article</Card.Cta>
 </Card>
