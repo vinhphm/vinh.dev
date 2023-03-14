@@ -8,11 +8,11 @@ export async function get(context: APIContext) {
   return rss({
     title: SITE.title,
     description: SITE.description,
-    site: context.site?.toString() ?? 'vinh.dev',
+    site: context.site?.toString() ?? 'https://vinh.dev/',
     items: articles.map(article => ({
       link: `articles/${article.slug}`,
       title: article.data.title,
-      description: article.data.description,
+      description: article.data.summary,
       pubDate: new Date(article.data.date),
     })),
   })
