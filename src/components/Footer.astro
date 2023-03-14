@@ -1,6 +1,7 @@
 ---
 import { InnerContainer, OuterContainer } from '@/components/Container.astro'
 import NavLink from '@/components/NavLink.astro'
+import { SITE } from '@/config'
 ---
 
 <footer class="mt-32">
@@ -20,7 +21,8 @@ import NavLink from '@/components/NavLink.astro'
             <NavLink href="/uses">Uses</NavLink>
           </div>
           <p class="text-sm text-zinc-400 dark:text-zinc-500">
-            &copy; {new Date().getFullYear()} Vinh Pham. All rights reserved.
+            &copy; {new Date().getFullYear()}
+            {SITE.title}. All rights reserved.
           </p>
         </div>
       </InnerContainer>

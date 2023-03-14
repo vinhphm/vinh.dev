@@ -6,6 +6,7 @@ import logoVinhDev from '@/images/logos/vinh-dev.svg'
 import logoVinhDevLegacy from '@/images/logos/vinh-dev-legacy.svg'
 import logoVPaste from '@/images/logos/v-paste.png'
 import Layout from '@/layouts/Simple.astro'
+import { SITE } from '@/config'
 
 interface Project {
   name: string
@@ -43,11 +44,11 @@ const projects: Project[] = [
 ---
 
 <Layout
-  title="Projects - Vinh Pham"
-  description="Things I’ve made trying to put my dent in the universe."
+  title={`Projects - ${SITE.title}`}
+  description="My creative endeavors, and a journey of making an impact"
 >
   <Fragment slot="title">
-    Things I’ve made trying to put my dent in the universe.
+    My creative endeavors, and a journey of making an impact.
   </Fragment>
 
   <Fragment slot="intro">
