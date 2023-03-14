@@ -12,10 +12,11 @@ import SocialLink from '@/components/SocialLink.astro'
 import NowPlaying from '@/components/NowPlaying'
 import Layout from '@/layouts/Base.astro'
 import portrait from '@/assets/images/portrait.jpg'
+import { SITE } from '@/config'
 ---
 
 <Layout
-  title="About - Vinh Pham"
+  title={`About - ${SITE.title}`}
   description="I’m Vinh Pham. I live in Ho Chi Minh City, where I build the future."
 >
   <Container className="mt-16 sm:mt-32">

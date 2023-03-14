@@ -2,20 +2,20 @@
 import Tool from '@/components/Tool.astro'
 import ToolsSection from '@/components/ToolsSection.astro'
 import Layout from '@/layouts/Simple.astro'
+import { SITE } from '@/config'
 ---
 
 <Layout
-  title="Uses - Vinh Pham"
-  description="Software I use, gadgets I love, and other things I recommend."
+  title={`Uses - ${SITE.title}`}
+  description="My tools of the trade and what I use to make things happen."
 >
   <Fragment slot="title">
-    Software I use, gadgets I love, and other things I recommend.
+    My tools of the trade and what I use to make things happen.
   </Fragment>
   <Fragment slot="intro">
-    Software I use, gadgets I love, and other things I recommend." intro="I get
-    asked a lot about the things I use to build software, stay productive, or
-    buy to fool myself into thinking I’m being productive when I’m really just
-    procrastinating. Here’s a big list of all of my favorite stuff.
+    I get asked a lot about the things I use to build software, stay productive,
+    or buy to fool myself into thinking I’m being productive when I’m really
+    just procrastinating. Here’s a big list of all of my favorite stuff.
   </Fragment>
 
   <div class="space-y-20">

@@ -4,9 +4,10 @@ import '@/styles/tailwind.css'
 import interVariable from '@fontsource/inter/files/inter-latin-variable-wghtOnly-normal.woff2'
 import Footer from '@/components/Footer.astro'
 import Header from '@/components/Header.astro'
+import { SITE } from '@/config'
 
 const {
-  title = 'Vinh Pham - Coding with style and substance',
+  title = SITE.title + ' - Coding with style and substance',
   description = 'Coding with style and substance on Vinh.Dev',
   author = 'Vinh Pham',
 } = Astro.props

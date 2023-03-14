@@ -2,14 +2,16 @@
 import Layout from '@/layouts/Simple.astro'
 import Appearance from '@/components/Appearance.astro'
 import RecommendSection from '@/components/RecommendSection.astro'
+import { SITE } from '@/config'
 ---
 
 <Layout
-  title="Recommends - Vinh Pham"
-  description="A list of recommended movies, books and more."
+  title={`Recommends - ${SITE.title}`}
+  description="Things that enrich my life and what I enjoy and learn from in different media formats."
 >
   <Fragment slot="title">
-    My list of recommended books, movies, podcasts and more.
+    Things that enrich my life and what I enjoy and learn from in different
+    media formats.
   </Fragment>
   <Fragment slot="intro">
     What do you do in your spare time? For me, I would read a book, watch a

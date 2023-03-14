@@ -6,6 +6,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@components/Icons'
 import LinkButton from '@components/LinkButton.astro'
 import type { CollectionEntry } from 'astro:content'
 import * as timeago from 'timeago.js'
+import { SITE } from '@/config'
 
 export interface Props {
   pageNum: number
@@ -18,7 +19,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
 ---
 
 <Layout
-  title={`Articles${pageNum > 1 ? ` - ${pageNum}` : ''} - Vinh Pham`}
+  title={`Articles${pageNum > 1 ? ` - ${pageNum}` : ''} - ${SITE.title}`}
   description="All of my long-form thoughts on programming, product design, and more, collected in chronological order."
 >
   <Fragment slot="title">
