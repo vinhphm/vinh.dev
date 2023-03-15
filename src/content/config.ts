@@ -12,6 +12,13 @@ const articles = defineCollection({
   }),
 })
 
+const authors = defineCollection({
+  schema: z.object({
+    name: z.string(),
+  }),
+})
+
 export const collections = {
   articles,
+  authors,
 }
