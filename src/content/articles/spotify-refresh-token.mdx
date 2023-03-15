@@ -62,7 +62,7 @@ SCOPE = ['user-read-currently-playing'] // add the scopes you will need for your
 
 app.get('/login', (request, response) => {
   const redirect_url = `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${SCOPE}&state=123456&redirect_uri=${REDIRECT_URI}&prompt=consent`
-  response.tealirect(redirect_url)
+  response.redirect(redirect_url)
 })
 
 app.get('/callback', async (request, response) => {
