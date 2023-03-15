@@ -3,12 +3,11 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
-      return `rgba(var(${variableName}), ${opacityValue})`;
+      return `rgba(var(${variableName}), ${opacityValue})`
     }
-    return `rgb(var(${variableName}))`;
-  };
+    return `rgb(var(${variableName}))`
+  }
 }
-
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -38,17 +37,17 @@ module.exports = {
     extend: {
       textColor: {
         skin: {
-          base: withOpacity("--color-text-base"),
-          accent: withOpacity("--color-accent"),
-          inverted: withOpacity("--color-fill"),
+          base: withOpacity('--color-text-base'),
+          accent: withOpacity('--color-accent'),
+          inverted: withOpacity('--color-fill'),
         },
       },
       fill: {
         skin: {
-          base: withOpacity("--color-text-base"),
-          accent: withOpacity("--color-accent"),
+          base: withOpacity('--color-text-base'),
+          accent: withOpacity('--color-accent'),
         },
-        transparent: "transparent",
+        transparent: 'transparent',
       },
       spacing: {
         0.75: '0.1875rem',
@@ -56,9 +55,22 @@ module.exports = {
       colors: {
         'spotify-logo-green': '#1ED760',
         'spotify-green': '#1DB954',
+        aquamarine: {
+          DEFAULT: '#3CFFD0',
+          50: '#A2FFE9',
+          100: '#8EFFE4',
+          200: '#65FFDA',
+          300: '#3CFFD0',
+          400: '#04FFC2',
+          500: '#00CB9A',
+          600: '#00936F',
+          700: '#005B45',
+          800: '#00231A',
+          900: '#000000',
+        },
       },
     },
-    typography: (theme) => ({
+    typography: theme => ({
       invert: {
         css: {
           '--tw-prose-body': 'var(--tw-prose-invert-body)',
@@ -66,8 +78,7 @@ module.exports = {
           '--tw-prose-links': 'var(--tw-prose-invert-links)',
           '--tw-prose-links-hover': 'var(--tw-prose-invert-links-hover)',
           '--tw-prose-underline': 'var(--tw-prose-invert-underline)',
-          '--tw-prose-underline-hover':
-            'var(--tw-prose-invert-underline-hover)',
+          '--tw-prose-shadow-hover': 'var(--tw-prose-invert-shadow-hover)',
           '--tw-prose-bold': 'var(--tw-prose-invert-bold)',
           '--tw-prose-counters': 'var(--tw-prose-invert-counters)',
           '--tw-prose-bullets': 'var(--tw-prose-invert-bullets)',
@@ -90,7 +101,7 @@ module.exports = {
           '--tw-prose-links': theme('colors.zinc.800'),
           '--tw-prose-links-hover': theme('colors.zinc.900'),
           '--tw-prose-underline': theme('colors.zinc.500 / 0.5'),
-          '--tw-prose-underline-hover': theme('colors.teal.500'),
+          '--tw-prose-shadow-hover': theme('colors.aquamarine.300'),
           '--tw-prose-bold': theme('colors.zinc.900'),
           '--tw-prose-counters': theme('colors.zinc.900'),
           '--tw-prose-bullets': theme('colors.zinc.900'),
@@ -110,7 +121,7 @@ module.exports = {
           '--tw-prose-invert-links': theme('colors.zinc.300'),
           '--tw-prose-invert-links-hover': theme('colors.zinc.200'),
           '--tw-prose-invert-underline': theme('colors.zinc.400 / 0.6'),
-          '--tw-prose-invert-underline-hover': theme('colors.teal.400'),
+          '--tw-prose-invert-shadow-hover': theme('colors.aquamarine.600'),
           '--tw-prose-invert-bold': theme('colors.zinc.200'),
           '--tw-prose-invert-counters': theme('colors.zinc.200'),
           '--tw-prose-invert-bullets': theme('colors.zinc.200'),
@@ -170,14 +181,14 @@ module.exports = {
             textDecoration: 'underline',
             textDecorationColor: 'var(--tw-prose-underline)',
             textUnderlineOffset: '0.125rem',
-            transitionProperty: 'color, text-decoration-color',
+            transitionProperty: 'text-decoration, box-shadow',
             transitionDuration: theme('transitionDuration.150'),
             transitionTimingFunction: theme('transitionTimingFunction.in-out'),
           },
           'a:hover': {
             color: 'var(--tw-prose-links-hover)',
-            textDecorationColor: 'var(--tw-prose-underline-hover)',
-            textDecorationThickness: '0.125rem'
+            textDecoration: 'none',
+            boxShadow: 'inset 0 -.5em 0 0 var(--tw-prose-shadow-hover)',
           },
           strong: {
             color: 'var(--tw-prose-bold)',
