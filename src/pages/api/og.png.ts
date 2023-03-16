@@ -2,8 +2,11 @@ import type { APIRoute } from 'astro'
 import htm from 'htm'
 import satori from 'satori'
 import sharp from 'sharp'
-import inter700 from '../../fonts/Inter-Bold.ttf'
-import inter400 from '../../fonts/Inter-Regular.ttf'
+import inter700 from '../../fonts/Inter-Bold.ttf?raw-hex'
+import inter400 from '../../fonts/Inter-Regular.ttf?raw-hex'
+
+const fromHexString = (hexString: { match: (arg0: RegExp) => any[] }) =>
+  Uint8Array.from(hexString.match(/.{1,2}/g).map(byte => parseInt(byte, 16)))
 
 function h(
   type: string | Function,
@@ -31,13 +34,13 @@ function h(
 const fonts = [
   {
     name: 'Inter',
-    data: inter400,
+    data: fromHexString(inter400),
     weight: 400,
     style: 'normal',
   },
   {
     name: 'Inter',
-    data: inter700,
+    data: fromHexString(inter700),
     weight: 700,
     style: 'normal',
   },
