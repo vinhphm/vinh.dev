@@ -12,8 +12,8 @@ const site = process.env.PUBLIC_VERCEL_URL
   : 'http://localhost:3000/'
 
 const content = Object.keys(
-  import.meta.glob('./src/content/articles/**/*.mdx')
-).map(file => file.split('./src/content/articles/').pop().split('.mdx').shift())
+  import.meta.glob('./src/content/!(authors)/**/*.mdx')
+).map(file => file.split('./src/content/').pop().split('.mdx').shift())
 const pages = Object.keys(import.meta.glob('./src/pages/**/*.astro'))
   .map(file =>
     file
