@@ -33,7 +33,7 @@
     "react": "npm:@preact/compat@^17.1.2",
     "react-dom": "npm:@preact/compat@^17.1.2",
     "rehype-external-links": "^2.0.1",
-    "satori": "0.4.2",
+    "satori": "^0.4.2",
     "sharp": "^0.31.3",
     "swr": "^2.1.0",
     "tailwindcss": "^3.2.7",

@@ -11,6 +11,7 @@ const {
   description = 'Coding with style and substance on Vinh.Dev',
   author = 'Vinh Pham',
 } = Astro.props
+const { href, origin } = Astro.url
 ---
 
 <html class="h-full antialiased" lang="en">
@@ -22,6 +23,31 @@ const {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content={author} />
+
+    <meta property="og:title" content="Vinh Pham" />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={href} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="vinh.dev" />
+    <meta
+      property="og:image"
+      content={`${origin}/api/og.png?title=${encodeURIComponent(title)}`}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={href} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content={`${origin}/api/og.png?title=${encodeURIComponent(title)}`}
+    />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Vinh Pham" />
 
     <script strategy="beforeInteractive">
       let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
