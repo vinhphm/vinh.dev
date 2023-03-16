@@ -2,3 +2,7 @@
 @import 'tailwindcss/components';
 @import './prism.css';
 @import 'tailwindcss/utilities';
+
+::selection {
+  background-color: theme('colors.aquamarine.500 / 0.2');
+}
