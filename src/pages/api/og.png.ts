@@ -91,7 +91,7 @@ export const get: APIRoute = async ({ url, site }) => {
             color: 'black',
             marginTop: 30,
             padding: '0 120px',
-            boxShadow: 'inset 0 -.5em 0 0 #3CFFD0',
+            boxShadow: 'inset 0 -30px 0 0 #3CFFD0',
             lineHeight: 1.4,
             whiteSpace: 'pre-wrap',
           }}
