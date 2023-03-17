@@ -88,7 +88,7 @@ export const get: APIRoute = async ({ url, site }) => {
             padding: '0 120px',
           }}
         >
-          <span
+          <div
             style=${{
               fontSize: 60,
               fontStyle: 'normal',
@@ -101,7 +101,7 @@ export const get: APIRoute = async ({ url, site }) => {
             }}
           >
             ${title}
-          </span>
+          </div>
         </div>
       </div>
     `,
