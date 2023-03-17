@@ -90,7 +90,7 @@ export const get: APIRoute = async ({ url, site }) => {
         >
           <span
             style=${{
-              ontSize: 60,
+              fontSize: 60,
               fontStyle: 'normal',
               fontWeight: 700,
               letterSpacing: '-0.025em',
