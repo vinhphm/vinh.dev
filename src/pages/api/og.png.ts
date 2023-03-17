@@ -1,7 +1,8 @@
 import type { APIRoute } from 'astro'
 import htm from 'htm'
 import satori from 'satori'
-import { Resvg } from '@resvg/resvg-js'
+import sharp from 'sharp'
+import ogIcon from '@/images/logos/vinh-dev-og.png?raw-hex'
 import inter700 from '@/fonts/Inter-Bold.ttf?raw-hex'
 
 const fromHexString = (hexString: { match: (arg0: RegExp) => any[] }) =>
@@ -78,7 +79,9 @@ export const get: APIRoute = async ({ url, site }) => {
             alt="Vinh.Dev"
             height=${200}
             width=${200}
-            src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiPgogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMEgyNTZWMjU2SDB6Ii8+CiAgICA8Y2lyY2xlIGN4PSIzMjQuMyIgY3k9IjEyMC42IiByPSIzMy42IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iOCIgdHJhbnNmb3JtPSJtYXRyaXgoLjYyOTI3IDAgMCAuNjI5MjcgNTYgNDguNCkgdHJhbnNsYXRlKC0xMTMuNSAtNzkpIi8+CiAgICA8cGF0aCBkPSJNMTc2IDk1LjdoMzhjLjMgMCAuNS4zLjUuNXY2LjZjMCAuNC0uMy43LS43LjctOS44LjItMTUuNiA0LjItMTcuNSAxMS44LS44IDMuNi0uNiA4IC42IDEzLjQgMSA0LjIgMi41IDguNSA0LjUgMTIuOSAyMS4zIDQ1LjQgNDIuNSA5MC45IDYzLjkgMTM2LjJ2MS4ybC0yNSA2My41YzAgLjMtLjMuNS0uNi41aC02Yy0uNSAwLTEtLjQtMS4zLTEtMjguMy02MS01Ni41LTEyMS44LTg0LjctMTgyLjItNS0xMC45LTEwLjItMjEuNy0xNS40LTMyLjVhNTQgNTQgMCAwIDAtNy43LTExLjZjLTMuNC00LTctNy0xMC42LTguN2EzNC4yIDM0LjIgMCAwIDAtMTQuOS0zLjNjLS42IDAtMS0uNC0xLTF2LTYuNWMwLS4zLjMtLjUuNi0uNUgxNzZaIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSI4IiB0cmFuc2Zvcm09Im1hdHJpeCguNjI5MjcgMCAwIC42MjkyNyA1NiA0OC40KSB0cmFuc2xhdGUoLTExMy41IC03OSkiLz4KPC9zdmc+Cg=="
+            src=${`data:image/png;base64, ${Buffer.from(
+              fromHexString(ogIcon)
+            ).toString('base64')}`}
             style=${{ margin: '0 30px' }}
           />
         </div>
@@ -115,7 +118,7 @@ export const get: APIRoute = async ({ url, site }) => {
   //   },
   // })
 
-  return new Response(new Resvg(svg).render().asPng(), {
+  return new Response(await sharp(Buffer.from(svg)).png().toBuffer(), {
     status: 200,
     headers: {
       'Cache-Control': 'max-age=31536000, immutable',
