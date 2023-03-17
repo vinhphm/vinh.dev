@@ -2,8 +2,8 @@ import type { APIRoute } from 'astro'
 import htm from 'htm'
 import satori from 'satori'
 import sharp from 'sharp'
-import vinhDev from '@/images/logos/vinh-dev.svg?raw-hex'
-import inter700 from '@/fonts/Inter-Bold.ttf?raw-hex'
+import vinhDev from '../../images/logos/vinh-dev.svg?raw-hex'
+import inter700 from '../../fonts/Inter-Bold.ttf?raw-hex'
 
 const fromHexString = (hexString: { match: (arg0: RegExp) => any[] }) =>
   Uint8Array.from(hexString.match(/.{1,2}/g).map(byte => parseInt(byte, 16)))
