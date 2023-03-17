@@ -12,3 +12,6 @@
 !.prettierrc
 !.eslintrc.js
 !README.md
+
+# Still ignore this specific files
+/src/pages/api/og.png.ts
