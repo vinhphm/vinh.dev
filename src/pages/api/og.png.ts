@@ -84,11 +84,12 @@ export const get: APIRoute = async ({ url, site }) => {
         </div>
         <div
           style=${{
+            display: 'flex',
             marginTop: 30,
             padding: '0 120px',
           }}
         >
-          <div
+          <span
             style=${{
               fontSize: 60,
               fontStyle: 'normal',
@@ -101,7 +102,7 @@ export const get: APIRoute = async ({ url, site }) => {
             }}
           >
             ${title}
-          </div>
+          </span>
         </div>
       </div>
     `,
