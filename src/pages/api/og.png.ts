@@ -88,7 +88,7 @@ export const get: APIRoute = async ({ url, site }) => {
             fontStyle: 'normal',
             fontWeight: 700,
             letterSpacing: '-0.025em',
-            color: 'white',
+            color: 'black',
             marginTop: 30,
             padding: '0 120px',
             boxShadow: 'inset 0 -.5em 0 0 #3CFFD0',
