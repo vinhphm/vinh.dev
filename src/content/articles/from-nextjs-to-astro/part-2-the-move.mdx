@@ -5,7 +5,7 @@ summary: After finding out about Astro, I was excited for the move to the new fr
 tags: [nextjs, astro, migration]
 ---
 
-> - [From Next.js to Astro - Part 1: Why I Changed Again](/articles/from-nextjs-to-astro/part-1-why-i-changed-again)
+> [From Next.js to Astro - Part 1: Why I Changed Again](/articles/from-nextjs-to-astro/part-1-why-i-changed-again)
 
 At first glance you would think the move is easy, and it might actually be if your site doesn’t have much going on. For my case though, it was a whole different story.
 
@@ -13,9 +13,25 @@ Let's start by taking a look at [Astro's document](https://docs.astro.build/en/g
 
 Following all of those steps was kind of easy, you should find no troubles doing it in a simple static site. But some parts of my website did not work so well after the conversion.
 
-## The Header
+## The header
 
 My header has a specific animation and behavior. It will show itself when the user scrolls up. This once relied heavily on React’s useRef and useEffects hooks. With the conversion to `.astro` file, I either had to convert those hooks and functions to the vanilla JS or keep those in `.tsx` file. The latter did not sound good, the header is always present on the site, I would rather have it optimized by Astro. It took me a while but I made it.
+
+## The font
+
+I use Inter variable font for Vinh.Dev. Since it’s a variable font, the size of the font files are somewhat bigger than normal font files. In Next.js, since it has all been loaded in the first time you load the page, when you navigate through the site, you won’t see anything strange. However, that’s not the case with Astro, since almost anything in Astro is static. When you navigate through the site, everything needs to be loaded again, including the fonts. This can cause layout shift when your font of choice hasn’t loaded yet but the page’s contents have already appeared.
+
+The best way to avoid this is to have your font preloaded by putting this tag inside `<header>...</header>`
+
+```html
+<link
+  rel="preload"
+  href="{interVariable}"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+```
 
 ## Spotify
 
