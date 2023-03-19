@@ -5,6 +5,11 @@ import sharp from 'sharp'
 import ogIcon from '@/images/logos/vinh-dev-og.png?raw-hex'
 import inter700 from '@/fonts/Inter-Bold.ttf?raw-hex'
 
+export const config = {
+  runtime: 'edge',
+  regions: ['sin1'],
+}
+
 const fromHexString = (hexString: { match: (arg0: RegExp) => any[] }) =>
   Uint8Array.from(hexString.match(/.{1,2}/g).map(byte => parseInt(byte, 16)))
 
