@@ -1,10 +1,5 @@
 import { getNowPlaying } from '@/lib/spotify'
 
-export const config = {
-  runtime: 'edge',
-  regions: ['sin1'],
-}
-
 export const get = async () => {
   const response = await getNowPlaying()
 

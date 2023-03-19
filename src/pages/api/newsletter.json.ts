@@ -1,10 +1,5 @@
 import mailchimp from '@mailchimp/mailchimp_marketing'
 
-export const config = {
-  runtime: 'edge',
-  regions: ['sin1'],
-}
-
 mailchimp.setConfig({
   apiKey: import.meta.env.MAILCHIMP_API_KEY,
   server: import.meta.env.MAILCHIMP_API_SERVER, // e.g. us1
