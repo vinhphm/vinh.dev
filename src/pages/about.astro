@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 import { getEntryBySlug } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 import Container from '@/components/Container.astro'
@@ -14,6 +14,7 @@ import {
 import SocialLink from '@/components/SocialLink.astro'
 import NowPlaying from '@/components/NowPlaying'
 import Layout from '@/layouts/Base.astro'
+import portrait from '@/assets/images/portrait.jpg'
 import { SITE } from '@/config'
 
 const author = (await getEntryBySlug(
@@ -34,12 +35,10 @@ const { Content } = await author.render()
     >
       <div class="lg:pl-20">
         <div class="max-w-xs px-2.5 lg:max-w-none">
-          <Picture
+          <Image
+            src={portrait}
             alt=""
             class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-            sizes="(min-width: 512px) 32rem, 20rem"
-            src={import('@/images/portrait.jpg')}
-            widths={[800, 600]}
           />
         </div>
       </div>

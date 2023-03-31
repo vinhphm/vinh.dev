@@ -1,9 +1,8 @@
 ---
-import { Image } from '@astrojs/image/components'
 import Button from '@/components/Button'
-import logoPwC from '@/images/logos/pwc.svg'
-import logoAccenture from '@/images/logos/accenture.svg'
-import logoHitachi from '@/images/logos/hitachi.svg'
+import logoPwC from '@/assets/images/logos/pwc.svg'
+import logoAccenture from '@/assets/images/logos/accenture.svg'
+import logoHitachi from '@/assets/images/logos/hitachi.svg'
 import { BriefcaseIcon } from '@/components/Icons'
 interface Position {
   company: string
@@ -51,7 +50,7 @@ const resume: Position[] = [
       resume.map((role: Position, roleIndex) => (
         <li class="flex gap-4">
           <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5  dark:bg-white dark:ring-0">
-            <Image src={role.logo} alt="" class="h-7 w-7 object-contain" />
+            <img src={role.logo.src} alt="" class="h-7 w-7 object-contain" />
           </div>
           <dl class="flex flex-auto flex-wrap gap-x-2">
             <dt class="sr-only">Company</dt>

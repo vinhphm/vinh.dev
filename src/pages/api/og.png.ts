@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro'
 import htm from 'htm'
 import satori from 'satori'
 import sharp from 'sharp'
-import ogIcon from '@/images/logos/vinh-dev-og.png?raw-hex'
+import ogIcon from '@/assets/images/logos/vinh-dev-og.png?raw-hex'
 import inter700 from '@/fonts/Inter-Bold.ttf?raw-hex'
 
 const fromHexString = (hexString: { match: (arg0: RegExp) => any[] }) =>

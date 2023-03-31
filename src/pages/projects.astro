@@ -1,10 +1,9 @@
 ---
-import { Image } from '@astrojs/image/components'
 import { Card } from '@/components/Card'
 import LinkIcon from '@/components/LinkIcon.astro'
-import logoVinhDev from '@/images/logos/vinh-dev.svg'
-import logoVinhDevLegacy from '@/images/logos/vinh-dev-legacy.svg'
-import logoVPaste from '@/images/logos/v-paste.png'
+import logoVinhDev from '@/assets/images/logos/vinh-dev.svg'
+import logoVinhDevLegacy from '@/assets/images/logos/vinh-dev-legacy.svg'
+import logoVPaste from '@/assets/images/logos/v-paste.svg'
 import Layout from '@/layouts/Simple.astro'
 import { SITE } from '@/config'
 
@@ -26,7 +25,7 @@ const projects: Project[] = [
   {
     name: 'Vinh.Dev ‘Legacy’',
     description:
-      'Previous version of this website with a different look and feel. This is also te first version I use Next.js and Tailwind CSS.',
+      'Previous version of this website with a different look and feel. This is also the first version I use Next.js and Tailwind CSS.',
     link: {
       href: 'https://vinh-dev-legacy.vercel.app',
       label: 'vinh-dev-legacy.vercel.app',
@@ -64,10 +63,10 @@ const projects: Project[] = [
       projects.map(project => (
         <Card as="li">
           <div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-            <Image
+            <img
               alt=""
               class="h-8 w-8 rounded-full bg-white"
-              src={project.logo}
+              src={project.logo.src}
             />
           </div>
           <h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
