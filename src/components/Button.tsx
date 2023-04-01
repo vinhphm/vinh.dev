@@ -5,7 +5,7 @@ interface Props {
   href?: string
   target?: string
   rel?: string
-  variant: keyof typeof variantStyles
+  variant?: keyof typeof variantStyles
   [x: string]: any
 }
 
