@@ -3,7 +3,7 @@ const { props } = Astro
 const { className } = props
 ---
 
-<div {...props} class:list={['sm:px-8', className]}>
+<div class:list={['sm:px-8', className]} {...props}>
   <div class="mx-auto max-w-7xl lg:px-8">
     <slot />
   </div>
