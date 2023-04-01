@@ -181,6 +181,7 @@ module.exports = {
             textDecoration: 'underline',
             textDecorationColor: 'var(--tw-prose-underline)',
             textUnderlineOffset: '0.125rem',
+            textDecorationThickness: '0.0625rem',
             transitionProperty: 'text-decoration, box-shadow',
             transitionDuration: theme('transitionDuration.150'),
             transitionTimingFunction: theme('transitionTimingFunction.in-out'),
