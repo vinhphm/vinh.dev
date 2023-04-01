@@ -43,7 +43,7 @@ import { MoonIcon, SunIcon } from '@/components/Icons'
     constructor() {
       super()
 
-      this.querySelector('button').addEventListener('click', toggleMode)
+      this.querySelector('button')?.addEventListener('click', toggleMode)
     }
   }
 
