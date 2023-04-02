@@ -1,9 +1,20 @@
+import inter700 from '@/assets/fonts/Inter-Bold.ttf?raw-hex'
+import ogIcon from '@/assets/images/logos/vinh-dev-og.png?raw-hex'
 import type { APIRoute } from 'astro'
 import htm from 'htm'
+import type { SatoriOptions } from 'satori'
 import satori from 'satori'
 import sharp from 'sharp'
-import ogIcon from '@/assets/images/logos/vinh-dev-og.png?raw-hex'
-import inter700 from '@/fonts/Inter-Bold.ttf?raw-hex'
+
+declare type Weight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+declare type Style$1 = 'normal' | 'italic'
+interface FontOptions {
+  data: Buffer | ArrayBuffer
+  name: string
+  weight?: Weight
+  style?: Style$1
+  lang?: string
+}
 
 const fromHexString = (hexString: { match: (arg0: RegExp) => any[] }) =>
   Uint8Array.from(hexString.match(/.{1,2}/g).map(byte => parseInt(byte, 16)))
@@ -31,7 +42,7 @@ function h(
   }
 }
 
-const fonts = [
+const fonts: FontOptions[] = [
   {
     name: 'Inter',
     data: fromHexString(inter700),
@@ -44,7 +55,7 @@ const html = htm.bind(h)
 
 export const get: APIRoute = async ({ url, site }) => {
   const title = url.searchParams.get('title') ?? 'Missing Title'
-  const options = {
+  const options: SatoriOptions = {
     // debug: true,
     width: 1200,
     height: 630,
