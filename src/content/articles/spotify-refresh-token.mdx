@@ -5,10 +5,14 @@ summary: If you need to embed Spotify content on your website, you will need a r
 tags: [spotify, refresh, token]
 ---
 
+import { Image } from 'astro:assets'
+import currentPlaying from '@/assets/images/2023/spotify-current-playing.png'
+import clientIdSecret from '@/assets/images/2023/client-id-secret.png'
+
 Are you a web developer who loves music? Do you want to spice up your website with some awesome Spotify content? Maybe you want to show off your favorite playlists, albums, or tracks. Or maybe you want to create a custom music player that streams songs from Spotify. In my case, I put a simple current playing widget on my website:
 
 <center>
-  ![Spotify current playing](/static/images/2023/spotify-current-playing.png)
+  <Image src={currentPlaying} alt="Spotify current playing" />
 </center>
 
 To do this, you will need to use the Spotify Web API, which is a set of endpoints that let you access and manipulate Spotify data. But there's a catch. The Spotify Web API requires authentication and authorization from both you and your users. This means that you will need to get an access token and a refresh token for each user who wants to use your website.
@@ -35,7 +39,9 @@ Assumed you already have a registered application on the [Spotify Developer Dash
 
 They will look like this:
 
-<center>![Client ID Secret](/static/images/2023/client-id-secret.png)</center>
+<center>
+  <Image src={clientIdSecret} alt="Client ID Secret" />
+</center>
 
 You will also need to change the **Redirect URIs** in the application settings to `http://localhost:3000/callback`.
 
