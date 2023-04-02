@@ -5,6 +5,9 @@ summary: Last year, with my new vinh.dev domain, I decided to use Next.js to bui
 tags: [nextjs, astro, migration]
 ---
 
+import { Image } from 'astro:assets'
+import astroSpeed from '@/assets/images/2023/astro-speed.jpg'
+
 Next.js is a big deal in the React world. It’s like the cool kid on the block that everyone wants to hang out with. I was one of those people. I used Next.js for my blog for over a year and I thought it was awesome. But then I met Astro, a new kid in town that promised to be faster, smaller and more flexible than Next.js. Astro was like the cute nerd that caught my eye and made me curious. So I decided to dump Next.js and give Astro a chance.
 
 In this blog post series, I will tell you all about my breakup with Next.js and my new relationship with Astro. I will spill the tea on these topics:
@@ -17,7 +20,9 @@ Let’s start with some juicy gossip: why I ditched Next.js for Astro.
 
 One of the main reasons why I ditched Next.js for Astro was the difference in how they handle JavaScript. Next.js loads all the JavaScript for every page upfront, which can slow down your website and hurt your SEO. Astro, on the other hand, uses a technique called **partial hydration**, which means it only loads the JavaScript that is needed for each component and only when it is needed. This way, Astro can deliver fast and lightweight pages that are mostly static HTML with some islands of interactivity . For example, I was able to reduce my JavaScript bundle size by 90% by switching to Astro and using its built-in media query feature that prevents unnecessary code from being sent to mobile devices. Here is an impressive chart shown on [Astro website](https://astro.build):
 
-![Astro's speed](/static/images/2023/astro-speed.jpg)
+<center>
+  <Image src={astroSpeed} alt="Astro's speed" />
+</center>
 
 Another reason why I ditched Next.js for Astro was the support for multiple frontend frameworks. Next.js is mainly focused on React, which is great if you love React (and who doesn’t?). But what if you want to try something different? What if you want to use Vue or Svelte or Solid or even vanilla JS? Well, with Astro you can do that. You can use any frontend framework you want in your project and even mix them together in the same page. This gives you more freedom and flexibility to choose the best tool for the job or just experiment with something new.
 
