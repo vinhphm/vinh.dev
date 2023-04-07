@@ -1,4 +1,4 @@
-export default async function Fetcher(
+export default async function fetcher(
   input: RequestInfo | URL,
   init: RequestInit | undefined
 ) {
