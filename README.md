@@ -2,7 +2,7 @@
 
 ## Tech stack
 
-This blog is hosted on [Vercel](https://vercel.com/), built with [Astro](https://astro.build/)and [Tailwind CSS](https://tailwindcss.com/).
+This blog is hosted on [Vercel](https://vercel.com/), built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
 ## Images
 
