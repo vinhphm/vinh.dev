@@ -76,6 +76,7 @@ export default defineConfig({
     analytics: true,
     imageConfig: {
       sizes: [320, 640, 1280],
+      formats: ['image/webp', 'image/avif'],
     },
     imageService: true,
   }),
