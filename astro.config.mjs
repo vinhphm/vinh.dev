@@ -74,6 +74,9 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     analytics: true,
+    imageConfig: {
+      sizes: [320, 640, 1280],
+    },
     imageService: true,
   }),
   vite: {
