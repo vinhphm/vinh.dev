@@ -3,7 +3,7 @@ import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import vercel from '@astrojs/vercel/serverless'
-import { defineConfig, sharpImageService } from 'astro/config'
+import { defineConfig } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
 
 const site = process.env.PUBLIC_VERCEL_URL
@@ -51,9 +51,6 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
-  image: {
-    service: sharpImageService(),
-  },
   integrations: [
     tailwind(),
     sitemap({
@@ -77,6 +74,7 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     analytics: true,
+    imageService: true,
   }),
   vite: {
     plugins: [hexLoader],
