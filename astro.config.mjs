@@ -2,7 +2,7 @@ import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import vercel from '@astrojs/vercel/edge'
+import vercel from '@astrojs/vercel/serverless'
 import { defineConfig, sharpImageService } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
 
@@ -49,9 +49,19 @@ const hexLoader = {
 export default defineConfig({
   site,
   compressHTML: true,
+  output: 'hybrid',
   experimental: {
     assets: true,
+    hybridOutput: true,
   },
+  adapter: vercel({
+    analytics: true,
+    imageConfig: {
+      sizes: [640, 1280],
+      formats: ['image/webp', 'image/avif'],
+    },
+    imageService: true,
+  }),
   // image: {
   //   service: sharpImageService(),
   // },
@@ -75,15 +85,6 @@ export default defineConfig({
       ],
     ],
   },
-  output: 'server',
-  adapter: vercel({
-    analytics: true,
-    imageConfig: {
-      sizes: [640, 1280],
-      formats: ['image/webp', 'image/avif'],
-    },
-    imageService: true,
-  }),
   vite: {
     plugins: [hexLoader],
   },
