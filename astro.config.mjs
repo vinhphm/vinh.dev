@@ -49,10 +49,9 @@ const hexLoader = {
 export default defineConfig({
   site,
   compressHTML: true,
-  output: 'hybrid',
+  output: 'server',
   experimental: {
     assets: true,
-    hybridOutput: true,
   },
   adapter: vercel({
     analytics: true,
