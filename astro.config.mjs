@@ -2,7 +2,7 @@ import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import vercel from '@astrojs/vercel/serverless'
+import vercel from '@astrojs/vercel/edge'
 import { defineConfig, sharpImageService } from 'astro/config'
 import rehypeExternalLinks from 'rehype-external-links'
 
