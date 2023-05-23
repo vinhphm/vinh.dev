@@ -17,7 +17,7 @@ module.exports = {
   plugins: [require('@tailwindcss/typography')],
   theme: {
     fontFamily: {
-      sans: ['InterVariable', ...fontFamily.sans],
+      sans: ['Inter Variable', ...fontFamily.sans],
     },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
