@@ -55,7 +55,7 @@ export default defineConfig({
   },
   adapter: vercel({
     analytics: true,
-    imageConfig: {
+    imagesConfig: {
       sizes: [640, 1280],
       formats: ['image/webp', 'image/avif'],
     },
@@ -64,14 +64,6 @@ export default defineConfig({
   // image: {
   //   service: sharpImageService(),
   // },
-  integrations: [
-    tailwind(),
-    sitemap({
-      customPages,
-    }),
-    mdx(),
-    preact({ compat: true }),
-  ],
   markdown: {
     syntaxHighlight: 'prism',
     rehypePlugins: [
@@ -84,6 +76,16 @@ export default defineConfig({
       ],
     ],
   },
+  integrations: [
+    tailwind(),
+    sitemap({
+      customPages,
+    }),
+    mdx({
+      optimize: true,
+    }),
+    preact({ compat: true }),
+  ],
   vite: {
     plugins: [hexLoader],
   },
