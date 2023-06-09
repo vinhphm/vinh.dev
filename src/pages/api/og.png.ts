@@ -66,57 +66,59 @@ export const get: APIRoute = async ({ url, site }) => {
     html`
       <div
         style=${{
-          backgroundColor: 'white',
-          backgroundSize: '150px 150px',
+          display: 'flex',
           height: '100%',
           width: '100%',
-          display: 'flex',
-          textAlign: 'center',
           alignItems: 'center',
           justifyContent: 'center',
-          flexDirection: 'column',
-          flexWrap: 'nowrap',
+          letterSpacing: '-.02em',
+          fontWeight: 700,
+          background: '#3CFFD0',
         }}
       >
         <div
           style=${{
+            left: 42,
+            top: 42,
+            position: 'absolute',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            justifyItems: 'center',
           }}
         >
           <img
             alt="Vinh.Dev"
-            height=${200}
-            width=${200}
+            height=${24}
+            width=${24}
             src=${`data:image/png;base64, ${Buffer.from(
               fromHexString(ogIcon)
             ).toString('base64')}`}
-            style=${{ margin: '0 30px' }}
           />
-        </div>
-        <span
-          style=${{
-            marginTop: 30,
-            padding: '0 120px',
-          }}
-        >
           <span
             style=${{
-              fontSize: 60,
-              fontStyle: 'normal',
-              fontWeight: 700,
-              letterSpacing: '-0.025em',
-              color: 'black',
-              boxShadow: 'inset 0 -30px 0 0 #3CFFD0',
-              lineHeight: 1.2,
-              whiteSpace: 'pre-wrap',
+              marginLeft: 8,
+              fontSize: 20,
             }}
           >
-            ${title}
+            vinh.dev
           </span>
-        </span>
+        </div>
+        <div
+          style=${{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            padding: '20px 50px',
+            margin: '0 42px',
+            fontSize: 40,
+            width: 'auto',
+            maxWidth: 550,
+            textAlign: 'center',
+            color: 'black',
+            lineHeight: 1.4,
+          }}
+        >
+          ${title}
+        </div>
       </div>
     `,
     options
