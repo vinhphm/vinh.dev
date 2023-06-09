@@ -66,59 +66,57 @@ export const get: APIRoute = async ({ url, site }) => {
     html`
       <div
         style=${{
-          display: 'flex',
+          backgroundColor: 'white',
+          backgroundSize: '150px 150px',
           height: '100%',
           width: '100%',
+          display: 'flex',
+          textAlign: 'center',
           alignItems: 'center',
           justifyContent: 'center',
-          letterSpacing: '-.02em',
-          fontWeight: 700,
-          background: '#3CFFD0',
+          flexDirection: 'column',
+          flexWrap: 'nowrap',
         }}
       >
         <div
           style=${{
-            left: 42,
-            top: 42,
-            position: 'absolute',
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'center',
+            justifyItems: 'center',
           }}
         >
           <img
             alt="Vinh.Dev"
-            height=${24}
-            width=${24}
+            height=${200}
+            width=${200}
             src=${`data:image/png;base64, ${Buffer.from(
               fromHexString(ogIcon)
             ).toString('base64')}`}
+            style=${{ margin: '0 30px' }}
           />
-          <span
-            style=${{
-              marginLeft: 8,
-              fontSize: 20,
-            }}
-          >
-            vinh.dev
-          </span>
         </div>
-        <div
+        <span
           style=${{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            padding: '20px 50px',
-            margin: '0 42px',
-            fontSize: 40,
-            width: 'auto',
-            maxWidth: 550,
-            textAlign: 'center',
-            color: 'black',
-            lineHeight: 1.4,
+            marginTop: 30,
+            padding: '0 120px',
           }}
         >
-          ${title}
-        </div>
+          <span
+            style=${{
+              fontSize: 60,
+              fontStyle: 'normal',
+              fontWeight: 700,
+              letterSpacing: '-0.025em',
+              color: 'black',
+              boxShadow: 'inset 0 -30px 0 0 #3CFFD0',
+              lineHeight: 1.2,
+              whiteSpace: 'pre-wrap',
+            }}
+          >
+            ${title}
+          </span>
+        </span>
       </div>
     `,
     options
