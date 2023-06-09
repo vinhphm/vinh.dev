@@ -66,7 +66,7 @@ export const get: APIRoute = async ({ url, site }) => {
     html`
       <div
         style=${{
-          backgroundColor: 'white',
+          backgroundColor: '#3CFFD0',
           backgroundSize: '150px 150px',
           height: '100%',
           width: '100%',
@@ -109,7 +109,6 @@ export const get: APIRoute = async ({ url, site }) => {
               fontWeight: 700,
               letterSpacing: '-0.025em',
               color: 'black',
-              boxShadow: 'inset 0 -30px 0 0 #3CFFD0',
               lineHeight: 1.2,
               whiteSpace: 'pre-wrap',
             }}
