@@ -25,7 +25,7 @@
     "@headlessui/react": "^1.7.15",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.6.4",
+    "astro": "^2.6.5",
     "clsx": "^1.2.1",
     "htm": "^3.1.1",
     "preact": "^10.15.1",
