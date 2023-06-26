@@ -39,7 +39,7 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
-    "@types/react": "^18.2.13",
+    "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/sharp": "^0.31.1",
     "astro-eslint-parser": "^0.14.0",
