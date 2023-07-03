@@ -50,9 +50,6 @@ export default defineConfig({
   site,
   compressHTML: true,
   output: 'server',
-  build: {
-    split: true,
-  },
   experimental: {
     assets: true,
   },
