@@ -4,7 +4,7 @@ import HeroSocialLink from '@/components/HeroSocialLink.astro'
 import {
   GitHubIcon,
   LinkedInIcon,
-  TwitterIcon,
+  ThreadsIcon,
   InstagramIcon,
 } from '@/components/Icons'
 import Photos from '@/components/Photos.astro'
@@ -30,9 +30,9 @@ const articles = (await getArticles()).slice(0, 4)
       </p>
       <div class="mt-6 flex gap-6">
         <HeroSocialLink
-          href="https://twitter.com/vinhphh"
-          aria-label="Follow on Twitter"
-          icon={TwitterIcon}
+          href="https://www.threads.net/@vinh.phm"
+          aria-label="Follow on Threads"
+          icon={ThreadsIcon}
         />
         <HeroSocialLink
           href="https://instagram.com/vinh.phm"

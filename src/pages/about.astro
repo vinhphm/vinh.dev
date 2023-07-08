@@ -8,7 +8,7 @@ import {
   GitHubIcon,
   LinkedInIcon,
   MailIcon,
-  TwitterIcon,
+  ThreadsIcon,
   InstagramIcon,
 } from '@/components/Icons'
 import SocialLink from '@/components/SocialLink.astro'
@@ -59,6 +59,13 @@ const { Content } = await author.render()
         <ul role="list">
           <NowPlaying client:only="preact" />
           <SocialLink
+            href="https://www.threads.net/@vinh.phm"
+            icon={ThreadsIcon}
+            className="mt-4"
+          >
+            Follow on Threads
+          </SocialLink>
+          <SocialLink
             href="https://instagram.com/vinh.phm"
             icon={InstagramIcon}
             className="mt-4"
@@ -71,13 +78,6 @@ const { Content } = await author.render()
             className="mt-4"
           >
             Follow on GitHub
-          </SocialLink>
-          <SocialLink
-            href="https://twitter.com/vinhphh"
-            icon={TwitterIcon}
-            className="mt-4"
-          >
-            Follow on Twitter
           </SocialLink>
           <SocialLink
             href="https://linkedin.com/in/vinhphm"
