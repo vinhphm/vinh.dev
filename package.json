@@ -28,7 +28,7 @@
     "astro": "^2.8.0",
     "clsx": "^1.2.1",
     "htm": "^3.1.1",
-    "preact": "^10.15.1",
+    "preact": "^10.16.0",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
     "rehype-external-links": "^2.1.0",
