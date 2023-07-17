@@ -26,7 +26,7 @@
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.8.3",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "htm": "^3.1.1",
     "preact": "^10.16.0",
     "react": "npm:@preact/compat",
