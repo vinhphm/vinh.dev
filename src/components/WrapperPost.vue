@@ -13,8 +13,8 @@ const route = useRoute()
 const content = ref<HTMLDivElement>()
 
 const base = 'https://vinh.dev'
-const tweetUrl = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @antfu7\'s ${base}${route.path}\n\nI think...`)}`)
-const elkUrl = computed(() => `https://elk.zone/intent/post?text=${encodeURIComponent(`Reading @antfu@m.webtoo.ls\'s ${base}${route.path}\n\nI think...`)}`)
+const tweetUrl = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @vinhphh\'s ${base}${route.path}\n\nI think...`)}`)
+const threadUrl = computed(() => `https://threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.phm\'s ${base}${route.path}\n\nI think...`)}`)
 
 onMounted(() => {
   const navigate = () => {
@@ -113,7 +113,7 @@ onMounted(() => {
     <template v-if="frontmatter.duration">
       <span font-mono op50>> </span>
       <span op50>comment on </span>
-      <a :href="elkUrl" target="_blank" op50>mastodon</a>
+      <a :href="threadUrl" target="_blank" op50>threads</a>
       <span op25> / </span>
       <a :href="tweetUrl" target="_blank" op50>twitter</a>
     </template>
