@@ -1,5 +1,5 @@
 ---
-title: Bookmarks - Anthony Fu
+title: Bookmarks - Vinh Pham
 display: Bookmarks
 subtitle: Some of my favorite websites/tools with excellent design and UX that I highly recommend
 ---

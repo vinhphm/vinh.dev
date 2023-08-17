@@ -1,5 +1,5 @@
 ---
-title: Projects - Anthony Fu
+title: Projects - Vinh Pham
 display: Projects
 description: List of projects that I am proud of
 plum: true
