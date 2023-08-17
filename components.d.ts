@@ -41,6 +41,7 @@ declare module 'vue' {
     SponsorButton: typeof import('./src/components/SponsorButton.vue')['default']
     SubNav: typeof import('./src/components/SubNav.vue')['default']
     TextCopy: typeof import('./src/components/TextCopy.vue')['default']
+    Threads: typeof import('./src/components/icons/Threads.vue')['default']
     ToggleTheme: typeof import('./src/components/ToggleTheme.vue')['default']
     Tweet: typeof import('./src/components/Tweet.vue')['default']
     Unocss: typeof import('./src/components/icons/Unocss.vue')['default']
