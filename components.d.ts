@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppLink: typeof import('./src/components/AppLink.vue')['default']
     CalCom: typeof import('./src/components/CalCom.vue')['default']
+    CarbonLogoGithub: typeof import('~icons/carbon/logo-github')['default']
     DarkToggleButton: typeof import('./src/components/slides/DarkToggleButton.vue')['default']
     Elk: typeof import('./src/components/icons/Elk.vue')['default']
     FeatherTwitter: typeof import('~icons/feather/twitter')['default']
