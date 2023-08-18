@@ -22,6 +22,6 @@ Find me on
 
 <p flex="~ gap-3 wrap" class="mt--2!">
   <a href="https://github.com/vinhphm" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
-  <a href="https://www.threads.net/@vinh.phm" target="_blank"> Threads</a>
+  <a href="https://www.threads.net/@vinh.phm" target="_blank"> <span op75 i-fa6-brands-threads /> Threads</a>
   <a href="https://www.instagram.com/vinh.phm" target="_blank"><span op75 i-simple-icons-instagram /> Instagram</a>
 </p>

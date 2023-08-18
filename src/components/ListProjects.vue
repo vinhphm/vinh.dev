@@ -49,19 +49,14 @@ function slug(name: string) {
     <div class="prose pb5 mx-auto mt10 text-center">
       <p op75>
         <em>
-          Thanks for getting interested in my works! If like them or find them useful, consider
-          &nbsp;<a
-            href="https://github.com/sponsors/antfu"
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-          >sponsoring me</a>&nbsp;to support me keeping them sustainable. Cheers! :)
+          Thanks for getting interested in my works! If like them or find them useful, feel free
+          to contact me if you have any questions. Cheers! :)
         </em>
       </p>
 
-      <SponsorButton />
-      <div block mt-5>
+      <!-- <div block mt-5>
         <a href="https://vinh.dev/stars-rank" target="_blank" op50>All projects sort by Stars</a>
-      </div>
+      </div> -->
     </div>
   </div>
   <div>
