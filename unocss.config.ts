@@ -27,7 +27,7 @@ export default defineConfig({
     presetWebFonts({
       fonts: {
         sans: 'Inter:400,600,800',
-        mono: 'DM Mono:400,600',
+        mono: 'Roboto Mono:400,600',
       },
     }),
   ],
