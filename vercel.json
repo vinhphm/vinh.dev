@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "redirects": [
     { "source": "/articles/(.*)", "destination": "/posts/$1", "statusCode": 301 },
     { "source": "/rss", "destination": "https://vinh.dev/feed.xml", "statusCode": 301 },
@@ -8,7 +11,6 @@
     { "source": "/twitter", "destination": "https://twitter.com/vinhphh", "statusCode": 301 },
     { "source": "/instagram", "destination": "https://instagram.com/vinh.phm", "statusCode": 301 },
     { "source": "/ig", "destination": "https://instagram.com/vinh.phm", "statusCode": 301 },
-    { "source": "/(.*)", "destination": "/index.html", "statusCode": 200 }
   ],
   "framework": "vite"
 }

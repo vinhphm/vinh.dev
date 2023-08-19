@@ -1,0 +1,10 @@
+ [build.environment]
+   NODE_VERSION = "18"
+
+ [build]
+   publish = "dist"
+   command = "pnpm run build"
+
+ [[redirects]]
+   from = "/*"
+   to = "/index.html"
