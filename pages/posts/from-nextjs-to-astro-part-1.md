@@ -1,0 +1,33 @@
+---
+title: 'From Next.js to Astro - Part 1: Why I Changed Again'
+date: 2023-03-11
+lang: en
+duration: 5min
+description: Last year, with my new vinh.dev domain, I decided to use Next.js to build my personal website. It was a great journey, and I had fun with it until I learned about some drawbacks with the type of my website and Next.js. But I didn’t find any substitutes that I actually liked. And then there was Astro…
+---
+
+Next.js is a big deal in the React world. It’s like the cool kid on the block that everyone wants to hang out with. I was one of those people. I used Next.js for my blog for over a year and I thought it was awesome. But then I met Astro, a new kid in town that promised to be faster, smaller and more flexible than Next.js. Astro was like the cute nerd that caught my eye and made me curious. So I decided to dump Next.js and give Astro a chance.
+
+In this blog post series, I will tell you all about my breakup with Next.js and my new relationship with Astro. I will spill the tea on these topics:
+
+- Why I ditched Next.js for Astro
+- How I converted my Next.js pages and components to Astro
+- How Astro made my website better than ever
+
+Let’s start with some juicy gossip: why I ditched Next.js for Astro.
+
+One of the main reasons why I ditched Next.js for Astro was the difference in how they handle JavaScript. Next.js loads all the JavaScript for every page upfront, which can slow down your website and hurt your SEO. Astro, on the other hand, uses a technique called **partial hydration**, which means it only loads the JavaScript that is needed for each component and only when it is needed. This way, Astro can deliver fast and lightweight pages that are mostly static HTML with some islands of interactivity . For example, I was able to reduce my JavaScript bundle size by 90% by switching to Astro and using its built-in media query feature that prevents unnecessary code from being sent to mobile devices. Here is an impressive chart shown on [Astro website](https://astro.build):
+
+![Astro's speed](/images/2023/astro-speed.jpg)
+
+Another reason why I ditched Next.js for Astro was the support for multiple frontend frameworks. Next.js is mainly focused on React, which is great if you love React (and who doesn’t?). But what if you want to try something different? What if you want to use Vue or Svelte or Solid or even vanilla JS? Well, with Astro you can do that. You can use any frontend framework you want in your project and even mix them together in the same page. This gives you more freedom and flexibility to choose the best tool for the job or just experiment with something new.
+
+Astro also has some built-in features that make your life easier as a developer. For example, it has markdown support out of the box, which means you can write your blog posts in markdown without any extra setup or plugins. It also has component collections, which let you create reusable components from any data source such as files or APIs. It also has zero-JS mode, which lets you disable JavaScript completely on certain pages or components if you don’t need any interactivity at all.
+
+Finally, Astro gives you more control over your website structure and design by using file-based routing and custom layouts. With file-based routing, you can create pages by simply adding files to your src/pages folder without any configuration or boilerplate code. With custom layouts, you can define different layouts for different types of pages such as blog posts or landing pages without repeating yourself.
+
+These are some of the reasons why I ditched Next.js for Astro. Of course, this does not mean that Next.js is bad or that Astro is perfect. They are both great frameworks with their own pros and cons. But for me personally, Astro was a better fit for my needs and goals.
+
+In the next blog post, I will tell you how I converted my Next.js pages and components to Astro and what challenges I faced along the way.
+
+Stay tuned!

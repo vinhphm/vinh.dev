@@ -1,0 +1,48 @@
+---
+title: 'Vitesse Theme: A VS Code Theme that You’ll Love'
+date: 2023-02-26
+lang: en
+duration: 3min
+description: It is this time of the year again when I am in search of a good VS Code theme. It is hard but I finally found one that caught my eye, Vitesse. And I am sure it will catch yours too.
+---
+
+[[toc]]
+
+Last year, I introduced you to a theme called [Rosé Pine](https://vinh.dev/articles/rose-pine). It is still a phenomenal theme, but due to my curiosity, I always want to try some other new themes as well just to compare. It is not easy though. I am sure if you try to find one for yourself you will be lost among the popular themes out there. And what happens if none of those actually catch your eye? Well, good luck with your search then because all the top results on Google only mention those themes. You either accept them or try to flip through the VS Code marketplace blindly to find one that suits you well.
+
+## Vitesse
+
+Let me save you from all these troubles and introduce a new theme instead of those big popular names out there. Just as Rosé Pine, my ideal theme would need to be:
+
+- **A complete experience:** That means the theme must be consistent through all VS Code components. There shouldn’t be any part of VS Code being left out.
+- **Well-maintained:** VS Code team updates their application regularly, which means any parts of VS Code could be changed in the future and the theme should also match it.
+- **Supports both light and dark variants:** This one might not be important to many but sometimes I would like to work with a good light theme, not just dark.
+
+And [Vitesse by Anthony Fu](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse) fit all of these perfectly. Here is how it look in action:
+
+<img src="/images/2023/vitesse-light.png" img-light>
+<img src="/images/2023/vitesse-dark.png" img-dark>
+
+There are six variants for you to choose. And I think you will love it.
+
+## Extra experience
+
+You can also improve your experience with the theme with some extra stuff...
+
+### Product Icons - Carbon
+
+This is one of the new features in VS Code that I am talking about in the above paragraph. VS Code now allows you to change the icons that appear in VS Code itself, not just for files or folders. To match with Vitesse, you should use the [Carbon Product Icons](https://marketplace.visualstudio.com/items?itemName=antfu.icons-carbon) from the same publisher.
+
+### Match your VS Code theme with system theme automatically
+
+Another new thing in VS Code that you can config so that VS Code will change the theme to match with the system theme (dark or light) automatically. Here is how you do it in the VS Code's settings JSON file:
+
+```json
+{
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Vitesse Light",
+  "workbench.preferredDarkColorTheme": "Vitesse Dark"
+}
+```
+
+Hope you enjoy the new theme and the new VS Code tips!
