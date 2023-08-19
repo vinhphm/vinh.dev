@@ -4,7 +4,6 @@ date: 2023-02-17
 lang: en
 duration: 5min
 description: If you are a web developer, you might have heard of Fresh and Deno, two new tools that aim to make your life easier and more productive. But what are they, and why should you use them? In this blog post, I will explain why developing with Fresh and Deno is simply better than using traditional tools like Node.js and npm.
-image: 'https://vinh.dev/images/2023/fresh-deno.svg'
 ---
 
 [[toc]]
@@ -12,8 +11,6 @@ image: 'https://vinh.dev/images/2023/fresh-deno.svg'
 If you are a web developer, you might have heard of Fresh and Deno, two new tools that aim to make your life easier and more productive. But what are they, and why should you use them? In this blog post, I will explain why developing with Fresh and Deno is simply better than using traditional tools like Node.js and npm.
 
 ## What are Fresh and Deno?
-
-![Fresh and Deno](/images/2022/fresh-deno.svg")
 
 Fresh is a framework for building modern web applications with Deno. It provides features like hot reloading, code splitting, server-side rendering, routing, authentication, testing, and more. Fresh is inspired by Next.js, but it is designed to work seamlessly with Deno.
 
