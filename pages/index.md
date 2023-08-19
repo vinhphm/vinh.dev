@@ -8,7 +8,7 @@ plum: true
 Hey, I am Vinh Pham, a seasoned software engineer.
 
 Working at [PwC](https://pwc.com/).<br>
-Core team member of Digital Solutions.<br>
+A part of Digital Solutions team.<br>
 
 My true passion lies in envisioning ideas and turning them into reality. Feel free to explore some of [my side projects here](/projects). Additionally, I have a knack for UI/UX design.
 
