@@ -3,7 +3,6 @@ title: 'Rosé Pine: A Perfect Theme for Both Your Dark and Light Mode Setup'
 date: 2022-03-27
 lang: en
 duration: 3min
-description: If you are just like me, a little bit picky and sometimes can't choose between dark and light mode, then maybe Rosé Pine might just be the one.
 ---
 
 I'm a bit picky when it comes to themes, and to make it worse, sometimes, I can't decide between dark and light mode. Most developers probably prefer dark mode, but sometimes, I find it make my eyes tired. And then light theme are nice, but there aren't many options out there. The few popular ones are just too bright or too tanned.

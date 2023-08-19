@@ -3,7 +3,6 @@ title: 'From Next.js to Astro - Part 2: The Move'
 date: 2023-03-12
 duration: 10min
 lang: en
-description: After finding out about Astro, I was excited for the move to the new framework and wanted to have a go with it right away. But things got harder than I thought. Here is what happened…
 ---
 
 [[toc]]

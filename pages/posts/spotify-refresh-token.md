@@ -3,7 +3,6 @@ title: The DIY Guide to Generating Refresh Tokens for Spotify API Calls
 date: 2023-02-19
 lang: en
 duration: 10min
-description: If you need to embed Spotify content on your website, you will need a refresh token for the API calls. Some websites offer a simple interface for this, but they may expose your data. Here is how you can do it yourself
 ---
 
 [[toc]]

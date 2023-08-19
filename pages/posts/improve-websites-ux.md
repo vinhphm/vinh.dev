@@ -3,7 +3,6 @@ title: Improve Website’s UX by Adding Micro-interactions
 date: 2022-04-03
 lang: en
 duration: 7min
-description: One of the few things I studied from Google UX Design course is how a good UX design should be fun to use.
 ---
 
 [[toc]]

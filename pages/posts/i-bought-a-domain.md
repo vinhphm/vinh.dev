@@ -3,7 +3,6 @@ title: I Bought a Domain
 lang: en
 date: 2022-03-19
 duration: 5min
-description: For the first time since I started the web development journey at college, I have bought an actually personal domain for myself (vinh.dev). And I can tell you that it is so much different from what I had known before.
 ---
 
 For the first time since I started the web development journey at college, I have bought an actually personal domain for myself (vinh.dev). And I can tell you that it is so much different from what I had known before.

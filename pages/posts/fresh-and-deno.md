@@ -3,7 +3,6 @@ title: Why Developing with Fresh and Deno is Simply Better
 date: 2023-02-17
 lang: en
 duration: 5min
-description: If you are a web developer, you might have heard of Fresh and Deno, two new tools that aim to make your life easier and more productive. But what are they, and why should you use them? In this blog post, I will explain why developing with Fresh and Deno is simply better than using traditional tools like Node.js and npm.
 ---
 
 [[toc]]

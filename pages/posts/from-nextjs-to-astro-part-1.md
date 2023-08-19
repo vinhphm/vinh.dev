@@ -3,7 +3,6 @@ title: 'From Next.js to Astro - Part 1: Why I Changed Again'
 date: 2023-03-11
 lang: en
 duration: 5min
-description: Last year, with my new vinh.dev domain, I decided to use Next.js to build my personal website. It was a great journey, and I had fun with it until I learned about some drawbacks with the type of my website and Next.js. But I didn’t find any substitutes that I actually liked. And then there was Astro…
 ---
 
 Next.js is a big deal in the React world. It’s like the cool kid on the block that everyone wants to hang out with. I was one of those people. I used Next.js for my blog for over a year and I thought it was awesome. But then I met Astro, a new kid in town that promised to be faster, smaller and more flexible than Next.js. Astro was like the cute nerd that caught my eye and made me curious. So I decided to dump Next.js and give Astro a chance.

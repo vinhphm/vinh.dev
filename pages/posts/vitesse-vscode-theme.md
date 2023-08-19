@@ -3,7 +3,6 @@ title: 'Vitesse Theme: A VS Code Theme that You’ll Love'
 date: 2023-02-26
 lang: en
 duration: 3min
-description: It is this time of the year again when I am in search of a good VS Code theme. It is hard but I finally found one that caught my eye, Vitesse. And I am sure it will catch yours too.
 ---
 
 [[toc]]

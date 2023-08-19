@@ -3,7 +3,6 @@ title: Every Software Developer Should Write a Blog
 date: 2023-01-11
 lang: en
 duration: 5min
-description: Many programmers have discussed this, and I agree entirely. Here are just my few takes on blogging and its benefits.
 ---
 
 [[toc]]

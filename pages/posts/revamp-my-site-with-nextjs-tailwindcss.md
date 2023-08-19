@@ -2,7 +2,6 @@
 title: Revamp My Site with Next.js and Tailwind CSS
 date: 2022-03-24
 lang: en
-description: After gave it a lot of thoughts, I decided to revamp my site with Next.js and Tailwind CSS.
 duration: 6min
 ---
 

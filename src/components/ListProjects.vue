@@ -49,8 +49,8 @@ function slug(name: string) {
     <div class="prose pb5 mx-auto mt10 text-center">
       <p op75>
         <em>
-          Thanks for getting interested in my works! If like them or find them useful, feel free
-          to contact me if you have any questions. Cheers! :)
+          Thanks for getting interested in my works! If like them, find them useful, or simply have any questions, feel free
+          to contact me. Cheers! :)
         </em>
       </p>
 

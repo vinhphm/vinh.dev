@@ -2,7 +2,6 @@
 title: Customize Git Bash Shell to Make It Yours
 lang: en
 date: 2022-03-22
-description: If you are a web developer but work mainly on Windows environment like me, you may have known about Git Bash. It’s based on MinGW64 (Minimalist GNU for Windows x64). It serves well for its purpose but sometimes it\'s kind of boring. Due to the need to maintain backward compatibility, newer features of Bash are rarely enabled by default.
 duration: 10min
 ---
 

@@ -3,7 +3,6 @@ title: Chuyển domain từ Google Domains sang dịch vụ khác
 date: 2023-08-19T15:00:00+07:00
 lang: vi
 duration: 5min
-description: Google sẽ đóng cửa dịch vụ Google Domains và chuyển những domain họ đang giữ cho một nhà cung cấp khác, bạn nên xem xét chủ động chuyển domain của mình sang một dịch vụ khác trước thời hạn này.
 ---
 
 [[toc]]
