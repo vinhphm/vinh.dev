@@ -23,5 +23,18 @@ Nhiều người chọn Google Domains vì sự thuận tiện khi liên kết v
 
 Tên miền của bạn hoàn toàn có thể được chuyển từ nhà cung cấp này sang nhà cung cấp khác chỉ bằng một vài thao tác đơn giản, nhưng cũng có một số điều bạn cần lưu ý:
 
-- Nhà cung cấp (registrar) mà bạn chuyển tên miền đến phải hỗ trợ domain của bạn. Ví dụ, chỉ mới vài tháng trước, Cloudflare vẫn chưa hỗ trợ ai có domain `.dev` chuyển dịch vụ của họ, nhưng rất may là họ đã hỗ trợ domain này vào giữa tháng 7 vừa rồi.
+- Nhà cung cấp (registrar) mà bạn chuyển domain đến phải hỗ trợ top-level domain của bạn. Ví dụ, chỉ mới vài tháng trước, Cloudflare vẫn chưa hỗ trợ ai có domain đuôi `.dev` chuyển sang dịch vụ của họ, nhưng rất may là họ đã hỗ trợ domain này vào giữa tháng 7 vừa rồi.
+- Domain của bạn đã đăng ký hoặc chuyển lần gần nhất phải là ít nhất 60 ngày cho tới thời điểm hiện tại.
+- Thông tin đăng ký domain của bạn không có thay đổi trong 60 ngày gần đây.
 - Chuyển domain sang nhà cung cấp khác thường sẽ không mất phí nhưng theo quy định của nhà quản lý (ICANN), bạn phải gia hạn domain thêm một năm khi thực hiện chuyển. Phần gia hạn này sẽ được thực hiện bên phía nhà cung cấp mới khi bạn đã hoàn thành các thao tác chuyển.
+
+Sau khi nắm rõ về những điều trên, việc tiếp theo là lựa chọn nhà cung cấp dịch vụ mà bạn tin cậy và giá thành phù hợp với túi tiền của bạn. Một khi quyết định được, dù là về tay nơi nào đi nữa thì chung quy các bước để đổi domain đều là:
+
+1. Vào trang web của nhà cung cấp bạn muốn chuyển tới và tìm đến mục "Transfer domain". Thông thường họ sẽ đặt mục này ở những nơi rất dễ tìm thấy trên trang web của họ. Sau đó nhập tên domain để họ xem có thể chuyển về họ quản lý được không (thông thường là kiểm tra các mục nêu trên và một vài đuôi tên miền có các quy định đặc biệt khác).
+2. Tắt DNSSEC trong thiết lập DNS của bên quản lý DNS domain của bạn.
+3. Mở khoá domain. Thường bên nhà cung cấp sẽ có một công tắc ngăn chặn người lạ tìm cách chuyển tên miền. Nên bạn cần vào trang quản lý của Google Domains để mở khoá (tắt chức năng này).
+4. Lấy mã authorization (auth code, authinfo code, hoặc transfer code) ở Google Domains. Sau đó bạn sẽ điền mã này khi được yêu cầu bởi nhà cung cấp bạn muốn đổi tới.
+5. Xác nhận thông tin liên lạc và thanh toán phí gia hạn.
+6. Xác nhận chuyển domain. Google Domains sẽ gửi email đến bạn để thông báo về việc chuyển domain. Thường quá trình sẽ tự động hoàn tất trong 5 ngày nếu bạn không huỷ, bạn cũng có thể bấm xác nhận để chuyển ngay.
+
+Một số dịch vụ sẽ có những yêu cầu khác trong quá trình chuyển đổi nhưng cũng không quá phức tạp. Mình đã chuyển từ Google Domains sang dịch vụ khác sau hai năm gắn bó. Mong bài viết này đã giúp bạn hiểu rõ hơn được phần nào về quá trình này.
