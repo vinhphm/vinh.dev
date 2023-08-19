@@ -3,6 +3,7 @@
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "redirects": [
+    { "source": "/articles/(.*)", "destination": "/posts/$1", "statusCode": 301 },
     { "source": "/rss", "destination": "https://vinh.dev/feed.xml", "statusCode": 301 },
     { "source": "/blog", "destination": "https://vinh.dev/posts", "statusCode": 301 },
     { "source": "/github", "destination": "https://github.com/vinhphm", "statusCode": 301 },
