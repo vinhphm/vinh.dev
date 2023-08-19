@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "redirects": [
     { "source": "/articles/(.*)", "destination": "/posts/$1", "statusCode": 301 },
     { "source": "/rss", "destination": "https://vinh.dev/feed.xml", "statusCode": 301 },
