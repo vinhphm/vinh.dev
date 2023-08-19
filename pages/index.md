@@ -1,18 +1,18 @@
 ---
 title: Vinh Pham
-description: A dev point of view
+description: A code artisan with a flair for design
 image: https://vinh.dev/og.png
 plum: true
 ---
 
-Hey, I am Vinh Pham, a software engineer.
+Hey, I am Vinh Pham, a seasoned software engineer.
 
 Working at [PwC](https://pwc.com/).<br>
 Core team member of Digital Solutions.<br>
 
-Dreaming up ideas and making them come true is where my passion lies. You can find my [full projects list here](/projects). I also do some UI/UX designing.
+My true passion lies in envisioning ideas and turning them into reality. Feel free to explore some of [my side projects here](/projects). Additionally, I have a knack for UI/UX design.
 
-Outside of programming, I enjoy doing photography and traveling. Some of my photos can be found on [Instagram](https://www.instagram.com/vinh.phm). If you happen to be in the same city I live (currently in Ho Chi Minh City), maybe we can hang out and take some photos or code together.
+Outside of programming, I enjoy doing some amateur photography and traveling. Some of my photos can be found on [Instagram](https://www.instagram.com/vinh.phm). If you happen to be in the same city I live (currently in Ho Chi Minh City), maybe we can hang out and have some talks (or code).
 
 <div flex-auto />
 
@@ -25,4 +25,5 @@ Find me on
   <a href="https://www.linkedin.com/in/vinhphm/" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
   <a href="https://www.threads.net/@vinh.phm" target="_blank"><span op75 i-fa6-brands-threads /> Threads</a>
   <a href="https://www.instagram.com/vinh.phm" target="_blank"><span op75 i-simple-icons-instagram /> Instagram</a>
+  <a href="https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4?si=1567653669df4908" target="_blank"><span op75 i-simple-icons-spotify /> Spotify</a>
 </p>
