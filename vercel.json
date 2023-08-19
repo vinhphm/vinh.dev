@@ -2,5 +2,14 @@
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
+  "redirects": [
+    { "source": "/rss", "destination": "https://vinh.dev/feed.xml", "statusCode": 301 },
+    { "source": "/blog", "destination": "https://vinh.dev/posts", "statusCode": 301 },
+    { "source": "/github", "destination": "https://github.com/vinhphm", "statusCode": 301 },
+    { "source": "/gh", "destination": "https://github.com/vinhphm", "statusCode": 301 },
+    { "source": "/twitter", "destination": "https://twitter.com/vinhphh", "statusCode": 301 },
+    { "source": "/instagram", "destination": "https://instagram.com/vinh.phm", "statusCode": 301 },
+    { "source": "/ig", "destination": "https://instagram.com/vinh.phm", "statusCode": 301 }
+  ],
   "framework": "vite"
 }
