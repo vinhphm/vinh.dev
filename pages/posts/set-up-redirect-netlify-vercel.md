@@ -1,0 +1,40 @@
+---
+title: Set up Redirects for Netlify and Vercel
+date: 2023-08-20T10:30:00+07:00
+lang: en
+duration: 5min
+type: note
+---
+
+Let's say you recently changed your blog part from `/articles/*` to `/blog/*`. This will impact your SEO on search engines and the links where you had shared before if you have a redirect rule for this situation. You could get all the paths for your posts and set a rule for each of them, but that wouldn't be necessary. Instead, you could set a rule to apply to all.
+
+## Netlify
+
+On Netlify, you could either use `netlify.toml` file or `_redirects` file set the redirect rule.
+
+For `netlify.toml`, the rule should look like this:
+
+```toml
+[[redirects]]
+  from = "/articles/*"
+  to = "/blog/:splat"
+  status = 301
+```
+
+And here is how it looks in `_redirects`:
+
+```
+/articles/*  /blog/:splat  301
+```
+
+## Vercel
+
+For Vercel, we're gonna use `vercel.json`:
+
+```json
+{
+  "redirects": [
+    { "source": "/articles/(.*)", "destination": "/blog/$1", "statusCode": 301 }
+  ]
+}
+```
