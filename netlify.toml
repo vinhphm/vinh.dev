@@ -1,10 +1,16 @@
- [build.environment]
-   NODE_VERSION = "18"
+[build.environment]
+  NODE_VERSION = "18"
 
- [build]
-   publish = "dist"
-   command = "pnpm run build"
+[build]
+  publish = "dist"
+  command = "pnpm run build"
 
- [[redirects]]
-   from = "/*"
-   to = "/index.html"
+[[redirects]]
+  from = "https://vinh-dev.netlify.app/*"
+  to = "https://vinh.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"

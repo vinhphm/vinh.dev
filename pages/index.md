@@ -8,11 +8,11 @@ plum: true
 Hey, I am Vinh Pham, a seasoned software engineer.
 
 Working at [PwC](https://pwc.com/).<br>
-A part of Digital Solutions team.<br>
+A part of the Digital Solutions team.<br>
 
 My true passion lies in envisioning ideas and turning them into reality. Feel free to explore some of [my side projects here](/projects). Additionally, I have a knack for UI/UX design.
 
-Outside of programming, I enjoy doing some amateur photography and traveling. Some of my photos can be found on [Instagram](https://www.instagram.com/vinh.phm). If you happen to be in the same city I live (currently in Ho Chi Minh City), maybe we can hang out and have some talks (or code).
+Outside of programming, I enjoy doing amateur photography and traveling. Some of my photos can be found on [Instagram](https://www.instagram.com/vinh.phm). If you happen to be in the same city I live (currently in Ho Chi Minh City), maybe we can hang out and have some talks (or code).
 
 <div flex-auto />
 

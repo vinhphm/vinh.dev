@@ -12,9 +12,9 @@ projects:
       icon: 'vitest'
 
   Astro:
-    - name: 'Placeholder'
-      link: 'https://github.com/vinhphm'
-      desc: 'Astro web'
+    - name: 'Vinh.Dev - Astro version'
+      link: 'https://github.com/vinhphm/vp-astro'
+      desc: 'The Astro version of my website in the first half of 2023'
       icon: 'i-simple-icons-astro saturate-0'
 
   Fresh/Deno:
@@ -25,7 +25,7 @@ projects:
       
   Next.js:
     - name: 'Vinh.Dev (2022)'
-      link: 'https://vinh-dev-legacy.vercel.app/'
+      link: 'https://github.com/vinhphm/vinh-dev-legacy'
       desc: 'Previous version of this website with a different look and feel. This is also the first version I use Next.js and Tailwind CSS'
       icon: 'i-tabler-brand-nextjs saturate-0'
 
