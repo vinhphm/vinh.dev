@@ -17,7 +17,7 @@ Believe it or not, your software career depends a lot on your ability to communi
 
 ### Learn and enhance your technical skills
 
-I remember things better when I try to explain them to someone. I learned this from my study groups at university, where my lecturer would ask us to teach each other the topics instead of lecturing us. I still remember everything I tried to explain and show to my group members. Explaining forces you to learn more about the topic, which is good not only for your readers but for yourself as well. Starting a programming blog is very similar to teaching, because you will be teaching the world about programming and computer science.
+I remember things better when I try to explain them to someone. I learned this from my study groups at university, where my lecturer would ask us to teach each other the topics instead of lecturing us. I still remember everything I tried to explain and show to my group members. Explaining forces you to learn more about the topic, which is good not only for your readers but for yourself as well. Starting a programming blog is very similar to teaching because you will be teaching the world about programming and computer science.
 
 ### Market yourself and boost your career
 

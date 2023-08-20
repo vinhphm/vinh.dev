@@ -9,9 +9,9 @@ duration: 6min
 
 ## The reasons
 
-So in the last article, I mentioned about moving to using Hugo instead of Jekyll. It was great for a while but then it got me thinking. I always want to try things out with my site, but the fact that Hugo is written in Go is a bit of a pain for me. I have no experience with Go, and its template engine can be a bit of a pain to get started with.
+So in the last article, I mentioned moving to using Hugo instead of Jekyll. It was great for a while but then it got me thinking. I always want to try things out with my site, but the fact that Hugo is written in Go is a bit of a pain for me. I have no experience with Go, and its template engine can be a bit of a pain to get started with.
 
-Here’s another example for a simple if statement:
+Here’s another example of a simple if statement:
 
 **Hugo**
 
@@ -31,7 +31,7 @@ Do something if condition is true
 {% endif %}
 ```
 
-As someone working mainly with JavaScript, I find Jekyll to be much more intuitive. Then you might ask, why not use Gatsby 🤷‍♂️? To be honest, I dread the idea of have an ernomous `node_modules` directory and then have to update all the dependencies just for a simple website. I love how Hugo works with just one single library. But will I accept its limitations, choose one of pre-maded themes and done with it? I think not.
+As someone working mainly with JavaScript, I find Jekyll to be much more intuitive. Then you might ask, why not use Gatsby 🤷‍♂️? To be honest, I dread the idea of having an enormous `node_modules` directory and then having to update all the dependencies just for a simple website. I love how Hugo works with just one single library. But will I accept its limitations, choose one of the pre-made themes and be done with it? I think not.
 
 At some point, I did try Gatsby. But something didn't click. It's undoubted that Gatsby is popular. You get convenient plugins, little to no setup, and the fantastic power of GraphQL. But as someone said...
 
@@ -39,14 +39,14 @@ At some point, I did try Gatsby. But something didn't click. It's undoubted that
 
 ## The move
 
-Some people find it hard to move from a site to another. For me, I already decided to start from the beginning then I will move my content later. But that not meant I was confident to build a site from scratch.
+Some people find it hard to move from one site to another. For me, I already decided to start from the beginning then I will move my content later. But that not meant I was confident to build a site from scratch.
 
 Instead, I used a starter template called [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog). Huge thanks to [Tim Lin](https://twitter.com/timlrxx) for the minimal, lightweight, and super easy-to-customize blog starter.
 
-This site also got a BIG inspirations from [Marcelo Formentão](https://twitter.com/marceloavf). I can't say thank you enough to him for his phenomenal design and customization of the original theme 🙏.
+This site also got BIG inspiration from [Marcelo](https://twitter.com/marceloavf)](https://twitter.com/marceloavf) Formentão](https://twitter.com/marceloavf). I can't say thank you enough to him for his phenomenal design and customization of the original theme 🙏.
 
-I hope with these setup, I can start my own Next.js and Tailwind CSS playground and get a better understanding of the possibilities.
+I hope with these setups, I can start my own Next.js and Tailwind CSS playground and get a better understanding of the possibilities.
 
 ## The deployment
 
-At first, I wanted to continue to use Cloudflare Pages to host my site. But I found that it was not the best option (for Next.js app at least). The problem lies on the Image Optimization service that Next.js uses. Next.js is built by Vercel, of course, it will support their solution out of the box. Meanwhile, to use the same functionality in Cloudflare Pages would require a lot of work and Cloudflare's solution is not available on the free tier. Therefore, I found it was better to use Vercel.
+At first, I wanted to continue to use Cloudflare Pages to host my site. But I found that it was not the best option (for Next.js app at least). The problem lies in the Image Optimization service that Next.js uses. Next.js is built by Vercel, of course, it will support their solution out of the box. Meanwhile, to use the same functionality in Cloudflare Pages would require a lot of work and Cloudflare's solution is not available on the free tier. Therefore, I found it was better to use Vercel.

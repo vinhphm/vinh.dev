@@ -7,7 +7,7 @@ duration: 7min
 
 [[toc]]
 
-One of the few things I studied from Google UX Design course is how a good UX design should be fun to use. Google didn't exactly use the word "fun" to describe a good UX design, the exact word is **"enjoyable"**
+One of the few things I studied in the Google UX Design course is how a good UX design should be fun to use. Google didn't exactly use the word "fun" to describe a good UX design, the exact word is **"enjoyable"**
 
 > "If a product is enjoyable, it means the design delights the user. The design reflects what the user may be thinking or feeling and creates a positive connection with them. A product's design doesn't have to be enjoyable for it to function properly. But, an enjoyable design adds to an already functional product and can enhance the user's feelings about the experience." - [Google UX Design course](https://www.coursera.org/professional-certificates/google-ux-design)
 > But what exactly are **"micro-interactions"** and how come they are related to this?
@@ -17,11 +17,11 @@ One of the few things I studied from Google UX Design course is how a good UX de
 
 ## Toggle menu (hamburger) icon 🍔
 
-First is the toogle menu for mobile devices from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c) with a little tweak from me:
+First is the toggle menu for mobile devices from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c) with a little tweak from me:
 
 <img src="/images/2022/menu-toggle.gif" rounded-lg>
 
-I use React for my website but below is the plain HTML/CSS code shared by Mikael Ainalem from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c). I recommend you to check out his article on how this icon and animation is made. It's really fascinating.
+I use React for my website but below is the plain HTML/CSS code shared by Mikael Ainalem from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c). I recommend you check out his article on how this icon and animation is made. It's fascinating.
 
 ```html
 <button
@@ -89,10 +89,10 @@ I use React for my website but below is the plain HTML/CSS code shared by Mikael
 
 ## Theme toggle icon ☀️/🌙
 
-Second is the theme toggle icon from the top right corner:
+Second, is the theme toggle icon from the top right corner:
 
 <img src="/images/2022/theme-toggle.gif" rounded-lg>
 
-This one I use React Spring to animate SVG icons based on the instruction from [jfelix.info](https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle) with another small tweaks from me to match with the current setup from my site. You can find the source code [here at GitHub](https://github.com/vinhphm/vinh-dev-archive/blob/main/components/AnimatedThemeIcon.js).
+For this one I use React Spring to animate SVG icons based on the instruction from [jfelix.info](https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle) with another small tweak from me to match with the current setup from my site. You can find the source code [here at GitHub](https://github.com/vinhphm/vinh-dev-archive/blob/main/components/AnimatedThemeIcon.js).
 
 That's it for now. I hope you enjoy my sharing and if you have any questions, feel free to leave a comment below.

@@ -1,5 +1,5 @@
 ---
-title: The DIY Guide to Generating Refresh Tokens for Spotify API Calls
+title: Generating Refresh Tokens for Spotify API Calls
 date: 2023-02-19
 lang: en
 duration: 10min
@@ -7,7 +7,7 @@ duration: 10min
 
 [[toc]]
 
-Are you a web developer who loves music? Do you want to spice up your website with some awesome Spotify content? Maybe you want to show off your favorite playlists, albums, or tracks. Or maybe you want to create a custom music player that streams songs from Spotify. In my case, I put a simple current playing widget on my website:
+Are you a web developer who loves music? Do you want to spice up your website with some awesome Spotify content? Maybe you want to show off your favorite playlists, albums, or tracks. Or maybe you want to create a custom music player that streams songs from Spotify. In my case, I put a simple current-playing widget on my website:
 
 <img src="/images/2023/spotify-current-playing.png" alt="Spotify current playing" rounded-lg>
 
@@ -29,9 +29,9 @@ In this blog post, I will show you how you can generate refresh tokens for the S
 
 Ready? Let's get started!
 
-## Prepare your Spotify's application
+## Prepare your Spotify application
 
-Assumed you already have a registered application on the [Spotify Developer Dashboard](https://developer.spotify.com), you will need to save the **Client ID** and **Client Secret** from the Overview page somewhere safe for the next step.
+Assuming you already have a registered application on the [Spotify Developer Dashboard](https://developer.spotify.com), you will need to save the **Client ID** and **Client Secret** from the Overview page somewhere safe for the next step.
 
 They will look like this:
 
@@ -115,7 +115,7 @@ app.listen(3000, () => {
 })
 ```
 
-2. Go to the directory where your save your `get-token.js`. Run the following command:
+2. Go to the directory where you saved your `get-token.js`. Run the following command:
 
 ```shell
 npm install express axios cors
@@ -127,6 +127,6 @@ npm install express axios cors
 node get-token.js
 ```
 
-4. Open your browser and enter this address `http://localhost:3000/login`. You will get your tokens as an array result from two API calls: the first one is to get access token and refresh token, the second one to grant the refresh token.
+4. Open your browser and enter this address `http://localhost:3000/login`. You will get your tokens as an array result from two API calls: the first one is to get an access token and refresh token, and the second one is to grant the refresh token.
 
-There you go. You finally have your refresh token for your website. You can continue implement Spotify to your website now. Happy coding!
+There you go. You finally have your refresh token for your website. You can continue to implement Spotify on your website now. Happy coding!

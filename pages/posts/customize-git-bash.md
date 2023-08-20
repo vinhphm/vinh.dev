@@ -7,7 +7,7 @@ duration: 10min
 
 [[toc]]
 
-If you are a web developer but work mainly on Windows environment like me, you may have known about Git Bash. It's based on MinGW64 (Minimalist GNU for Windows x64). It serves well for its purpose but sometimes it's kind of boring. Due to the need to maintain backward compatibility, newer features of Bash are rarely enabled by default. WSL is good replacement but it need configurations on the system level. Not very handy if you work in a limited access system. So back to Git Bash, no worries, we can tweak it a little bit to enhance the experience. In this tutorial, I will assume that you installed Git for Windows and (optionally) Windows Terminal.
+If you are a web developer but work mainly on Windows environments like me, you may have known about Git Bash. It's based on MinGW64 (Minimalist GNU for Windows x64). It serves well for its purpose but sometimes it's kind of boring. Due to the need to maintain backward compatibility, newer features of Bash are rarely enabled by default. WSL is a good replacement but it needs configurations on the system level. Not very handy if you work in a limited access system. So back to Git Bash, no worries, we can tweak it a little bit to enhance the experience. In this tutorial, I will assume that you installed Git for Windows and (optionally) Windows Terminal.
 
 ## Customize startup files
 

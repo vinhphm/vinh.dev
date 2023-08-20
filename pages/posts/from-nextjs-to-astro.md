@@ -1,5 +1,5 @@
 ---
-title: 'From Next.js to Astro - Part 2: The Move'
+title: 'The Move from Next.js to Astro'
 date: 2023-03-12
 duration: 10min
 lang: en
@@ -7,13 +7,11 @@ lang: en
 
 [[toc]]
 
-> [From Next.js to Astro - Part 1: Why I Changed Again](/articles/from-nextjs-to-astro/part-1-why-i-changed-again)
-
-At first glance you would think the move is easy, and it might actually be if your site doesn’t have much going on. For my case though, it was a whole different story.
+At first glance, you would think the move is easy, and it might actually be if your site doesn’t have much going on. In my case though, it was a whole different story.
 
 Let's start by taking a look at [Astro's document](https://docs.astro.build/en/guides/migrate-to-astro/) for the migration. They have all sorts of scenarios of which framework you’re coming from, so I took a look at the [Next.js page](https://docs.astro.build/en/guides/migrate-to-astro/from-nextjs/)
 
-Following all of those steps was kind of easy, you should find no troubles doing it in a simple static site. But some parts of my website did not work so well after the conversion.
+Following all of those steps was kind of easy, you should find no trouble doing it on a simple static site. But some parts of my website did not work so well after the conversion.
 
 ## The header
 
@@ -21,7 +19,7 @@ My header has a specific animation and behavior. It will show itself when the us
 
 ## The font
 
-I use Inter variable font for Vinh.Dev. Since it’s a variable font, the size of the font files are somewhat bigger than normal font files. In Next.js, since it has all been loaded in the first time you load the page, when you navigate through the site, you won’t see anything strange. However, that’s not the case with Astro, since almost anything in Astro is static. When you navigate through the site, everything needs to be loaded again, including the fonts. This can cause layout shift when your font of choice hasn’t loaded yet but the page’s contents have already appeared.
+I use Inter variable font for Vinh.Dev. Since it’s a variable font, the size of the font files is somewhat bigger than normal font files. In Next.js, since it has all been loaded the first time you load the page when you navigate through the site, you won’t see anything strange. However, that’s not the case with Astro, since almost anything in Astro is static. When you navigate through the site, everything needs to be loaded again, including the fonts. This can cause a layout shift when your font of choice hasn’t loaded yet but the page’s contents have already appeared.
 
 The best way to avoid this is to have your font preloaded by putting this tag inside `<header>...</header>`
 
@@ -39,7 +37,7 @@ The best way to avoid this is to have your font preloaded by putting this tag in
 
 If you have ever created a personal website with Next.js, you might have seen a Spotify widget on someone else’s site. I have one on mine too 😎. It was probably inspired by [this tutorial](https://leerob.io/blog/spotify-api-nextjs) from Lee Robinson. It’s a cool widget, but you couldn’t use it in Astro until version 2.0.0 came out. (Well, technically you could, but that did require another site to act as API Endpoints, and we don’t want to complicate things up, do we?)
 
-So in version 2.0.0, Astro supports SSR endpoints so that we can have all kinds APIs we want, and that means? Yes, Spotify 🎉. So here is how the code for Spotify API looks like in Astro's way:
+So in version 2.0.0, Astro supports SSR endpoints so that we can have all kinds of APIs we want, and that means? Yes, Spotify 🎉. So here is how the code for Spotify API looks like in Astro's way:
 
 ```ts
 // src/pages/api/spotify.json.ts
@@ -98,7 +96,7 @@ export const get = async () => {
 }
 ```
 
-We don’t have a `handler` function with `req` and `res` cooked for us. Instead we have to define functions with the corresponding HTTP request type, then get the request and make the response by ourself. Actually, the Spotify example above is not very clear how can you get data from request's body. Here is another example how you can do it:
+We don’t have a `handler` function with `req` and `res` cooked for us. Instead, we have to define functions with the corresponding HTTP request type, then get the request and make the response by ourselves. Actually, the Spotify example above is not very clear on how can you get data from the request's body. Here is another example of how you can do it:
 
 ```ts
 // src/pages/api/newsletter.json.ts
@@ -146,7 +144,7 @@ export const post = async ({ request }) => {
 
 And also remember that the filename should include the data type your API will return, for example, `spotify.json.ts`
 
-In my case, the component that uses the API is a `.tsx file. This means that when I want to use that component in some place in my Astro site, I have to call it like this:
+In my case, the component that uses the API is a `.tsx file. This means that when I want to use that component in some place on my Astro site, I have to call it like this:
 
 ```tsx
 // ...
@@ -154,4 +152,4 @@ In my case, the component that uses the API is a `.tsx file. This means that whe
 // ...
 ```
 
-That has covered up all the big issues I encountered during the transfered to Astro. In the next article in the series, I will tell you how Astro made my website better than ever.
+That has covered up all the big issues I encountered during the transfer to Astro. In the next article in the series, I will tell you how Astro made my website better than ever.
