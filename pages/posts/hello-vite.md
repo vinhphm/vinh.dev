@@ -2,10 +2,8 @@
 title: Hello, Vite
 date: 2023-08-20T12:30:00+07:00
 lang: en
-duration: 5min
+duration: 3min
 ---
-
-[[toc]]
 
 Can't say that I'm proud of how frequently I change the tech stack of my website. But since my first intention for this web is where I can freely practice things that I learn in my journey in the technology field. And the latest of them is Vite.
 
