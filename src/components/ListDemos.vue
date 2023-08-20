@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { breakpointsTailwind } from '@vueuse/core'
-import { demoItems } from '../../demo/data'
+import { demoItems } from '../../demos/data'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 

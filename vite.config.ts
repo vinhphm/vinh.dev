@@ -67,7 +67,7 @@ export default defineConfig({
     }),
 
     Markdown({
-      wrapperComponent: id => id.includes('/demo/')
+      wrapperComponent: id => id.includes('/demos/')
         ? 'WrapperDemo'
         : 'WrapperPost',
       wrapperClasses: (id, code) => code.includes('@layout-full-width')

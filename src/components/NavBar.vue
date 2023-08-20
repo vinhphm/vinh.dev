@@ -38,7 +38,10 @@ const { y: scroll } = useWindowScroll()
           <span class="lt-md:hidden">Projects</span>
           <div i-ri-lightbulb-line class="md:hidden" />
         </RouterLink>
-
+        <RouterLink to="/demos" title="Demos">
+          <span class="lt-md:hidden">Demos</span>
+          <div i-ri-screenshot-line class="md:hidden" />
+        </RouterLink>
         <a href="https://threads.net/@vinh.phm" target="_blank" title="Twitter" class="lt-md:hidden">
           <fa6-brands-threads />
         </a>
