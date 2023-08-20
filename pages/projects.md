@@ -8,14 +8,14 @@ projects:
   Current Focus:
     - name: 'Vinh.Dev'
       link: 'https://vinh.dev'
-      desc: 'Current version of my personal website to share things out with the world'
-      icon: 'vitest'
+      desc: 'My place to share things out with the world. Vite edition.'
+      icon: 'vinh-dev'
 
   Astro:
     - name: 'Vinh.Dev - Astro version'
       link: 'https://github.com/vinhphm/vp-astro'
       desc: 'The Astro version of my website in the first half of 2023'
-      icon: 'i-simple-icons-astro saturate-0'
+      icon: 'i-devicon-plain-astro saturate-0'
 
   Fresh/Deno:
     - name: 'Paste'
