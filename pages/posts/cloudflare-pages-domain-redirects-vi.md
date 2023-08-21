@@ -2,7 +2,7 @@
 title: Thiết lập domain redirects cho Cloudflare Pages
 date: 2023-08-21T12:30:00+07:00
 lang: vi
-duration: 6min
+duration: 10min
 description: Chuyển domain *.pages.dev sang custom domain, từ www sang non-www (apex) domain
 ---
 
@@ -18,7 +18,7 @@ Cloudflare Pages hỗ trợ chức năng redirect thông qua file `_redirects`, 
 /articles/*  /blog/:splat  301
 ```
 
-Rule này redirect tất cả đường link blog của bạn từ dạng `/articles/...` sang `/blog/...`. Nhưng rule này cũng chỉ ở mức subpath, bạn không thể làm hai điều mà mình sắp hướng dẫn dưới đây thông qua file `_redirects` này được.
+Rule này redirect tất cả đường link blog của bạn từ dạng `/articles/...` sang `/blog/...`. Bạn có thể đọc thêm về phần này tại [trang document của Cloudflare](https://developers.cloudflare.com/pages/platform/redirects/). Nhưng rule này cũng chỉ ở mức subpath, bạn không thể làm hai điều mà mình sắp hướng dẫn dưới đây thông qua file `_redirects` này được.
 
 ## Redirect từ *.pages.dev sang custom domain của bạn
 
@@ -28,12 +28,12 @@ Khi bạn deploy project của mình lên Cloudflare Pages, địa chỉ domain 
 
 ### Tiến hành
 
-1. Log in vào [Cloudflare dashboard](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/domains) và chọn account của bạn.
+1. Đăng nhập vào [Cloudflare dashboard](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/domains) và chọn account của bạn.
 2. Chọn **Workers & Pages** rồi chọn Pages mà bạn muốn.
 3. Vào **Custom domains** và kiểm tra lại xem custom domain của bạn có ở đó chưa. Nếu chưa, thêm mới bằng cách chọn **Set up a custom domain**.
 4. Tìm đến **Account Home** > **Bulk Redirects**.
 5. Chọn **Create a new Bulk Redirects list** > **Create new list**.
-<img src="/images/2023/create_a_new_bulk_redirect_list.png" rounded-lg>
+<img src="/images/2023/create_a_new_bulk_redirect_list.png" alt="Create new Bulk Redirect list" rounded-lg>
 6. Ở mục content type, chọn **Redirect**.
 7. Thêm domain `*.pages.dev` của project bạn vào source URL.
 8. Nhập target custom domain URL. Lưu ý là bạn phải thêm `https://` vào trước tên apex domain (domain không có `www`).
@@ -41,4 +41,17 @@ Khi bạn deploy project của mình lên Cloudflare Pages, địa chỉ domain 
 > Optional: Nếu tick vào **Include subdomains box**, toàn bộ những URLs bản preview sẽ bị redirect tới custom domain chính.
 10.  Click **Add to list**.
 11. Vào lại **Bulk Redirects** > **Create Bulk Redirects** > chọn list bạn vừa tạo > **Save and Deploy**.
-<img src="/images/2023/create_new_bulk_redirect.png" rounded-lg>
+<img src="/images/2023/create_new_bulk_redirect.png" alt="Create new Bulk Redirects" rounded-lg>
+
+## Redirect từ domain có `www` sang không có `www` (apex domain)
+
+Trong một số trường hợp, thay vì muốn có domain `www.example.com`, người dùng lại muốn có domain gọn hơn dạng ```example.com` trên thanh địa chỉ. Và việc thống nhất cách hiển thiện này cũng là điều thiết yếu trong quá trình phát triển trang web. Thông thường, các dịch vụ như Netlify hay Vercel hỗ trợ điều này không qua thiết lập DNS kèm theo số tinh chỉnh trực quan ở dashboard của họ. Riêng với Cloudflar Pages, bạn phải tự set up chức năng này, và cũng phải thông qua **Bulk Redirects**, chi tiết như sau:
+
+1. Đăng nhập vào [Cloudflare dashboard](https://dash.cloudflare.com/), chọn account và website của bạn.
+2. Vào mục DNS.
+3. Tạo một record DNS mới cho subdomain `www`. Hoặc là `A` record với value là `192.0.2.1` hoặc là `AAAA` record với value là `100::`. Record mới này cũng phải được mở proxy của Cloudflare (đám mây màu cam) để nó có thể tương thích với redirect rule mà chúng ta sẽ thiết lập sắp tới.
+<img src="/images/2023/www_subdomain.png" alt="DNS record setting" rounded-lg>
+4. Tiếp theo, tìm đến **Account Home** > **Bulk Redirects** và set up rule redirect tương tự như hướng dẫn phía trên (bạn có thể add thêm rule vào list đã được tạo ở trên), vẫn tick chọn vào **Preserve query string**, **Subpath matching**, **Preserve path suffix**. Và cuối cùng là **Save and Deploy**.
+<img src="/images/2023/redirect-parameters.png" alt="Redirect parameters" rounded-lg>
+
+Hi vọng hướng dẫn trên đây là giúp bạn phần nào trong quá trình chuyển sang Cloudflare Pages. Cheers!
