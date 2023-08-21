@@ -1,5 +1,3 @@
-https://vinh-dev.pages.dev/*  https://vinh.dev/:splat  301
-
 /rss  /feed.xml  301
 /blog  /posts  301
 /articles/*  /posts/:splat  301
