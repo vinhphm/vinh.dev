@@ -25,15 +25,15 @@ const { y: scroll } = useWindowScroll()
       <div class="right" print:op0>
         <RouterLink to="/posts" title="Blog">
           <span class="lt-md:hidden">Blog</span>
-          <div i-ri-article-line md:hidden />
+          <div i-tabler-notebook md:hidden />
         </RouterLink>
         <RouterLink to="/projects" title="Projects">
           <span class="lt-md:hidden">Projects</span>
-          <div i-ri-lightbulb-line class="md:hidden" />
+          <div i-tabler-list-details class="md:hidden" />
         </RouterLink>
         <RouterLink to="/demos" title="Demos">
           <span class="lt-md:hidden">Demos</span>
-          <div i-ri-screenshot-line class="md:hidden" />
+          <div i-tabler:photo-code class="md:hidden" />
         </RouterLink>
         <a href="https://threads.net/@vinh.phm" target="_blank" title="Twitter" class="lt-md:hidden">
           <fa6-brands-threads />
@@ -42,10 +42,10 @@ const { y: scroll } = useWindowScroll()
           <div i-uil-github-alt />
         </a>
         <a href="mailto:vinh@vinh.dev" target="_blank" title="Email" class="lt-md:hidden">
-          <div i-lucide-mail />
+          <div i-tabler-mail />
         </a>
         <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
-          <div i-la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" />
+          <div i-fluent-rss-20-regular style="font-size:1.25rem; margin: 0 -0.125rem;" />
         </a>
         <toggle-theme />
       </div>

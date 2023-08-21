@@ -8,7 +8,9 @@ description: Chuyển domain *.pages.dev sang custom domain, từ www sang non-w
 
 [[toc]]
 
-[<span i-simple-icons-cloudflarepages /> Cloudflare Pages](https://pages.cloudflare.com/) là nhân vật mới trong giới JAMstack khi có thể so sánh với Netlify hay Vercel. Dù là cái tên mới nhưng Cloudflare lại là cái tên được nhiều người biết đến nên dần nhiều người bắt đầu chuyển sang dịch vụ này của Cloudflare. Cloudflare Pages có nhiều ưu điểm để nhiều người cân nhắc nhưng cũng những vấn đề bạn phải cân chỉnh, thiết lập thì mới đạt được điều mình mong muốn. Một trong số đó là redirects.
+> [Tiếng Anh - English Version](/posts/cloudflare-pages-domain-redirects)
+
+[<span i-simple-icons-cloudflarepages /> Cloudflare Pages](https://pages.cloudflare.com/) là nhân tố mới trong giới JAMstack, bên cạnh Netlify và Vercel. Dù là nhân vật mới nhưng Cloudflare lại là cái tên được nhiều người biết đến nên dần nhiều người bắt đầu chuyển sang dịch vụ này của Cloudflare. Cloudflare Pages có nhiều ưu điểm để nhiều người cân nhắc nhưng cũng những vấn đề bạn phải cân chỉnh, thiết lập thì mới đạt được điều mình mong muốn. Một trong số đó là redirects.
 
 ## Vấn đề
 
@@ -20,7 +22,7 @@ Cloudflare Pages hỗ trợ chức năng redirect thông qua file `_redirects`, 
 
 Rule này redirect tất cả đường link blog của bạn từ dạng `/articles/...` sang `/blog/...`. Bạn có thể đọc thêm về phần này tại [trang document của Cloudflare](https://developers.cloudflare.com/pages/platform/redirects/). Nhưng rule này cũng chỉ ở mức subpath, bạn không thể làm hai điều mà mình sắp hướng dẫn dưới đây thông qua file `_redirects` này được.
 
-## Redirect từ *.pages.dev sang custom domain của bạn
+## Redirect từ `*.pages.dev` sang custom domain của bạn
 
 ### Tại sao phải làm điều này?
 
