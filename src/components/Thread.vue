@@ -15,12 +15,19 @@ const username = computed(() => {
   return parts[parts.length - 3].slice(1)
 })
 
+let threadScript: HTMLScriptElement | null = null
+
 onMounted(() => {
-  if (!document.querySelector('script[src="https://www.threads.net/embed.js"]')) {
-    const script = document.createElement('script')
-    script.setAttribute('async', '')
-    script.setAttribute('src', 'https://www.threads.net/embed.js')
-    document.head.appendChild(script)
+  threadScript = document.createElement('script')
+  threadScript.setAttribute('async', '')
+  threadScript.setAttribute('src', 'https://www.threads.net/embed.js')
+  document.head.appendChild(threadScript)
+})
+
+onUnmounted(() => {
+  if (threadScript) {
+    document.head.removeChild(threadScript)
+    threadScript = null
   }
 })
 </script>
