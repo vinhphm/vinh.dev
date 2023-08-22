@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { isDark } from '../logics'
 
 const props = defineProps<{
   link: string
@@ -15,24 +15,29 @@ const username = computed(() => {
   return parts[parts.length - 3].slice(1)
 })
 
+const threadContainer = ref<HTMLElement | null>(null)
+
 onMounted(() => {
-  const script = document.createElement('script')
-  script.setAttribute('async', '')
-  script.setAttribute('src', 'https://www.threads.net/embed.js')
-  document.head.appendChild(script)
+  if (threadContainer.value) {
+    const script = document.createElement('script')
+    script.setAttribute('async', '')
+    script.setAttribute('src', 'https://www.threads.net/embed.js')
+    threadContainer.value.appendChild(script)
+  }
 })
 </script>
 
 <template>
-  <div v-if="props.link">
+  <div v-if="props.link" ref="threadContainer">
     <blockquote
-      :id="`ig-tp-${postId}`" class="text-post-media"
-      :data-text-post-permalink="props.link" data-text-post-version="0"
-      style=" background:#FFF; border-width: 1px; border-style: solid; border-color: #00000026; border-radius: 16px; max-width:540px; margin: 1px; min-width:270px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"
+      :id="`ig-tp-${postId}`"
+      :class="`text-post-media thread-wrapper ${isDark ?? 'dark'}`"
+      :data-text-post-permalink="props.link"
+      data-text-post-version="0"
     >
       <a
         :href="props.link"
-        style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%; font-family: -apple-system, BlinkMacSystemFont, sans-serif;"
+        class="thread-content"
         target="_blank"
       >
         <div style=" padding: 40px; display: flex; flex-direction: column; align-items: center;">
@@ -46,10 +51,10 @@ onMounted(() => {
               />
             </svg>
           </div>
-          <div style=" font-size: 15px; line-height: 21px; color: #999999; font-weight: 400; padding-bottom: 4px; ">
+          <div class="details">
             Post by @{{ username }}
           </div>
-          <div style=" font-size: 15px; line-height: 21px; color: #000000; font-weight: 600; ">
+          <div class="threads-btn">
             View on Threads
           </div>
         </div>
@@ -57,3 +62,62 @@ onMounted(() => {
     </blockquote>
   </div>
 </template>
+
+<style scoped>
+.thread-wrapper {
+  background: #FFF;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000026;
+  border-radius: 16px;
+  max-width:540px;
+  margin: 1px;
+  min-width: 270px;
+  padding: 0;
+  width: 99.375%;
+  width: -webkit-calc(100% - 2px);
+  width: calc(100% - 2px);
+
+  .thread-content {
+    background: #FFFFFF;
+    line-height: 0;
+    padding: 0 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+    .details {
+      font-size: 15px;
+      line-height: 21px;
+      color: #999999;
+      font-weight: 400;
+      padding-bottom: 4px;
+    }
+
+    .threads-btn {
+      font-size: 15px;
+      line-height: 21px;
+      color: #000000;
+      font-weight: 600;
+    }
+  }
+}
+
+.thread-wrapper.dark {
+  background: #000;
+  border-color: #FFFFFF26;
+
+  .thread-content {
+    background:#000000;
+
+    .details {
+      color: #666666;
+    }
+
+    .threads-btn {
+      color: #FFFFFF;
+    }
+  }
+}
+</style>
