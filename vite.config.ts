@@ -137,6 +137,8 @@ export default defineConfig({
           frontmatter.image = `https://vinh.dev/${path}`
         })()
         const head = defaults(frontmatter, options)
+        if (id.startsWith(resolve(__dirname, 'pages/posts')))
+          head.title = `${frontmatter.title} - Vinh Pham`
         return { head, frontmatter }
       },
     }),

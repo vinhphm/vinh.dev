@@ -6,8 +6,8 @@ duration: 5min
 type: note
 ---
 
-Ever since Threads is released, I find myself use it more frequently and move away from Twitter (or should I call it X now).
+Ever since Threads is released, I find myself using it more frequently and moving away from Twitter (or should I call it X now).
 
-Now I need to test Threads embedding:
+This is my test for Threads embeds:
 
 <Thread link="https://www.threads.net/@vinh.phm/post/Cvy1WboPbWB" />
