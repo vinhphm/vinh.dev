@@ -140,6 +140,7 @@ export default defineConfig({
         const postsDir = resolve(__dirname, 'pages/posts')
         if (id.startsWith(postsDir) && basename(id) !== 'index.md')
           head.title = `${frontmatter.title} - Vinh Pham`
+        head.meta.push({ property: 'og:title', content: `${frontmatter.title} - Vinh Pham` })
         return { head, frontmatter }
       },
     }),
