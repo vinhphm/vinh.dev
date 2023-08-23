@@ -128,13 +128,8 @@ export default defineConfig({
           const route = basename(id, '.md')
           if (route === 'index' || frontmatter.image || !frontmatter.title)
             return
-          const path = `og/${route}.png`
-          promises.push(
-            fs.existsSync(`${id.slice(0, -3)}.png`)
-              ? fs.copy(`${id.slice(0, -3)}.png`, `public/${path}`)
-              : generateOg(frontmatter.title!.replace(/\s-\s.*$/, '').trim(), `public/${path}`),
-          )
-          frontmatter.image = `https://vinh.dev/${path}`
+          const title = encodeURIComponent(frontmatter.title!.replace(/\s-\s.*$/, '').trim())
+          frontmatter.image = `https://workers.vinh.dev/og?title=${title}`
         })()
         const head = defaults(frontmatter, options)
         const postsDir = resolve(__dirname, 'pages/posts')
