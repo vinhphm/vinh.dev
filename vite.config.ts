@@ -190,7 +190,6 @@ export default defineConfig({
         if (warning.code !== 'UNUSED_EXTERNAL_IMPORT')
           next(warning)
       },
-      input: 'functions',
     },
   },
 
