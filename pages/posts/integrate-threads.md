@@ -6,7 +6,7 @@ duration: 5min
 description: Embed Threads contents to your website/app
 ---
 
-Ever since Threads was released, I find myself using it more frequently and moving away from Twitter, or should I call it X now. With Threads web version a few days away, let's find a way to add it to our websites, like this:
+Ever since Threads (an Instagram-powered social network) was released, I find myself using it more frequently and moving away from Twitter, or should I call it X now. With Threads web version a few days away, let's find a way to add it to our websites, like this:
 
 <Thread href="https://www.threads.net/@threads/post/CwQEkZfgBH0" />
 
