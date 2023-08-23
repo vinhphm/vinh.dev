@@ -23,21 +23,16 @@ const props = defineProps<{
   href: string
 }>()
 
-const threadContainer = ref<HTMLElement | null>(null)
 const iframelyKeyHash = import.meta.env.VITE_IFRAMELY_KEY_HASH
 
 onMounted(() => {
-  if (threadContainer.value) {
-    const script = document.createElement('script')
-    script.setAttribute('async', '')
-    script.setAttribute('src', 'https://cdn.iframe.ly/embed.js')
-    threadContainer.value.appendChild(script)
-  }
+  // @ts-expect-error cdn
+  window?.iframely && window.iframely.load()
 })
 </script>
 
 <template>
-  <div v-if="props.href" ref="threadContainer">
+  <div v-if="props.href">
     <div class="iframely-embed">
       <div class="iframely-responsive" style="padding-bottom: 100%">
         <a
@@ -51,3 +46,17 @@ onMounted(() => {
 ```
 
 Iframely provides many ways to use their service but I feel like this is the fastest way for now.
+
+So, when you signed up for Iframely, you will be provided with a key and a MD5 hash version of it. In this method of ours, we're going to use the hash key. You will need to save it in your environment variable.
+
+We have this code snippet, `window?.iframely && window.iframely.load();`, on the `onMounted` method. This is to call the Iframely's `embed.js` whenever our component appears. And also, make sure you have added the script tag below to your `index.html`:
+
+```html
+<script async src="//cdn.iframe.ly/embed.js"></script>
+```
+
+And there. Now your website is partly prepared for Threads, so let's hang back and wait for Threads web version.
+
+<Thread href="https://www.threads.net/@vinh.phm/post/CwNHs0Nv66-" />
+
+Good luck!

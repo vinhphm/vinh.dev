@@ -3,21 +3,16 @@ const props = defineProps<{
   href: string
 }>()
 
-const threadContainer = ref<HTMLElement | null>(null)
 const iframelyKeyHash = import.meta.env.VITE_IFRAMELY_KEY_HASH
 
 onMounted(() => {
-  if (threadContainer.value) {
-    const script = document.createElement('script')
-    script.setAttribute('async', '')
-    script.setAttribute('src', 'https://cdn.iframe.ly/embed.js')
-    threadContainer.value.appendChild(script)
-  }
+  // @ts-expect-error cdn
+  window?.iframely && window.iframely.load()
 })
 </script>
 
 <template>
-  <div v-if="props.href" ref="threadContainer">
+  <div v-if="props.href">
     <div class="iframely-embed">
       <div class="iframely-responsive" style="padding-bottom: 100%">
         <a
