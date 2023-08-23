@@ -121,18 +121,26 @@ export default defineConfig({
       },
       frontmatterPreprocess(frontmatter, options, id, defaults) {
         (() => {
-          const route = basename(id, '.md')
           if (!id.endsWith('.md'))
             return
-          if ((route === 'index' && dirname(id).endsWith('pages')) || frontmatter.image || !frontmatter.title)
+          const route = basename(id, '.md')
+          if (
+            (route === 'index' && dirname(id).endsWith('pages'))
+            || frontmatter.image
+            || !frontmatter.title
+          )
             return
           const title = encodeURIComponent(frontmatter.title!.replace(/\s-\s.*$/, '').trim())
           frontmatter.image = `https://workers.vinh.dev/og?title=${title}`
         })()
         const head = defaults(frontmatter, options)
-        const postsDir = resolve(__dirname, 'pages/posts')
+        const pagesDir = resolve(__dirname, 'pages')
         const route = basename(id, '.md')
-        if (id.startsWith(postsDir) && !(route === 'index' && dirname(id).endsWith('pages')))
+        if (
+          id.startsWith(pagesDir)
+          && !(route === 'index' && dirname(id).endsWith('pages'))
+          && route !== '[...404]'
+        )
           head.title = `${frontmatter.title} - Vinh Pham`
         return { head, frontmatter }
       },
