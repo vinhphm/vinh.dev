@@ -1,5 +1,5 @@
 ---
-title: Notes - Vinh Pham
+title: Notes
 plum: true
 display: ''
 ---

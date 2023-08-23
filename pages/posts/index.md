@@ -1,5 +1,5 @@
 ---
-title: Blog - Vinh Pham
+title: Blog
 display: ''
 plum: true
 ---
