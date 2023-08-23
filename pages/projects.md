@@ -1,5 +1,5 @@
 ---
-title: Projects - Vinh Pham
+title: Projects
 display: Projects
 description: My creative endeavors, and a journey of making an impact
 plum: true

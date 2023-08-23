@@ -1,4 +1,4 @@
-import { basename, resolve } from 'node:path'
+import { basename, resolve, dirname} from 'node:path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 import Pages from 'vite-plugin-pages'
@@ -121,17 +121,18 @@ export default defineConfig({
       },
       frontmatterPreprocess(frontmatter, options, id, defaults) {
         (() => {
+          const route = basename(id, '.md')
           if (!id.endsWith('.md'))
             return
-          const route = basename(id, '.md')
-          if (route === 'index' || frontmatter.image || !frontmatter.title)
+          if ((route === 'index' && dirname(id).endsWith('pages')) || frontmatter.image || !frontmatter.title)
             return
           const title = encodeURIComponent(frontmatter.title!.replace(/\s-\s.*$/, '').trim())
           frontmatter.image = `https://workers.vinh.dev/og?title=${title}`
         })()
         const head = defaults(frontmatter, options)
         const postsDir = resolve(__dirname, 'pages/posts')
-        if (id.startsWith(postsDir) && basename(id) !== 'index.md')
+        const route = basename(id, '.md')
+        if (id.startsWith(postsDir) && !(route === 'index' && dirname(id).endsWith('pages')))
           head.title = `${frontmatter.title} - Vinh Pham`
         return { head, frontmatter }
       },
