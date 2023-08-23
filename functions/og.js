@@ -1,6 +1,5 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import type { SatoriOptions } from 'satori'
 import satori from 'satori'
 import sharp from 'sharp'
 
@@ -10,17 +9,7 @@ const ogSVG = fs.readFileSync(path.resolve(__dirname, '../scripts/og-template.sv
 // Read the font file
 const inter400 = fs.readFileSync(path.resolve(__dirname, '../scripts/fonts/Inter-Bold.ttf'))
 
-declare type Weight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
-declare type Style$1 = 'normal' | 'italic'
-interface FontOptions {
-  data: Buffer | ArrayBuffer
-  name: string
-  weight?: Weight
-  style?: Style$1
-  lang?: string
-}
-
-const fonts: FontOptions[] = [
+const fonts = [
   {
     name: 'Inter',
     data: inter400,
@@ -29,7 +18,7 @@ const fonts: FontOptions[] = [
   },
 ]
 
-export async function handleRequest(request: Request) {
+export async function handleRequest(request) {
   const url = new URL(request.url)
 
   const title = url.searchParams.get('title') ?? 'Missing Title'
@@ -38,7 +27,7 @@ export async function handleRequest(request: Request) {
   const lines = title.trim().split(/(.{0,25})(?:\s|$)/g).filter(Boolean)
 
   // Map the lines to your placeholders
-  const data: Record<string, string> = {
+  const data = {
     line1: lines[0],
     line2: lines[1],
     line3: lines[2],
@@ -47,7 +36,7 @@ export async function handleRequest(request: Request) {
   // Replace placeholders in the SVG with the title lines
   let svg = ogSVG.replace(/\{\{([^}]+)}}/g, (_, name) => data[name] || '')
 
-  const options: SatoriOptions = {
+  const options = {
     // debug: true,
     width: 1200,
     height: 630,
