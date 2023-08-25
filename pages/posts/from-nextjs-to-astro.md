@@ -1,5 +1,5 @@
 ---
-title: 'The Move from Next.js to Astro'
+title: 'The move from Next.js to Astro'
 date: 2023-03-12
 duration: 10min
 lang: en
@@ -44,7 +44,7 @@ So in version 2.0.0, Astro supports SSR endpoints so that we can have all kinds 
 
 import { getNowPlaying } from '@/lib/spotify'
 
-export const get = async () => {
+export async function get() {
   const response = await getNowPlaying()
 
   if (response.status === 204 || response.status > 400) {
@@ -77,7 +77,8 @@ export const get = async () => {
         },
       }
     )
-  } else if (nowPlaying.currently_playing_type === 'episode') {
+  }
+  else if (nowPlaying.currently_playing_type === 'episode') {
     // podcast
     return new Response(
       JSON.stringify({
@@ -108,7 +109,7 @@ mailchimp.setConfig({
   server: import.meta.env.MAILCHIMP_API_SERVER, // e.g. us1
 })
 
-export const post = async ({ request }) => {
+export async function post({ request }) {
   let email
 
   if (request.headers.get('Content-Type') === 'application/json') {
@@ -131,7 +132,8 @@ export const post = async ({ request }) => {
     return new Response(JSON.stringify({ error: '' }), {
       status: 201,
     })
-  } catch (error) {
+  }
+  catch (error) {
     return new Response(
       JSON.stringify({ error: error.message || error.toString() }),
       {

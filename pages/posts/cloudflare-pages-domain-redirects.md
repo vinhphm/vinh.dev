@@ -1,5 +1,5 @@
 ---
-title: Set Domain Redirects for Cloudflare Pages
+title: Set domain redirects for Cloudflare Pages
 date: 2023-08-21T12:30:00+07:00
 lang: en
 duration: 10min

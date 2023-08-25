@@ -1,5 +1,5 @@
 ---
-title: 'Vitesse Theme: A VS Code Theme that You’ll Love'
+title: 'Vitesse Theme - VS Code theme'
 date: 2023-02-26
 lang: en
 duration: 3min

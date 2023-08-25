@@ -1,5 +1,5 @@
 ---
-title: OG Image Generation and Cloudflare Workers
+title: OG image generation and Cloudflare Workers
 date: 2023-08-24T23:00:00+07:00
 lang: en
 duration: 5min

@@ -1,5 +1,5 @@
 ---
-title: I Bought a Domain
+title: I bought a domain
 lang: en
 date: 2022-03-19
 duration: 5min

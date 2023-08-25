@@ -1,5 +1,5 @@
 ---
-title: 'Rosé Pine: Perfect Theme for Your Dark and Light Mode Setup'
+title: 'Rosé Pine - VS Code theme'
 date: 2022-03-27
 lang: en
 duration: 3min
