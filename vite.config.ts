@@ -131,7 +131,7 @@ export default defineConfig({
           )
             return
           const title = encodeURIComponent(frontmatter.title!.replace(/\s-\s.*$/, '').trim())
-          frontmatter.image = `https://vinh.dev/worker/og?title=${title}`
+          frontmatter.image = `https://worker.vinh.dev/og?title=${title}`
         })()
         const head = defaults(frontmatter, options)
         const pagesDir = resolve(__dirname, 'pages')

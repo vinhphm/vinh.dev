@@ -27,7 +27,15 @@ If you're not a fan of the note above, then you can consider using **Routes** in
 
 Routes allow users to map a URL pattern to a Worker. When a request comes in to the Cloudflare network that matches the specified URL pattern, your Worker will execute on that route.
 
-Just like Custom Domains, adding Routes via the dashboard interface is very simple. All you need is to define a route and select the zone it applies to. For example, route `api.abc.dev/og` with zone `abc.dev`.
+Routes can be a little bit trickier than Custom Domain. If you intend to use some routes without a subdomain like `abc.dev/api/something` then adding it by clicking on **Add route** in the dashboard is enough. But what if you want use something like `api.abc.dev/something`, then you will need to set up a DNS record with Cloudflare proxy (orange-clouded) for the website first. If the subdomain you intend to use here will not be used in anything else, simply point it to Cloudflare.
+
+| Type | Name   | IPv4 address | Proxy status |
+| ---- | ------ | ------------ | ------------ |
+| A    | `www`  | `192.0.2.1`  | Proxied      |
+
+Then you can use the **Add route** button the dashboard.
+
+> Route pattern matching considers the entire request URL, including the query parameter string. Since route patterns may not contain query parameters, the only way to have a route pattern match URLs with query parameters is to terminate it with a wildcard, *.
 
 ## Final notes
 After setting all these configurations on the dashboard, all will be saved to `wrangler.toml` file in the Worker project, make sure you don't accidentally replace those configuration when deploying new code to the Worker.
