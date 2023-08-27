@@ -6,4 +6,6 @@
 /instagram  https://instagram.com/vinh.phm  301
 /ig  https://instagram.com/vinh.phm  301
 
+/about  /  301
+
 /articles/*  /posts/:splat  301

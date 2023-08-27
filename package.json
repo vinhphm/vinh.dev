@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@8.6.12",
   "scripts": {
-    "build": "cross-env NODE_ENV=production vite-ssg build && esno ./scripts/rss.ts && cp _dist_redirects dist/_redirects",
+    "build": "cross-env NODE_ENV=production vite-ssg build && esno ./scripts/rss.ts && cp _redirects dist/_redirects",
     "dev": "vite --port 3333 --open",
     "preview": "vite preview",
     "lint": "eslint .",
