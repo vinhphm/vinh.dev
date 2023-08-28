@@ -29,7 +29,7 @@
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
     "@types/prompts": "^2.4.4",
-    "@unhead/vue": "^1.3.5",
+    "@unhead/vue": "^1.3.9",
     "@unocss/reset": "^0.55.2",
     "@vitejs/plugin-vue": "^4.3.3",
     "cross-env": "^7.0.3",
