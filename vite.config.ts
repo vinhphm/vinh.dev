@@ -1,4 +1,4 @@
-import { basename, resolve, dirname} from 'node:path'
+import { basename, dirname, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 import Pages from 'vite-plugin-pages'
@@ -33,6 +33,7 @@ export default defineConfig({
       'vue',
       'vue-router',
       '@vueuse/core',
+      'swr-vue',
       'dayjs',
       'dayjs/plugin/localizedFormat',
     ],
