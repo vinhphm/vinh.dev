@@ -1,6 +1,8 @@
 
 <script setup lang="ts">
-const wrapperClass = ref('')
+defineProps<{
+  wrapperClass?: string
+}>()
 </script>
 
 <template>
