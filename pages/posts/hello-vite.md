@@ -16,5 +16,3 @@ And since we're back to SPA, it's possible to do something like this 👇🏼
 <div class="text-center">
   <ToggleTheme class="text-2xl pb-2 pt-1"/>
 </div>
-
-<NowPlaying />

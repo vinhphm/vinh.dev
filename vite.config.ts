@@ -33,7 +33,6 @@ export default defineConfig({
       'vue',
       'vue-router',
       '@vueuse/core',
-      'swr-vue',
       'dayjs',
       'dayjs/plugin/localizedFormat',
     ],
