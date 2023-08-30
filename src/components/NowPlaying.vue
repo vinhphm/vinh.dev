@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSWR } from 'swr-vue'
+import useSWRV from 'swrv'
 
 async function fetcher(url: string) {
   const res = await fetch(url)
@@ -7,7 +7,7 @@ async function fetcher(url: string) {
   return res.json()
 }
 
-const { data } = useSWR('https://worker.vinh.dev/spotify', fetcher)
+const { data } = useSWRV('https://worker.vinh.dev/spotify', fetcher)
 </script>
 
 <template>
