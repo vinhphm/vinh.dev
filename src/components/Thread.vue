@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import iframely from '@iframely/embed.js'
+
 const props = defineProps<{
   href: string
 }>()
@@ -6,8 +8,7 @@ const props = defineProps<{
 const iframelyKeyHash = import.meta.env.VITE_IFRAMELY_KEY_HASH
 
 onMounted(() => {
-  // @ts-expect-error cdn
-  window?.iframely && window.iframely.load()
+  iframely.load()
 })
 </script>
 
