@@ -35,7 +35,6 @@ export default defineConfig({
       '@vueuse/core',
       'dayjs',
       'dayjs/plugin/localizedFormat',
-      '@iframely/embed.js',
     ],
   },
   plugins: [
