@@ -12,7 +12,7 @@ const { data } = useSWR('https://worker.vinh.dev/spotify', fetcher)
 
 <template>
   <a
-    class="group flex items-center font-medium !border-none"
+    class="group flex items-center font-medium"
     target="_blank"
     rel="noopener"
     :href="data?.isPlaying && data?.songUrl ? data.songUrl : 'https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4'"

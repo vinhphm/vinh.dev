@@ -17,6 +17,4 @@ And since we're back to SPA, it's possible to do something like this 👇🏼
   <ToggleTheme class="text-2xl pb-2 pt-1"/>
 </div>
 
-<div class="justify-items-center">
-  <NowPlaying />
-</div>
+<NowPlaying />
