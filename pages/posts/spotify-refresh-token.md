@@ -3,7 +3,7 @@ title: Generating refresh token for Spotify API calls
 date: 2023-02-19
 lang: en
 duration: 10min
-description: Get Spotify refresh token without relying on other sites
+description: See how you can generate refresh tokens for the Spotify Web API using your browser and Node.js. Learn how to use the Spotify Developer Dashboard, scopes, and code snippets to access Spotify data on your website.
 ---
 
 [[toc]]

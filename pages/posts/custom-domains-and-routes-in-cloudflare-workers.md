@@ -3,7 +3,7 @@ title: Custom Domains and Routes in Cloudflare Workers
 date: 2023-08-25T22:00:00+07:00
 lang: en
 duration: 5min
-description: The guild to start with Cloudflare Workers
+description: A beginner's guide to Cloudflare Workers, a serverless platform that runs your code on the edge. Learn how to use custom domains and routes to trigger your Workers.
 ---
 [[toc]]
 
@@ -38,4 +38,4 @@ Then you can use the **Add route** button the dashboard.
 > Route pattern matching considers the entire request URL, including the query parameter string. Since route patterns may not contain query parameters, the only way to have a route pattern match URLs with query parameters is to terminate it with a wildcard, *.
 
 ## Final notes
-After setting all these configurations on the dashboard, all will be saved to `wrangler.toml` file in the Worker project, make sure you don't accidentally replace those configuration when deploying new code to the Worker.
+After setting all these configurations on the dashboard, all will be saved to `wrangler.toml` file in the Worker project, make sure you don't accidentally replace that configuration when deploying new code to the Worker.

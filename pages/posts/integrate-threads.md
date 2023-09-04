@@ -3,7 +3,7 @@ title: Integrate Threads
 date: 2023-08-22T23:00:00+07:00
 lang: en
 duration: 5min
-description: Embed Threads contents to your website/app
+description: Follow me as I show you how to embed Threads posts on your website using Iframely, a third-party widget that supports rich media. See how you can create a Vue component and use HTML and JavaScript to display Threads posts.
 ---
 
 > **Updated on 30 Aug 2023:** New API call method
