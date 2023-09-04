@@ -3,6 +3,8 @@ import 'floating-vue/dist/style.css'
 import './styles/main.css'
 import './styles/prose.css'
 import './styles/markdown.css'
+import '@fontsource-variable/inter'
+import '@fontsource-variable/roboto-mono'
 import 'uno.css'
 
 import autoRoutes from 'pages-generated'
