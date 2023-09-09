@@ -1,8 +1,9 @@
 ---
-title: 'The move from Next.js to Astro'
+title: The move from Next.js to Astro
 date: 2023-03-12
 duration: 10min
 lang: en
+description: Read about my experience of migrating my website from Next.js to Astro, a new web framework designed for speed. Learn how I solved some of the challenges and improved the site performance.
 ---
 
 [[toc]]
@@ -11,7 +12,7 @@ At first glance, you would think the move is easy, and it might actually be if y
 
 Let's start by taking a look at [Astro's document](https://docs.astro.build/en/guides/migrate-to-astro/) for the migration. They have all sorts of scenarios of which framework you’re coming from, so I took a look at the [Next.js page](https://docs.astro.build/en/guides/migrate-to-astro/from-nextjs/)
 
-Following all of those steps was kind of easy, you should find no trouble doing it on a simple static site. But some parts of my website did not work so well after the conversion.
+Following all of those steps was kind of easy, you should find no trouble doing it on a simple static site. However, some parts of my website did not work so well after the conversion.
 
 ## The header
 
@@ -99,52 +100,7 @@ export async function get() {
 
 We don’t have a `handler` function with `req` and `res` cooked for us. Instead, we have to define functions with the corresponding HTTP request type, then get the request and make the response by ourselves. Actually, the Spotify example above is not very clear on how can you get data from the request's body. Here is another example of how you can do it:
 
-```ts
-// src/pages/api/newsletter.json.ts
-
-import mailchimp from '@mailchimp/mailchimp_marketing'
-
-mailchimp.setConfig({
-  apiKey: import.meta.env.MAILCHIMP_API_KEY,
-  server: import.meta.env.MAILCHIMP_API_SERVER, // e.g. us1
-})
-
-export async function post({ request }) {
-  let email
-
-  if (request.headers.get('Content-Type') === 'application/json') {
-    const formData = await request.json()
-    email = formData.email
-  }
-
-  if (!email) {
-    return new Response(JSON.stringify({ error: 'Email is required' }), {
-      status: 400,
-    })
-  }
-
-  try {
-    await mailchimp.lists.addListMember(import.meta.env.MAILCHIMP_AUDIENCE_ID, {
-      email_address: email,
-      status: 'subscribed',
-    })
-
-    return new Response(JSON.stringify({ error: '' }), {
-      status: 201,
-    })
-  }
-  catch (error) {
-    return new Response(
-      JSON.stringify({ error: error.message || error.toString() }),
-      {
-        status: 500,
-      }
-    )
-  }
-}
-```
-
-And also remember that the filename should include the data type your API will return, for example, `spotify.json.ts`
+Also remember that the filename should include the data type your API will return, for example, `spotify.json.ts`
 
 In my case, the component that uses the API is a `.tsx file. This means that when I want to use that component in some place on my Astro site, I have to call it like this:
 

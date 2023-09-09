@@ -3,6 +3,7 @@ title: Every software developer should write a blog
 date: 2023-01-11
 lang: en
 duration: 5min
+description: Discover the benefits of blogging as a software developer. Learn how blogging can improve your skills, career, and well-being. Find out how to start and stick with it.
 ---
 
 [[toc]]
@@ -29,6 +30,6 @@ How many times a week do you find the perfect StackOverflow answer that solves y
 
 ### Reduce your stress
 
-Take a break from your daily routine of coding, give yourself some freedom, be with your thoughts and write about something you want to share, your own opinion, your own perspective. Write it down and publish it. It will make you feel relaxed.
+Take a break from your daily routine of coding, give yourself some freedom, be with your thoughts, and write about something you want to share, your own opinion, your own perspective. Write it down and publish it. It will make you feel relaxed.
 
 Blogging as a software developer is a great way to develop your personality. Writing a blog can enhance whatever you do or plan to do, and it can open doors that you would never expect. It is worth trying and seeing its benefits.

@@ -1,0 +1,162 @@
+---
+title: Using Spotify API with Vite and Cloudflare Workers
+date: 2023-09-01T13:00:00+07:00
+lang: en
+duration: 5min
+description: Discover how to use Cloudflare Workers to interact with the Spotify API and display your current playing song on your website. Explore how to use Vite and Vue to create a Spotify widget with animation and style.
+---
+
+[[toc]]
+
+In a previous post, we discussed how to generate refresh tokens for Spotify API calls. Now, let's dive into the exciting part: using Cloudflare Workers to interact with the Spotify API.
+
+## A Worker API to handle Spotify APIs call
+
+Before we begin, make sure you have a basic understanding of Cloudflare Workers and have set up a blank Worker with a configured route. If you need guidance on this, refer to our post on [custom domains and routes in Cloudflare Workers](/posts/custom-domains-and-routes-in-cloudflare-workers).
+
+In your `wrangler.toml` file, define non-sensitive variables you'll use in your Worker. For example, let's specify a list of allowed origins:
+
+```toml
+[vars]
+ALLOW_ORIGINS = "'https://abc.dev','http://localhost:3333'"
+```
+
+However, for sensitive information like your Spotify Client ID and tokens, follow these steps:
+
+### Managing Secrets
+
+#### Development Secrets
+
+During local development, create a `.dev.vars` file at the root of your project to store secrets that will be available when running `wrangler dev`. This file should follow a dotenv-like format:
+
+```
+SPOTIFY_CLIENT_ID=your_client_id
+SPOTIFY_CLIENT_SECRET=your_client_secret
+SPOTIFY_REFRESH_TOKEN=your_refresh_token
+```
+
+#### Deployed Worker Secrets
+
+To add secrets to the deployed Worker, run the following command in your terminal, replacing `<KEY>` with the name of your secret:
+
+```shell
+wrangler secret put <KEY>
+```
+
+### Calling the APIs
+
+Depending on your preference, you can structure your source code. For instance, I prefer splitting it into two files: `index.ts` and `spotify.ts`.
+
+In [`spotify.ts`](https://github.com/vinhphm/spotify-worker/blob/main/src/spotify.ts), you can encapsulate the logic related to Spotify API interactions. In [`index.ts`](https://github.com/vinhphm/spotify-worker/blob/main/src/index.ts), you can handle the routing and overall structure of your Cloudflare Worker.
+
+## Vite/Vue Spotify components
+
+I want to archive the same style as my Spotify widget on my old site.
+
+<img src="/images/2023/spotify-current-playing.png" alt="Spotify current playing" rounded-lg>
+
+It contains a `MusicEqualizer.vue` component to show an icon with a small animation to indicate a song is playing.
+
+```vue
+<script setup lang="ts">
+defineProps<{
+  wrapperClass?: string
+}>()
+</script>
+
+<template>
+  <div class="flex h-3 w-4 items-center gap-0.75" :class="[wrapperClass]">
+    <span class="h-3 w-0.75 animate-shrink rounded-sm bg-spotify-green" />
+    <span class="h-1.5 w-0.75 animate-expand rounded-sm bg-spotify-green" />
+    <span class="h-3 w-0.75 animate-shrink rounded-sm bg-spotify-green" />
+  </div>
+</template>
+```
+
+Aside from custom CSS classes for animation, which are shown below, I also made use of UnoCSS/Tailwind CSS.
+
+```css
+@keyframes shrink {
+  0%, 100% {
+    height: 0.75rem;
+  }
+  50% {
+    height: 0.375rem;
+  }
+}
+
+@keyframes expand {
+  0%, 100% {
+    height: 0.375rem;
+  }
+  50% {
+    height: 0.75rem;
+  }
+}
+
+.animate-shrink {
+  animation: shrink ease-in-out 1.5s infinite;
+}
+
+.animate-expand {
+  animation: expand ease-in-out 1.5s infinite;
+}
+```
+
+Now, for the main component,`NowPlaying.vue`:
+
+```vue
+<script setup lang="ts">
+import useSWRV from 'swrv'
+
+async function fetcher(url: string) {
+  const res = await fetch(url)
+
+  return res.json()
+}
+
+const { data } = useSWRV('<your-worker-route>', fetcher)
+</script>
+
+<template>
+  <a
+    class="group flex items-center font-medium !border-none"
+    target="_blank"
+    rel="noopener"
+    :href="data?.isPlaying && data?.songUrl ? data.songUrl : '<your-spotify-profile-url>'"
+  >
+    <svg
+      class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-spotify-logo-green"
+      viewBox="0 0 168 168"
+    >
+      <path d="M83.996.277C37.747.277.253 37.77.253 84.019c0 46.251 37.494 83.741 83.743 83.741 46.254 0 83.744-37.49 83.744-83.741 0-46.246-37.49-83.738-83.745-83.738l.001-.004zm38.404 120.78a5.217 5.217 0 01-7.18 1.73c-19.662-12.01-44.414-14.73-73.564-8.07a5.222 5.222 0 01-6.249-3.93 5.213 5.213 0 013.926-6.25c31.9-7.291 59.263-4.15 81.337 9.34 2.46 1.51 3.24 4.72 1.73 7.18zm10.25-22.805c-1.89 3.075-5.91 4.045-8.98 2.155-22.51-13.839-56.823-17.846-83.448-9.764-3.453 1.043-7.1-.903-8.148-4.35a6.538 6.538 0 014.354-8.143c30.413-9.228 68.222-4.758 94.072 11.127 3.07 1.89 4.04 5.91 2.15 8.976v-.001zm.88-23.744c-26.99-16.031-71.52-17.505-97.289-9.684-4.138 1.255-8.514-1.081-9.768-5.219a7.835 7.835 0 015.221-9.771c29.581-8.98 78.756-7.245 109.83 11.202a7.823 7.823 0 012.74 10.733c-2.2 3.722-7.02 4.949-10.73 2.739z" />
+    </svg>
+
+    <div class="ml-4 flex max-w-full items-center truncate">
+      <MusicEqualizer v-if="data?.isPlaying && data?.songUrl" wrapper-class="mr-2" />
+      <p
+        v-if="data?.songUrl"
+        class="max-w-max truncate text-sm text-zinc-800 group-hover:text-spotify-green dark:text-zinc-200 dark:group-hover:text-spotify-green"
+      >
+        {{ data.title }}
+      </p>
+      <p
+        v-else
+        class="text-sm text-zinc-700 group-hover:text-spotify-green dark:text-zinc-300 dark:group-hover:text-spotify-green"
+      >
+        Not playing
+      </p>
+      <span class="mx-2 text-sm text-zinc-400 dark:text-zinc-500">
+        –
+      </span>
+      <p class="max-w-max truncate text-sm text-zinc-400 dark:text-zinc-500">
+        {{ data?.artist ?? 'Spotify' }}
+      </p>
+    </div>
+  </a>
+</template>
+```
+
+## Conclusion
+
+I hope you have fun playing around and exploring Cloudflare Worker and Vite/Vue. You should always know there is a limit for the number of requests for a Worker in Cloudflare free account and you should take that into account when implementing it on your site.

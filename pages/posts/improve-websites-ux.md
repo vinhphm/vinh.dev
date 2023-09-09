@@ -3,6 +3,7 @@ title: Improve website’s UX by adding micro-interactions
 date: 2022-04-03
 lang: en
 duration: 7min
+description: Learn how to make your website more enjoyable and engaging with micro-interactions. See how you can use HTML, CSS, React, and React Spring to create animated icons for your menu and theme toggle.
 ---
 
 [[toc]]
@@ -93,6 +94,6 @@ Second, is the theme toggle icon from the top right corner:
 
 <img src="/images/2022/theme-toggle.gif" rounded-lg>
 
-For this one I use React Spring to animate SVG icons based on the instruction from [jfelix.info](https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle) with another small tweak from me to match with the current setup from my site. You can find the source code [here at GitHub](https://github.com/vinhphm/vinh-dev-archive/blob/main/components/AnimatedThemeIcon.js).
+For this one, I use React Spring to animate SVG icons based on the instruction from [jfelix.info](https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle) with another small tweak from me to match with the current setup from my site. You can find the source code [here at GitHub](https://github.com/vinhphm/vinh-dev-archive/blob/main/components/AnimatedThemeIcon.js).
 
 That's it for now. I hope you enjoy my sharing and if you have any questions, feel free to leave a comment below.
