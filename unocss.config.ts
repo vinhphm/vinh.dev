@@ -37,4 +37,14 @@ export default defineConfig({
   safelist: [
     'i-ri-menu-2-fill',
   ],
+  theme: {
+    colors: {
+      'spotify-logo-green': '#1ED760',
+      'spotify-green': '#1DB954',
+    },
+    spacing: {
+      0.75: '0.1875rem',
+    },
+  },
+
 })
