@@ -110,8 +110,8 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   pnpm:
-    specifier: ^8.7.1
-    version: 8.7.1
+    specifier: ^8.7.5
+    version: 8.7.5
   prompts:
     specifier: ^2.4.2
     version: 2.4.2
@@ -4491,8 +4491,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.7.1:
-    resolution: {integrity: sha512-Qbt3EhYUaXFS2k4FLQA7r2/eYz/JoDeG680/3UXG0Ga03LPuY4GgdvCLe+zO3M7ZnWG4VI4bAwk7QpJyfr5eqA==}
+  /pnpm@8.7.5:
+    resolution: {integrity: sha512-WI8WZb89Uiq5x2jdz4PcQMG9ovTnXcDCEpoEckPYIT2zD8/+dEhVozPlT7bu3WkBgE0uTARtgyIKAFt+IpW2cQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
