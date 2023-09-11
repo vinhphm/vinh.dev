@@ -1,5 +1,5 @@
-import '@fontsource-variable/inter'
-import '@fontsource-variable/roboto-mono'
+import '@fontsource/inter'
+import '@fontsource/roboto-mono'
 import '@unocss/reset/tailwind.css'
 import 'floating-vue/dist/style.css'
 import './styles/main.css'
