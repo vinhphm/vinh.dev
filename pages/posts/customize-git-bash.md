@@ -3,6 +3,7 @@ title: Customize Git Bash shell to make it yours
 lang: en
 date: 2022-03-22
 duration: 10min
+description: Enhance your Git Bash on Windows with custom configurations for a smoother development experience. Learn quick tweaks for better productivity.
 ---
 
 [[toc]]

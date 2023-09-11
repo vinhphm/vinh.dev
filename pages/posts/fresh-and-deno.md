@@ -3,6 +3,7 @@ title: Why developing with Fresh and Deno is simply better
 date: 2023-02-17
 lang: en
 duration: 5min
+description: "Discover Fresh and Deno: Modern web dev tools. Secure, simple, speedy. Say goodbye to Node.js/npm complexities. Start coding with Fresh and Deno now!"
 ---
 
 [[toc]]
@@ -22,7 +23,7 @@ Here are some reasons why developing with Fresh and Deno is better than using tr
 - **Security**: Deno does not allow access to the file system, network, or environment variables unless explicitly granted by the user. This prevents malicious code from running on your machine or stealing your data. Node.js allows any code to access these resources by default.
 - **Simplicity**: Deno does not use a package manager like npm. Instead, it uses URLs to import modules from any source. This means you don't have to deal with package.json files, node_modules folders, or dependency conflicts. You can also use TypeScript without any configuration or transpilation.
 - **Speed**: Deno uses a single executable file that contains everything you need to run your code. It also caches modules locally for faster loading. Node.js requires installing multiple dependencies and compiling native modules for each platform.
-- **Modern**: Deno supports the latest JavaScript features like ES modules, top-level await, optional chaining, nullish coalescing operator etc., as well as TypeScript out of the box. Node.js requires using third-party tools like Babel or TypeScript to use these features.
+- **Modern**: Deno supports the latest JavaScript features like ES modules, top-level await, optional chaining, nullish coalescing operator, etc., as well as TypeScript out of the box. Node.js requires using third-party tools like Babel or TypeScript to use these features.
 - **Productive**: Fresh provides a fast development experience with hot reloading (no need to refresh the browser), code splitting (no need to bundle everything into one file), server-side rendering (no need to wait for client-side hydration), routing (no need to set up express or koa), authentication (no need to implement JWT or OAuth), testing (no need to install jest or mocha), etc.
 
 ## How do I get started?

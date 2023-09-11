@@ -3,16 +3,17 @@ title: I bought a domain
 lang: en
 date: 2022-03-19
 duration: 5min
+description: Follow my story of buying a personal domain for myself (vinh.dev) and how it changed my web development journey. Learn how I set up a mailbox, a blog, and more with my own domain name.
 ---
 
 For the first time since I started the web development journey at college, I have bought a personal domain for myself (vinh.dev). And I can tell you that it is so much different from what I had known before.
 
-Domains and hosting are not something new to me before. Since the first time I got my hands on the internet 14 years ago, I had tried so many things. At the time, WordPress.com was the easiest way to have yourself a free website with a subdomain and of course, I had a WordPress.com site. And after that, I started learning domains, hosting, and other things. I registered some free domains from various providers, and of course, these domains were less well-known and surely not suitable for SEOs. The same thing went with the hosting, I only registered for a few free hosts just to try things out like WordPress or vBulletin.
+Domains and hosting were not something new to me before. Since the first time I got my hands on the internet 14 years ago, I have tried so many things. At the time, WordPress.com was the easiest way to have a free website with a subdomain and of course, I had a WordPress.com site. And after that, I started learning domains, hosting, and other things. I registered some free domains from various providers, and of course, these domains were less well-known and surely not suitable for SEOs. The same thing went with the hosting, I only registered for a few free hosts just to try things out like WordPress or vBulletin.
 
-After a while, I got more serious about writing blogs and spreading them out, but I still hadn't got the budget to invest in a domain since I was still in college. To be able to reach more people, I decided to write blogs on Medium.com, and sometimes even on my personal "github.io" page because I found out these domains had better chances to get more traffic.
+After a while, I got more serious about writing blogs and spreading them out, but I still hadn't had the budget to invest in a domain since I was still in college. To be able to reach more people, I decided to write blogs on Medium.com, and sometimes even on my personal "github.io" page because I found out these domains had better chances to get more traffic.
 
 Now, things have changed. Domains are now more affordable and come with a wide range of names. So, I decided to do it. After a quick check, I found Google is offering a more reasonable price tag for their fresh-out-of-beta Domains service, so I went with it. The checkout steps are quite fast and easy. And finally, vinh.dev is here.
 
-Now that I have a domain, I can start setting up a mailbox with that domain, something I haven't done before. Google offers this with a price tag each month, but I don't like it. I prefer Outlook.com, but since I don't have Microsoft 365 subscription, I can't use Outlook.com custom domain feature. Fortunately, I currently have iCloud+ so I can set it up with Apple's iCloud custom domain feature.
+Now that I have a domain, I can start setting up a mailbox with that domain, something I haven't done before. Google offers this with a price tag each month, but I don't like it. I prefer Outlook.com, but since I don't have a Microsoft 365 subscription, I can't use Outlook.com custom domain feature. Fortunately, I currently have iCloud+ so I can set it up with Apple's iCloud custom domain feature.
 
 Now back to the blog, I can start pointing it to my GitHub Pages. But that soon will make me realize something, another change I have to make...
