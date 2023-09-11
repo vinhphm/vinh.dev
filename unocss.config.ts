@@ -27,8 +27,8 @@ export default defineConfig({
     presetWebFonts({
       provider: 'none',
       fonts: {
-        sans: 'Inter',
-        mono: 'Roboto Mono',
+        sans: 'Inter Variable',
+        mono: 'Roboto Mono Variable',
       },
     }),
   ],

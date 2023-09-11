@@ -11,12 +11,6 @@ dependencies:
   '@fontsource-variable/roboto-mono':
     specifier: ^5.0.9
     version: 5.0.9
-  '@fontsource/inter':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/roboto-mono':
-    specifier: ^5.0.8
-    version: 5.0.8
   '@vueuse/core':
     specifier: ^10.4.1
     version: 10.4.1(vue@3.3.4)
@@ -811,14 +805,6 @@ packages:
 
   /@fontsource-variable/roboto-mono@5.0.9:
     resolution: {integrity: sha512-iNZz251NVB1sENvrTRt7x5t1yuaYai/QsBRwYtEiot+R33Ks8CQnDZxY2kbrFdEFwTJVqb7RyObjgGVuysTRUw==}
-    dev: false
-
-  /@fontsource/inter@5.0.8:
-    resolution: {integrity: sha512-28knWH1BfOiRalfLs90U4sge5mpQ8ZH6FS0PTT+IZMKrZ7wNHDHRuKa1kQJg+uHcc6axBppnxll+HXM4c7zo/Q==}
-    dev: false
-
-  /@fontsource/roboto-mono@5.0.8:
-    resolution: {integrity: sha512-vjnNX8zQCSp4HadUJ3gpZiizCsK/ROjgGMpd4bcRxuyiTNGGMaznmKbhqdyVeFVap1sX8h2Qu380awaotey/mQ==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
