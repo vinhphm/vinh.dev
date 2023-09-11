@@ -49,7 +49,7 @@
     "pnpm": "^8.7.1",
     "prompts": "^2.4.2",
     "sharp": "0.32.5",
-    "shikiji": "^0.6.6",
+    "shikiji": "^0.6.8",
     "simple-git": "^3.19.1",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",
