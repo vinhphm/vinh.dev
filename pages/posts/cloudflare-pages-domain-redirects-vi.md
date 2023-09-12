@@ -47,7 +47,7 @@ Khi bạn deploy project của mình lên Cloudflare Pages, địa chỉ domain 
 
 ## Redirect từ domain có `www` sang không có `www` (apex domain)
 
-Trong một số trường hợp, thay vì muốn có domain `www.example.com`, người dùng lại muốn có domain gọn hơn dạng ```example.com` trên thanh địa chỉ. Và việc thống nhất cách hiển thiện này cũng là điều thiết yếu trong quá trình phát triển trang web. Thông thường, các dịch vụ như Netlify hay Vercel hỗ trợ điều này không qua thiết lập DNS kèm theo số tinh chỉnh trực quan ở dashboard của họ. Riêng với Cloudflar Pages, bạn phải tự set up chức năng này, và cũng phải thông qua **Bulk Redirects**, chi tiết như sau:
+Trong một số trường hợp, thay vì muốn có domain `www.example.com`, người dùng lại muốn có domain gọn hơn dạng `example.com` trên thanh địa chỉ. Và việc thống nhất cách hiển thiện này cũng là điều thiết yếu trong quá trình phát triển trang web. Thông thường, các dịch vụ như Netlify hay Vercel hỗ trợ điều này không qua thiết lập DNS kèm theo số tinh chỉnh trực quan ở dashboard của họ. Riêng với Cloudflar Pages, bạn phải tự set up chức năng này, và cũng phải thông qua **Bulk Redirects**, chi tiết như sau:
 
 1. Đăng nhập vào [Cloudflare dashboard](https://dash.cloudflare.com/), chọn account và website của bạn.
 2. Vào mục DNS.
