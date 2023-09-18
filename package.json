@@ -63,7 +63,7 @@
     "vite": "^4.4.9",
     "vite-plugin-inspect": "^0.7.38",
     "vite-plugin-pages": "^0.31.0",
-    "vite-ssg": "^0.23.1",
+    "vite-ssg": "^0.23.2",
     "vite-svg-loader": "^4.0.0"
   },
   "simple-git-hooks": {
