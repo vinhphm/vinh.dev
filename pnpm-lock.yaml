@@ -18,8 +18,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0(vue@3.3.4)
   dayjs:
-    specifier: ^1.11.9
-    version: 1.11.9
+    specifier: ^1.11.10
+    version: 1.11.10
   floating-vue:
     specifier: 2.0.0-beta.24
     version: 2.0.0-beta.24(vue@3.3.4)
@@ -2246,8 +2246,8 @@ packages:
       whatwg-url: 12.0.1
     dev: true
 
-  /dayjs@1.11.9:
-    resolution: {integrity: sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==}
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
   /debug@3.2.7:
