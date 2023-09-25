@@ -128,8 +128,8 @@ devDependencies:
     specifier: ^0.6.8
     version: 0.6.8
   simple-git:
-    specifier: ^3.19.1
-    version: 3.19.1
+    specifier: ^3.20.0
+    version: 3.20.0
   simple-git-hooks:
     specifier: ^2.9.0
     version: 2.9.0
@@ -4880,8 +4880,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /simple-git@3.19.1:
-    resolution: {integrity: sha512-Ck+rcjVaE1HotraRAS8u/+xgTvToTuoMkT9/l9lvuP5jftwnYUp6DwuJzsKErHgfyRk8IB8pqGHWEbM3tLgV1w==}
+  /simple-git@3.20.0:
+    resolution: {integrity: sha512-ozK8tl2hvLts8ijTs18iFruE+RoqmC/mqZhjs/+V7gS5W68JpJ3+FCTmLVqmR59MaUQ52MfGQuWsIqfsTbbJ0Q==}
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
