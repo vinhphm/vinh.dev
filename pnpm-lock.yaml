@@ -161,8 +161,8 @@ devDependencies:
     specifier: ^0.31.0
     version: 0.31.0(vite@4.4.9)
   vite-ssg:
-    specifier: ^0.23.2
-    version: 0.23.2(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4)
+    specifier: ^0.23.3
+    version: 0.23.3(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4)
   vite-svg-loader:
     specifier: ^4.0.0
     version: 4.0.0
@@ -4580,9 +4580,9 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
@@ -5623,8 +5623,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-ssg@0.23.2(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-j7HHqMB7MVM5Eqypjt92XU+x8tijFdeoICgzHeAMsSvqFp6nL6SdErPb5o7gj079SJuUPo0rUuQupkVoN/FsAg==}
+  /vite-ssg@0.23.3(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4):
+    resolution: {integrity: sha512-SinJROcjl3/wvfB9fTMFjcGnDj42AOaYG4FAPz4FVnazX87qgb1U+q87JrgzLz2PiYKAacPYBMQSHTIjvsnJyw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     peerDependencies:
@@ -5645,7 +5645,7 @@ packages:
       html5parser: 2.0.2
       jsdom: 22.1.0
       kolorist: 1.8.0
-      prettier: 2.8.8
+      prettier: 3.0.3
       vite: 4.4.9
       vue: 3.3.4
       vue-router: 4.2.4(vue@3.3.4)
