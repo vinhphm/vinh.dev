@@ -116,8 +116,8 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   pnpm:
-    specifier: ^8.8.0
-    version: 8.8.0
+    specifier: ^8.9.0
+    version: 8.9.0
   prompts:
     specifier: ^2.4.2
     version: 2.4.2
@@ -138,7 +138,7 @@ devDependencies:
     version: 5.2.2
   unocss:
     specifier: ^0.56.5
-    version: 0.56.5(postcss@8.4.31)(vite@4.4.10)
+    version: 0.56.5(postcss@8.4.31)(vite@4.4.11)
   unplugin-auto-import:
     specifier: ^0.16.6
     version: 0.16.6(@vueuse/core@10.5.0)
@@ -4623,8 +4623,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.8.0:
-    resolution: {integrity: sha512-eY5rMiZpzmPI2oVr1irR97bzb036oKwCWvK91wDQndXcqUPlytPtrF0bO668Syw/uA+7hTf5NnM8Mr4ux4BRRA==}
+  /pnpm@8.9.0:
+    resolution: {integrity: sha512-74hZk44fBTe5/PAwkEQxE5Lzs4s0QXbmzU/e4hsiVSSwrCobCK4q4t3Vs/9LjKSW1neOlQ8+fJ9VW4EyWYJEHA==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
@@ -5490,7 +5490,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.56.5(postcss@8.4.31)(vite@4.4.10):
+  /unocss@0.56.5(postcss@8.4.31)(vite@4.4.11):
     resolution: {integrity: sha512-tO+9St4CntSjHpLXZqBo0/etS06MtvFF1NEny/qFJCL9sCopWwmDKuzW6/LIb4wfqZLdMpVFoEACMNv8nP849A==}
     engines: {node: '>=14'}
     peerDependencies:
