@@ -48,7 +48,7 @@
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-table-of-contents": "^0.6.0",
     "picocolors": "^1.0.0",
-    "pnpm": "^8.9.0",
+    "pnpm": "^8.9.2",
     "prompts": "^2.4.2",
     "sharp": "0.32.6",
     "shikiji": "^0.6.9",
