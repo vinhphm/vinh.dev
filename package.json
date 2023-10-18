@@ -12,8 +12,8 @@
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.13",
     "@fontsource-variable/roboto-mono": "^5.0.14",
+    "@unhead/vue": "^1.7.4",
     "@vueuse/core": "^10.5.0",
-    "@vueuse/head": "^2.0.0",
     "dayjs": "^1.11.10",
     "floating-vue": "2.0.0-beta.24",
     "nprogress": "^0.2.0",
@@ -31,7 +31,6 @@
     "@types/markdown-it-link-attributes": "^3.0.2",
     "@types/nprogress": "^0.2.1",
     "@types/prompts": "^2.4.6",
-    "@unhead/vue": "^1.7.4",
     "@unocss/reset": "^0.56.5",
     "@vitejs/plugin-vue": "^4.4.0",
     "cross-env": "^7.0.3",
