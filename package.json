@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "1.0.0-beta.29",
-    "@iconify/json": "^2.2.135",
+    "@iconify/json": "^2.2.136",
     "@octokit/rest": "^20.0.2",
     "@types/diacritics": "^1.3.2",
     "@types/fs-extra": "^11.0.3",
