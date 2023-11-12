@@ -51,4 +51,3 @@ The process of building and customizing the Invoicer app revealed the strengths 
 <img src="/images/2023/refine-quick-start.gif" alt="Refine quick start" rounded-lg>
 
 Refine has been a revelation in my React journey. It's not just another framework; it's a tool that brings simplicity and efficiency to complex tasks. For fellow developers looking to streamline their React projects, especially those grappling with data-intensive challenges, I highly recommend giving Refine a try. It might just change your perspective on web development as it did mine.
-
