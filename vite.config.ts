@@ -15,7 +15,6 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import UnoCSS from 'unocss/vite'
 import SVG from 'vite-svg-loader'
 import { bundledLanguages, getHighlighter } from 'shikiji'
-import { unheadVueComposablesImports } from '@unhead/vue'
 
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
@@ -72,7 +71,6 @@ export default defineConfig({
       wrapperClasses: (id, code) => code.includes('@layout-full-width')
         ? ''
         : 'prose m-auto slide-enter-content',
-      headEnabled: 'unhead',
       exportFrontmatter: false,
       exposeFrontmatter: false,
       exposeExcerpt: false,
@@ -152,7 +150,6 @@ export default defineConfig({
         'vue',
         'vue-router',
         '@vueuse/core',
-        unheadVueComposablesImports,
       ],
     }),
 
