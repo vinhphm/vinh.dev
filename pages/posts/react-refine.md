@@ -1,6 +1,6 @@
 ---
 title: Charting a new course in web development with Refine
-date: 2023-11-01T18:00:00+07:00
+date: 2023-11-12T18:00:00+07:00
 lang: en
 duration: 5min
 description: Join me as I share my experience with Refine, a React-based framework that has remarkably simplified my approach to building web applications.
