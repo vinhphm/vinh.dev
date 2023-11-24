@@ -12,7 +12,7 @@
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.15",
     "@fontsource-variable/roboto-mono": "^5.0.16",
-    "@unhead/vue": "^1.8.5",
+    "@unhead/vue": "^1.8.8",
     "@vueuse/core": "^10.6.1",
     "dayjs": "^1.11.10",
     "floating-vue": "2.0.0-beta.24",
@@ -22,8 +22,8 @@
     "vue-router-better-scroller": "^0.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.0.0",
-    "@iconify/json": "^2.2.144",
+    "@antfu/eslint-config": "2.1.0",
+    "@iconify/json": "^2.2.145",
     "@octokit/rest": "^20.0.2",
     "@types/diacritics": "^1.3.3",
     "@types/fs-extra": "^11.0.4",
@@ -50,7 +50,7 @@
     "pnpm": "^8.10.5",
     "prompts": "^2.4.2",
     "sharp": "0.32.6",
-    "shikiji": "^0.6.13",
+    "shikiji": "^0.7.2",
     "simple-git": "^3.21.0",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.3.2",
@@ -59,7 +59,7 @@
     "unplugin-icons": "^0.17.4",
     "unplugin-vue-components": "^0.25.2",
     "unplugin-vue-markdown": "^0.25.2",
-    "vite": "^5.0.1",
+    "vite": "^5.0.2",
     "vite-plugin-inspect": "^0.7.42",
     "vite-plugin-pages": "^0.31.0",
     "vite-ssg": "^0.23.5",
