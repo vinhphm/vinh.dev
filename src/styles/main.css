@@ -8,6 +8,7 @@ html {
   background-color: var(--c-bg);
   overflow-x: hidden;
   overflow-y: scroll;
+  font-display: swap;
 }
 
 html.dark {

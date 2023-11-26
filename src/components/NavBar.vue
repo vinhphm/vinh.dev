@@ -35,7 +35,7 @@ const { y: scroll } = useWindowScroll()
           <span class="lt-md:hidden">Demos</span>
           <div i-tabler:photo-code class="md:hidden" />
         </RouterLink>
-        <a href="https://threads.net/@vinh.phm" target="_blank" title="Twitter" class="lt-md:hidden">
+        <a href="https://www.threads.net/@vinh.phm" target="_blank" title="Twitter" class="lt-md:hidden">
           <fa6-brands-threads />
         </a>
         <a href="https://github.com/vinhphm" target="_blank" title="GitHub" class="lt-md:hidden">

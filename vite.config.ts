@@ -142,7 +142,7 @@ export default defineConfig({
           && !(route === 'index' && dirname(id).endsWith('pages'))
           && route !== '[...404]'
         )
-          head.title = `${frontmatter.title} - Vinh Pham`
+          head.title = `${frontmatter.title} • Vinh Pham`
         return { head, frontmatter }
       },
     }),
@@ -152,7 +152,6 @@ export default defineConfig({
         'vue',
         'vue-router',
         '@vueuse/core',
-        '@vueuse/head',
       ],
     }),
 

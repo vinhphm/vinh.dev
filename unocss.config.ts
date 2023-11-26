@@ -25,9 +25,10 @@ export default defineConfig({
     presetAttributify(),
     presetUno(),
     presetWebFonts({
+      provider: 'none',
       fonts: {
-        sans: 'Inter:400,600,800',
-        mono: 'Roboto Mono:400,600',
+        sans: 'Inter Variable',
+        mono: 'Roboto Mono Variable',
       },
     }),
   ],
