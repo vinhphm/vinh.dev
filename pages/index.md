@@ -25,5 +25,6 @@ Find me on
   <a href="https://www.linkedin.com/in/vinhphm/" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
   <a href="https://www.threads.net/@vinh.phm" target="_blank"><span op75 i-fa6-brands-threads /> Threads</a>
   <a href="https://www.instagram.com/vinh.phm" target="_blank"><span op75 i-simple-icons-instagram /> Instagram</a>
-  <a href="https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4?si=1567653669df4908" target="_blank"><span op75 i-simple-icons-spotify /> Spotify</a>
+  <!-- <a href="https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4?si=1567653669df4908" target="_blank"><span op75 i-simple-icons-spotify /> Spotify</a> -->
+  <NowPlaying />
 </p>
