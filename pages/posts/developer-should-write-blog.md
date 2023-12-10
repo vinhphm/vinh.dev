@@ -1,5 +1,5 @@
 ---
-title: Every software developer should write a blog
+title: Every Software Developer Should Write a Blog
 date: 2023-01-11
 lang: en
 duration: 5min

@@ -1,5 +1,5 @@
 ---
-title: 'Rosé Pine - VS Code theme'
+title: 'Rosé Pine - VS Code Theme'
 date: 2022-03-27
 lang: en
 duration: 3min

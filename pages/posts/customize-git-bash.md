@@ -1,5 +1,5 @@
 ---
-title: Customize Git Bash shell to make it yours
+title: Customize Git Bash Shell to Make it Yours
 lang: en
 date: 2022-03-22
 duration: 10min

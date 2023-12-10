@@ -1,5 +1,5 @@
 ---
-title: Thiết lập domain redirects cho Cloudflare Pages
+title: Thiết Lập Domain Redirects Cho Cloudflare Pages
 date: 2023-08-21T12:30:00+07:00
 lang: vi
 duration: 10min

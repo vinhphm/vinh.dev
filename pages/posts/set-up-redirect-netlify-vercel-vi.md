@@ -1,5 +1,5 @@
 ---
-title: Cài đặt Redirects cho Netlify và Vercel
+title: Cài Đặt Redirects Cho Netlify Và Vercel
 date: 2023-08-20T10:30:00+07:00
 lang: vi
 duration: 5min

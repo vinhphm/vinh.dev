@@ -1,5 +1,5 @@
 ---
-title: Charting a new course in web development with Refine
+title: Charting a New Course in Web Development with Refine
 date: 2023-11-12T18:00:00+07:00
 lang: en
 duration: 5min

@@ -1,5 +1,5 @@
 ---
-title: Cloudflare Pages surprised me
+title: Cloudflare Pages Surprised Me
 date: 2023-08-21T23:27:00+07:00
 lang: en
 duration: 5min

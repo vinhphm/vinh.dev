@@ -1,5 +1,5 @@
 ---
-title: Chuyển domain từ Google Domains sang dịch vụ khác
+title: Chuyển Domain Từ Google Domains Sang Dịch Vụ Khác
 date: 2023-08-19T15:00:00+07:00
 lang: vi
 duration: 5min
@@ -17,7 +17,7 @@ Vào ngày 15 tháng 3 năm 2022, Google thông báo rằng Google Domains đã 
 
 Vào ngày 15 tháng 6 năm 2023, Squarespace đã kết thúc thỏa thuận để mua lại kinh doanh Google Domains, bao gồm khoảng 10 triệu tên miền đã đăng ký. Dịch vụ Google Domains sẽ đóng cửa sau khi việc bán và chuyển nhượng tên miền hoàn thành, dự kiến vào ngày 31 tháng 10 năm 2023.
 
-Nhiều người chọn Google Domains vì sự thuận tiện khi liên kết với các dịch vụ khác của Google. Ngoài ra việc domain được quản lý bởi Google cũng khiến mọi người tin tưởng hơn so với các dịch vụ khác. Google cũng là người tiên phong cho người đăng ký các tên miền mới sau này như `.dev`, `.life`, `.digital`,... 
+Nhiều người chọn Google Domains vì sự thuận tiện khi liên kết với các dịch vụ khác của Google. Ngoài ra việc domain được quản lý bởi Google cũng khiến mọi người tin tưởng hơn so với các dịch vụ khác. Google cũng là người tiên phong cho người đăng ký các tên miền mới sau này như `.dev`, `.life`, `.digital`,...
 
 ## Chuyển sang nhà cung cấp khác
 

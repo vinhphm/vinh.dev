@@ -1,5 +1,5 @@
 ---
-title: Improve website’s UX by adding micro-interactions
+title: Improve Website’s UX by Adding Micro-interactions
 date: 2022-04-03
 lang: en
 duration: 7min

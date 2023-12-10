@@ -1,5 +1,5 @@
 ---
-title: Set domain redirects for Cloudflare Pages
+title: Set Domain Redirects for Cloudflare Pages
 date: 2023-08-21T12:30:00+07:00
 lang: en
 duration: 10min
@@ -19,7 +19,6 @@ Cloudflare Pages supports redirect functionality through the `_redirects` file, 
 ```
 /articles/*  /blog/:splat  301
 ```
-
 
 This rule redirects all your blog links from the form `/articles/...` to `/blog/...`. You can read more about this in the [Cloudflare documentation](https://developers.cloudflare.com/pages/platform/redirects/). However, this rule only works at the subpath level, and you can't accomplish the two scenarios I'm about to guide you through using this `_redirects` file.
 

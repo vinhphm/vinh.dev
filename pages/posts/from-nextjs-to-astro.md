@@ -1,5 +1,5 @@
 ---
-title: The move from Next.js to Astro
+title: The Move from Next.js to Astro
 date: 2023-03-12
 duration: 10min
 lang: en

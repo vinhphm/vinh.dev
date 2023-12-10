@@ -1,5 +1,5 @@
 ---
-title: Generating refresh token for Spotify API calls
+title: Generating Refresh Token for Spotify API Calls
 date: 2023-02-19
 lang: en
 duration: 10min
