@@ -1,10 +1,11 @@
-import '@fontsource-variable/inter'
-import '@fontsource-variable/roboto-mono'
+// import '@fontsource-variable/inter'
+// import '@fontsource-variable/roboto-mono'
 import '@unocss/reset/tailwind.css'
 import 'floating-vue/dist/style.css'
 import './styles/main.css'
 import './styles/prose.css'
 import './styles/markdown.css'
+import './styles/geist.css'
 import 'uno.css'
 
 import autoRoutes from 'pages-generated'
