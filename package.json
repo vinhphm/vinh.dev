@@ -10,8 +10,6 @@
     "compress": "esno scripts/img-compress-staged.ts"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.0.16",
-    "@fontsource-variable/roboto-mono": "^5.0.17",
     "@unhead/vue": "^1.8.9",
     "@vueuse/core": "^10.7.1",
     "dayjs": "^1.11.10",
