@@ -134,7 +134,7 @@
 }
 .prose code {
   color: var(--fg-deep);
-  font-family: 'Roboto Mono Variable', 'Roboto Mono', 'Fira Code', monospace;
+  font-family: 'Geist Mono Variable', 'Roboto Mono', 'Fira Code', monospace;
   font-weight: 600;
   font-size: 0.875em;
 }
