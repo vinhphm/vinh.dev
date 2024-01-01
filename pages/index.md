@@ -5,7 +5,7 @@ image: https://vinh.dev/og.png
 plum: true
 ---
 
-Hey, I am Vinh Pham, a seasoned software engineer.
+Hey, I am Vinh, a seasoned software engineer.
 
 Working at [PwC](https://pwc.com/).<br>
 A part of the Digital Solutions team.<br>

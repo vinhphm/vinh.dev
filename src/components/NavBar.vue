@@ -24,15 +24,15 @@ const { y: scroll } = useWindowScroll()
       <div class="spacer" />
       <div class="right" print:op0>
         <RouterLink to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
+          <span class="lt-md:hidden tracking-tighter">Blog</span>
           <div i-tabler-notebook md:hidden />
         </RouterLink>
         <RouterLink to="/projects" title="Projects">
-          <span class="lt-md:hidden">Projects</span>
+          <span class="lt-md:hidden tracking-tighter">Projects</span>
           <div i-tabler-list-details class="md:hidden" />
         </RouterLink>
         <RouterLink to="/demos" title="Demos">
-          <span class="lt-md:hidden">Demos</span>
+          <span class="lt-md:hidden tracking-tighter">Demos</span>
           <div i-tabler:photo-code class="md:hidden" />
         </RouterLink>
         <a href="https://www.threads.net/@vinh.phm" target="_blank" title="Twitter" class="lt-md:hidden">

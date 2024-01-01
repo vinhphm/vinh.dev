@@ -29,7 +29,7 @@
 html.dark .shiki,
 html.dark .shiki span {
   color: var(--s-dark) !important;
-  background-color: #0e0e0e !important;
+  background-color: #171717 !important;
 }
 
 .prose {
@@ -61,8 +61,8 @@ html.dark .shiki span {
 }
 
 html.dark .prose {
-  --fg: #bbb;
-  --fg-deep: #ddd;
+  --fg: #d4d4d4;
+  --fg-deep: #dfdfdf;
   --fg-deeper: #fff;
 }
 

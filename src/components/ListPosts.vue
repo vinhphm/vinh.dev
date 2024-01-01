@@ -125,10 +125,10 @@ function getGroupName(p: Post) {
               <span v-if="route.duration" text-sm op40 ws-nowrap>· {{ route.duration }}</span>
               <span v-if="route.platform" text-sm op40 ws-nowrap>· {{ route.platform }}</span>
               <span
-                v-if="route.lang === 'zh'"
+                v-if="route.lang === 'vi'"
                 align-middle flex-none
                 class="text-xs bg-zinc:15 text-zinc5 rounded px-1 py-0.5 my-auto md:hidden"
-              >中文</span>
+              >Việt</span>
             </div>
           </li>
         </component>
