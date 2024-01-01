@@ -2,7 +2,7 @@
 
 ## Tech stack
 
-This website is hosted on [Netlify](https://netlify.com/), built with [Vite](https://vitejs.dev/) and [UnoCSS](https://unocss.dev/).
+This website is hosted on [CloudFlare](https://cloudflare.com/), built with [Vite](https://vitejs.dev/) and [UnoCSS](https://unocss.dev/).
 
 ## Images
 
