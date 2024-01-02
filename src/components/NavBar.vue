@@ -24,16 +24,13 @@ const { y: scroll } = useWindowScroll()
       <div class="spacer" />
       <div class="right" print:op0>
         <RouterLink to="/posts" title="Blog">
-          <span class="lt-md:hidden tracking-tighter">Blog</span>
-          <div i-tabler-notebook md:hidden />
+          <span class="tracking-tighter">Blog</span>
         </RouterLink>
         <RouterLink to="/projects" title="Projects">
-          <span class="lt-md:hidden tracking-tighter">Projects</span>
-          <div i-tabler-list-details class="md:hidden" />
+          <span class="tracking-tighter">Projects</span>
         </RouterLink>
         <RouterLink to="/demos" title="Demos">
-          <span class="lt-md:hidden tracking-tighter">Demos</span>
-          <div i-tabler:photo-code class="md:hidden" />
+          <span class="tracking-tighter">Demos</span>
         </RouterLink>
         <a href="https://www.threads.net/@vinh.phm" target="_blank" title="Twitter" class="lt-md:hidden">
           <fa6-brands-threads />
@@ -85,7 +82,7 @@ const { y: scroll } = useWindowScroll()
   text-decoration: none;
   color: inherit;
   transition: opacity 0.2s ease;
-  opacity: 0.6;
+  opacity: 0.8;
   outline: none;
 }
 

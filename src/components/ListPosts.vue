@@ -47,7 +47,7 @@ function getGroupName(p: Post) {
 <template>
   <ul>
     <template v-if="!posts.length">
-      <div py2 op50>
+      <div py2 op75>
         { nothing here yet }
       </div>
     </template>
@@ -119,11 +119,11 @@ function getGroupName(p: Post) {
                 title="Provided in radio"
               />
 
-              <span text-sm op50 ws-nowrap>
+              <span text-sm op75 ws-nowrap>
                 {{ formatDate(route.date, true) }}
               </span>
-              <span v-if="route.duration" text-sm op40 ws-nowrap>· {{ route.duration }}</span>
-              <span v-if="route.platform" text-sm op40 ws-nowrap>· {{ route.platform }}</span>
+              <span v-if="route.duration" text-sm op75 ws-nowrap>· {{ route.duration }}</span>
+              <span v-if="route.platform" text-sm op75 ws-nowrap>· {{ route.platform }}</span>
               <span
                 v-if="route.lang === 'vi'"
                 align-middle flex-none

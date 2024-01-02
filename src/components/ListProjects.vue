@@ -12,7 +12,7 @@ function slug(name: string) {
       v-for="key, cidx in Object.keys(projects)" :key="key" slide-enter
       :style="{ '--enter-stage': cidx + 1 }"
     >
-      <h4 :id="slug(key)" class="mt-15 mb-2 font-bold text-center op75">
+      <h4 :id="slug(key)" class="mt-15 mb-2 font-medium text-center op85">
         {{ key }}
       </h4>
       <div
@@ -30,13 +30,13 @@ function slug(name: string) {
           :title="item.name"
         >
           <div v-if="item.icon" class="pt-2 pr-5">
-            <Vitest v-if="item.icon === 'vitest'" class="text-4xl opacity-50" />
-            <VinhDev v-else-if="item.icon === 'vinh-dev'" class="text-4xl opacity-50" />
-            <div v-else class="text-3xl opacity-50" :class="item.icon || 'i-carbon-unknown'" />
+            <Vitest v-if="item.icon === 'vitest'" class="text-4xl opacity-85" />
+            <VinhDev v-else-if="item.icon === 'vinh-dev'" class="text-4xl opacity-85" />
+            <div v-else class="text-3xl opacity-85" :class="item.icon || 'i-carbon-unknown'" />
           </div>
           <div class="flex-auto">
             <div class="text-normal">{{ item.name }}</div>
-            <div class="desc text-sm opacity-50 font-normal" v-html="item.desc" />
+            <div class="desc text-sm opacity-85 font-normal" v-html="item.desc" />
           </div>
         </a>
       </div>
