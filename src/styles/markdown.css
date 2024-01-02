@@ -33,6 +33,7 @@ html.dark .shiki span {
 }
 
 .prose {
+  --fg-pale: #d1d5db;
   --fg: #404040;
   --fg-deep: #202020;
   --fg-deeper: #000;
@@ -61,6 +62,7 @@ html.dark .shiki span {
 }
 
 html.dark .prose {
+  --fg-pale: #525252;
   --fg: #d4d4d4;
   --fg-deep: #dfdfdf;
   --fg-deeper: #fff;

@@ -65,7 +65,7 @@
 .prose ul > li::before {
   content: "";
   position: absolute;
-  background-color: #d1d5db;
+  background-color: var(--fg-pale);
   border-radius: 50%;
   width: 0.375em;
   height: 0.375em;
