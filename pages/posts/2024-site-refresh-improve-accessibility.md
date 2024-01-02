@@ -28,7 +28,7 @@ I also decided to "unbold" all the headings so it doesn't feel like you're being
     <img src="/images/2024/2024-refresh-new-dark.png" rounded shadow img-dark important-m0 />
   </div>
   <figcaption important-mt8 text-center>
-    My old site (left) vs. my new own (right). Click the icon here <toggle-theme /> to check other variant.
+    My old site (left/above) vs. my new own (right/below). Click the icon here <toggle-theme /> to check other variant.
   </figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ The answer is both if we're talking about what best for accessibility. But in so
     <img src="/images/2024/2024-refresh-mobile-new-dark.png" rounded shadow img-dark important-m0 />
   </div>
   <figcaption important-mt8 text-center>
-    My old site (left) vs. my new own (right). Click the icon here <toggle-theme /> to check other variant.
+    My old site (left/above) vs. my new own (right/below). Click the icon here <toggle-theme /> to check other variant.
   </figcaption>
 </figure>
 
