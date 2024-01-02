@@ -40,7 +40,10 @@ When you deploy your project on Cloudflare Pages, the initial domain address you
 7. Add your project's `*.pages.dev` domain to the source URL.
 8. Enter the target custom domain URL. Note that you need to prepend `https://` before the apex domain name (domain without `www`).
 9. Click **Edit parameters** and check **Preserve query string**, **Subpath matching**, **Preserve path suffix**.
-   > Optional: If you check the **Include subdomains box**, all preview URLs will be redirected to the main custom domain.
+
+> [!NOTE]
+> If you check the **Include subdomains box**, all preview URLs will be redirected to the main custom domain.
+
 10. Click **Add to list**.
 11. Go back to **Bulk Redirects** > **Create Bulk Redirects** > select the list you just created > **Save and Deploy**.
     <img src="/images/2023/create_new_bulk_redirect.png" alt="Create new Bulk Redirects" rounded-lg>

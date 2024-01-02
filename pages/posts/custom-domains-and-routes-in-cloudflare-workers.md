@@ -35,6 +35,7 @@ Routes can be a little bit trickier than Custom Domain. If you intend to use som
 
 Then you can use the **Add route** button the dashboard.
 
+> [!WARNING]
 > Route pattern matching considers the entire request URL, including the query parameter string. Since route patterns may not contain query parameters, the only way to have a route pattern match URLs with query parameters is to terminate it with a wildcard, *.
 
 ## Final notes

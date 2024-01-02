@@ -40,7 +40,10 @@ Khi bạn deploy project của mình lên Cloudflare Pages, địa chỉ domain 
 7. Thêm domain `*.pages.dev` của project bạn vào source URL.
 8. Nhập target custom domain URL. Lưu ý là bạn phải thêm `https://` vào trước tên apex domain (domain không có `www`).
 9. Click **Edit parameters** và tick chọn **Preserve query string**, **Subpath matching**, **Preserve path suffix**.
-> Optional: Nếu tick vào **Include subdomains box**, toàn bộ những URLs bản preview sẽ bị redirect tới custom domain chính.
+
+> [!NOTE]
+> Nếu tick vào **Include subdomains box**, toàn bộ những URLs bản preview sẽ bị redirect tới custom domain chính.
+
 10.  Click **Add to list**.
 11. Vào lại **Bulk Redirects** > **Create Bulk Redirects** > chọn list bạn vừa tạo > **Save and Deploy**.
 <img src="/images/2023/create_new_bulk_redirect.png" alt="Create new Bulk Redirects" rounded-lg>

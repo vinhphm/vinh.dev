@@ -11,10 +11,12 @@ description: Learn how to make your website more enjoyable and engaging with mic
 One of the few things I studied in the Google UX Design course is how a good UX design should be fun to use. Google didn't exactly use the word "fun" to describe a good UX design, the exact word is **"enjoyable"**
 
 > "If a product is enjoyable, it means the design delights the user. The design reflects what the user may be thinking or feeling and creates a positive connection with them. A product's design doesn't have to be enjoyable for it to function properly. But, an enjoyable design adds to an already functional product and can enhance the user's feelings about the experience." - [Google UX Design course](https://www.coursera.org/professional-certificates/google-ux-design)
-> But what exactly are **"micro-interactions"** and how come they are related to this?
+
+But what exactly are **"micro-interactions"** and how come they are related to this?
 
 > "Micro-interactions are events which have one main task - a single purpose - and they're found all over your device and within apps. Their purpose is to delight the user; to create a moment that is engaging, welcoming and, dare we say it - human." - [UXDesign.cc](https://uxdesign.cc/micro-interactions-why-when-and-how-to-use-them-to-boost-the-ux-17094b3baaa0)
-> Okay, so in order to maker my site more engaging and enjoyable, I decided to add some micro-interactions/ animation to it. I'm not planning to add back all the stuff that [I have got rid of](https://vinh.dev/blog/i-opted-in-a-more-minimal-design-but-why), instead, I'm going to add some small other thing. One of the big reasons I decided to simplify my website in the first place is this because animations seems not work correctly on some devices.
+
+Okay, so in order to maker my site more engaging and enjoyable, I decided to add some micro-interactions/ animation to it. I'm not planning to add back all the stuff that [I have got rid of](https://vinh.dev/blog/i-opted-in-a-more-minimal-design-but-why), instead, I'm going to add some small other thing. One of the big reasons I decided to simplify my website in the first place is this because animations seems not work correctly on some devices.
 
 ## Toggle menu (hamburger) icon 🍔
 
