@@ -35,7 +35,7 @@ Khi bạn deploy project của mình lên Cloudflare Pages, địa chỉ domain 
 3. Vào **Custom domains** và kiểm tra lại xem custom domain của bạn có ở đó chưa. Nếu chưa, thêm mới bằng cách chọn **Set up a custom domain**.
 4. Tìm đến **Account Home** > **Bulk Redirects**.
 5. Chọn **Create a new Bulk Redirects list** > **Create new list**.
-<img src="/images/2023/create_a_new_bulk_redirect_list.png" alt="Create new Bulk Redirect list" rounded-lg>
+   <img src="/images/2023/create_a_new_bulk_redirect_list.png" dark:invert-95 alt="Create new Bulk Redirect list" rounded-lg>
 6. Ở mục content type, chọn **Redirect**.
 7. Thêm domain `*.pages.dev` của project bạn vào source URL.
 8. Nhập target custom domain URL. Lưu ý là bạn phải thêm `https://` vào trước tên apex domain (domain không có `www`).
@@ -44,9 +44,9 @@ Khi bạn deploy project của mình lên Cloudflare Pages, địa chỉ domain 
 > [!NOTE]
 > Nếu tick vào **Include subdomains box**, toàn bộ những URLs bản preview sẽ bị redirect tới custom domain chính.
 
-10.  Click **Add to list**.
+10. Click **Add to list**.
 11. Vào lại **Bulk Redirects** > **Create Bulk Redirects** > chọn list bạn vừa tạo > **Save and Deploy**.
-<img src="/images/2023/create_new_bulk_redirect.png" alt="Create new Bulk Redirects" rounded-lg>
+    <img src="/images/2023/create_new_bulk_redirect.png" dark:invert-95 alt="Create new Bulk Redirects" rounded-lg>
 
 ## Redirect từ domain có `www` sang không có `www` (apex domain)
 
@@ -55,8 +55,8 @@ Trong một số trường hợp, thay vì muốn có domain `www.example.com`, 
 1. Đăng nhập vào [Cloudflare dashboard](https://dash.cloudflare.com/), chọn account và website của bạn.
 2. Vào mục DNS.
 3. Tạo một record DNS mới cho subdomain `www`. Hoặc là `A` record với value là `192.0.2.1` hoặc là `AAAA` record với value là `100::`. Record mới này cũng phải được mở proxy của Cloudflare (đám mây màu cam) để nó có thể tương thích với redirect rule mà chúng ta sẽ thiết lập sắp tới.
-<img src="/images/2023/www_subdomain.png" alt="DNS record setting" rounded-lg>
+   <img src="/images/2023/www_subdomain.png" alt="DNS record setting" rounded-lg>
 4. Tiếp theo, tìm đến **Account Home** > **Bulk Redirects** và set up rule redirect tương tự như hướng dẫn phía trên (bạn có thể add thêm rule vào list đã được tạo ở trên), vẫn tick chọn vào **Preserve query string**, **Subpath matching**, **Preserve path suffix**. Và cuối cùng là **Save and Deploy**.
-<img src="/images/2023/redirect-parameters.png" alt="Redirect parameters" rounded-lg>
+   <img src="/images/2023/redirect-parameters.png" dark:invert-95 alt="Redirect parameters" rounded-lg>
 
 Hi vọng hướng dẫn trên đây là giúp bạn phần nào trong quá trình chuyển sang Cloudflare Pages. Cheers!
