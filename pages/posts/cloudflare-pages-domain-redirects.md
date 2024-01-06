@@ -2,7 +2,7 @@
 title: Set Domain Redirects for Cloudflare Pages
 date: 2023-08-21T12:30:00+07:00
 lang: en
-duration: 10min
+duration: 10 mins
 description: Redirect *.pages.dev domain to custom domain, from www to non-www (apex) domain
 ---
 

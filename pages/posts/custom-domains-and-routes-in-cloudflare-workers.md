@@ -2,7 +2,7 @@
 title: Custom Domains and Routes in Cloudflare Workers
 date: 2023-08-25T22:00:00+07:00
 lang: en
-duration: 5min
+duration: 5 mins
 description: A beginner's guide to Cloudflare Workers, a serverless platform that runs your code on the edge. Learn how to use custom domains and routes to trigger your Workers.
 ---
 

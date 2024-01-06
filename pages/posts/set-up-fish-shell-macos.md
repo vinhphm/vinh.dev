@@ -2,7 +2,7 @@
 title: Set up Fish Shell on macOS (Intel and Silicone)
 date: 2023-08-20T13:30:00+07:00
 lang: en
-duration: 5min
+duration: 3 mins
 type: note
 ---
 
@@ -33,16 +33,21 @@ In the examples below, I will use the Silicone Macs path, but you can replace th
 ## Make `fish` the default
 
 1. Add fish to the know shells by running the command:
+
 ```shell
 sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
 ```
+
 2. Restart your terminal
 3. Set fish as the default shell using the command:
+
 ```shell
 chsh -s /opt/homebrew/bin/fish
 ```
+
 4. Restart your terminal and check if it launched with fish or not
 5. Add brew binaries in fish path:
+
 ```shell
 set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
 ```

@@ -2,7 +2,7 @@
 title: Why Developing with Fresh and Deno is Simply Better
 date: 2023-02-17
 lang: en
-duration: 5min
+duration: 5 mins
 description: "Discover Fresh and Deno: Modern web dev tools. Secure, simple, speedy. Say goodbye to Node.js/npm complexities. Start coding with Fresh and Deno now!"
 ---
 

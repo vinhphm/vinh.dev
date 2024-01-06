@@ -2,7 +2,7 @@
 title: Hello, Vite
 date: 2023-08-20T12:30:00+07:00
 lang: en
-duration: 3min
+duration: 3 mins
 description: Read about my journey of switching the tech stack of my website to Vite, a fast and modern build tool. I will show you the features and benefits of Vite and how I used Vue as a framework.
 ---
 

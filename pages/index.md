@@ -16,14 +16,14 @@ Outside of programming, I enjoy doing amateur photography and traveling. Some of
 
 <div flex-auto />
 
-***
+---
 
 Find me on
 
 <p flex="~ gap-3 wrap" class="mt--2!">
   <a href="https://github.com/vinhphm" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
   <a href="https://www.linkedin.com/in/vinhphm/" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
-  <a href="https://www.threads.net/@vinh.phm" target="_blank"><span op75 i-fa6-brands-threads /> Threads</a>
+  <a href="https://www.threads.net/@vinh.phm" target="_blank"><span op75 i-simple-icons-threads /> Threads</a>
   <a href="https://www.instagram.com/vinh.phm" target="_blank"><span op75 i-simple-icons-instagram /> Instagram</a>
   <a href="https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4?si=1567653669df4908" target="_blank"><span op75 i-simple-icons-spotify /> Spotify</a>
 </p>

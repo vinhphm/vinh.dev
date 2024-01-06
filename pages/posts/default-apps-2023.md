@@ -2,13 +2,13 @@
 title: Default Apps - 2023
 date: 2023-11-30T18:00:00+07:00
 lang: en
-duration: 5min
+duration: 5 mins
 description: My take on the default apps in 2023.
 ---
 
 Its been a while since I last wrote about my default apps. I thought it would be interesting to revisit this topic and see how my preferences have changed over the years.
 
-***
+---
 
 📮 Mail Client: Apple Mail, Outlook
 

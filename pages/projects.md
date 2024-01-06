@@ -22,7 +22,7 @@ projects:
       link: 'https://paste.vinh.dev'
       desc: 'A minimal plain text storage service powered by Fresh framework, Deno, and Supabase'
       icon: 'i-tabler-brand-deno saturate-0'
-      
+
   Next.js:
     - name: 'Vinh.Dev (2022)'
       link: 'https://github.com/vinhphm/vinh-dev-legacy'
@@ -34,4 +34,3 @@ projects:
 <!-- @layout-full-width -->
 
 <ListProjects :projects="frontmatter.projects" />
-

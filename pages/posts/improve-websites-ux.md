@@ -2,7 +2,7 @@
 title: Improve Website’s UX by Adding Micro-interactions
 date: 2022-04-03
 lang: en
-duration: 7min
+duration: 7 mins
 description: Learn how to make your website more enjoyable and engaging with micro-interactions. See how you can use HTML, CSS, React, and React Spring to create animated icons for your menu and theme toggle.
 ---
 
@@ -58,8 +58,9 @@ I use React for my website but below is the plain HTML/CSS code shared by Mikael
   fill: none;
   stroke: black;
   stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset
-      600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .line1 {
   stroke-dasharray: 60 207;

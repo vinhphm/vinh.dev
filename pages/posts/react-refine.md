@@ -2,16 +2,22 @@
 title: Charting a New Course in Web Development with Refine
 date: 2023-11-12T18:00:00+07:00
 lang: en
-duration: 5min
+duration: 5 mins
 description: Join me as I share my experience with Refine, a React-based framework that has remarkably simplified my approach to building web applications.
 ---
+
 [[toc]]
 
 ## Introduction: Stumbling upon a React gem
 
 As a web developer constantly exploring new technologies, I recently stumbled upon Refine. This React-based framework promised to ease the complexities of data-intensive application development. Intrigued, I dived in, and what I discovered was nothing short of transformative for my React projects.
 
-<img src="/images/2023/refine-diagram.png" alt="Refine diagram" rounded-lg>
+<figure pt-5>
+  <div lg:scale-120 md:scale-110>
+    <img src="/images/2023/refine-diagram.png" alt="Refine diagram" rounded-lg>
+  </div>
+  <figcaption important-mt8 text-center>Refine</figcaption>
+</figure>
 
 In this post, I want to share my journey with Refine, from initial skepticism to genuine appreciation, and how it reshaped my approach to a recent project.
 
@@ -48,6 +54,11 @@ The process of building and customizing the Invoicer app revealed the strengths 
 
 ## Conclusion: My take on Refine for React development
 
-<img src="/images/2023/refine-quick-start.gif" alt="Refine quick start" rounded-lg>
+<figure pt-5>
+  <div lg:scale-120 md:scale-110>
+    <img src="/images/2023/refine-quick-start.gif" alt="Refine quick start" rounded-lg>
+  </div>
+  <figcaption important-mt8 text-center>Refine step-by-step</figcaption>
+</figure>
 
 Refine has been a revelation in my React journey. It's not just another framework; it's a tool that brings simplicity and efficiency to complex tasks. For fellow developers looking to streamline their React projects, especially those grappling with data-intensive challenges, I highly recommend giving Refine a try. It might just change your perspective on web development as it did mine.

@@ -2,7 +2,7 @@
 title: Cài Đặt Redirects Cho Netlify Và Vercel
 date: 2023-08-20T10:30:00+07:00
 lang: vi
-duration: 5min
+duration: 3 mins
 type: note
 ---
 
@@ -20,9 +20,9 @@ Trên Netlify, bạn có thể dùng file `netlify.toml` hoặc `_redirects` đ�
 
 ```toml
 [[redirects]]
-  from = "/articles/*"
-  to = "/blog/:splat"
-  status = 301
+from = "/articles/*"
+to = "/blog/:splat"
+status = 301
 ```
 
 Còn đây là file `_redirects`:

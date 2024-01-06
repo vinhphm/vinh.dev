@@ -2,7 +2,7 @@
 title: I Bought a Domain
 lang: en
 date: 2022-03-19
-duration: 5min
+duration: 3 mins
 description: Follow my story of buying a personal domain for myself (vinh.dev) and how it changed my web development journey. Learn how I set up a mailbox, a blog, and more with my own domain name.
 ---
 

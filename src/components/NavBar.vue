@@ -33,7 +33,7 @@ const { y: scroll } = useWindowScroll()
           <span class="tracking-tighter">Demos</span>
         </RouterLink>
         <a href="https://www.threads.net/@vinh.phm" target="_blank" title="Threads" class="lt-md:hidden">
-          <fa6-brands-threads />
+          <div i-simple-icons-threads />
         </a>
         <a href="https://github.com/vinhphm" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
@@ -69,7 +69,7 @@ const { y: scroll } = useWindowScroll()
   box-sizing: border-box;
 }
 
-.nav>* {
+.nav > * {
   margin: auto;
 }
 
@@ -97,7 +97,7 @@ const { y: scroll } = useWindowScroll()
   grid-auto-flow: column;
 }
 
-.nav .right>* {
+.nav .right > * {
   margin: auto;
 }
 </style>

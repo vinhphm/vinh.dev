@@ -2,7 +2,7 @@
 title: Thiết Lập Domain Redirects Cho Cloudflare Pages
 date: 2023-08-21T12:30:00+07:00
 lang: vi
-duration: 10min
+duration: 10 mins
 description: Chuyển domain *.pages.dev sang custom domain, từ www sang non-www (apex) domain
 ---
 

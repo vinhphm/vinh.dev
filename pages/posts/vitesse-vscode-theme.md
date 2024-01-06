@@ -2,7 +2,7 @@
 title: 'Vitesse Theme - VS Code theme'
 date: 2023-02-26
 lang: en
-duration: 3min
+duration: 3 mins
 ---
 
 [[toc]]
@@ -19,8 +19,13 @@ Let me save you from all these troubles and introduce a new theme instead of tho
 
 And [Vitesse by [Anthony Fu](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse) fits all of these perfectly. Here is how it looks in action:
 
-<img src="/images/2023/vitesse-light.png" img-light>
-<img src="/images/2023/vitesse-dark.png" img-dark>
+<figure pt-5>
+  <div lg:scale-120 md:scale-110>
+    <img src="/images/2023/vitesse-light.png" img-light>
+    <img src="/images/2023/vitesse-dark.png" img-dark>
+  </div>
+  <figcaption important-mt8 text-center>Vitesse</figcaption>
+</figure>
 
 There are six variants for you to choose from. And I think you will love it.
 
