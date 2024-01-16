@@ -13,9 +13,9 @@
     "@unhead/vue": "^1.8.9",
     "@vueuse/core": "^10.7.2",
     "dayjs": "^1.11.10",
-    "floating-vue": "5.0.3",
+    "floating-vue": "5.1.0",
     "nprogress": "^0.2.0",
-    "vue": "^3.4.13",
+    "vue": "^3.4.14",
     "vue-router": "4.2.5",
     "vue-router-better-scroller": "^0.0.0"
   },
