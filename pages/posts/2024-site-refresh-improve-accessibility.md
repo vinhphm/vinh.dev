@@ -22,10 +22,10 @@ I also decided to "unbold" all the headings so it doesn't feel like you're being
 
 <figure pt-5>
   <div grid="~ cols-1 md:cols-2 gap-1" lg:scale-120 md:scale-110>
-    <img src="/images/2024/2024-refresh-old-light.png" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-new-light.png" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-old-dark.png" rounded shadow img-dark important-m0 />
-    <img src="/images/2024/2024-refresh-new-dark.png" rounded shadow img-dark important-m0 />
+    <img src="/images/2024/2024-refresh-old-light.png" alt="Old site in light mode" rounded shadow img-light important-m0 />
+    <img src="/images/2024/2024-refresh-new-light.png" alt="New site in light mode" rounded shadow img-light important-m0 />
+    <img src="/images/2024/2024-refresh-old-dark.png" alt="Old site in dark mode" rounded shadow img-dark important-m0 />
+    <img src="/images/2024/2024-refresh-new-dark.png" alt="New site in dark mode" rounded shadow img-dark important-m0 />
   </div>
   <figcaption important-mt8 text-center>
     My old site (left/above) vs. my new own (right/below). Click the icon here <toggle-theme /> to check other variant.
@@ -44,10 +44,10 @@ The answer is both if we're talking about what best for accessibility. But in so
 
 <figure pt-5>
   <div grid="~ cols-1 md:cols-2 gap-1" lg:scale-120 md:scale-110>
-    <img src="/images/2024/2024-refresh-mobile-old-light.png" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-mobile-new-light.png" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-mobile-old-dark.png" rounded shadow img-dark important-m0 />
-    <img src="/images/2024/2024-refresh-mobile-new-dark.png" rounded shadow img-dark important-m0 />
+    <img src="/images/2024/2024-refresh-mobile-old-light.png" alt="Old site in light mode (mobile)" rounded shadow img-light important-m0 />
+    <img src="/images/2024/2024-refresh-mobile-new-light.png" alt="New site in light mode (mobile)" rounded shadow img-light important-m0 />
+    <img src="/images/2024/2024-refresh-mobile-old-dark.png" alt="Old site in dark mode (mobile)" rounded shadow img-dark important-m0 />
+    <img src="/images/2024/2024-refresh-mobile-new-dark.png" alt="New site in dark mode (mobile)" rounded shadow img-dark important-m0 />
   </div>
   <figcaption important-mt8 text-center>
     My old site (left/above) vs. my new own (right/below). Click the icon here <toggle-theme /> to check other variant.

@@ -22,8 +22,8 @@ And [Vitesse by [Anthony Fu](https://marketplace.visualstudio.com/items?itemName
 
 <figure pt-5>
   <div lg:scale-120 md:scale-110>
-    <img src="/images/2023/vitesse-light.png" img-light>
-    <img src="/images/2023/vitesse-dark.png" img-dark>
+    <img src="/images/2023/vitesse-light.png" alt="Vitesse Light" img-light />
+    <img src="/images/2023/vitesse-dark.png" alt="Vitesse Dark" img-dark />
   </div>
   <figcaption important-mt8 text-center>Vitesse</figcaption>
 </figure>
