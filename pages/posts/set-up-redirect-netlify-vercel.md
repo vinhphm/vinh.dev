@@ -4,6 +4,7 @@ date: 2023-08-20T10:30:00+07:00
 lang: en
 duration: 3 mins
 type: note
+description: How to set up redirects for Netlify and Vercel.
 ---
 
 [[toc]]

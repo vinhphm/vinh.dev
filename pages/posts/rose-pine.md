@@ -1,5 +1,6 @@
 ---
 title: 'Rosé Pine - VS Code Theme'
+description: "Rosé Pine is a beautiful theme for your favorite text editor/IDE, and it's not just a light theme, there are also two dark variants."
 date: 2022-03-27
 lang: en
 duration: 3 mins

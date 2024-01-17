@@ -3,6 +3,7 @@ title: Chuyển Domain Từ Google Domains Sang Dịch Vụ Khác
 date: 2023-08-19T15:00:00+07:00
 lang: vi
 duration: 5 mins
+description: Hướng dẫn chuyển domain từ Google Domains sang dịch vụ khác.
 ---
 
 [[toc]]

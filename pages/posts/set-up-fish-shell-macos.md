@@ -4,6 +4,7 @@ date: 2023-08-20T13:30:00+07:00
 lang: en
 duration: 3 mins
 type: note
+description: How to set up fish shell on macOS (Intel and Silicone).
 ---
 
 [[toc]]

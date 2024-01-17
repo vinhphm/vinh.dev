@@ -4,6 +4,7 @@ date: 2023-08-20T10:30:00+07:00
 lang: vi
 duration: 3 mins
 type: note
+description: Cách cài đặt redirects cho Netlify và Vercel.
 ---
 
 [[toc]]

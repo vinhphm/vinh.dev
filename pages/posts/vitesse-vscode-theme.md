@@ -3,6 +3,7 @@ title: 'Vitesse Theme - VS Code theme'
 date: 2023-02-26
 lang: en
 duration: 3 mins
+description: Let's take a look at a new theme for VS Code.
 ---
 
 [[toc]]
