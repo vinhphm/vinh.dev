@@ -10,16 +10,16 @@ All images in this blog are from [Unsplash](https://unsplash.com/), [imgur](http
 
 ## Getting started
 
-To get started with this template, first install the npm dependencies:
+To get started with this template, first install the dependencies:
 
 ```bash
-npm install
+bun install
 ```
 
 Next, run the development server:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 Finally, open [http://localhost:3333](http://localhost:3333) in your browser to view the website.
