@@ -3,8 +3,7 @@ title: Is It Time to Switch to Bun?
 date: 2024-1-16T22:00:00+07:00
 lang: en
 duration: 5 mins
-draft: true
-description: What is Bun and why should you care?
+description: Is it time to switch to Bun?
 ---
 
 [[toc]]
