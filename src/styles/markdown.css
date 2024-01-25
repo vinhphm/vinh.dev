@@ -64,10 +64,13 @@ html:not(.dark) .shiki span {
 }
 
 .prose a {
-  font-weight: inherit;
   text-decoration: none;
   border-bottom: 1px solid rgba(125, 125, 125, 0.3);
   transition: border 0.3s ease-in-out;
+}
+
+.fw-inherit a {
+  font-weight: inherit;
 }
 
 .prose a:hover {
@@ -208,7 +211,7 @@ h6:focus .header-anchor {
 }
 
 .table-of-contents ul > li > a {
-  --uno: op75 hover-op100 transition;
+  --uno: op75 hover-op100 transition font-normal;
 }
 
 .code-wrap .line {

@@ -81,7 +81,7 @@ function getGroupName(p: Post) {
               to: route.path,
             }
           "
-          class="item block font-normal mb-6 mt-2 no-underline"
+          class="item block !font-normal mb-6 mt-2 no-underline"
         >
           <li class="no-underline" flex="~ col md:row gap-2 md:items-center">
             <div class="title text-lg leading-1.2em" flex="~ gap-2 wrap">
