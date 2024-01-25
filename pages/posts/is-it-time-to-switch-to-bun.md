@@ -14,8 +14,8 @@ So [Bun](https://bun.sh/) is a new project that describes itself as:
 
 Hmm... sounds interesting. And surely the benchmarks shown on the website are super impressive. And they just released version 1.0 a few months ago. But is it ready for you and me? I don't know about you, but for me, the was a few things preventing me from trying it out at first:
 
-- Cross-platform support
-- Online services that support it
+- [Cross-platform support](#cross-platform-support)
+- [Online services that support it](#online-services-that-support-it)
 
 ## Cross-platform support
 
