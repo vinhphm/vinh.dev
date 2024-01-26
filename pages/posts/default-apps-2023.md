@@ -1,5 +1,5 @@
 ---
-title: Default Apps - 2023
+title: Default Apps (2023)
 date: 2023-11-30T18:00:00+07:00
 lang: en
 duration: 5 mins
