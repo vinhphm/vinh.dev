@@ -14,7 +14,6 @@
 .prose a {
   color: var(--fg-deeper);
   text-decoration: none;
-  font-weight: 500;
 }
 .prose strong {
   color: var(--fg-deep);
