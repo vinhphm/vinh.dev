@@ -82,8 +82,8 @@ export default defineConfig({
       async markdownItSetup(md) {
         md.use(await MarkdownItShiki({
           themes: {
-            dark: 'vitesse-dark',
-            light: 'vitesse-light',
+            dark: 'rose-pine-moon',
+            light: 'rose-pine-dawn',
           },
           defaultColor: false,
           cssVariablePrefix: '--s-',

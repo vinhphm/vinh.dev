@@ -1,4 +1,11 @@
-import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  presetWebFonts,
+  transformerDirectives,
+} from 'unocss'
 
 export default defineConfig({
   shortcuts: [
