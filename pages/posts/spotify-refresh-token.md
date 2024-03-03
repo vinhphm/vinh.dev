@@ -130,4 +130,5 @@ node get-token.js
 
 4. Open your browser and enter this address `http://localhost:3000/login`. You will get your tokens as an array result from two API calls: the first one is to get an access token and refresh token, and the second one is to grant the refresh token.
 
-There you go. You finally have your refresh token for your website. You can continue to implement Spotify on your website now. Happy coding!
+> [!TIP]
+> There you go. You finally have your refresh token for your website. You can continue to implement Spotify on your website now, which I also have an example of in [Using Spotify API with Vite and Cloudflare Workers](/posts/spotify-api-vite-cloudflare-workers). Feel free to check it out.

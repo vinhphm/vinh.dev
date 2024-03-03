@@ -37,10 +37,10 @@ SPOTIFY_REFRESH_TOKEN=your_refresh_token
 
 #### Deployed Worker Secrets
 
-To add secrets to the deployed Worker, run the following command in your terminal, replacing `<KEY>` with the name of your secret:
+To add secrets to the deployed Worker, run the following command in your terminal, replacing `KEY` with the name of your secret:
 
 ```shell
-wrangler secret put <KEY>
+wrangler secret put `KEY`
 ```
 
 ### Calling the APIs
