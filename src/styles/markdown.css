@@ -37,7 +37,7 @@ html:not(.dark) .shiki span {
 }
 
 .prose .shiki {
-  font-family: 'Geist Mono Variable', 'Roboto Mono', 'Fira Code', monospace;
+  font-family: 'Geist Mono', 'Roboto Mono', 'Fira Code', monospace;
   font-size: 0.875em;
   line-height: 1.5;
   margin: 0.5em 0;
