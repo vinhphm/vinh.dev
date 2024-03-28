@@ -34,8 +34,8 @@ export default defineConfig({
     presetWebFonts({
       provider: 'none',
       fonts: {
-        sans: 'Geist Sans Variable',
-        mono: 'Geist Mono Variable',
+        sans: 'Geist',
+        mono: 'Geist Mono',
       },
     }),
   ],
