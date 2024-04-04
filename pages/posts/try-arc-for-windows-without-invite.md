@@ -25,7 +25,7 @@ I know it's a bit tricky, but at least you don't need to wait in the queue for a
 <figure pt-5>
   <div grid="~ cols-1 md:cols-2 gap-1" lg:scale-120 md:scale-110>
     <img src="/images/2024/arc-windows.png" alt="Arc for Windows" rounded shadow important-m0 />
-    <img src="/images/2024/arc-windows-peak.png" alt="Arc for Windows with Peak" rounded shadow img-light important-m0 />
+    <img src="/images/2024/arc-windows-peak.png" alt="Arc for Windows with Peak" rounded shadow important-m0 />
   </div>
   <figcaption important-mt8 text-center>
     Arc for Windows
