@@ -7,7 +7,7 @@ plum: true
 
 Hey, I am Vinh, a seasoned software engineer.
 
-Working at [PwC](https://pwc.com/).<br>
+Working at [PwC](https://www.pwc.com/).<br>
 A part of the Digital Solutions team.<br>
 
 My true passion lies in envisioning ideas and turning them into reality. Feel free to explore some of [my side projects here](/projects). Additionally, I have a knack for UI/UX design.
