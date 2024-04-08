@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.12.2",
-    "@iconify/json": "^2.2.197",
+    "@iconify/json": "^2.2.198",
     "@octokit/rest": "^20.1.0",
     "@shikijs/markdown-it": "^1.2.4",
     "@shikijs/twoslash": "^1.2.4",
