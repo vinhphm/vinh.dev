@@ -2,7 +2,7 @@
 
 ## Tech stack
 
-This website is hosted on [CloudFlare](https://cloudflare.com/), built with [Vite](https://vitejs.dev/) and [UnoCSS](https://unocss.dev/).
+This website is hosted on [CloudFlare](https://cloudflare.com/), built with [Vite](https://vitejs.dev/) and [UnoCSS](https://unocss.dev/), hugely inspired by Anthony Fu's [site](https://antfu.me).
 
 ## Images
 
