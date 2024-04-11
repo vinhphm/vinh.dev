@@ -170,3 +170,12 @@ html:not(.dark) [img-dark] {
 .fade-leave-to {
   opacity: 0;
 }
+
+/* Logo */
+.text-light-accent {
+  color: color(display-p3 1 0.144 0.4521);
+}
+
+:is(.dark .dark\:text-dark-accent) {
+  color: color(display-p3 0.3499 1 0.766 / 0.9);
+}

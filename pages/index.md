@@ -1,18 +1,16 @@
 ---
 title: Vinh Pham
-description: A code artisan with a flair for design
-image: https://vinh.dev/og.png
+description: An unhinged place for unhinged thoughts and ideas.
 plum: true
 ---
 
-Hey, I am Vinh, a seasoned software engineer.
+Hi, I'm Vinh, welcome to my unhinged site.
 
-Working at [PwC](https://www.pwc.com/).<br>
-A part of the Digital Solutions team.<br>
+As a software engineer at [PwC](https://www.pwc.com/), I'm part of the innovative Digital Solutions team.
 
-My true passion lies in envisioning ideas and turning them into reality. Feel free to explore some of [my side projects here](/projects). Additionally, I have a knack for UI/UX design.
+My passion lies in envisioning ideas and bringing them to life. Sometimes, the most intriguing concepts don't fit within the scope of my day job, and that's where this site comes in. Here, I share those unbridled thoughts and projects—hence the name, 'unhinged', and the playful glitch in the logo. Dive in with an open mind and feel free to explore [my side projects](/projects).
 
-Outside of programming, I enjoy doing amateur photography and traveling. Some of my photos can be found on [Instagram](https://www.instagram.com/vinh.phm). If you happen to be in the same city I live (currently in Ho Chi Minh City), maybe we can hang out and have some talks (or code).
+Outside of programming, I enjoy doing amateur photography and traveling. Some of my photos can be found on [Instagram](https://www.instagram.com/vinh.phm).
 
 <div flex-auto />
 

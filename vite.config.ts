@@ -37,6 +37,7 @@ export default defineConfig({
       '@vueuse/core',
       'dayjs',
       'dayjs/plugin/localizedFormat',
+      'vue-powerglitch',
     ],
   },
   plugins: [
