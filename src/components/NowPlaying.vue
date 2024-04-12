@@ -26,24 +26,24 @@ const { data } = useSWRV('https://worker.vinh.dev/spotify', fetcher)
 
     <div class="ml-4 flex max-w-full items-center truncate">
       <MusicEqualizer v-if="data?.isPlaying && data?.songUrl" wrapper-class="mr-2" />
-      <p
+      <span
         v-if="data?.songUrl"
         class="max-w-max truncate text-sm text-zinc-800 group-hover:text-spotify-green dark:text-zinc-200 dark:group-hover:text-spotify-green"
       >
         {{ data.title }}
-      </p>
-      <p
+      </span>
+      <span
         v-else
         class="text-sm text-zinc-700 group-hover:text-spotify-green dark:text-zinc-300 dark:group-hover:text-spotify-green"
       >
         Not playing
-      </p>
+      </span>
       <span class="mx-2 text-sm text-zinc-400 dark:text-zinc-500">
         –
       </span>
-      <p class="max-w-max truncate text-sm text-zinc-400 dark:text-zinc-500">
+      <span class="max-w-max truncate text-sm text-zinc-400 dark:text-zinc-500">
         {{ data?.artist ?? 'Spotify' }}
-      </p>
+      </span>
     </div>
   </a>
 </template>
