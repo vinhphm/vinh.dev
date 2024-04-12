@@ -53,7 +53,12 @@ In [`spotify.ts`](https://github.com/vinhphm/spotify-worker/blob/main/src/spotif
 
 I want to archive the same style as my Spotify widget on my old site.
 
-<img src="/images/2023/spotify-current-playing.png" alt="Spotify current playing" rounded-lg>
+<figure pt-5>
+  <img src="/images/2023/spotify-current-playing.gif" alt="Spotify current playing" shadow rounded-lg lg:scale-80 md:scale-100>
+  <figcaption important-mt2 text-center>
+    Spotify current playing
+  </figcaption>
+</figure>
 
 It contains a `MusicEqualizer.vue` component to show an icon with a small animation to indicate a song is playing.
 

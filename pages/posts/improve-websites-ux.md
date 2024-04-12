@@ -22,7 +22,12 @@ Okay, so in order to maker my site more engaging and enjoyable, I decided to add
 
 First is the toggle menu for mobile devices from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c) with a little tweak from me:
 
-<img src="/images/2022/menu-toggle.gif" alt="Menu toggle" rounded-lg />
+<figure pt-5>
+  <img src="/images/2022/menu-toggle.gif" alt="Menu toggle" rounded-lg />
+  <figcaption text-center>
+    Menu toggle
+  </figcaption>
+</figure>
 
 I use React for my website but below is the plain HTML/CSS code shared by Mikael Ainalem from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c). I recommend you check out his article on how this icon and animation is made. It's fascinating.
 
@@ -95,7 +100,12 @@ I use React for my website but below is the plain HTML/CSS code shared by Mikael
 
 Second, is the theme toggle icon from the top right corner:
 
-<img src="/images/2022/theme-toggle.gif" alt="Theme toggle" rounded-lg />
+<figure pt-5>
+  <img src="/images/2022/theme-toggle.gif" alt="Theme toggle" rounded-lg />
+  <figcaption text-center>
+    Theme toggle
+  </figcaption>
+</figure>
 
 For this one, I use React Spring to animate SVG icons based on the instruction from [jfelix.info](https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle) with another small tweak from me to match with the current setup from my site. You can find the source code [here at GitHub](https://github.com/vinhphm/vinh-dev-archive/blob/main/components/AnimatedThemeIcon.js).
 

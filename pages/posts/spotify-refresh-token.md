@@ -8,7 +8,12 @@ description: See how you can generate refresh tokens for the Spotify Web API usi
 
 [[toc]]
 
-<img src="/images/2023/spotify-current-playing.png" alt="Spotify current playing" rounded-lg>
+<figure pt-5>
+  <img src="/images/2023/spotify-current-playing.gif" alt="Spotify current playing" shadow rounded-lg lg:scale-80 md:scale-100>
+  <figcaption important-mt2 text-center>
+    Spotify current playing
+  </figcaption>
+</figure>
 
 Do you want to add some cool Spotify features to your website, such as displaying your current playing song, creating a custom music player, or showing off your playlists? If so, you will need to use the Spotify Web API, which lets you access and manipulate Spotify data. However, the Spotify Web API requires authentication and authorization from both you and your users, which means you will need to get an access token and a refresh token for each user. This can be tricky and risky if you don't do it right. In this blog post, I will show you how you can generate refresh tokens for the Spotify Web API using only your browser and a few lines of code. All you need is:
 
@@ -24,7 +29,7 @@ Assuming you already have a registered application on the [Spotify Developer Das
 
 They will look like this:
 
-<img src="/images/2023/client-id-secret.png" alt="Client ID Secret" rounded-lg>
+<img src="/images/2023/client-id-secret.png" alt="Client ID Secret" shadow rounded-lg>
 
 You will also need to change the **Redirect URIs** in the application settings to `http://localhost:3000/callback`.
 
