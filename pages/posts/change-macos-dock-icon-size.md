@@ -9,7 +9,7 @@ description: Commands to change/reset the size of the macOS Dock icon.
 
 [[toc]]
 
-## Set to an integer value (default is 64)
+## Set to an Integer Value (default is 64)
 
 Dock icon size of 32 pixels.
 
@@ -23,13 +23,13 @@ Dock icon size of 48 pixels.
 defaults write com.apple.dock "tilesize" -int "48" && killall Dock
 ```
 
-## Read current value
+## Read Current Value
 
 ```shell
 defaults read com.apple.dock "tilesize"
 ```
 
-## Reset to default
+## Reset to Default
 
 ```shell
 defaults delete com.apple.dock "tilesize" && killall Dock
