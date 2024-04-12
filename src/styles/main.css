@@ -212,3 +212,11 @@ html:not(.dark) [img-dark] {
 .fade-leave-to {
   opacity: 0;
 }
+
+/* Logo */
+.logo-fill-color {
+  fill: #303030;
+}
+.dark .logo-fill-color {
+  fill: #fdfdfd;
+}
