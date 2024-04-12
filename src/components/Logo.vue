@@ -4,6 +4,9 @@
       timing: {
         duration: 5000,
       },
+      glitchTimeSpan: {
+        end: 0.8,
+      },
     }"
   >
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
