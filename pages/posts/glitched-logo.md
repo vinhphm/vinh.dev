@@ -21,7 +21,7 @@ You saw a glitch? Don't worry, that's just the new logo.
       </div>
     </center>
     <figcaption important-mt8 text-center>
-      The original logo
+      Original
     </figcaption>
   </figure>
   <figure pt-5>
@@ -31,7 +31,7 @@ You saw a glitch? Don't worry, that's just the new logo.
     </div>
   </center>
   <figcaption important-mt8 text-center>
-      The new logo
+      New
     </figcaption>
   </figure>
 </div>
