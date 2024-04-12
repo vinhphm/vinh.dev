@@ -2,7 +2,7 @@
 title: Using Spotify API with Vite and Cloudflare Workers
 date: 2023-09-01T13:00:00+07:00
 lang: en
-duration: 5min
+duration: 5 mins
 description: Discover how to use Cloudflare Workers to interact with the Spotify API and display your current playing song on your website. Explore how to use Vite and Vue to create a Spotify widget with animation and style.
 ---
 
@@ -37,10 +37,10 @@ SPOTIFY_REFRESH_TOKEN=your_refresh_token
 
 #### Deployed Worker Secrets
 
-To add secrets to the deployed Worker, run the following command in your terminal, replacing `<KEY>` with the name of your secret:
+To add secrets to the deployed Worker, run the following command in your terminal, replacing `KEY` with the name of your secret:
 
 ```shell
-wrangler secret put <KEY>
+wrangler secret put `KEY`
 ```
 
 ### Calling the APIs
@@ -77,7 +77,8 @@ Aside from custom CSS classes for animation, which are shown below, I also made 
 
 ```css
 @keyframes shrink {
-  0%, 100% {
+  0%,
+  100% {
     height: 0.75rem;
   }
   50% {
@@ -86,7 +87,8 @@ Aside from custom CSS classes for animation, which are shown below, I also made 
 }
 
 @keyframes expand {
-  0%, 100% {
+  0%,
+  100% {
     height: 0.375rem;
   }
   50% {

@@ -11,7 +11,7 @@ const { y: scroll } = useWindowScroll()
 
 <template>
   <header class="header z-40">
-    <RouterLink class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none" to="/" focusable="false">
+    <RouterLink class="w-12 h-12 absolute lg:fixed m-5 select-none outline-none" to="/" focusable="false">
       <Logo />
     </RouterLink>
     <button
@@ -24,19 +24,16 @@ const { y: scroll } = useWindowScroll()
       <div class="spacer" />
       <div class="right" print:op0>
         <RouterLink to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
-          <div i-tabler-notebook md:hidden />
+          <span class="tracking-tighter">Blog</span>
         </RouterLink>
         <RouterLink to="/projects" title="Projects">
-          <span class="lt-md:hidden">Projects</span>
-          <div i-tabler-list-details class="md:hidden" />
+          <span class="tracking-tighter">Projects</span>
         </RouterLink>
         <RouterLink to="/demos" title="Demos">
-          <span class="lt-md:hidden">Demos</span>
-          <div i-tabler:photo-code class="md:hidden" />
+          <span class="tracking-tighter">Demos</span>
         </RouterLink>
-        <a href="https://www.threads.net/@vinh.phm" target="_blank" title="Twitter" class="lt-md:hidden">
-          <fa6-brands-threads />
+        <a href="https://www.threads.net/@vinh.phm" target="_blank" title="Threads" class="lt-md:hidden">
+          <div i-simple-icons-threads />
         </a>
         <a href="https://github.com/vinhphm" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
@@ -72,7 +69,7 @@ const { y: scroll } = useWindowScroll()
   box-sizing: border-box;
 }
 
-.nav>* {
+.nav > * {
   margin: auto;
 }
 
@@ -85,7 +82,7 @@ const { y: scroll } = useWindowScroll()
   text-decoration: none;
   color: inherit;
   transition: opacity 0.2s ease;
-  opacity: 0.6;
+  opacity: 0.8;
   outline: none;
 }
 
@@ -100,7 +97,7 @@ const { y: scroll } = useWindowScroll()
   grid-auto-flow: column;
 }
 
-.nav .right>* {
+.nav .right > * {
   margin: auto;
 }
 </style>

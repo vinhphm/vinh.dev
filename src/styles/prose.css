@@ -4,7 +4,7 @@
   font-size: 1rem;
   line-height: 1.75;
 }
-.prose [class~="lead"] {
+.prose [class~='lead'] {
   color: #4b5563;
   font-size: 1.25em;
   line-height: 1.6;
@@ -14,37 +14,36 @@
 .prose a {
   color: var(--fg-deeper);
   text-decoration: none;
-  font-weight: 500;
 }
 .prose strong {
   color: var(--fg-deep);
   font-weight: 600;
 }
-.prose ol[type="A"] {
+.prose ol[type='A'] {
   --list-counter-style: upper-alpha;
 }
-.prose ol[type="a"] {
+.prose ol[type='a'] {
   --list-counter-style: lower-alpha;
 }
-.prose ol[type="A s"] {
+.prose ol[type='A s'] {
   --list-counter-style: upper-alpha;
 }
-.prose ol[type="a s"] {
+.prose ol[type='a s'] {
   --list-counter-style: lower-alpha;
 }
-.prose ol[type="I"] {
+.prose ol[type='I'] {
   --list-counter-style: upper-roman;
 }
-.prose ol[type="i"] {
+.prose ol[type='i'] {
   --list-counter-style: lower-roman;
 }
-.prose ol[type="I s"] {
+.prose ol[type='I s'] {
   --list-counter-style: upper-roman;
 }
-.prose ol[type="i s"] {
+.prose ol[type='i s'] {
   --list-counter-style: lower-roman;
 }
-.prose ol[type="1"] {
+.prose ol[type='1'] {
   --list-counter-style: decimal;
 }
 .prose ol > li {
@@ -52,7 +51,7 @@
   padding-left: 1.75em;
 }
 .prose ol > li::before {
-  content: counter(list-item, var(--list-counter-style, decimal)) ".";
+  content: counter(list-item, var(--list-counter-style, decimal)) '.';
   position: absolute;
   font-weight: 400;
   color: #6b7280;
@@ -63,9 +62,9 @@
   padding-left: 1.75em;
 }
 .prose ul > li::before {
-  content: "";
+  content: '';
   position: absolute;
-  background-color: #d1d5db;
+  background-color: var(--fg-pale);
   border-radius: 50%;
   width: 0.375em;
   height: 0.375em;
@@ -73,7 +72,7 @@
   left: 0.25em;
 }
 .prose hr {
-  border-color: rgba(125,125,125,0.3);
+  border-color: rgba(125, 125, 125, 0.3);
   margin-top: 3em;
   margin-bottom: 3em;
 }
@@ -82,8 +81,8 @@
   font-style: italic;
   color: inherit;
   border-left-width: 0.25rem;
-  border-color: rgba(125,125,125,0.3);
-  quotes: "\201C""\201D""\2018""\2019";
+  border-color: rgba(125, 125, 125, 0.3);
+  quotes: '\201C' '\201D' '\2018' '\2019';
   margin-top: 1.6em;
   margin-bottom: 1.6em;
   padding-left: 1em;
@@ -96,23 +95,26 @@
 }
 .prose h1 {
   color: var(--fg-deeper);
-  font-weight: 800;
+  font-weight: 500;
+  letter-spacing: -0.05em;
   font-size: 2.25em;
   margin-top: 0;
   margin-bottom: 0.8888889em;
   line-height: 1.1111111;
 }
 .prose h2 {
-  color: var(--fg-deep);
-  font-weight: 700;
+  color: var(--fg-deeper);
+  font-weight: 500;
+  letter-spacing: -0.05em;
   font-size: 1.5em;
   margin-top: 2em;
   margin-bottom: 1em;
   line-height: 1.3333333;
 }
 .prose h3 {
-  color: inherit;
-  font-weight: 600;
+  color: var(--fg-deeper);
+  font-weight: 500;
+  letter-spacing: -0.05em;
   font-size: 1.25em;
   margin-top: 1.6em;
   margin-bottom: 0.6em;
@@ -120,8 +122,9 @@
   opacity: 0.7;
 }
 .prose h4 {
-  color: inherit;
-  font-weight: 600;
+  color: var(--fg-deep);
+  font-weight: 500;
+  letter-spacing: -0.05em;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   line-height: 1.5;
@@ -133,16 +136,16 @@
   margin-top: 0.8571429em;
 }
 .prose code {
-  color: var(--fg-deep);
-  font-family: 'Roboto Mono Variable', 'Roboto Mono', 'Fira Code', monospace;
+  color: var(--fg-deeper);
+  font-family: 'Geist Mono', 'Roboto Mono', 'Fira Code', monospace;
   font-weight: 600;
   font-size: 0.875em;
 }
 .prose code::before {
-  content: "`";
+  content: '`';
 }
 .prose code::after {
-  content: "`";
+  content: '`';
 }
 .prose a code {
   color: #111827;
@@ -165,7 +168,7 @@
   border-width: 0;
   border-radius: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 500;
   color: inherit;
   font-size: inherit;
   font-family: inherit;
@@ -187,8 +190,8 @@
   line-height: 1.7142857;
 }
 .prose thead {
-  color: var(--fg-deep);
-  font-weight: 600;
+  color: var(--fg-deeper);
+  font-weight: 500;
   border-bottom-width: 1px;
   border-bottom-color: #d1d5db;
 }
@@ -262,7 +265,10 @@
 .prose > ol > li > *:last-child {
   margin-bottom: 1.25em;
 }
-.prose ul ul, .prose ul ol, .prose ol ul, .prose ol ol {
+.prose ul ul,
+.prose ul ol,
+.prose ol ul,
+.prose ol ol {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
 }
@@ -318,7 +324,7 @@
   margin-top: 1.1428571em;
   margin-bottom: 1.1428571em;
 }
-.prose-sm [class~="lead"] {
+.prose-sm [class~='lead'] {
   font-size: 1.2857143em;
   line-height: 1.5555556;
   margin-top: 0.8888889em;
@@ -436,7 +442,10 @@
 .prose-sm > ol > li > *:last-child {
   margin-bottom: 1.1428571em;
 }
-.prose-sm ul ul, .prose-sm ul ol, .prose-sm ol ul, .prose-sm ol ol {
+.prose-sm ul ul,
+.prose-sm ul ol,
+.prose-sm ol ul,
+.prose-sm ol ol {
   margin-top: 0.5714286em;
   margin-bottom: 0.5714286em;
 }

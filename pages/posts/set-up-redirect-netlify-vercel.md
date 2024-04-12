@@ -2,8 +2,9 @@
 title: Set up Redirects for Netlify and Vercel
 date: 2023-08-20T10:30:00+07:00
 lang: en
-duration: 5min
+duration: 3 mins
 type: note
+description: How to set up redirects for Netlify and Vercel.
 ---
 
 [[toc]]
@@ -20,9 +21,9 @@ For `netlify.toml`, the rule should look like this:
 
 ```toml
 [[redirects]]
-  from = "/articles/*"
-  to = "/blog/:splat"
-  status = 301
+from = "/articles/*"
+to = "/blog/:splat"
+status = 301
 ```
 
 And here is how it looks in `_redirects`:

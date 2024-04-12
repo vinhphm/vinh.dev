@@ -1,8 +1,8 @@
 ---
-title: Every software developer should write a blog
+title: Every Software Developer Should Write a Blog
 date: 2023-01-11
 lang: en
-duration: 5min
+duration: 5 mins
 description: Discover the benefits of blogging as a software developer. Learn how blogging can improve your skills, career, and well-being. Find out how to start and stick with it.
 ---
 

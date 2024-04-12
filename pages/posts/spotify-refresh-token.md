@@ -1,28 +1,16 @@
 ---
-title: Generating refresh token for Spotify API calls
+title: Generating Refresh Token for Spotify API Calls
 date: 2023-02-19
 lang: en
-duration: 10min
+duration: 5 mins
 description: See how you can generate refresh tokens for the Spotify Web API using your browser and Node.js. Learn how to use the Spotify Developer Dashboard, scopes, and code snippets to access Spotify data on your website.
 ---
 
 [[toc]]
 
-Are you a web developer who loves music? Do you want to spice up your website with some awesome Spotify content? Maybe you want to show off your favorite playlists, albums, or tracks. Or maybe you want to create a custom music player that streams songs from Spotify. In my case, I put a simple current-playing widget on my website:
-
 <img src="/images/2023/spotify-current-playing.png" alt="Spotify current playing" rounded-lg>
 
-To do this, you will need to use the Spotify Web API, which is a set of endpoints that let you access and manipulate Spotify data. But there's a catch. The Spotify Web API requires authentication and authorization from both you and your users. This means that you will need to get an access token and a refresh token for each user who wants to use your website.
-
-An access token is a short-lived credential that lets you make requests to the Spotify Web API on behalf of a user. A refresh token is a long-lived credential that lets you renew the access token when it expires. You will need both tokens to ensure that your website can always access the Spotify data that you need.
-
-Sounds complicated, right? Don't worry. There are some websites out there that can help you generate refresh tokens for the Spotify Web API with an easy-to-use interface. All you have to do is enter your client ID and client secret (which you can get from the Spotify Developer Dashboard), authorize your application with your Spotify account, and copy the refresh token that is generated for you.
-
-Sounds easy, right? Well, not so fast. These websites may not be trustworthy or secure. They may leak your data or misuse your tokens without your consent or knowledge. They may also violate the Spotify Developer Terms of Service or Privacy Policy.
-
-So what's the solution? How can you generate refresh tokens for the Spotify Web API without risking your data or breaking any rules? The answer is simple: do it yourself!
-
-In this blog post, I will show you how you can generate refresh tokens for the Spotify Web API using only your browser and a few lines of code. All you need is:
+Do you want to add some cool Spotify features to your website, such as displaying your current playing song, creating a custom music player, or showing off your playlists? If so, you will need to use the Spotify Web API, which lets you access and manipulate Spotify data. However, the Spotify Web API requires authentication and authorization from both you and your users, which means you will need to get an access token and a refresh token for each user. This can be tricky and risky if you don't do it right. In this blog post, I will show you how you can generate refresh tokens for the Spotify Web API using only your browser and a few lines of code. All you need is:
 
 - A registered application on the Spotify Developer Dashboard
 - A web browser with developer tools enabled
@@ -130,4 +118,5 @@ node get-token.js
 
 4. Open your browser and enter this address `http://localhost:3000/login`. You will get your tokens as an array result from two API calls: the first one is to get an access token and refresh token, and the second one is to grant the refresh token.
 
-There you go. You finally have your refresh token for your website. You can continue to implement Spotify on your website now. Happy coding!
+> [!TIP]
+> There you go. You finally have your refresh token for your website. You can continue to implement Spotify on your website now, which I also have an example of in [Using Spotify API with Vite and Cloudflare Workers](/posts/spotify-api-vite-cloudflare-workers). Feel free to check it out.

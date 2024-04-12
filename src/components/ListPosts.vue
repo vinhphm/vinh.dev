@@ -47,7 +47,7 @@ function getGroupName(p: Post) {
 <template>
   <ul>
     <template v-if="!posts.length">
-      <div py2 op50>
+      <div py2 op75>
         { nothing here yet }
       </div>
     </template>
@@ -81,7 +81,7 @@ function getGroupName(p: Post) {
               to: route.path,
             }
           "
-          class="item block font-normal mb-6 mt-2 no-underline"
+          class="item block !font-normal mb-6 mt-2 no-underline"
         >
           <li class="no-underline" flex="~ col md:row gap-2 md:items-center">
             <div class="title text-lg leading-1.2em" flex="~ gap-2 wrap">
@@ -119,16 +119,16 @@ function getGroupName(p: Post) {
                 title="Provided in radio"
               />
 
-              <span text-sm op50 ws-nowrap>
+              <span text-sm op75 ws-nowrap>
                 {{ formatDate(route.date, true) }}
               </span>
-              <span v-if="route.duration" text-sm op40 ws-nowrap>· {{ route.duration }}</span>
-              <span v-if="route.platform" text-sm op40 ws-nowrap>· {{ route.platform }}</span>
+              <span v-if="route.duration" text-sm op75 ws-nowrap>· {{ route.duration }}</span>
+              <span v-if="route.platform" text-sm op75 ws-nowrap>· {{ route.platform }}</span>
               <span
-                v-if="route.lang === 'zh'"
+                v-if="route.lang === 'vi'"
                 align-middle flex-none
                 class="text-xs bg-zinc:15 text-zinc5 rounded px-1 py-0.5 my-auto md:hidden"
-              >中文</span>
+              >Việt</span>
             </div>
           </li>
         </component>

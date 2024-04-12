@@ -12,9 +12,12 @@ import matter from 'gray-matter'
 import AutoImport from 'unplugin-auto-import/vite'
 import anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
+import GitHubAlerts from 'markdown-it-github-alerts'
 import UnoCSS from 'unocss/vite'
 import SVG from 'vite-svg-loader'
-import { bundledLanguages, getHighlighter } from 'shikiji'
+import MarkdownItShiki from '@shikijs/markdown-it'
+import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
+import MarkdownItMagicLink from 'markdown-it-magic-link'
 
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
@@ -36,6 +39,7 @@ export default defineConfig({
       'swrv',
       'dayjs',
       'dayjs/plugin/localizedFormat',
+      'vue-powerglitch',
     ],
   },
   plugins: [
@@ -43,7 +47,6 @@ export default defineConfig({
 
     Vue({
       include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
       script: {
         defineModel: true,
       },
@@ -80,23 +83,20 @@ export default defineConfig({
         quotes: '""\'\'',
       },
       async markdownItSetup(md) {
-        const shiki = await getHighlighter({
-          themes: ['vitesse-dark', 'vitesse-light'],
-          langs: Object.keys(bundledLanguages) as any,
-        })
-
-        md.use((markdown) => {
-          markdown.options.highlight = (code, lang) => {
-            return shiki.codeToHtml(code, {
-              lang,
-              themes: {
-                light: 'vitesse-light',
-                dark: 'vitesse-dark',
-              },
-              cssVariablePrefix: '--s-',
-            })
-          }
-        })
+        md.use(await MarkdownItShiki({
+          themes: {
+            dark: 'rose-pine-moon',
+            light: 'rose-pine-dawn',
+          },
+          defaultColor: false,
+          cssVariablePrefix: '--s-',
+          transformers: [
+            transformerTwoslash({
+              explicitTrigger: true,
+              renderer: rendererRich(),
+            }),
+          ],
+        }))
 
         md.use(anchor, {
           slugify,
@@ -119,6 +119,10 @@ export default defineConfig({
           slugify,
           containerHeaderHtml: '<div class="table-of-contents-anchor"><div class="i-ri-menu-2-fill" /></div>',
         })
+
+        md.use(MarkdownItMagicLink)
+
+        md.use(GitHubAlerts)
       },
       frontmatterPreprocess(frontmatter, options, id, defaults) {
         (() => {

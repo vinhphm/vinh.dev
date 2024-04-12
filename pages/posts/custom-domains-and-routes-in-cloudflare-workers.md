@@ -2,9 +2,10 @@
 title: Custom Domains and Routes in Cloudflare Workers
 date: 2023-08-25T22:00:00+07:00
 lang: en
-duration: 5min
+duration: 5 mins
 description: A beginner's guide to Cloudflare Workers, a serverless platform that runs your code on the edge. Learn how to use custom domains and routes to trigger your Workers.
 ---
+
 [[toc]]
 
 You are new to Cloudflare Workers. You just created your first Worker but not sure what to do next. This is for you.
@@ -19,6 +20,7 @@ By default, when creating a Worker, you will be assigned to a domain like this `
 
 Using the dashboard interface to add Custom Domains is super quick and easy. It's a one-click operation for websites on Cloudflare or using Cloudflare DNS (which is the requirement here).
 
+> [!WARNING]
 > You should note that custom domains point all paths of a domain or subdomain to your Worker, so be wise to choose a domain that won't conflict with your main website. For example, if you have your website at `abc.dev`, you should not add `abc.dev` to your Worker again, instead you can use `<subdomain>.abc.dev`.
 
 ### Use Routes
@@ -29,13 +31,15 @@ Routes allow users to map a URL pattern to a Worker. When a request comes in to 
 
 Routes can be a little bit trickier than Custom Domain. If you intend to use some routes without a subdomain like `abc.dev/api/something` then adding it by clicking on **Add route** in the dashboard is enough. But what if you want use something like `api.abc.dev/something`, then you will need to set up a DNS record with Cloudflare proxy (orange-clouded) for the website first. If the subdomain you intend to use here will not be used in anything else, simply point it to Cloudflare.
 
-| Type | Name   | IPv4 address | Proxy status |
-| ---- | ------ | ------------ | ------------ |
-| A    | `www`  | `192.0.2.1`  | Proxied      |
+| Type | Name  | IPv4 address | Proxy status |
+| ---- | ----- | ------------ | ------------ |
+| A    | `www` | `192.0.2.1`  | Proxied      |
 
 Then you can use the **Add route** button the dashboard.
 
-> Route pattern matching considers the entire request URL, including the query parameter string. Since route patterns may not contain query parameters, the only way to have a route pattern match URLs with query parameters is to terminate it with a wildcard, *.
+> [!NOTE]
+> Route pattern matching considers the entire request URL, including the query parameter string. Since route patterns may not contain query parameters, the only way to have a route pattern match URLs with query parameters is to terminate it with a wildcard, \*.
 
 ## Final notes
+
 After setting all these configurations on the dashboard, all will be saved to `wrangler.toml` file in the Worker project, make sure you don't accidentally replace that configuration when deploying new code to the Worker.

@@ -1,8 +1,8 @@
 ---
-title: Cloudflare Pages surprised me
+title: Cloudflare Pages Surprised Me
 date: 2023-08-21T23:27:00+07:00
 lang: en
-duration: 5min
+duration: 5 mins
 description: Discover why Cloudflare Pages surprised me and how it outperformed other JAMstack platforms. Learn from my experience with Next.js, Astro, and Vite.
 ---
 

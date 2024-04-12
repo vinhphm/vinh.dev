@@ -1,9 +1,16 @@
-import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  presetWebFonts,
+  transformerDirectives,
+} from 'unocss'
 
 export default defineConfig({
   shortcuts: [
     {
-      'bg-base': 'bg-white dark:bg-black',
+      'bg-base': 'bg-white dark:bg-[#111010]',
       'border-base': 'border-[#8884]',
     },
     [/^btn-(\w+)$/, ([_, color]) => `op50 px2.5 py1 transition-all duration-200 ease-out no-underline! hover:(op100 text-${color} bg-${color}/10) border border-base! rounded`],
@@ -27,8 +34,8 @@ export default defineConfig({
     presetWebFonts({
       provider: 'none',
       fonts: {
-        sans: 'Inter Variable',
-        mono: 'Roboto Mono Variable',
+        sans: 'Geist',
+        mono: 'Geist Mono',
       },
     }),
   ],

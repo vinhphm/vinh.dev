@@ -1,8 +1,8 @@
 ---
-title: Improve website’s UX by adding micro-interactions
+title: Improve Website’s UX by Adding Micro-interactions
 date: 2022-04-03
 lang: en
-duration: 7min
+duration: 7 mins
 description: Learn how to make your website more enjoyable and engaging with micro-interactions. See how you can use HTML, CSS, React, and React Spring to create animated icons for your menu and theme toggle.
 ---
 
@@ -11,16 +11,18 @@ description: Learn how to make your website more enjoyable and engaging with mic
 One of the few things I studied in the Google UX Design course is how a good UX design should be fun to use. Google didn't exactly use the word "fun" to describe a good UX design, the exact word is **"enjoyable"**
 
 > "If a product is enjoyable, it means the design delights the user. The design reflects what the user may be thinking or feeling and creates a positive connection with them. A product's design doesn't have to be enjoyable for it to function properly. But, an enjoyable design adds to an already functional product and can enhance the user's feelings about the experience." - [Google UX Design course](https://www.coursera.org/professional-certificates/google-ux-design)
-> But what exactly are **"micro-interactions"** and how come they are related to this?
+
+But what exactly are **"micro-interactions"** and how come they are related to this?
 
 > "Micro-interactions are events which have one main task - a single purpose - and they're found all over your device and within apps. Their purpose is to delight the user; to create a moment that is engaging, welcoming and, dare we say it - human." - [UXDesign.cc](https://uxdesign.cc/micro-interactions-why-when-and-how-to-use-them-to-boost-the-ux-17094b3baaa0)
-> Okay, so in order to maker my site more engaging and enjoyable, I decided to add some micro-interactions/ animation to it. I'm not planning to add back all the stuff that [I have got rid of](https://vinh.dev/blog/i-opted-in-a-more-minimal-design-but-why), instead, I'm going to add some small other thing. One of the big reasons I decided to simplify my website in the first place is this because animations seems not work correctly on some devices.
+
+Okay, so in order to maker my site more engaging and enjoyable, I decided to add some micro-interactions/ animation to it. I'm not planning to add back all the stuff that [I have got rid of](https://vinh.dev/blog/i-opted-in-a-more-minimal-design-but-why), instead, I'm going to add some small other thing. One of the big reasons I decided to simplify my website in the first place is this because animations seems not work correctly on some devices.
 
 ## Toggle menu (hamburger) icon 🍔
 
 First is the toggle menu for mobile devices from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c) with a little tweak from me:
 
-<img src="/images/2022/menu-toggle.gif" rounded-lg>
+<img src="/images/2022/menu-toggle.gif" alt="Menu toggle" rounded-lg />
 
 I use React for my website but below is the plain HTML/CSS code shared by Mikael Ainalem from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c). I recommend you check out his article on how this icon and animation is made. It's fascinating.
 
@@ -56,8 +58,9 @@ I use React for my website but below is the plain HTML/CSS code shared by Mikael
   fill: none;
   stroke: black;
   stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset
-      600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .line1 {
   stroke-dasharray: 60 207;
@@ -92,7 +95,7 @@ I use React for my website but below is the plain HTML/CSS code shared by Mikael
 
 Second, is the theme toggle icon from the top right corner:
 
-<img src="/images/2022/theme-toggle.gif" rounded-lg>
+<img src="/images/2022/theme-toggle.gif" alt="Theme toggle" rounded-lg />
 
 For this one, I use React Spring to animate SVG icons based on the instruction from [jfelix.info](https://jfelix.info/blog/using-react-spring-to-animate-svg-icons-dark-mode-toggle) with another small tweak from me to match with the current setup from my site. You can find the source code [here at GitHub](https://github.com/vinhphm/vinh-dev-archive/blob/main/components/AnimatedThemeIcon.js).
 

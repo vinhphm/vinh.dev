@@ -11,6 +11,12 @@ projects:
       desc: 'My place to share things out with the world. Vite edition.'
       icon: 'vinh-dev'
 
+  VS Code Extension:
+    - name: 'Subessense Theme'
+      link: 'https://marketplace.visualstudio.com/items?itemName=vinhphm.subessence'
+      desc: 'A subjectively revamped, more electrifying version of awesome `Subliminal Next` theme made by Konrad Keska.'
+      icon: 'i-devicon-plain-vscode saturate-0'
+
   Astro:
     - name: 'Vinh.Dev - Astro version'
       link: 'https://github.com/vinhphm/vp-astro'
@@ -22,7 +28,7 @@ projects:
       link: 'https://paste.vinh.dev'
       desc: 'A minimal plain text storage service powered by Fresh framework, Deno, and Supabase'
       icon: 'i-tabler-brand-deno saturate-0'
-      
+
   Next.js:
     - name: 'Vinh.Dev (2022)'
       link: 'https://github.com/vinhphm/vinh-dev-legacy'
@@ -34,4 +40,3 @@ projects:
 <!-- @layout-full-width -->
 
 <ListProjects :projects="frontmatter.projects" />
-

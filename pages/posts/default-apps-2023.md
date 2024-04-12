@@ -1,0 +1,61 @@
+---
+title: Default Apps (2023)
+date: 2023-11-30T18:00:00+07:00
+lang: en
+duration: 5 mins
+description: My take on the default apps in 2023.
+---
+
+Its been a while since I last wrote about my default apps. I thought it would be interesting to revisit this topic and see how my preferences have changed over the years.
+
+---
+
+📮 Mail Client: Apple Mail, Outlook
+
+📮 Mail Server: Microsoft, Apple.
+
+📝 Notes: Apple Notes
+
+✅ To-Do: N/A (😬)
+
+📷 Photo Shooting: Mostly iPhone 15 Pro
+
+🎨 Photo Editing: Mostly: Lightroom. Sometimes: Photoshop.
+
+📆 Calendar: Apple Calendar.
+
+📁 Cloud File Storage: iCloud Drive, OneDrive, Google Drive, Dropbox (depends)
+
+📖 RSS: Feedbin
+
+🙍🏻‍♂️ Contacts: Apple Contacts
+
+🌐 Browser: Desktop: Edge, Chrome, Safari. iOS: Safari (as I’m forced to).
+
+💬 Chat: In order of quantity: Google Chat (work), Instagram, Messenger, WhatsApp
+
+🔖 Bookmarks: Safari
+
+📑 Read It Later: Notion Web Clipper & Feedbin
+
+📜 Word Processing: Rarely: Word, Pages, Google Docs
+
+📈 Spreadsheets: Equal parts rare: Excel, Numbers, and Google Sheets
+
+📊 Presentations: PowerPoint
+
+🛒 Shopping Lists: Reminders
+
+🍴 Meal Planning: N/A (😬)
+
+💰 Budgeting and Personal Finance: N/A (😬)
+
+📰 News: Artifact
+
+🎵 Music: Spotify
+
+🎤 Podcasts: Spotify
+
+🔐 Password Management: Apple Keychain
+
+🧑‍💻 Code Editor: VS Code

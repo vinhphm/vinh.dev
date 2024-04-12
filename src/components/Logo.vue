@@ -1,16 +1,17 @@
 <template>
-  <svg id="texture" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Vinh Pham @ vinh.dev</title>
-    <circle class="cls-1" cx="17.68" cy="7.25" r="1.98" />
-    <path class="cls-1" d="m8.94,5.78c.75,0,1.49,0,2.24,0,.02,0,.03.01.03.03v.38s-.02.04-.04.04c-.58.01-.92.25-1.03.69-.05.22-.04.48.03.79.06.25.15.5.27.76,1.25,2.68,2.51,5.36,3.76,8.04,0,.02.01.05,0,.07l-1.47,3.75s-.02.03-.04.03h-.35s-.07-.02-.08-.05c-1.67-3.6-3.33-7.19-4.99-10.76-.3-.64-.6-1.28-.91-1.92-.12-.25-.27-.48-.45-.69-.2-.24-.41-.41-.63-.51-.26-.13-.55-.19-.88-.19-.04,0-.06-.03-.06-.06v-.38s.02-.03.04-.03c1.52,0,3.04,0,4.56,0Z" />
-  </svg>
+  <GlitchedElement
+    :options="{
+      timing: {
+        duration: 5000,
+      },
+    }"
+  >
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <title>Vinh Pham @ vinh.dev</title>
+      <path
+        class="logo-fill-color"
+        d="M31.4 47.4V53H25.8V41.8H20.2V25H14.6V13.8H25.8V25H31.4V41.8H37V47.4H31.4ZM48.2 25H42.6V13.8H53.8V19.4H48.2V25ZM42.6 30.6V36.2H37V30.6H42.6Z"
+      />
+    </svg>
+  </GlitchedElement>
 </template>
-
-<style scoped>
-.cls-1 {
-  fill: #303030;
-}
-.dark .cls-1 {
-  fill: #fdfdfd;
-}
-</style>

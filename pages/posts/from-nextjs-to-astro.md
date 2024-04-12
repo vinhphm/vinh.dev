@@ -1,7 +1,7 @@
 ---
-title: The move from Next.js to Astro
+title: The Move from Next.js to Astro
 date: 2023-03-12
-duration: 10min
+duration: 10 mins
 lang: en
 description: Read about my experience of migrating my website from Next.js to Astro, a new web framework designed for speed. Learn how I solved some of the challenges and improved the site performance.
 ---

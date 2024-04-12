@@ -1,8 +1,8 @@
 ---
-title: Set domain redirects for Cloudflare Pages
+title: Set Domain Redirects for Cloudflare Pages
 date: 2023-08-21T12:30:00+07:00
 lang: en
-duration: 10min
+duration: 10 mins
 description: Redirect *.pages.dev domain to custom domain, from www to non-www (apex) domain
 ---
 
@@ -20,7 +20,6 @@ Cloudflare Pages supports redirect functionality through the `_redirects` file, 
 /articles/*  /blog/:splat  301
 ```
 
-
 This rule redirects all your blog links from the form `/articles/...` to `/blog/...`. You can read more about this in the [Cloudflare documentation](https://developers.cloudflare.com/pages/platform/redirects/). However, this rule only works at the subpath level, and you can't accomplish the two scenarios I'm about to guide you through using this `_redirects` file.
 
 ## Redirect from `*.pages.dev` to Your Custom Domain
@@ -36,15 +35,18 @@ When you deploy your project on Cloudflare Pages, the initial domain address you
 3. Go to **Custom domains** and check if your custom domain is listed there. If not, add it by selecting **Set up a custom domain**.
 4. Navigate to **Account Home** > **Bulk Redirects**.
 5. Choose **Create a new Bulk Redirects list** > **Create new list**.
-   <img src="/images/2023/create_a_new_bulk_redirect_list.png" alt="Create new Bulk Redirect list" rounded-lg>
+   <img src="/images/2023/create_a_new_bulk_redirect_list.png" dark:invert-95 alt="Create new Bulk Redirect list" rounded-lg>
 6. In the content type section, select **Redirect**.
 7. Add your project's `*.pages.dev` domain to the source URL.
 8. Enter the target custom domain URL. Note that you need to prepend `https://` before the apex domain name (domain without `www`).
 9. Click **Edit parameters** and check **Preserve query string**, **Subpath matching**, **Preserve path suffix**.
-   > Optional: If you check the **Include subdomains box**, all preview URLs will be redirected to the main custom domain.
+
+> [!NOTE]
+> If you check the **Include subdomains box**, all preview URLs will be redirected to the main custom domain.
+
 10. Click **Add to list**.
 11. Go back to **Bulk Redirects** > **Create Bulk Redirects** > select the list you just created > **Save and Deploy**.
-    <img src="/images/2023/create_new_bulk_redirect.png" alt="Create new Bulk Redirects" rounded-lg>
+    <img src="/images/2023/create_new_bulk_redirect.png" dark:invert-95 alt="Create new Bulk Redirects" rounded-lg>
 
 ## Redirect from `www` Domain to Non-`www` Domain (Apex Domain)
 
@@ -55,6 +57,6 @@ In some cases, instead of wanting a `www.example.com` domain, users prefer a sho
 3. Create a new DNS record for the `www` subdomain. Either an `A` record with a value of `192.0.2.1` or an `AAAA` record with a value of `100::`. This new record should also be proxied by Cloudflare (orange cloud) to be compatible with the redirect rule we'll set up.
    <img src="/images/2023/www_subdomain.png" alt="DNS record setting" rounded-lg>
 4. Next, navigate to **Account Home** > **Bulk Redirects** and set up a redirect rule similar to the instructions above (you can add additional rules to the list created earlier). Still, check **Preserve query string**, **Subpath matching**, **Preserve path suffix**. Finally, **Save and Deploy**.
-   <img src="/images/2023/redirect-parameters.png" alt="Redirect parameters" rounded-lg>
+   <img src="/images/2023/redirect-parameters.png" dark:invert-95 alt="Redirect parameters" rounded-lg>
 
 I hope this guide helps you in transitioning to Cloudflare Pages. Cheers!
