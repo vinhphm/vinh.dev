@@ -6,7 +6,7 @@ plum: true
 
 Hi, I'm Vinh, welcome to my unhinged site.
 
-As a software engineer at [PwC](https://www.pwc.com/), I'm part of the innovative Digital Solutions team.
+As a software engineer at {PwC|https://www.pwc.com/}, I'm part of the innovative Digital Solutions team.
 
 My passion lies in envisioning ideas and bringing them to life. Sometimes, the most intriguing concepts don't fit within the scope of my day job, and that's where this site comes in. Here, I share those unbridled thoughts and projects—hence the name, 'unhinged', and the playful glitch in the logo. Dive in with an open mind and feel free to explore [my side projects](/projects).
 
