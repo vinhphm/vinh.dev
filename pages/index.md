@@ -36,4 +36,4 @@ Find me on
   </a>
 </p>
 
-Or mail me at `vinh@vinh.dev`
+Or mail me at <span font-mono>vinh<span i-carbon-at/>vinh.dev</span>
