@@ -35,3 +35,5 @@ Find me on
     <span op75 i-simple-icons-spotify /> Spotify
   </a>
 </p>
+
+Or mail me at `vinh@vinh.dev`
