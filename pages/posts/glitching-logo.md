@@ -1,5 +1,5 @@
 ---
-title: Glitched Logo
+title: Glitching Logo
 date: 2024-04-12T11:00:00+07:00
 lang: en
 duration: 3 mins
