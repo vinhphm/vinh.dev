@@ -10,7 +10,7 @@
     "compress": "esno scripts/img-compress-staged.ts"
   },
   "dependencies": {
-    "@unhead/vue": "^1.9.8",
+    "@unhead/vue": "^1.9.9",
     "@vueuse/core": "^10.9.0",
     "dayjs": "^1.11.11",
     "floating-vue": "5.2.2",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.2.206",
-    "@octokit/rest": "^20.1.0",
+    "@octokit/rest": "^20.1.1",
     "@shikijs/markdown-it": "^1.4.0",
     "@shikijs/twoslash": "^1.4.0",
     "@types/diacritics": "^1.3.3",
@@ -35,10 +35,10 @@
     "@unocss/reset": "^0.59.4",
     "@vinhphm/eslint-config": "2.16.1",
     "@vitejs/plugin-vue": "^5.0.4",
-    "bun": "^1.1.6",
+    "bun": "^1.1.7",
     "cross-env": "^7.0.3",
     "diacritics": "^1.3.0",
-    "eslint": "9.1.1",
+    "eslint": "9.2.0",
     "eslint-plugin-format": "^0.1.1",
     "esno": "^4.7.0",
     "fast-glob": "^3.3.2",
