@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "bun@1.0.23",
+  "packageManager": "bun@1.1.8",
   "scripts": {
     "build": "cross-env NODE_ENV=production vite-ssg build && esno ./scripts/rss.ts && cp _redirects dist/_redirects",
     "dev": "vite --port 3333 --open",
@@ -77,7 +77,7 @@
     "*": "eslint --fix"
   },
   "eslintConfig": {
-    "extends": "@vinhphm",
+    "extends": "@antfu",
     "rules": {
       "vue/no-v-text-v-html-on-component": "off"
     },
