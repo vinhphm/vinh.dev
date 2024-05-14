@@ -1,6 +1,6 @@
-import preset from '@vinhphm/eslint-config'
+import antfu from '@antfu/eslint-config'
 
-export default preset(
+export default antfu(
   {
     formatters: true,
   },
