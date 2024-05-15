@@ -13,7 +13,7 @@ const route = useRoute()
 const content = ref<HTMLDivElement>()
 
 const base = 'https://vinh.dev'
-const threadUrl = computed(() => `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.phm\'s ${base}${route.path}\n\nI think...`)}`)
+const threadUrl = computed(() => `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.dev\'s ${base}${route.path}\n\nI think...`)}`)
 const tweetUrl = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @vinhtphm\'s ${base}${route.path}\n\nI think...`)}`)
 
 onMounted(() => {

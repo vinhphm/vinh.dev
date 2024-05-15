@@ -25,7 +25,7 @@ Find me on
   <a href="https://www.linkedin.com/in/vinhphm/" target="_blank">
     <span op75 i-simple-icons-linkedin /> LinkedIn
   </a>
-  <a href="https://www.threads.net/@vinh.phm" target="_blank">
+  <a href="https://www.threads.net/@vinh.dev" target="_blank">
     <span op75 i-simple-icons-threads /> Threads
   </a>
   <a href="https://www.instagram.com/vinh.phm" target="_blank">

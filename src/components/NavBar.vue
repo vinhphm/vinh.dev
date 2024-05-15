@@ -32,7 +32,7 @@ const { y: scroll } = useWindowScroll()
         <RouterLink to="/demos" title="Demos">
           <span class="tracking-tighter">Demos</span>
         </RouterLink>
-        <a href="https://www.threads.net/@vinh.phm" target="_blank" title="Threads" class="lt-md:hidden">
+        <a href="https://www.threads.net/@vinh.dev" target="_blank" title="Threads" class="lt-md:hidden">
           <div i-simple-icons-threads />
         </a>
         <a href="https://github.com/vinhphm" target="_blank" title="GitHub" class="lt-md:hidden">
