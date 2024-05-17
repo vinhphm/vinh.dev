@@ -25,8 +25,8 @@ let h = window.innerHeight
 const offsetY = window.scrollY
 
 const SCALE = 200
-const LENGTH = 20
-const SPACING = 30
+const LENGTH = 10
+const SPACING = 15
 
 function getForceOnPoint(x: number, y: number, z: number) {
   // https://p5js.org/reference/#/p5/noise
