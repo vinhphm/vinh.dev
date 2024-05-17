@@ -1,6 +1,6 @@
 ---
 title: Notes
-art: dots
+art: plum
 display: ''
 description: Small notes about programming, product design, and more.
 ---
