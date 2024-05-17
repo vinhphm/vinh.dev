@@ -84,7 +84,7 @@ export default defineConfig({
       markdownItOptions: {
         quotes: '""\'\'',
       },
-      async markdownItSetup(md) {
+      async markdownItSetup(md: any) {
         md.use(await MarkdownItShiki({
           themes: {
             dark: 'rose-pine-moon',
