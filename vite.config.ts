@@ -122,7 +122,12 @@ export default defineConfig({
           containerHeaderHtml: '<div class="table-of-contents-anchor"><div class="i-ri-menu-2-fill" /></div>',
         })
 
-        md.use(MarkdownItMagicLink, {})
+        md.use(MarkdownItMagicLink, {
+          linksMap: {
+            PwC: { link: 'https://www.pwc.com', imageUrl: 'https://github.com/PwCUK-CTO.png' },
+          },
+          imageOverrides: [],
+        })
 
         md.use(GitHubAlerts)
       },

@@ -2,7 +2,7 @@
 title: Projects
 display: Projects
 description: My creative endeavors, and a journey of making an impact
-plum: true
+art: dots
 wrapperClass: 'text-center'
 projects:
   Current Focus:

@@ -1,12 +1,12 @@
 ---
 title: Vinh Pham
 description: An unhinged place for unhinged thoughts and ideas.
-plum: true
+art: random
 ---
 
 Hi, I'm Vinh, welcome to my <GlitchedElement :inline='true' :options="{ timing: { duration: 5000 }}">unhinged</GlitchedElement> space.
 
-I work as a software engineer at [PwC](https://www.pwc.com/).
+I work as a software engineer at {PwC}<br>
 
 My passion lies in envisioning ideas and bringing them to life. Sometimes, the most intriguing concepts don't fit within the scope of my day job, and that's where this site comes in. Here, I share those unbridled thoughts and projects—hence the name, 'unhinged', and the playful glitch in the logo. Dive in with an open mind and feel free to explore [my side projects](/projects).
 
