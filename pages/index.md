@@ -31,6 +31,9 @@ Find me on
   <a href="https://www.instagram.com/vinh.phm" target="_blank">
     <span op75 i-simple-icons-instagram /> Instagram
   </a>
+  <!-- <a :href="`https://chatgpt.com/?q=${encodeURIComponent('Vinh Pham vinh.dev')}`" target="_blank">
+    <span op75 i-simple-icons-openai /> ChatGPT
+  </a> -->
   <a href="https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4?si=1567653669df4908" target="_blank">
     <span op75 i-simple-icons-spotify /> Spotify
   </a>
