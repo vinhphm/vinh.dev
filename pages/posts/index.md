@@ -1,6 +1,6 @@
 ---
 title: Blog
-art: random
+art: dots
 display: ''
 description: All of my long-form thoughts on programming, product design, and more, collected in chronological order.
 ---

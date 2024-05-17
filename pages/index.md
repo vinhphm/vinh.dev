@@ -1,7 +1,7 @@
 ---
 title: Vinh Pham
 description: An unhinged place for unhinged thoughts and ideas.
-art: random
+art: dots
 ---
 
 Hi, I'm Vinh, welcome to my <GlitchedElement :inline='true' :options="{ timing: { duration: 5000 }}">unhinged</GlitchedElement> space.

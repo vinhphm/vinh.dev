@@ -25,8 +25,8 @@ let h = window.innerHeight
 const offsetY = window.scrollY
 
 const SCALE = 200
-const LENGTH = 10
-const SPACING = 15
+const LENGTH = 20
+const SPACING = 30
 
 function getForceOnPoint(x: number, y: number, z: number) {
   // https://p5js.org/reference/#/p5/noise
@@ -88,13 +88,6 @@ onMounted(() => {
     resizeCanvas(w, h)
     addPoints()
   })
-
-  // Uncomment to enable scroll-based animation
-  // Tho there is some lag when scrolling, not sure if it's solvable
-  // useEventListener('scroll', () => {
-  //   offsetY = window.scrollY
-  //   addPoints()
-  // }, { passive: true })
 })
 
 onUnmounted(() => {
