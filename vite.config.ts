@@ -1,7 +1,6 @@
 import { basename, dirname, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
-import Pages from 'vite-plugin-pages'
 import Inspect from 'vite-plugin-inspect'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -18,6 +17,8 @@ import SVG from 'vite-svg-loader'
 import MarkdownItShiki from '@shikijs/markdown-it'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import MarkdownItMagicLink from 'markdown-it-magic-link'
+import VueRouter from 'unplugin-vue-router/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
@@ -44,26 +45,28 @@ export default defineConfig({
   plugins: [
     UnoCSS(),
 
+    VueRouter({
+      extensions: ['.vue', '.md'],
+      routesFolder: 'pages',
+      logs: true,
+      extendRoute(route) {
+        const path = route.components.get('default')
+        if (!path)
+          return
+
+        if (!path.includes('projects.md') && path.endsWith('.md')) {
+          const { data } = matter(fs.readFileSync(path, 'utf-8'))
+          route.addToMeta({
+            frontmatter: data,
+          })
+        }
+      },
+    }),
+
     Vue({
       include: [/\.vue$/, /\.md$/],
       script: {
         defineModel: true,
-      },
-    }),
-
-    Pages({
-      extensions: ['vue', 'md'],
-      dirs: 'pages',
-      extendRoute(route) {
-        const path = resolve(__dirname, route.component.slice(1))
-
-        if (!path.includes('projects.md') && path.endsWith('.md')) {
-          const md = fs.readFileSync(path, 'utf-8')
-          const { data } = matter(md)
-          route.meta = Object.assign(route.meta || {}, { frontmatter: data })
-        }
-
-        return route
       },
     }),
 
@@ -119,7 +122,7 @@ export default defineConfig({
           containerHeaderHtml: '<div class="table-of-contents-anchor"><div class="i-ri-menu-2-fill" /></div>',
         })
 
-        md.use(MarkdownItMagicLink)
+        md.use(MarkdownItMagicLink, {})
 
         md.use(GitHubAlerts)
       },
@@ -153,7 +156,7 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
-        'vue-router',
+        VueRouterAutoImports,
         '@vueuse/core',
       ],
     }),
