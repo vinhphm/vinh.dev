@@ -10,7 +10,7 @@ import {
 export default defineConfig({
   shortcuts: [
     {
-      'bg-base': 'bg-white dark:bg-[#000]',
+      'bg-base': 'bg-white dark:bg-[#111010]',
       'color-base': 'text-black dark:text-white',
       'border-base': 'border-[#8884]',
     },
