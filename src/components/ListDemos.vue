@@ -30,6 +30,7 @@ const parts = computed(() => {
         :key="date"
         :date="date"
         :video="video"
+        class="slide-enter"
         :style="{
           '--enter-stage': idx + 1,
         }"
