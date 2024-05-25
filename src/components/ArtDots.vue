@@ -51,7 +51,7 @@ function addPoints() {
 
 function setup() {
   createCanvas(w, h)
-  background(isDark.value ? '#111010' : '#ffffff')
+  background(isDark.value ? '#000000' : '#ffffff')
   stroke('#ccc')
   noFill()
 
@@ -61,7 +61,7 @@ function setup() {
 }
 
 function draw({ circle }: P5I) {
-  background(isDark.value ? '#111010' : '#ffffff')
+  background(isDark.value ? '#000000' : '#ffffff')
   const t = +new Date() / 10000
 
   for (const p of points) {
@@ -70,7 +70,7 @@ function draw({ circle }: P5I) {
     const length = (noise(x / SCALE, y / SCALE, t * 2) + 0.5) * LENGTH
     const nx = x + cos(rad) * length
     const ny = y + sin(rad) * length
-    const rgbValue = isDark.value ? 40 : 200
+    const rgbValue = isDark.value ? 55 : 200
     stroke(rgbValue, rgbValue, rgbValue, (Math.abs(cos(rad)) * 0.8 + 0.2) * p.opacity * 255)
     circle(nx, ny - offsetY, 1)
   }

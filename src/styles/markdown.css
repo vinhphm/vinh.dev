@@ -94,9 +94,9 @@ html:not(.dark) .shiki span {
 }
 
 html.dark .prose {
-  --fg-pale: #525252;
-  --fg: #d4d4d4;
-  --fg-deep: #dfdfdf;
+  --fg-pale: #888;
+  --fg: #bbb;
+  --fg-deep: #ddd;
   --fg-deeper: #fff;
 }
 
