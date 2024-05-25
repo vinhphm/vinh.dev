@@ -2,7 +2,7 @@
 title: Projects
 display: Projects
 description: My creative endeavors, and a journey of making an impact
-art: plum
+art: dots
 wrapperClass: 'text-center'
 projects:
   Current Focus:
@@ -17,23 +17,21 @@ projects:
       desc: 'A subjectively revamped, more electrifying version of awesome `Subliminal Next` theme made by Konrad Keska.'
       icon: 'i-devicon-plain-vscode saturate-0'
 
-  Astro:
+  Blog Archives:
     - name: 'Vinh.Dev - Astro version'
       link: 'https://github.com/vinhphm/vp-astro'
       desc: 'The Astro version of my website in the first half of 2023'
       icon: 'i-devicon-plain-astro saturate-0'
+    - name: 'Vinh.Dev (2022)'
+      link: 'https://github.com/vinhphm/vinh-dev-legacy'
+      desc: 'Previous version of this website with a different look and feel. This is also the first version I use Next.js and Tailwind CSS'
+      icon: 'i-tabler-brand-nextjs saturate-0'
 
   Fresh/Deno:
     - name: 'Paste'
       link: 'https://paste.vinh.dev'
       desc: 'A minimal plain text storage service powered by Fresh framework, Deno, and Supabase'
       icon: 'i-tabler-brand-deno saturate-0'
-
-  Next.js:
-    - name: 'Vinh.Dev (2022)'
-      link: 'https://github.com/vinhphm/vinh-dev-legacy'
-      desc: 'Previous version of this website with a different look and feel. This is also the first version I use Next.js and Tailwind CSS'
-      icon: 'i-tabler-brand-nextjs saturate-0'
 
 ---
 

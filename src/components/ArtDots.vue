@@ -2,6 +2,7 @@
 import { p5i } from 'p5i'
 import type { P5I } from 'p5i'
 import { onMounted, onUnmounted, ref } from 'vue'
+import { isDark } from '../logics'
 
 const el = ref<HTMLCanvasElement | null>(null)
 
@@ -50,7 +51,7 @@ function addPoints() {
 
 function setup() {
   createCanvas(w, h)
-  background('#ffffff')
+  background(isDark.value ? '#111010' : '#ffffff')
   stroke('#ccc')
   noFill()
 
@@ -60,7 +61,7 @@ function setup() {
 }
 
 function draw({ circle }: P5I) {
-  background('#ffffff')
+  background(isDark.value ? '#111010' : '#ffffff')
   const t = +new Date() / 10000
 
   for (const p of points) {
@@ -69,7 +70,8 @@ function draw({ circle }: P5I) {
     const length = (noise(x / SCALE, y / SCALE, t * 2) + 0.5) * LENGTH
     const nx = x + cos(rad) * length
     const ny = y + sin(rad) * length
-    stroke(200, 200, 200, (Math.abs(cos(rad)) * 0.8 + 0.2) * p.opacity * 255)
+    const rgbValue = isDark.value ? 40 : 200
+    stroke(rgbValue, rgbValue, rgbValue, (Math.abs(cos(rad)) * 0.8 + 0.2) * p.opacity * 255)
     circle(nx, ny - offsetY, 1)
   }
 }
@@ -96,5 +98,5 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="el" z--1 fixed left-0 right-0 top-0 bottom-0 pointer-events-none dark:invert />
+  <div ref="el" z--1 fixed left-0 right-0 top-0 bottom-0 pointer-events-none />
 </template>
