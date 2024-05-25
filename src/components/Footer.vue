@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 </script>
 
 <template>
-  <div class="mt-10 mb-6 prose fw-inherit m-auto flex slide-enter animate-delay-1200!">
+  <div class="mt-10 mb-6 prose fw-inherit m-auto flex">
     <span class="text-sm op75">
       © 2021-{{ dayjs().year() }} Vinh Pham.
       <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:inherit">

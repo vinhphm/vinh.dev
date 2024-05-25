@@ -9,7 +9,7 @@ function slug(name: string) {
 <template>
   <div class="max-w-300 mx-auto">
     <div
-      v-for="key, cidx in Object.keys(projects)" :key="key" slide-enter
+      v-for="key, cidx in Object.keys(projects)" :key="key"
       :style="{ '--enter-stage': cidx + 1 }"
     >
       <h4 :id="slug(key)" class="mt-15 mb-2 font-medium text-center op85">
