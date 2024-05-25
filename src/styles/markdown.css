@@ -228,17 +228,15 @@ h6:focus .header-anchor {
 .markdown-magic-link {
   display: inline-flex;
   align-items: center;
-  background: #8882;
-  font-weight: 500 !important;
-  /* font-stretch: condensed !important; */
+  border: 1px solid #8882 !important;
   transform: translateY(3px);
   line-height: 100%;
   color: var(--fg-light) !important;
-  --uno: gap-1 transition rounded px1.5 py1 important-border-0;
+  --uno: gap-1 transition rounded px1.5 py1;
 }
 
 .markdown-magic-link:hover {
-  background: #8883;
+  border: 1px solid #8883 !important;
   color: var(--fg-deep) !important;
 }
 
