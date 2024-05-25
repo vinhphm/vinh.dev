@@ -229,6 +229,8 @@ h6:focus .header-anchor {
   display: inline-flex;
   align-items: center;
   background: #8882;
+  font-weight: 500 !important;
+  /* font-stretch: condensed !important; */
   transform: translateY(3px);
   line-height: 100%;
   color: var(--fg-light) !important;
@@ -237,7 +239,7 @@ h6:focus .header-anchor {
 
 .markdown-magic-link:hover {
   background: #8883;
-  color: var(--fg) !important;
+  color: var(--fg-deep) !important;
 }
 
 .markdown-magic-link-image {
