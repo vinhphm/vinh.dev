@@ -17,7 +17,7 @@ projects:
       desc: 'A subjectively revamped, more electrifying version of awesome `Subliminal Next` theme made by Konrad Keska.'
       icon: 'i-devicon-plain-vscode saturate-0'
 
-  Blog Archives:
+  Personal Websites:
     - name: 'Vinh.Dev - Astro version'
       link: 'https://github.com/vinhphm/vp-astro'
       desc: 'The Astro version of my website in the first half of 2023'
