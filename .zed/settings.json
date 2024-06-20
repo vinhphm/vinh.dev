@@ -1,0 +1,9 @@
+{
+  "format_on_save": "off",
+  "formatter": {
+    "code_actions": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": false
+    }
+  }
+}
