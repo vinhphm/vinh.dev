@@ -50,6 +50,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/set-up-redirect-netlify-vercel-vi': RouteRecordInfo<'/posts/set-up-redirect-netlify-vercel-vi', '/posts/set-up-redirect-netlify-vercel-vi', Record<never, never>, Record<never, never>>,
     '/posts/spotify-api-vite-cloudflare-workers': RouteRecordInfo<'/posts/spotify-api-vite-cloudflare-workers', '/posts/spotify-api-vite-cloudflare-workers', Record<never, never>, Record<never, never>>,
     '/posts/spotify-refresh-token': RouteRecordInfo<'/posts/spotify-refresh-token', '/posts/spotify-refresh-token', Record<never, never>, Record<never, never>>,
+    '/posts/switch-to-zed': RouteRecordInfo<'/posts/switch-to-zed', '/posts/switch-to-zed', Record<never, never>, Record<never, never>>,
     '/posts/try-arc-for-windows-without-invite': RouteRecordInfo<'/posts/try-arc-for-windows-without-invite', '/posts/try-arc-for-windows-without-invite', Record<never, never>, Record<never, never>>,
     '/posts/vitesse-vscode-theme': RouteRecordInfo<'/posts/vitesse-vscode-theme', '/posts/vitesse-vscode-theme', Record<never, never>, Record<never, never>>,
     '/projects': RouteRecordInfo<'/projects', '/projects', Record<never, never>, Record<never, never>>,
