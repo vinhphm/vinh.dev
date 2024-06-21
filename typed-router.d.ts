@@ -48,6 +48,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/set-up-fish-shell-macos': RouteRecordInfo<'/posts/set-up-fish-shell-macos', '/posts/set-up-fish-shell-macos', Record<never, never>, Record<never, never>>,
     '/posts/set-up-redirect-netlify-vercel': RouteRecordInfo<'/posts/set-up-redirect-netlify-vercel', '/posts/set-up-redirect-netlify-vercel', Record<never, never>, Record<never, never>>,
     '/posts/set-up-redirect-netlify-vercel-vi': RouteRecordInfo<'/posts/set-up-redirect-netlify-vercel-vi', '/posts/set-up-redirect-netlify-vercel-vi', Record<never, never>, Record<never, never>>,
+    '/posts/set-up-zed-the-way-it-suits-you': RouteRecordInfo<'/posts/set-up-zed-the-way-it-suits-you', '/posts/set-up-zed-the-way-it-suits-you', Record<never, never>, Record<never, never>>,
     '/posts/spotify-api-vite-cloudflare-workers': RouteRecordInfo<'/posts/spotify-api-vite-cloudflare-workers', '/posts/spotify-api-vite-cloudflare-workers', Record<never, never>, Record<never, never>>,
     '/posts/spotify-refresh-token': RouteRecordInfo<'/posts/spotify-refresh-token', '/posts/spotify-refresh-token', Record<never, never>, Record<never, never>>,
     '/posts/switch-to-zed': RouteRecordInfo<'/posts/switch-to-zed', '/posts/switch-to-zed', Record<never, never>, Record<never, never>>,
