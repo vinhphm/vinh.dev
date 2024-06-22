@@ -67,7 +67,7 @@ html.dark .prose {
 .prose ul > li::before {
   content: '';
   position: absolute;
-  background-color: #d1d5db;
+  background-color: var(--fg-pale);
   border-radius: 50%;
   width: 0.375em;
   height: 0.375em;
@@ -138,7 +138,8 @@ html.dark .prose {
   margin-top: 0.8571429em;
 }
 .prose code {
-  font-weight: 500;
+  color: var(--fg-deeper);
+  font-weight: 600;
   font-size: 0.875em;
 }
 .prose code::before {

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { useWindowScroll } from '@vueuse/core'
-import { computed, onMounted, ref, unref } from 'vue'
+import { computed } from 'vue'
 import Logo from './Logo.vue'
 import ThemeToggle from './ThemeToggle.vue'
 import siteConfig from '@/site-config'
@@ -22,80 +21,67 @@ const socialLinks = computed(() => {
     }
   })
 })
-
-const { y: scroll } = useWindowScroll()
-
-const oldScroll = ref(unref(scroll))
-
-onMounted(() => {
-  const navMask = document.querySelector('.nav-drawer-mask') as HTMLElement
-
-  navMask?.addEventListener('touchmove', (event) => {
-    event.preventDefault()
-  })
-
-  const headerEl = document.querySelector('#header') as HTMLElement
-  if (!headerEl)
-    return
-
-  if (document.documentElement.scrollTop > 100)
-    headerEl.classList.add('header-bg-blur')
-
-  window.addEventListener('scroll', () => {
-    if (scroll.value < 150) {
-      headerEl.classList.remove('header-hide')
-      return
-    }
-
-    if (scroll.value - oldScroll.value > 150) {
-      headerEl.classList.add('header-hide')
-      oldScroll.value = scroll.value
-    }
-
-    if (oldScroll.value - scroll.value > 150) {
-      headerEl.classList.remove('header-hide')
-      oldScroll.value = scroll.value
-    }
-  })
-})
 </script>
 
 <template>
-  <header
-    id="header" :class="{ 'header-bg-blur': scroll > 20 }"
-    class="!fixed bg-transparent z-899 w-screen h-20 px-6 flex justify-between items-center relative"
-  >
-    <div class="flex items-center h-full">
-      <a href="/" aria-label="Logo">
-        <Logo />
-      </a>
-    </div>
-    <div class="flex gap-x-6 items-center">
-      <nav class="flex tracking-tighter flex-wrap gap-x-6 position-initial flex-row">
+  <header class="header z-40 relative">
+    <a class="w-12 h-12 absolute lg:fixed m-5 select-none outline-none" href="/" aria-label="Logo">
+      <Logo />
+    </a>
+    <nav class="nav">
+      <div class="spacer" />
+      <div class="right" print:op0>
         <a
           v-for="link in navLinks" :key="link.text" :aria-label="`${link.text}`" :target="getLinkTarget(link.href)"
           nav-link :href="link.href"
         >
           {{ link.text }}
         </a>
-      </nav>
-      <a
-        v-for="link in socialLinks" :key="link.text" :aria-label="`${link.text}`" :class="link.icon" nav-link
-        :target="getLinkTarget(link.href)" :href="link.href" class="lt-md:hidden"
-      />
-      <a nav-link target="_blank" href="/rss.xml" class="lt-md:hidden" i-ri-rss-line aria-label="RSS" />
-      <ThemeToggle />
-    </div>
+        <a
+          v-for="link in socialLinks" :key="link.text" :aria-label="`${link.text}`" :class="link.icon" nav-link
+          :target="getLinkTarget(link.href)" :href="link.href" class="lt-md:hidden"
+        />
+        <a nav-link target="_blank" href="/rss.xml" class="lt-md:hidden" i-ri-rss-line aria-label="RSS" />
+        <ThemeToggle />
+      </div>
+    </nav>
   </header>
 </template>
 
 <style scoped>
-.header-hide {
-  transform: translateY(-100%);
-  transition: transform 0.4s ease;
+.header h1 {
+  margin-bottom: 0;
 }
 
-.header-bg-blur {
-  --at-apply: backdrop-blur-md;
+.logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+.nav {
+  padding: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto max-content;
+  box-sizing: border-box;
+}
+
+.nav > * {
+  margin: auto;
+}
+
+.nav img {
+  margin-bottom: 0;
+}
+
+.nav .right {
+  display: grid;
+  grid-gap: 1.2rem;
+  grid-auto-flow: column;
+}
+
+.nav .right > * {
+  margin: auto;
 }
 </style>

@@ -47,11 +47,12 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
       )
     }
   </div>
-  <article class="prose">
-
-    <Content />
+  <article>
+    <div class="prose m-auto">
+      <Content />
+    </div>
   </article>
-  <div class="prose m-auto mt-8 mb-8 print:hidden">
+  <div class="prose fw-inherit m-auto mt-8 mb-8 print:hidden">
     {duration && (
       <>
         <span class="font-mono op75">&gt;</span>

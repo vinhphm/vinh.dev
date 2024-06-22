@@ -18,13 +18,13 @@ const { ...head } = Astro.props
   <body class="antialiased bg-main text-main min-h-screen font-sans w-full bg-dot">
     <Header client:load />
     <main
-      class="grow max-w-3xl mx-auto sm:pt-36 pt-26 pb-10 px-7 relative of-x-hidden"
+      class="grow max-w-3xl mx-auto py-10 px-7 relative of-x-hidden"
       transition:animate={fade({ duration: '0.4s' })}
     >
       <slot />
       <ScrollToTop client:load />
       <Footer />
     </main>
-    <!-- <script async src="https://cdn.iframe.ly/embed.js"></script> -->
+    <script async src="https://cdn.iframe.ly/embed.js"></script>
   </body>
 </html>
