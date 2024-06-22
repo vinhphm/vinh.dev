@@ -1,6 +1,20 @@
 .prose {
-  --at-apply: text-base lh-1.75 mb-16 max-w-none sm: min-h-50vh min-h-38vh;
+  --at-apply: text-base max-w-none;
+
+  --fg-pale: #d1d5db;
+  --fg: #404040;
+  --fg-deep: #202020;
+  --fg-deeper: #000;
+
+  /* color: var(--fg); */
 }
+html.dark .prose {
+  --fg-pale: #888;
+  --fg: #bbb;
+  --fg-deep: #ddd;
+  --fg-deeper: #fff;
+}
+
 .prose a {
   --at-apply: prose-link;
   font-weight: inherit;
@@ -83,6 +97,7 @@
   content: close-quote;
 }
 .prose h1 {
+  color: var(--fg-deeper);
   font-weight: 500;
   font-size: 2.25em;
   letter-spacing: -0.05em;
@@ -91,6 +106,7 @@
   line-height: 1.1111111;
 }
 .prose h2 {
+  color: var(--fg-deeper);
   font-weight: 500;
   font-size: 1.5em;
   letter-spacing: -0.05em;
@@ -99,17 +115,16 @@
   line-height: 1.3333333;
 }
 .prose h3 {
-  color: inherit;
+  color: var(--fg-deeper);
   font-weight: 500;
   font-size: 1.25em;
   letter-spacing: -0.05em;
   margin-top: 1.6em;
   margin-bottom: 0.6em;
   line-height: 1.6;
-  opacity: 0.7;
 }
 .prose h4 {
-  color: inherit;
+  color: var(--fg-deep);
   font-weight: 500;
   letter-spacing: -0.05em;
   margin-top: 1.5em;

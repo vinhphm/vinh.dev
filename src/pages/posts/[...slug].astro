@@ -32,9 +32,9 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
 ---
 
 <BaseLayout title={title} description={description} pageType="article">
-  <article class="prose">
-    <h1>{title}</h1>
-    <p op-50>
+  <div class="prose mb-8 m-auto">
+    <h1 class="mb-0">{title}</h1 >
+    <p op-50 class="!-mt-6">
       {date && <time datetime={getDate(date)}>{date.split(',')}</time>}
       {duration && <span>· {duration}</span>}
       {tag && <span>· {tag}</span>}
@@ -46,9 +46,12 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
         </p>
       )
     }
+  </div>
+  <article class="prose">
+
     <Content />
   </article>
-  <div class="prose leading-normal! min-h-0! m-auto mt-8 mb-8 print:hidden">
+  <div class="prose m-auto mt-8 mb-8 print:hidden">
     {duration && (
       <>
         <span class="font-mono op75">&gt;</span>

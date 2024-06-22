@@ -80,21 +80,16 @@ function formatCanonicalURL(url: string | URL) {
   )
 }
 
-<!-- Fonts -->
-<link
-  rel="preload"
-  as="font"
-  crossorigin="anonymous"
-  href="/fonts/geist-sans/Geist-Variable.woff2"
-  type="font/woff2"
-/>
-<link
-  rel="preload"
-  as="font"
-  crossorigin="anonymous"
-  href="/fonts/geist-mono/GeistMono-Variable.woff2"
-  type="font/woff2"
-/>
+<script is:inline>
+	;(function () {
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+    if (setting === 'dark' || (prefersDark && setting !== 'light'))
+      document.documentElement.classList.toggle('dark', true)
+  })()
+</script>
 
 <script>
   import nprogress from 'nprogress'
@@ -106,4 +101,4 @@ function formatCanonicalURL(url: string | URL) {
   document.addEventListener('astro:page-load', () => {
     nprogress.done()
   })
-</script>
+</script >
