@@ -6,8 +6,6 @@ duration: 6 mins
 description: My experience of switching to Zed and configuring it to use all the AI features.
 ---
 
-[[toc]]
-
 So I talked about switching to Zed in the previous post. I'm obsessed with it these days, and still trying to set things up the way it suits me so I thought I should share the experience so you can set it up the way you want too.
 
 ## Basic UI

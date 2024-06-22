@@ -10,6 +10,12 @@ export const siteConfig = {
   email: 'vinh@vinh.dev',
   socialLinks: [
     {
+      text: 'Threads',
+      href: 'https://threads.net/vinh.phm',
+      icon: 'i-simple-icons-threads',
+      header: 'i-simple-icons-threads',
+    },
+    {
       text: 'GitHub',
       href: 'https://github.com/vinhphm',
       icon: 'i-simple-icons-github',
@@ -17,7 +23,7 @@ export const siteConfig = {
     },
     {
       text: 'Linkedin',
-      href: '',
+      href: 'https://www.linkedin.com/in/vinhphm/',
       icon: 'i-simple-icons-linkedin',
     },
     {

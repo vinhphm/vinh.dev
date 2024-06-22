@@ -7,8 +7,6 @@ type: note
 description: How to set up fish shell on macOS (Intel and Silicone).
 ---
 
-[[toc]]
-
 Okay, you probably thought I must be joking, installing fish shell on macOS couldn't be that hard. But believe me, at first, I had a hard time making everything work with fish the moment I installed it on macOS (Silicone). If you're here, I assume you got fish installed on your machine, now, let's figure out the rest.
 
 ## Check the path

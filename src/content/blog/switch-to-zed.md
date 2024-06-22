@@ -6,8 +6,6 @@ duration: 4 mins
 description: My experience of switching to Zed and configuring it to use all the AI features, the broke way.
 ---
 
-[[toc]]
-
 It's easy to say that Visual Studio Code is quite popular these days, so popular that almost every software developer knows about it or even uses it every day, and for good reasons. However, nothing is perfect, and VS Code sometimes shows its flaws in performance compared to native editors like Sublime Text, etc. That's why there are always new tools in the market trying to replace it, and one of them is [Zed](https://zed.dev).
 
 To be honest, I was not a fan of Zed initially, but now there are good reasons for me to make the switch, so let's dig into why.

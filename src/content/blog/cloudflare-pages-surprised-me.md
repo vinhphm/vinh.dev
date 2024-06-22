@@ -6,8 +6,6 @@ duration: 5 mins
 description: Discover why Cloudflare Pages surprised me and how it outperformed other JAMstack platforms. Learn from my experience with Next.js, Astro, and Vite.
 ---
 
-[[toc]]
-
 And maybe you would be too...
 
 ## The Past

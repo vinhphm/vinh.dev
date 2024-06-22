@@ -6,8 +6,6 @@ duration: 5 mins
 description: Discover how to use Cloudflare Workers to interact with the Spotify API and display your current playing song on your website. Explore how to use Vite and Vue to create a Spotify widget with animation and style.
 ---
 
-[[toc]]
-
 In a previous post, we discussed how to generate refresh tokens for Spotify API calls. Now, let's dive into the exciting part: using Cloudflare Workers to interact with the Spotify API.
 
 ## A Worker API to handle Spotify APIs call

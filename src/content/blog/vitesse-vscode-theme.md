@@ -6,8 +6,6 @@ duration: 3 mins
 description: Let's take a look at a new theme for VS Code.
 ---
 
-[[toc]]
-
 Last year, I introduced you to a theme called [Rosé Pine](https://vinh.dev/articles/rose-pine). It is still a phenomenal theme, but due to my curiosity, I always want to try some other new themes as well just to compare. It is not easy though. I am sure if you try to find one for yourself you will be lost among the popular themes out there. And what happens if none of those actually catch your eye? Well, good luck with your search then because all the top results on Google only mention those themes. You either accept them or try to flip through the VS Code marketplace blindly to find one that suits you well.
 
 ## Vitesse

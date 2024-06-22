@@ -6,8 +6,6 @@ duration: 5 mins
 description: Join me as I share my experience with Refine, a React-based framework that has remarkably simplified my approach to building web applications.
 ---
 
-[[toc]]
-
 ## Introduction: Stumbling upon a React gem
 
 As a web developer constantly exploring new technologies, I recently stumbled upon Refine. This React-based framework promised to ease the complexities of data-intensive application development. Intrigued, I dived in, and what I discovered was nothing short of transformative for my React projects.

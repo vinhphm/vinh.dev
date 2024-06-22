@@ -7,8 +7,6 @@ type: note
 description: How to set up redirects for Netlify and Vercel.
 ---
 
-[[toc]]
-
 > [Tiếng Việt - Vietnamese Version](/posts/set-up-redirect-netlify-vercel-vi)
 
 Let's say you recently changed your blog path from `/articles/*` to `/blog/*`. This will impact your SEO on search engines and the links where you had shared before if you don't have a redirect rule for this situation. You could get all the paths for your posts and set a rule for each of them, but that wouldn't be necessary. Instead, you could set a rule to apply to all.

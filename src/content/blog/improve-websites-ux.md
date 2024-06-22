@@ -6,8 +6,6 @@ duration: 7 mins
 description: Learn how to make your website more enjoyable and engaging with micro-interactions. See how you can use HTML, CSS, React, and React Spring to create animated icons for your menu and theme toggle.
 ---
 
-[[toc]]
-
 One of the few things I studied in the Google UX Design course is how a good UX design should be fun to use. Google didn't exactly use the word "fun" to describe a good UX design, the exact word is **"enjoyable"**
 
 > "If a product is enjoyable, it means the design delights the user. The design reflects what the user may be thinking or feeling and creates a positive connection with them. A product's design doesn't have to be enjoyable for it to function properly. But, an enjoyable design adds to an already functional product and can enhance the user's feelings about the experience." - [Google UX Design course](https://www.coursera.org/professional-certificates/google-ux-design)

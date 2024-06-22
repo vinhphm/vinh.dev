@@ -6,8 +6,6 @@ duration: 5 mins
 description: "Discover Fresh and Deno: Modern web dev tools. Secure, simple, speedy. Say goodbye to Node.js/npm complexities. Start coding with Fresh and Deno now!"
 ---
 
-[[toc]]
-
 If you are a web developer, you might have heard of Fresh and Deno, two new tools that aim to make your life easier and more productive. But what are they, and why should you use them? In this blog post, I will explain why developing with Fresh and Deno is simply better than using traditional tools like Node.js and npm.
 
 ## What are Fresh and Deno?

@@ -7,8 +7,6 @@ type: note
 description: Commands to change/reset the size of the macOS Dock icon.
 ---
 
-[[toc]]
-
 ## Set to an Integer Value (default is 64)
 
 Dock icon size of 32 pixels.

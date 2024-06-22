@@ -6,8 +6,6 @@ duration: 5 mins
 description: See how you can generate refresh tokens for the Spotify Web API using your browser and Node.js. Learn how to use the Spotify Developer Dashboard, scopes, and code snippets to access Spotify data on your website.
 ---
 
-[[toc]]
-
 <figure pt-5>
   <img src="/images/2023/spotify-current-playing.gif" alt="Spotify current playing" shadow rounded-lg lg:scale-80 md:scale-100>
   <figcaption important-mt2 text-center>

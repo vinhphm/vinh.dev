@@ -3,9 +3,10 @@
 }
 .prose a {
   --at-apply: prose-link;
+  font-weight: inherit;
 }
 .prose strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 .prose ol[type='A'] {
   --list-counter-style: upper-alpha;
@@ -122,7 +123,7 @@
   margin-top: 0.8571429em;
 }
 .prose code {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.875em;
 }
 .prose code::before {
@@ -174,7 +175,7 @@
   line-height: 1.7142857;
 }
 .prose thead {
-  font-weight: 600;
+  font-weight: 500;
   border-bottom-width: 1px;
   border-bottom-color: #8882;
 }

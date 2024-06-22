@@ -6,8 +6,6 @@ duration: 7 mins
 description: New year, new site refresh. This time, I'm focusing on improving accessibility.
 ---
 
-[[toc]]
-
 For a web blog, accessibility is important. It's not just about making the site accessible for people with disabilities, but also for people with slow internet connection, or people who use old devices. It's also about making the site accessible for search engines, so that they can index the site properly. I had always find my old site to be lacking in this regard, so I decided to improve it. And here're some of my thoughts along the way:
 
 - [Font Face](#font-face)

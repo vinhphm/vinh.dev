@@ -6,8 +6,6 @@ duration: 5 mins
 description: Is it time to switch to Bun?
 ---
 
-[[toc]]
-
 So [Bun](https://bun.sh/) is a new project that describes itself as:
 
 > "An all-in-one toolkit for JavaScript and TypeScript apps. At its core is the Bun runtime, a fast JavaScript runtime designed as a drop-in replacement for Node.js. It's written in Zig and powered by JavaScriptCore under the hood, dramatically reducing startup times and memory usage. The `bun` command-line tool also implements a test runner, script runner, and Node.js-compatible package manager."

@@ -25,6 +25,10 @@ const { Content } = await post.render()
 function getDate(date: string) {
   return new Date(date).toISOString()
 }
+
+const base = 'https://vinh.dev'
+const threadUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/${post.slug}\n\nI think...`)}`
+const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @vinhtphm's ${base}/${post.slug}\n\nI think...`)}`
 ---
 
 <BaseLayout title={title} description={description} pageType="article">
@@ -44,4 +48,23 @@ function getDate(date: string) {
     }
     <Content />
   </article>
+  <div class="prose leading-normal! min-h-0! m-auto mt-8 mb-8 print:hidden">
+    {duration && (
+      <>
+        <span class="font-mono op75">&gt;</span>
+        <span class="op75">comment on </span>
+        <a href={threadUrl} target="_blank" class="op75">threads</a>
+        <span class="op40"> / </span>
+        <a href={tweetUrl} target="_blank" class="op75">twitter</a>
+      </>
+    )}
+    <br />
+    <span class="font-mono op75">&gt;</span>
+    <a
+      href={post.slug.split('/').slice(0, -1).join('/') || '/'}
+      class="font-mono op80 hover:op85"
+    >
+      cd ..
+    </a>
+  </div>
 </BaseLayout>

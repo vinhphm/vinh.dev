@@ -6,8 +6,6 @@ lang: en
 description: Read about my experience of migrating my website from Next.js to Astro, a new web framework designed for speed. Learn how I solved some of the challenges and improved the site performance.
 ---
 
-[[toc]]
-
 At first glance, you would think the move is easy, and it might actually be if your site doesn’t have much going on. In my case though, it was a whole different story.
 
 Let's start by taking a look at [Astro's document](https://docs.astro.build/en/guides/migrate-to-astro/) for the migration. They have all sorts of scenarios of which framework you’re coming from, so I took a look at the [Next.js page](https://docs.astro.build/en/guides/migrate-to-astro/from-nextjs/)

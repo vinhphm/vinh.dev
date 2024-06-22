@@ -6,8 +6,6 @@ duration: 10 mins
 description: Chuyển domain *.pages.dev sang custom domain, từ www sang non-www (apex) domain
 ---
 
-[[toc]]
-
 > [Tiếng Anh - English Version](/posts/cloudflare-pages-domain-redirects)
 
 [<span i-simple-icons-cloudflarepages /> Cloudflare Pages](https://pages.cloudflare.com/) là nhân tố mới trong giới JAMstack, bên cạnh Netlify và Vercel. Dù là nhân vật mới nhưng Cloudflare lại là cái tên được nhiều người biết đến nên dần nhiều người bắt đầu chuyển sang dịch vụ này của Cloudflare. Cloudflare Pages có nhiều ưu điểm để nhiều người cân nhắc nhưng cũng những vấn đề bạn phải cân chỉnh, thiết lập thì mới đạt được điều mình mong muốn. Một trong số đó là redirects.

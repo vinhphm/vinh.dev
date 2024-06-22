@@ -6,8 +6,6 @@ duration: 5 mins
 description: So this is my dev setup in 2024. I hope you find it interesting.
 ---
 
-[[toc]]
-
 So last week, an colleague asked me about my dev setup, he thought it looked cool compared to what she had. And boy, I was flattered. I mean, I don't think my setup is that cool, but I'm glad that he liked it. So I decided to write this post to share my setup with you. I hope you find it interesting.
 
 ## Visual Studio Code

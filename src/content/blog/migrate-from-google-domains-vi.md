@@ -6,8 +6,6 @@ duration: 5 mins
 description: Hướng dẫn chuyển domain từ Google Domains sang dịch vụ khác.
 ---
 
-[[toc]]
-
 Vừa qua, Google đã gửi email thông báo đến người dùng về việc họ sẽ cho bán lại mảng dịch vụ Google Domains cho Squarespace. Tin này khiến cho người dùng không hài lòng và dự định sẽ chuyển domain (tên miền) của họ trên Google Domains sang một nhà cung cấp khác.
 
 ## Về Google Domains

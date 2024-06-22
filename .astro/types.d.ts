@@ -248,6 +248,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"integrate-threads.md": {
+	id: "integrate-threads.md";
+  slug: "integrate-threads";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "is-it-time-to-switch-to-bun.md": {
 	id: "is-it-time-to-switch-to-bun.md";
   slug: "is-it-time-to-switch-to-bun";
@@ -348,13 +355,6 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "pages": {
-"md-style.md": {
-	id: "md-style.md";
-  slug: "md-style";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".md"] };
 "posts-props.md": {
 	id: "posts-props.md";
   slug: "posts-props";

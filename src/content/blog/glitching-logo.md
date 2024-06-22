@@ -6,8 +6,6 @@ duration: 3 mins
 description: You saw a glitch? Don't worry, that's just the new logo.
 ---
 
-[[TOC]]
-
 You saw a glitch? Don't worry, that's just the new logo.
 
 <div grid="~ cols-1 md:cols-2">

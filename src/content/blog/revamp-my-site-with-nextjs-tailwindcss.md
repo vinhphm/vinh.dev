@@ -6,8 +6,6 @@ duration: 6min
 description: I decided to revamp my site with Next.js and Tailwind CSS.
 ---
 
-[[toc]]
-
 ## The reasons
 
 So in the last article, I mentioned moving to using Hugo instead of Jekyll. It was great for a while but then it got me thinking. I always want to try things out with my site, but the fact that Hugo is written in Go is a bit of a pain for me. I have no experience with Go, and its template engine can be a bit of a pain to get started with.

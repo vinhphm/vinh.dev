@@ -6,8 +6,6 @@ duration: 5 mins
 description: A beginner's guide to Cloudflare Workers, a serverless platform that runs your code on the edge. Learn how to use custom domains and routes to trigger your Workers.
 ---
 
-[[toc]]
-
 You are new to Cloudflare Workers. You just created your first Worker but not sure what to do next. This is for you.
 
 So a Worker is like a mini-application with a small piece of code that you would like to run. But when? That is when the **Triggers** tab on your Worker's dashboard comes in. There are so many options there but for the sake of this post, we will only talk about **Custom Domains** and **Routes**.
