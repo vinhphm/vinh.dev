@@ -1,14 +1,19 @@
-export interface Post {
-  path: string
+import type { CollectionEntry } from 'astro:content'
+
+export type PostKey = 'blog'
+
+export type CollectionPosts = CollectionEntry<PostKey>
+
+export type Pages = 'pages'
+
+export type CollectionPages = CollectionEntry<Pages>
+
+export type ProjectData = Array<{
   title: string
-  date: string
-  lang?: string
-  desc?: string
-  platform?: string
-  duration?: string
-  recording?: string
-  radio?: boolean
-  video?: boolean
-  inperson?: boolean
-  redirect?: string
-}
+  projects: Array<{
+    text: string
+    description?: string
+    icon?: string
+    href: string
+  }>
+}>
