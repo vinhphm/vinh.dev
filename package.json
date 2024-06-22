@@ -40,7 +40,6 @@
     "lint-staged": "^15.2.7",
     "lodash-es": "^4.17.21",
     "picocolors": "^1.0.1",
-    "prettier-plugin-astro": "^0.14.0",
     "prompts": "^2.4.2",
     "sharp": "^0.33.4",
     "simple-git": "^3.25.0",
