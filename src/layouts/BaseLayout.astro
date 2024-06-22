@@ -15,10 +15,12 @@ const { ...head } = Astro.props
     <BaseHead {...head} />
     <ViewTransitions />
   </head>
-  <body class="antialiased bg-main text-main min-h-screen font-sans w-full bg-dot">
+  <body
+    class="antialiased bg-main text-main min-h-screen font-sans w-full bg-dot"
+  >
     <Header client:load />
     <main
-      class="grow max-w-3xl mx-auto py-10 px-7 relative of-x-hidden"
+      class="grow max-w-3xl mx-auto py-10 px-7 relative"
       transition:animate={fade({ duration: '0.4s' })}
     >
       <slot />

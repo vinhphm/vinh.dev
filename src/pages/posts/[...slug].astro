@@ -33,7 +33,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
 
 <BaseLayout title={title} description={description} pageType="article">
   <div class="prose mb-8 m-auto">
-    <h1 class="mb-0">{title}</h1 >
+    <h1 class="mb-0">{title}</h1>
     <p op-50 class="!-mt-6">
       {date && <time datetime={getDate(date)}>{date.split(',')}</time>}
       {duration && <span>· {duration}</span>}
@@ -53,15 +53,21 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
     </div>
   </article>
   <div class="prose fw-inherit m-auto mt-8 mb-8 print:hidden">
-    {duration && (
-      <>
-        <span class="font-mono op75">&gt;</span>
-        <span class="op75">comment on </span>
-        <a href={threadUrl} target="_blank" class="op75">threads</a>
-        <span class="op40"> / </span>
-        <a href={tweetUrl} target="_blank" class="op75">twitter</a>
-      </>
-    )}
+    {
+      duration && (
+        <>
+          <span class="font-mono op75">&gt;</span>
+          <span class="op75">comment on </span>
+          <a href={threadUrl} target="_blank" class="op75">
+            threads
+          </a>
+          <span class="op40"> / </span>
+          <a href={tweetUrl} target="_blank" class="op75">
+            twitter
+          </a>
+        </>
+      )
+    }
     <br />
     <span class="font-mono op75">&gt;</span>
     <a

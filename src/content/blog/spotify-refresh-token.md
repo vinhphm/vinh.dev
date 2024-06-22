@@ -58,16 +58,14 @@ app.get('/login', (request, response) => {
 })
 
 app.get('/callback', async (request, response) => {
-  const code = request.query['code']
+  const code = request.query.code
   await axios
     .post(
-      (url = 'https://accounts.spotify.com/api/token'),
-      (data = new URLSearchParams({
+      (url = 'https://accounts.spotify.com/api/token'), (data = new URLSearchParams({
         grant_type: 'authorization_code',
         redirect_uri: REDIRECT_URI,
-        code: code,
-      })),
-      (config = {
+        code,
+      })), (config = {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
@@ -78,25 +76,21 @@ app.get('/callback', async (request, response) => {
           username: CLIENT_ID,
           password: CLIENT_SECRET,
         },
-      })
-    )
-    .then(resp1 => {
+      }))
+    .then((resp1) => {
       axios
         .post(
-          (url = 'https://accounts.spotify.com/api/token'),
-          (data = new URLSearchParams({
+          (url = 'https://accounts.spotify.com/api/token'), (data = new URLSearchParams({
             grant_type: 'refresh_token',
             refresh_token: resp1.data.refresh_token,
             access_token: resp1.data.access_token,
-          })),
-          (config = {
+          })), (config = {
             auth: {
               username: CLIENT_ID,
               password: CLIENT_SECRET,
             },
-          })
-        )
-        .then(resp2 => {
+          }))
+        .then((resp2) => {
           return response.send(JSON.stringify([resp1.data, resp2.data]))
         })
     })

@@ -9,14 +9,19 @@ import siteConfig from '@/site-config'
     <p>Hi, I'm Vinh, welcome to my unhinged space.</p>
     <p>I work as a software engineer at PwC.</p>
     <p>
-    My passion lies in envisioning ideas and bringing them to life. Sometimes, the most intriguing concepts don't fit within the scope of my day job, and that's where this site comes in. Here, I share those unbridled thoughts and projects—hence the name, 'unhinged', and the playful glitch in the logo. Dive in with an open mind and feel free to explore
-    <a
-      prose-link
-      aria-label="Projects"
-      href="/projects"
-    >my side projects</a>.
+      My passion lies in envisioning ideas and bringing them to life. Sometimes,
+      the most intriguing concepts don't fit within the scope of my day job, and
+      that's where this site comes in. Here, I share those unbridled thoughts
+      and projects—hence the name, 'unhinged', and the playful glitch in the
+      logo. Dive in with an open mind and feel free to explore<a
+        prose-link
+        aria-label="Projects"
+        href="/projects">my side projects</a
+      >.
     </p>
-    <p>Outside of programming, I enjoy doing amateur photography and traveling. Some of my photos can be found on [Instagram](https://www.instagram.com/vinh.phm).</p>
+    <p>
+      Outside of programming, I enjoy doing amateur photography and traveling.
+    </p>
     <div class="flex-auto"></div>
     <hr class="hr-line" />
     <p>Find me on</p>
@@ -29,7 +34,7 @@ import siteConfig from '@/site-config'
             target="_blank"
             class="prose-link"
           >
-            <span class:list={[link.icon]} />
+            <span align-text-bottom class:list={[link.icon]} />
             {link.text}
           </a>
         ))
@@ -37,7 +42,9 @@ import siteConfig from '@/site-config'
     </p>
     <p>
       If you have any questions, please email me at
-      <span font-mono>vinh<span i-carbon-at/>vinh.dev</span>
+      <span font-mono
+        >vinh<span align-text-bottom i-carbon-at></span>vinh.dev</span
+      >
     </p>
   </article>
 </BaseLayout>

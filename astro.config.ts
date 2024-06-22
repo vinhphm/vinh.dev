@@ -24,7 +24,7 @@ export default defineConfig({
         svgo: false,
         defaultImport: 'url',
       }),
-    ]
+    ],
   },
   markdown: {
     shikiConfig: {

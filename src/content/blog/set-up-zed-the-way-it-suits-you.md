@@ -32,7 +32,7 @@ Here are some configures that I've made on this main part of the UI:
   "buffer_font_family": "Geist Mono",
   "tabs": {
     "close_position": "left"
-  },
+  }
 }
 ```
 
@@ -49,7 +49,7 @@ Let's move on the main part of this post, configuring Zed's AI features. Zed has
   // ...
   "features": {
     "inline_completion_provider": "supermaven"
-  },
+  }
 }
 ```
 The options for you are:
@@ -70,7 +70,7 @@ In case you're wondering what the inline completion looks like, here's a example
   // ...
   "assistant": {
     "provider": {
-      "name": "openai",
+      "name": "openai"
     },
     // Version of this setting.
     "version": "1",
@@ -83,7 +83,7 @@ In case you're wondering what the inline completion looks like, here's a example
     // Default width when the assistant is docked to the left or right.
     "default_width": 640,
     // Default height when the assistant is docked to the bottom.
-    "default_height": 320,
+    "default_height": 320
   }
 }
 ```
@@ -100,12 +100,12 @@ The Ollama option is a bit more complicated, you need to install the [Ollama CLI
 {
   // ..
   "assistant": {
-      "version": "1",
-      "provider": {
-        "name": "ollama",
-        // Recommended setting to allow for model startup
-        "low_speed_timeout_in_seconds": 30,
-      }
+    "version": "1",
+    "provider": {
+      "name": "ollama",
+      // Recommended setting to allow for model startup
+      "low_speed_timeout_in_seconds": 30
+    }
   }
 }
 ```

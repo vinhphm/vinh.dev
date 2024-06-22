@@ -5,8 +5,8 @@ onMounted(async () => {
   const { PowerGlitch } = await import('powerglitch')
   PowerGlitch.glitch('.glitched-logo', {
     timing: {
-      duration: 5000
-    }
+      duration: 5000,
+    },
   })
 })
 </script>

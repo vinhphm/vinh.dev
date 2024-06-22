@@ -30,7 +30,7 @@ const socialLinks = computed(() => {
     </a>
     <nav class="nav">
       <div class="spacer" />
-      <div class="right" print:op0>
+      <div class="right" tracking-tighter print:op0>
         <a
           v-for="link in navLinks" :key="link.text" :aria-label="`${link.text}`" :target="getLinkTarget(link.href)"
           nav-link :href="link.href"

@@ -81,7 +81,7 @@ function formatCanonicalURL(url: string | URL) {
 }
 
 <script is:inline>
-	;(function () {
+  ;(function () {
     const prefersDark =
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -101,4 +101,4 @@ function formatCanonicalURL(url: string | URL) {
   document.addEventListener('astro:page-load', () => {
     nprogress.done()
   })
-</script >
+</script>
