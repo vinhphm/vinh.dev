@@ -54,7 +54,7 @@ Let's move on the main part of this post, configuring Zed's AI features. Zed has
 ```
 The options for you are:
 - [**"copilot"**](https://github.com/features/copilot) - (GitHub Copilot) - $10 per month
-- [**"supermaven"**](https://supermaven.com) - mutliple plans including free tier.
+- [**"supermaven"**](https://supermaven.com) - mutliple plans including free tier
 - **"none"** - turn off the feature
 
 In case you're wondering what the inline completion looks like, here's a example:
