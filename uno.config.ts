@@ -60,5 +60,6 @@ export default defineConfig({
     'i-ri-instagram-line',
     'i-ri-github-line',
     'i-ri-spotify-line',
+    'i-simple-icons-cloudflarepages',
   ],
 })

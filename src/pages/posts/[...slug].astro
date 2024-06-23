@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import TableOfContents from '@/components/TableOfContents.astro'
 import { type CollectionPosts } from '@/types'
@@ -43,7 +44,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
     {
       image && (
         <p>
-          <img width="640" height="360" src={image.src} alt={image.alt || ''} />
+          <Image width="640" height="360" src={image} alt={title || ''} />
         </p>
       )
     }

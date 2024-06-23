@@ -5,6 +5,9 @@ lang: en
 duration: 5 mins
 description: So this is my dev setup in 2024. I hope you find it interesting.
 ---
+import { Image } from 'astro:assets';
+import subessenceVSCode from '@/assets/images/2024/subessence-vscode.png';
+import terminal from '@/assets/images/2024/terminal.png';
 
 So last week, an colleague asked me about my dev setup, he thought it looked cool compared to what she had. And boy, I was flattered. I mean, I don't think my setup is that cool, but I'm glad that he liked it. So I decided to write this post to share my setup with you. I hope you find it interesting.
 
@@ -12,11 +15,11 @@ So last week, an colleague asked me about my dev setup, he thought it looked coo
 
 Let's start with the most important tool for a developer: the code editor. I use [Visual Studio Code](https://code.visualstudio.com/) as my code editor. Not really a surprise to anyone, to be honest. But what matters is how it looks, right? So here's how my VS Code looks like:
 
-<figure pt-5>
-  <div lg:scale-120 md:scale-110>
-    <img src="/images/2024/subessence-vscode.png" alt="VS Code setup" shadow />
+<figure class="pt-5">
+  <div class="lg:scale-120 md:scale-110">
+    <Image src={subessenceVSCode} alt="VS Code setup" class="shadow" />
   </div>
-  <figcaption important-mt8 text-center>
+  <figcaption class="md:mt-12! lg:mt-20! text-center">
     My VS Code setup
   </figcaption>
 </figure>
@@ -53,11 +56,11 @@ Having to work with two different operating systems means I have to configure an
 
 Though I use different shells on different machines, I want to have the same experience with prompt for both. So I use [Starship](https://starship.rs) as my prompt. It's fast, customizable, and cross-platform. I have been using it for a while now, and I'm quite happy with it.
 
-<figure pt-5>
-  <div lg:scale-120 md:scale-110>
-    <img src="/images/2024/terminal.png" alt="iTerm with Starship prompt" />
+<figure class="pt-5">
+  <div class="lg:scale-120 md:scale-110">
+    <Image src={terminal} alt="iTerm with Starship prompt" />
   </div>
-  <figcaption important-mt8 text-center>
+  <figcaption class="important-mt8 text-center">
     My terminal setup on macOS
   </figcaption>
 </figure>

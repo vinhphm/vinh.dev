@@ -5,6 +5,9 @@ lang: en
 duration: 3 mins
 description: Let's take a look at a new theme for VS Code.
 ---
+import { Image } from 'astro:assets';
+import vitesseLight from '@/assets/images/2023/vitesse-light.png';
+import vitesseDark from '@/assets/images/2023/vitesse-dark.png';
 
 Last year, I introduced you to a theme called [Rosé Pine](https://vinh.dev/articles/rose-pine). It is still a phenomenal theme, but due to my curiosity, I always want to try some other new themes as well just to compare. It is not easy though. I am sure if you try to find one for yourself you will be lost among the popular themes out there. And what happens if none of those actually catch your eye? Well, good luck with your search then because all the top results on Google only mention those themes. You either accept them or try to flip through the VS Code marketplace blindly to find one that suits you well.
 
@@ -18,12 +21,12 @@ Let me save you from all these troubles and introduce a new theme instead of tho
 
 And [Vitesse by [Anthony Fu](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse) fits all of these perfectly. Here is how it looks in action:
 
-<figure pt-5>
-  <div lg:scale-120 md:scale-110>
-    <img src="/images/2023/vitesse-light.png" alt="Vitesse Light" img-light />
-    <img src="/images/2023/vitesse-dark.png" alt="Vitesse Dark" img-dark />
+<figure class="pt-5">
+  <div class="lg:scale-120 md:scale-110">
+    <Image src={vitesseLight} alt="Vitesse Light" class="img-light" />
+    <Image src={vitesseDark} alt="Vitesse Dark" class="img-dark" />
   </div>
-  <figcaption important-mt8 text-center>Vitesse</figcaption>
+  <figcaption class="important-mt8 text-center">Vitesse</figcaption>
 </figure>
 
 There are six variants for you to choose from. And I think you will love it.

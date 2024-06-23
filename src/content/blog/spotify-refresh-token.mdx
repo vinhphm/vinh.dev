@@ -5,10 +5,13 @@ lang: en
 duration: 5 mins
 description: See how you can generate refresh tokens for the Spotify Web API using your browser and Node.js. Learn how to use the Spotify Developer Dashboard, scopes, and code snippets to access Spotify data on your website.
 ---
+import { Image } from 'astro:assets';
+import spotifyCurrentPlaying from '@/assets/images/2023/spotify-current-playing.gif';
+import clientIdSecret from '@/assets/images/2023/client-id-secret.png';
 
-<figure pt-5>
-  <img src="/images/2023/spotify-current-playing.gif" alt="Spotify current playing" shadow rounded-lg lg:scale-80 md:scale-100>
-  <figcaption important-mt2 text-center>
+<figure class="pt-5">
+  <img src="{spotifyCurrentPlaying.src}" alt="Spotify current playing" class="shadow rounded-lg" />
+  <figcaption class="important-mt2 text-center">
     Spotify current playing
   </figcaption>
 </figure>
@@ -27,7 +30,7 @@ Assuming you already have a registered application on the [Spotify Developer Das
 
 They will look like this:
 
-<img src="/images/2023/client-id-secret.png" alt="Client ID Secret" shadow rounded-lg>
+<Image src={clientIdSecret} alt="Client ID Secret" class="shadow rounded-lg" />
 
 You will also need to change the **Redirect URIs** in the application settings to `http://localhost:3000/callback`.
 

@@ -5,6 +5,16 @@ lang: en
 duration: 7 mins
 description: New year, new site refresh. This time, I'm focusing on improving accessibility.
 ---
+import { Image } from 'astro:assets';
+import oldSiteLight from '@/assets/images/2024/2024-refresh-old-light.png';
+import oldSiteDark from '@/assets/images/2024/2024-refresh-old-dark.png';
+import newSiteLight from '@/assets/images/2024/2024-refresh-new-light.png';
+import newSiteDark from '@/assets/images/2024/2024-refresh-new-dark.png';
+import mobileOldLight from '@/assets/images/2024/2024-refresh-mobile-old-light.png';
+import mobileOldDark from '@/assets/images/2024/2024-refresh-mobile-old-dark.png';
+import mobileNewLight from '@/assets/images/2024/2024-refresh-mobile-new-light.png';
+import mobileNewDark from '@/assets/images/2024/2024-refresh-mobile-new-dark.png';
+import ThemeToggle from '@/components/ThemeToggle.vue';
 
 For a web blog, accessibility is important. It's not just about making the site accessible for people with disabilities, but also for people with slow internet connection, or people who use old devices. It's also about making the site accessible for search engines, so that they can index the site properly. I had always find my old site to be lacking in this regard, so I decided to improve it. And here're some of my thoughts along the way:
 
@@ -18,15 +28,15 @@ I used to use [Inter](https://rsms.me/inter/) as the font face for my site. It's
 
 I also decided to "unbold" all the headings so it doesn't feel like you're being yelled at. Here's the comparison:
 
-<figure pt-5>
-  <div grid="~ cols-1 md:cols-2 gap-1" lg:scale-120 md:scale-110>
-    <img src="/images/2024/2024-refresh-old-light.png" alt="Old site in light mode" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-new-light.png" alt="New site in light mode" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-old-dark.png" alt="Old site in dark mode" rounded shadow img-dark important-m0 />
-    <img src="/images/2024/2024-refresh-new-dark.png" alt="New site in dark mode" rounded shadow img-dark important-m0 />
+<figure class="pt-5">
+  <div class="lg:scale-120 md:scale-110 grid ~ cols-1 md:cols-2 gap-1">
+    <Image src={oldSiteLight} alt="Old site in light mode" class="rounded shadow img-light important-m0" />
+    <Image src={newSiteLight} alt="New site in light mode" class="rounded shadow img-light important-m0" />
+    <Image src={oldSiteDark} alt="Old site in dark mode" class="rounded shadow img-dark important-m0" />
+    <Image src={newSiteDark} alt="New site in dark mode" class="rounded shadow img-dark important-m0" />
   </div>
-  <figcaption important-mt8 text-center>
-    My old site (left/above) vs. my new own (right/below). Click the icon here <toggle-theme /> to check other variant.
+  <figcaption class="important-mt8 text-center">
+    My old site (left/above) vs. my new own (right/below). Click the icon here <ThemeToggle client:load /> to check other variant.
   </figcaption>
 </figure>
 
@@ -40,15 +50,15 @@ For the dark theme, I also switched from using a black background to a dark gray
 
 The answer is both if we're talking about what best for accessibility. But in some cases, it can be a bit complicated. Let's talk about my site's top navigation bar for example. In the desktop view, there is a lot of real estate, so I can use both icons and texts. I can even leave it icons only, and add in the tooltip for accessibility. But in the mobile view, there is not much space, so I had to choose between icons or texts. I decided to turn every item to icons in the mobile view, and it created a whole lot of confusion. On the first look, will you know what the icons mean? Maybe some, but not all of them. So I turned to texts with a little narrower spacing between the characters, and I think it's a improvement. Here's the comparison:
 
-<figure pt-5>
-  <div grid="~ cols-1 md:cols-2 gap-1" lg:scale-120 md:scale-110>
-    <img src="/images/2024/2024-refresh-mobile-old-light.png" alt="Old site in light mode (mobile)" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-mobile-new-light.png" alt="New site in light mode (mobile)" rounded shadow img-light important-m0 />
-    <img src="/images/2024/2024-refresh-mobile-old-dark.png" alt="Old site in dark mode (mobile)" rounded shadow img-dark important-m0 />
-    <img src="/images/2024/2024-refresh-mobile-new-dark.png" alt="New site in dark mode (mobile)" rounded shadow img-dark important-m0 />
+<figure class="pt-5">
+  <div class="lg:scale-120 md:scale-110 grid ~ cols-1 md:cols-2 gap-1">
+    <Image src={mobileOldLight} alt="Old site in light mode (mobile)" class="rounded shadow img-light important-m0" />
+    <Image src={mobileNewLight} alt="New site in light mode (mobile)" class="rounded shadow img-light important-m0" />
+    <Image src={mobileOldDark} alt="Old site in dark mode (mobile)" class="rounded shadow img-dark important-m0" />
+    <Image src={mobileNewDark} alt="New site in dark mode (mobile)" class="rounded shadow img-dark important-m0" />
   </div>
-  <figcaption important-mt8 text-center>
-    My old site (left/above) vs. my new own (right/below). Click the icon here <toggle-theme /> to check other variant.
+  <figcaption class="important-mt8 text-center">
+    My old site (left/above) vs. my new own (right/below). Click the icon here <ThemeToggle client:load /> to check other variant.
   </figcaption>
 </figure>
 

@@ -15,11 +15,11 @@ html:not(.dark) {
   color-scheme: light;
 }
 
-.dark [img-light] {
+.dark .img-light {
   display: none;
 }
 
-html:not(.dark) [img-dark] {
+html:not(.dark) .img-dark {
   display: none;
 }
 

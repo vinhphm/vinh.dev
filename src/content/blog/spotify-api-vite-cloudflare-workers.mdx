@@ -5,6 +5,7 @@ lang: en
 duration: 5 mins
 description: Discover how to use Cloudflare Workers to interact with the Spotify API and display your current playing song on your website. Explore how to use Vite and Vue to create a Spotify widget with animation and style.
 ---
+import spotifyCurrentPlaying from '@/assets/images/2023/spotify-current-playing.gif';
 
 In a previous post, we discussed how to generate refresh tokens for Spotify API calls. Now, let's dive into the exciting part: using Cloudflare Workers to interact with the Spotify API.
 
@@ -51,9 +52,9 @@ In [`spotify.ts`](https://github.com/vinhphm/spotify-worker/blob/main/src/spotif
 
 I want to archive the same style as my Spotify widget on my old site.
 
-<figure pt-5>
-  <img src="/images/2023/spotify-current-playing.gif" alt="Spotify current playing" shadow rounded-lg lg:scale-80 md:scale-100>
-  <figcaption important-mt2 text-center>
+<figure ckass="pt-5">
+  <img src={spotifyCurrentPlaying.src} alt="Spotify current playing" class="shadow rounded-lg" />
+  <figcaption class="important-mt2 text-center">
     Spotify current playing
   </figcaption>
 </figure>
