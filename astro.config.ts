@@ -21,11 +21,6 @@ export default defineConfig({
     vue(),
   ],
   vite: {
-    build: {
-      rollupOptions: {
-        external: ['@/components/Iframely.vue'],
-      },
-    },
     plugins: [
       svgLoader({
         svgo: false,
