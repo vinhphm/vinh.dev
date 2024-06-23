@@ -7,7 +7,7 @@ import { getPosts } from '@/utils/posts'
 
 export async function getStaticPaths() {
   const posts = await getPosts()
-  return posts.map((post) => {
+  return posts.map((post: CollectionPosts) => {
     return {
       params: { slug: post.slug },
       props: {

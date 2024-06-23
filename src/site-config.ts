@@ -1,11 +1,11 @@
 export const siteConfig = {
   author: 'Vinh Pham',
   title: 'Vinh Pham',
-  subtitle: 'A dev point of view',
-  description: 'A dev point of view',
+  subtitle: 'Thoughts and ideas',
+  description: 'Thoughts and ideas',
   image: {
     src: '/hero.jpg',
-    alt: 'Website Main Image',
+    alt: 'Vinh Pham',
   },
   email: 'vinh@vinh.dev',
   socialLinks: [

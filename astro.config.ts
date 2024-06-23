@@ -6,9 +6,6 @@ import vue from '@astrojs/vue'
 
 export default defineConfig({
   site: 'https://vinh.dev',
-  server: {
-    port: 1977,
-  },
   integrations: [
     mdx(),
     sitemap(),

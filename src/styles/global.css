@@ -9,18 +9,20 @@ html.dark .astro-code span {
 
 html.dark {
   color-scheme: dark;
+
+  .img-light,
+  [img-light] {
+    display: none;
+  }
 }
 
 html:not(.dark) {
   color-scheme: light;
-}
 
-.dark .img-light {
-  display: none;
-}
-
-html:not(.dark) .img-dark {
-  display: none;
+  .img-dark,
+  [img-dark] {
+    display: none;
+  }
 }
 
 #nprogress {

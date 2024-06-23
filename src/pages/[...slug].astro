@@ -6,7 +6,7 @@ import type { CollectionPages } from '@/types'
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages')
-  return pages.map((page) => {
+  return pages.map((page: CollectionPages) => {
     return {
       params: { slug: page.slug },
       props: { page },
