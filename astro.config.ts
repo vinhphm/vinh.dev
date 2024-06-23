@@ -21,17 +21,17 @@ export default defineConfig({
     vue(),
   ],
   vite: {
+    build: {
+      rollupOptions: {
+        external: ['@/components/Iframely.vue'],
+      },
+    },
     plugins: [
       svgLoader({
         svgo: false,
         defaultImport: 'url',
       }),
     ],
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, 'src'),
-      },
-    },
   },
   markdown: {
     shikiConfig: {
