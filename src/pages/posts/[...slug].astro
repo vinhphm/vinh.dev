@@ -29,8 +29,9 @@ function getDate(date: string) {
 }
 
 const base = 'https://vinh.dev'
-const threadUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/${post.slug}\n\nI think...`)}`
-const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @vinhtphm's ${base}/${post.slug}\n\nI think...`)}`
+const parentDir = post.slug.split('/').slice(0, -1).join('/');
+const threadUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/posts/${post.slug}\n\nI think...`)}`
+const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @vinhtphm's ${base}/posts/${post.slug}\n\nI think...`)}`
 ---
 
 <BaseLayout title={title} description={description} pageType="article">
@@ -74,7 +75,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
     <br />
     <span class="font-mono op75">&gt; </span>
     <a
-      href={post.slug.split('/').slice(0, -1).join('/') || '/'}
+      href={'/blog' + (parentDir ? '/' + parentDir : '')}
       class="font-mono op80 hover:op85"
     >
       cd ..
