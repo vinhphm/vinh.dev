@@ -21,10 +21,3 @@ onMounted(async () => {
     </svg>
   </div>
 </template>
-
-<style scoped>
-.glitched-logo {
-  width: 48px;
-  height: 48px;
-}
-</style>
