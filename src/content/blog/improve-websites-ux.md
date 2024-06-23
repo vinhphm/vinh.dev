@@ -20,8 +20,8 @@ Okay, so in order to maker my site more engaging and enjoyable, I decided to add
 
 First is the toggle menu for mobile devices from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c) with a little tweak from me:
 
-<figure pt-5>
-  <img src="/images/2022/menu-toggle.gif" alt="Menu toggle" rounded-lg />
+<figure pt-5 flex flex-col items-center >
+  <img src="/images/2022/menu-toggle.gif" alt="Menu toggle" w-100 rounded-lg />
   <figcaption text-center>
     Menu toggle
   </figcaption>
@@ -98,8 +98,8 @@ I use React for my website but below is the plain HTML/CSS code shared by Mikael
 
 Second, is the theme toggle icon from the top right corner:
 
-<figure pt-5>
-  <img src="/images/2022/theme-toggle.gif" alt="Theme toggle" rounded-lg />
+<figure pt-5 flex flex-col items-center>
+  <img src="/images/2022/theme-toggle.gif" w-100 alt="Theme toggle" rounded-lg />
   <figcaption text-center>
     Theme toggle
   </figcaption>
