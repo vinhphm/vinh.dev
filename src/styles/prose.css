@@ -1,23 +1,30 @@
 .prose {
-  color: var(--fg);
-  max-width: 65ch;
-  font-size: 1rem;
-  line-height: 1.75;
+  --at-apply: text-base max-w-none;
+
+  --fg-pale: #d1d5db;
+  --fg: #404040;
+  --fg-deep: #202020;
+  --fg-deeper: #000;
+
+  /* color: var(--fg); */
 }
-.prose [class~='lead'] {
-  color: #4b5563;
-  font-size: 1.25em;
-  line-height: 1.6;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
+html.dark .prose {
+  --fg-pale: #888;
+  --fg: #bbb;
+  --fg-deep: #ddd;
+  --fg-deeper: #fff;
 }
+
 .prose a {
-  color: var(--fg-deeper);
-  text-decoration: none;
+  --at-apply: prose-link;
+  font-weight: inherit;
 }
 .prose strong {
   color: var(--fg-deep);
-  font-weight: 600;
+  font-weight: 500;
+}
+.prose :where(ol, ul):not(:where(.not-prose, .not-prose *)) {
+  padding-left: unset;
 }
 .prose ol[type='A'] {
   --list-counter-style: upper-alpha;
@@ -96,8 +103,8 @@
 .prose h1 {
   color: var(--fg-deeper);
   font-weight: 500;
-  letter-spacing: -0.05em;
   font-size: 2.25em;
+  letter-spacing: -0.05em;
   margin-top: 0;
   margin-bottom: 0.8888889em;
   line-height: 1.1111111;
@@ -105,8 +112,8 @@
 .prose h2 {
   color: var(--fg-deeper);
   font-weight: 500;
-  letter-spacing: -0.05em;
   font-size: 1.5em;
+  letter-spacing: -0.05em;
   margin-top: 2em;
   margin-bottom: 1em;
   line-height: 1.3333333;
@@ -114,12 +121,11 @@
 .prose h3 {
   color: var(--fg-deeper);
   font-weight: 500;
-  letter-spacing: -0.05em;
   font-size: 1.25em;
+  letter-spacing: -0.05em;
   margin-top: 1.6em;
   margin-bottom: 0.6em;
   line-height: 1.6;
-  opacity: 0.7;
 }
 .prose h4 {
   color: var(--fg-deep);
@@ -137,7 +143,6 @@
 }
 .prose code {
   color: var(--fg-deeper);
-  font-family: 'Geist Mono', 'Roboto Mono', 'Fira Code', monospace;
   font-weight: 600;
   font-size: 0.875em;
 }
@@ -168,7 +173,7 @@
   border-width: 0;
   border-radius: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 400;
   color: inherit;
   font-size: inherit;
   font-family: inherit;
@@ -190,10 +195,9 @@
   line-height: 1.7142857;
 }
 .prose thead {
-  color: var(--fg-deeper);
   font-weight: 500;
   border-bottom-width: 1px;
-  border-bottom-color: #d1d5db;
+  border-bottom-color: #8882;
 }
 .prose thead th {
   vertical-align: bottom;
@@ -203,7 +207,7 @@
 }
 .prose tbody tr {
   border-bottom-width: 1px;
-  border-bottom-color: #e5e7eb;
+  border-bottom-color: #8882;
 }
 .prose tbody tr:last-child {
   border-bottom-width: 0;
@@ -310,9 +314,6 @@
 .prose > :last-child {
   margin-bottom: 0;
 }
-.prose b {
-  color: var(--fg-deep);
-}
 .prose em {
   color: inherit;
 }
@@ -337,24 +338,28 @@
 }
 .prose-sm h1 {
   font-size: 2.1428571em;
+  letter-spacing: -0.05em;
   margin-top: 0;
   margin-bottom: 0.8em;
   line-height: 1.2;
 }
 .prose-sm h2 {
   font-size: 1.4285714em;
+  letter-spacing: -0.05em;
   margin-top: 1.6em;
   margin-bottom: 0.8em;
   line-height: 1.4;
 }
 .prose-sm h3 {
   font-size: 1.2857143em;
+  letter-spacing: -0.05em;
   margin-top: 1.5555556em;
   margin-bottom: 0.4444444em;
   line-height: 1.5555556;
 }
 .prose-sm h4 {
   margin-top: 1.4285714em;
+  letter-spacing: -0.05em;
   margin-bottom: 0.5714286em;
   line-height: 1.4285714;
 }

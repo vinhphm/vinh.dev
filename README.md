@@ -1,8 +1,8 @@
-# My "Vite" Site at [vinh.dev](https://vinh.dev)
+# My "Vite-inspired" Astro Site at [vinh.dev](https://vinh.dev)
 
 ## Tech stack
 
-This website is hosted on [CloudFlare](https://cloudflare.com/), built with [Vite](https://vitejs.dev/) and [UnoCSS](https://unocss.dev/), hugely inspired by Anthony Fu's [site](https://antfu.me).
+This website is hosted on [CloudFlare](https://cloudflare.com/), built with [Astro](https://astro.build/) and [UnoCSS](https://unocss.dev/), hugely inspired by Anthony Fu's [site](https://antfu.me).
 
 ## Images
 
