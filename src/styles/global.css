@@ -86,7 +86,7 @@ article {
   text-overflow: ellipsis;
   height: 100%;
   overflow-y: auto;
-  --at-apply: rounded op0 mt-1 pb-5 transition duration-700;
+  --at-apply: rounded op0 important-mt1 pb-5 transition duration-700;
 }
 
 .table-of-contents:hover > .table-of-contents-anchor,
@@ -107,11 +107,11 @@ article {
 }
 
 .table-of-contents ul > li {
-  padding-left: 0.8rem;
+  padding-left: 0.8rem !important;
   line-height: 1.5em;
   margin-top: 0.5em;
 }
 
 .table-of-contents ul > li > a {
-  --at-apply: op75 hover-op100 transition font-normal;
+  --at-apply: op75 hover-op100 transition font-normal whitespace-normal;
 }
