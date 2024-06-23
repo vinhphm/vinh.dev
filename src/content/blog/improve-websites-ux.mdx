@@ -5,7 +5,6 @@ lang: en
 duration: 7 mins
 description: Learn how to make your website more enjoyable and engaging with micro-interactions. See how you can use HTML, CSS, React, and React Spring to create animated icons for your menu and theme toggle.
 ---
-import { Image } from 'astro:assets';
 import menuToggle from '@/assets/images/2022/menu-toggle.gif';
 import themeToggle from '@/assets/images/2022/theme-toggle.gif';
 
@@ -24,7 +23,7 @@ Okay, so in order to maker my site more engaging and enjoyable, I decided to add
 First is the toggle menu for mobile devices from [UXDesign.cc](https://uxdesign.cc/the-menu-210bec7ad80c) with a little tweak from me:
 
 <figure class="pt-5 flex flex-col items-center">
-  <img src="{menuToggle.src}" alt="Menu toggle" class="shadow rounded-lg" />
+  <img src={menuToggle.src} alt="Menu toggle" class="shadow rounded-lg" />
   <figcaption class="text-center">
     Menu toggle
   </figcaption>
@@ -102,7 +101,7 @@ I use React for my website but below is the plain HTML/CSS code shared by Mikael
 Second, is the theme toggle icon from the top right corner:
 
 <figure class="pt-5 flex flex-col items-center">
-  <img src="{themeToggle.src}" alt="Theme toggle" class="shadow rounded-lg" />
+  <img src={themeToggle.src} alt="Theme toggle" class="shadow rounded-lg" />
   <figcaption class="text-center">
     Theme toggle
   </figcaption>
