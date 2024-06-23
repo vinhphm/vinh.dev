@@ -18,7 +18,6 @@ By default, when creating a Worker, you will be assigned to a domain like this `
 
 Using the dashboard interface to add Custom Domains is super quick and easy. It's a one-click operation for websites on Cloudflare or using Cloudflare DNS (which is the requirement here).
 
-> [!WARNING]
 > You should note that custom domains point all paths of a domain or subdomain to your Worker, so be wise to choose a domain that won't conflict with your main website. For example, if you have your website at `abc.dev`, you should not add `abc.dev` to your Worker again, instead you can use `<subdomain>.abc.dev`.
 
 ### Use Routes
@@ -35,7 +34,6 @@ Routes can be a little bit trickier than Custom Domain. If you intend to use som
 
 Then you can use the **Add route** button the dashboard.
 
-> [!NOTE]
 > Route pattern matching considers the entire request URL, including the query parameter string. Since route patterns may not contain query parameters, the only way to have a route pattern match URLs with query parameters is to terminate it with a wildcard, \*.
 
 ## Final notes
