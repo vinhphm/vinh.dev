@@ -17,14 +17,14 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
-    vue()
+    vue(),
   ],
   vite: {
     plugins: [
       svgLoader({
         svgo: false,
         defaultImport: 'url',
-      })
+      }),
     ],
   },
   markdown: {

@@ -75,8 +75,8 @@ article {
 }
 
 .table-of-contents-anchor {
-  --at-apply: mx2 w-7 h-7 text-lg flex items-center justify-center bg-base rounded
-    text-hex-8887 border border-base shadow md: border-transparent md:
+  --at-apply: mx2 w-7 h-7 text-lg flex items-center justify-center bg-base
+    rounded text-hex-8887 border border-base shadow md: border-transparent md:
     shadow-none transition duration-400;
 }
 

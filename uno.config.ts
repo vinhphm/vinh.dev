@@ -59,6 +59,6 @@ export default defineConfig({
     'i-ri-linkedin-box-line',
     'i-ri-instagram-line',
     'i-ri-github-line',
-    'i-ri-spotify-line'
+    'i-ri-spotify-line',
   ],
 })

@@ -23,7 +23,7 @@ html.dark .prose {
   color: var(--fg-deep);
   font-weight: 500;
 }
-.prose :where(ol,ul):not(:where(.not-prose,.not-prose *)) {
+.prose :where(ol, ul):not(:where(.not-prose, .not-prose *)) {
   padding-left: unset;
 }
 .prose ol[type='A'] {
