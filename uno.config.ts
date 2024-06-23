@@ -35,6 +35,7 @@ export default defineConfig({
       prefix: 'i-',
       extraProperties: {
         display: 'inline-block',
+        'vertical-align': 'text-bottom',
       },
     }),
     presetTypography(),
