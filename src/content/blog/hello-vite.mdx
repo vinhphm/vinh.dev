@@ -5,6 +5,7 @@ lang: en
 duration: 3 mins
 description: Read about my journey of switching the tech stack of my website to Vite, a fast and modern build tool. I will show you the features and benefits of Vite and how I used Vue as a framework.
 ---
+import ThemeToggle from '@/components/ThemeToggle.vue'
 
 Can't say that I'm proud of how frequently I change the tech stack of my website. However, my first intention for this web is where I can freely practice things that I learn in my journey in the technology field. And the latest of them is Vite.
 
@@ -15,5 +16,5 @@ Vite is a next-generation build tool that leverages native ES modules to provide
 And since we're back to SPA, it's possible to do something like this 👇🏼
 
 <div class="text-center">
-  <ToggleTheme class="text-2xl pb-2 pt-1"/>
+  <ThemeToggle client:load class="text-2xl pb-2 pt-1"/>
 </div>

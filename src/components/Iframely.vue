@@ -25,7 +25,8 @@ async function fetchEmbed() {
 }
 
 onMounted(() => {
-  fetchEmbed()
+  if (API_KEY)
+    fetchEmbed()
 })
 
 watch(isDark, () => {

@@ -20,7 +20,11 @@ html.dark .prose {
   font-weight: inherit;
 }
 .prose strong {
+  color: var(--fg-deep);
   font-weight: 500;
+}
+.prose :where(ol,ul):not(:where(.not-prose,.not-prose *)) {
+  padding-left: unset;
 }
 .prose ol[type='A'] {
   --list-counter-style: upper-alpha;

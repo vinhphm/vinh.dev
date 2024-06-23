@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
+import TableOfContents from '@/components/TableOfContents.astro'
 import { type CollectionPosts } from '@/types'
 import { getPosts } from '@/utils/posts'
 
@@ -20,7 +21,7 @@ type Props = { post: CollectionPosts }
 const { post } = Astro.props
 const { title, image, description, date, duration, tag } = post.data
 
-const { Content } = await post.render()
+const { Content, headings } = await post.render()
 
 function getDate(date: string) {
   return new Date(date).toISOString()
@@ -49,6 +50,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
   </div>
   <article>
     <div class="prose m-auto">
+      <TableOfContents headings={headings} />
       <Content />
     </div>
   </article>
@@ -56,7 +58,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
     {
       duration && (
         <>
-          <span class="font-mono op75">&gt;</span>
+          <span class="font-mono op75">&gt; </span>
           <span class="op75">comment on </span>
           <a href={threadUrl} target="_blank" class="op75">
             threads
@@ -69,7 +71,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
       )
     }
     <br />
-    <span class="font-mono op75">&gt;</span>
+    <span class="font-mono op75">&gt; </span>
     <a
       href={post.slug.split('/').slice(0, -1).join('/') || '/'}
       class="font-mono op80 hover:op85"

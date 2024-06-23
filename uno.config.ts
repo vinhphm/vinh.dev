@@ -14,7 +14,7 @@ export default defineConfig({
     {
       'bg-main': 'bg-hex-eef5fc dark:bg-hex-0d1117',
       'text-main': 'text-hex-555555 dark:text-hex-bbbbbb',
-      'text-link': 'text-dark dark:text-white ',
+      'text-link': 'text-dark dark:text-white',
       'border-main': 'border-truegray-300 dark:border-truegray-600',
     },
     {
@@ -48,7 +48,7 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [
-    'i-simple-icons-threads',
+    'i-ri-threads-line',
     'i-ri-file-list-2-line',
     'i-carbon-campsite',
     'i-codicon-vscode',
@@ -56,8 +56,9 @@ export default defineConfig({
     'i-tabler-brand-nextjs',
     'i-tabler-brand-deno',
     'i-simple-icons-github',
-    'i-simple-icons-linkedin',
-    'i-simple-icons-instagram',
+    'i-ri-linkedin-box-line',
+    'i-ri-instagram-line',
     'i-ri-github-line',
+    'i-ri-spotify-line'
   ],
 })

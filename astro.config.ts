@@ -5,6 +5,7 @@ import UnoCSS from 'unocss/astro'
 import vue from '@astrojs/vue'
 import svgLoader from 'vite-svg-loader'
 
+// https://astro.build/config
 export default defineConfig({
   site: 'https://vinh.dev/',
   server: {
@@ -16,14 +17,14 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
-    vue(),
+    vue()
   ],
   vite: {
     plugins: [
       svgLoader({
         svgo: false,
         defaultImport: 'url',
-      }),
+      })
     ],
   },
   markdown: {

@@ -3,7 +3,7 @@ title: Set up Zed the Way It Suits You
 date: 2024-06-21T20:00:00+07:00
 lang: en
 duration: 6 mins
-description: My experience of switching to Zed and configuring it to use all the AI features.
+description: How to configure Zed to use all the AI features
 ---
 
 So I talked about switching to Zed in the previous post. I'm obsessed with it these days, and still trying to set things up the way it suits me so I thought I should share the experience so you can set it up the way you want too.
@@ -54,7 +54,7 @@ Let's move on the main part of this post, configuring Zed's AI features. Zed has
 ```
 The options for you are:
 - [**"copilot"**](https://github.com/features/copilot) - (GitHub Copilot) - $10 per month
-- [**"supermaven"**](https://supermaven.com) - mutliple plans including free tier
+- [**"supermaven"**](https://supermaven.com) - mutliple plans including free tier.
 - **"none"** - turn off the feature
 
 In case you're wondering what the inline completion looks like, here's a example:

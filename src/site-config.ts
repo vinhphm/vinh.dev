@@ -12,24 +12,29 @@ export const siteConfig = {
     {
       text: 'Threads',
       href: 'https://threads.net/vinh.phm',
-      icon: 'i-simple-icons-threads',
-      header: 'i-simple-icons-threads',
+      icon: 'i-ri-threads-line',
+      header: 'i-ri-threads-line',
     },
     {
       text: 'GitHub',
       href: 'https://github.com/vinhphm',
-      icon: 'i-simple-icons-github',
+      icon: 'i-ri-github-line',
       header: 'i-ri-github-line',
     },
     {
       text: 'Linkedin',
       href: 'https://www.linkedin.com/in/vinhphm/',
-      icon: 'i-simple-icons-linkedin',
+      icon: 'i-ri-linkedin-box-line',
     },
     {
       text: 'Instagram',
       href: 'https://instagram.com/vinh.phm',
-      icon: 'i-simple-icons-instagram',
+      icon: 'i-ri-instagram-line',
+    },
+    {
+      text: 'Spotify',
+      href: 'https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4?si=1567653669df4908',
+      icon: 'i-ri-spotify-line',
     },
   ],
   header: {
