@@ -4,8 +4,8 @@ const pages = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string().optional(),
-    image: image().refine((img) => img.width >= 640, {
-      message: "Cover image must be at least 640 pixels wide!",
+    image: image().refine(img => img.width >= 640, {
+      message: 'Cover image must be at least 640 pixels wide!',
     }).optional(),
   }),
 })
@@ -15,8 +15,8 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     duration: z.string().optional(),
-    image: image().refine((img) => img.width >= 640, {
-      message: "Cover image must be at least 640 pixels wide!",
+    image: image().refine(img => img.width >= 640, {
+      message: 'Cover image must be at least 640 pixels wide!',
     }).optional(),
     date: z
       .string()

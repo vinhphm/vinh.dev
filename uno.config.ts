@@ -34,7 +34,7 @@ export default defineConfig({
       scale: 1.2,
       prefix: 'i-',
       extraProperties: {
-        display: 'inline-block',
+        'display': 'inline-block',
         'vertical-align': 'text-bottom',
       },
     }),
