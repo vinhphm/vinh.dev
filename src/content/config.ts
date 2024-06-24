@@ -4,9 +4,13 @@ const pages = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string().optional(),
-    image: image().refine(img => img.width >= 640, {
-      message: 'Cover image must be at least 640 pixels wide!',
-    }).optional(),
+    image: z
+      .object({
+        src: image().refine(img => img.width >= 640, {
+          message: 'Cover image must be at least 640 pixels wide!',
+        }),
+        alt: z.string(),
+      }).optional(),
   }),
 })
 
@@ -15,9 +19,13 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     duration: z.string().optional(),
-    image: image().refine(img => img.width >= 640, {
-      message: 'Cover image must be at least 640 pixels wide!',
-    }).optional(),
+    image: z
+      .object({
+        src: image().refine(img => img.width >= 640, {
+          message: 'Cover image must be at least 640 pixels wide!',
+        }),
+        alt: z.string(),
+      }).optional(),
     date: z
       .string()
       .or(z.date())

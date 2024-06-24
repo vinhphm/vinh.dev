@@ -14,7 +14,12 @@ interface Props {
 
 const {
   description = '',
-  image = siteConfig.image,
+  image = {
+    src: `https://worker.vinh.dev/og?title=${encodeURIComponent(
+      Astro.props.title || '',
+    )}`,
+    alt: Astro.props.title,
+  },
   pageType = 'website',
 } = Astro.props
 

@@ -45,7 +45,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
     {
       image && (
         <p>
-          <Image width="640" height="360" src={image} alt={title || ''} />
+          <Image width="640" height="360" src={image.src} alt={image.alt} />
         </p>
       )
     }

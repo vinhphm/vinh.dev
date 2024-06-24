@@ -28,7 +28,7 @@ const { Content } = await page.render()
     {
       image && (
         <p>
-          <Image width="640" height="360" src={image} alt={title || ''} />
+          <Image width="640" height="360" src={image.src} alt={image.alt} />
         </p>
       )
     }
