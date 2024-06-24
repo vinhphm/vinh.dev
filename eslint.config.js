@@ -19,6 +19,7 @@ export default antfu(
       'node/prefer-global/process': 'off',
       'prefer-rest-params': 'off',
       'symbol-description': 'off',
+      'style/operator-linebreak': 'off',
       'ts/ban-types': 'off',
       'ts/no-invalid-this': 'off',
       'ts/no-unnecessary-type-constraint': 'off',

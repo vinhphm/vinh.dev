@@ -29,7 +29,7 @@ function getDate(date: string) {
 }
 
 const base = 'https://vinh.dev'
-const parentDir = post.slug.split('/').slice(0, -1).join('/');
+const parentDir = post.slug.split('/').slice(0, -1).join('/')
 const threadUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/posts/${post.slug}\n\nI think...`)}`
 const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @vinhtphm's ${base}/posts/${post.slug}\n\nI think...`)}`
 ---
