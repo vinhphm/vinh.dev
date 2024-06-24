@@ -24,7 +24,4 @@ export default defineConfig({
       wrap: true,
     },
   },
-  experimental: {
-    contentCollectionCache: true,
-  },
 })
