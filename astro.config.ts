@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
@@ -28,4 +29,11 @@ export default defineConfig({
       [rehypeExternalLinks, { target: '_blank', rel: 'noopener' }],
     ],
   },
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve('./src'),
+      }
+    }
+  }
 })
