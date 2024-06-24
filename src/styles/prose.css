@@ -5,8 +5,6 @@
   --fg: #404040;
   --fg-deep: #202020;
   --fg-deeper: #000;
-
-  /* color: var(--fg); */
 }
 html.dark .prose {
   --fg-pale: #888;
