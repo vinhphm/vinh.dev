@@ -56,24 +56,6 @@ article {
   --at-apply: text-sm mr-1;
 }
 
-.theme-transition::view-transition-old(root),
-.theme-transition::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-.theme-transition::view-transition-old(root) {
-  z-index: 1;
-}
-.theme-transition::view-transition-new(root) {
-  z-index: 9999;
-}
-.theme-transition.dark::view-transition-old(root) {
-  z-index: 9999;
-}
-.theme-transition.dark::view-transition-new(root) {
-  z-index: 1;
-}
-
 /* Logo */
 .logo-fill-color {
   fill: #303030;
