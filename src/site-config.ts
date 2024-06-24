@@ -1,4 +1,6 @@
-export const siteConfig = {
+import type { SiteConfig } from '@/types'
+
+export const siteConfig: SiteConfig = {
   author: 'Vinh Pham',
   title: 'Vinh Pham',
   subtitle: 'Thoughts and ideas',
