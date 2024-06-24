@@ -62,5 +62,6 @@ export default defineConfig({
     'i-ri-github-line',
     'i-ri-spotify-line',
     'i-simple-icons-cloudflarepages',
+    'i-simple-icons-netlify',
   ],
 })

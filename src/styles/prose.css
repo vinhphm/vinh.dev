@@ -202,8 +202,10 @@ html.dark .prose {
   margin-bottom: 2em;
   font-size: 0.875em;
   line-height: 1.7142857;
+  display: table;
 }
 .prose thead {
+  color: var(--fg-deep);
   font-weight: 500;
   border-bottom-width: 1px;
   border-bottom-color: #8882;
@@ -232,9 +234,14 @@ html.dark .prose {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
 }
+.prose p > img {
+  width: 100%;
+  --at-apply: shadow rounded-lg;
+  transform: scale(1.05);
+  margin: 2.6em 0;
+}
 .prose img {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  width: 100%;
 }
 .prose video {
   margin-top: 2em;
