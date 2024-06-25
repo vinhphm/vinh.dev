@@ -3,6 +3,8 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import UnoCSS from 'unocss/astro'
 import vue from '@astrojs/vue'
+import { rehypeHeadingIds } from '@astrojs/markdown-remark'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 
 export default defineConfig({
@@ -37,6 +39,22 @@ export default defineConfig({
     },
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: 'noopener' }],
+      rehypeHeadingIds,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: 'header-anchor',
+            ariaHidden: true,
+          },
+          content: [
+            {
+              type: 'text',
+              value: '#',
+            }
+          ],
+        },
+      ],
     ],
   },
 })
