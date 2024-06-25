@@ -23,7 +23,7 @@ const {
   pageType = 'website',
 } = Astro.props
 
-const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' | ')
+const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' • ')
 
 const resolvedImage = image?.src
   ? {
