@@ -7,6 +7,9 @@ import rehypeExternalLinks from 'rehype-external-links'
 
 export default defineConfig({
   site: 'https://vinh.dev',
+  build: {
+    assets: '_assets',
+  },
   integrations: [
     mdx(),
     sitemap(),
