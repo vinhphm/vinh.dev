@@ -84,58 +84,60 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
 </BaseLayout>
 
 <script>
-  function navigate() {
-    if (location.hash) {
-      const el = document.querySelector(decodeURIComponent(location.hash))
-      if (el) {
-        const rect = el.getBoundingClientRect()
-        const y = window.scrollY + rect.top - 40
-        window.scrollTo({
-          top: y,
-          behavior: 'smooth',
-        })
-        return true
+  document.addEventListener('DOMContentLoaded', () => {
+    const navigate = () => {
+      if (location.hash) {
+        const el = document.querySelector(decodeURIComponent(location.hash))
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          const y = window.scrollY + rect.top - 40
+          window.scrollTo({
+            top: y,
+            behavior: 'smooth',
+          })
+          return true
+        }
+      }
+      return false
+    }
+
+    const handleAnchors = (event: MouseEvent) => {
+      const link = (event.target as HTMLElement).closest('a')
+
+      if (
+        !event.defaultPrevented
+        && link
+        && event.button === 0
+        && link.target !== '_blank'
+        && link.rel !== 'external'
+        && !link.download
+        && !event.metaKey
+        && !event.ctrlKey
+        && !event.shiftKey
+        && !event.altKey
+      ) {
+        const url = new URL(link.href)
+        if (url.origin !== window.location.origin)
+          return
+
+        event.preventDefault()
+        const { pathname, hash } = url
+        if (hash && (!pathname || pathname === location.pathname)) {
+          window.history.replaceState({}, '', hash)
+          navigate()
+        }
+        else {
+          window.location.href = `${pathname}${hash}`
+        }
       }
     }
-  }
 
-  function handleAnchors(event: MouseEvent) {
-    const link = (event.target as HTMLElement).closest('a')
+    window.addEventListener('hashchange', navigate, { passive: true })
+    document.getElementById('content')?.addEventListener('click', handleAnchors)
 
-    if (
-      !event.defaultPrevented &&
-      link &&
-      event.button === 0 &&
-      link.target !== '_blank' &&
-      link.rel !== 'external' &&
-      !link.download &&
-      !event.metaKey &&
-      !event.ctrlKey &&
-      !event.shiftKey &&
-      !event.altKey
-    ) {
-      const url = new URL(link.href)
-      if (url.origin !== window.location.origin)
-        return
-
-      event.preventDefault()
-      const { pathname, hash } = url
-      if (hash && (!pathname || pathname === location.pathname)) {
-        window.history.replaceState({}, '', hash)
-        navigate()
-      } else {
-        window.location.href = `${pathname}${hash}`
-      }
-    }
-  }
-
-  window.addEventListener('hashchange', navigate)
-  document
-    .getElementById('content')
-    ?.addEventListener('click', handleAnchors, { passive: false })
-
-  setTimeout(() => {
-    if (!navigate())
-      setTimeout(navigate, 1000)
-  }, 1)
-</script>
+    setTimeout(() => {
+      if (!navigate())
+        setTimeout(navigate, 1000)
+    }, 1)
+  })
+</script >
