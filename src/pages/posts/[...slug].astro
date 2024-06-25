@@ -83,7 +83,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
   </div>
 </BaseLayout>
 
-<script>
+<script is:inline type="module">
 function navigate() {
   if (location.hash) {
     const el = document.querySelector(decodeURIComponent(location.hash))
@@ -100,8 +100,8 @@ function navigate() {
   return false
 }
 
-function handleAnchors(event: MouseEvent) {
-  const link = (event.target as HTMLElement).closest('a')
+function handleAnchors(event) {
+  const link = event.target.closest('a')
 
   if (
     !event.defaultPrevented
@@ -138,4 +138,4 @@ setTimeout(() => {
   if (!navigate())
     setTimeout(navigate, 1000)
 }, 1)
-</script >
+</script  >
