@@ -9,6 +9,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 
 export default defineConfig({
   site: 'https://vinh.dev',
+  trailingSlash: 'never',
   build: {
     assets: '_assets',
   },
@@ -51,7 +52,7 @@ export default defineConfig({
             {
               type: 'text',
               value: '#',
-            }
+            },
           ],
         },
       ],
