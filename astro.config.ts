@@ -12,6 +12,7 @@ export default defineConfig({
   trailingSlash: 'never',
   build: {
     assets: '_assets',
+    format: 'file',
   },
   image: {
     service: {
