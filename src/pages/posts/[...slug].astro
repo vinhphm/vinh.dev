@@ -52,7 +52,11 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
   </div>
   <article id="content">
     <div class="prose m-auto">
-      <TableOfContents headings={headings} />
+      {
+        headings.length > 0 && (
+          <TableOfContents headings={headings} />
+        )
+      }
       <Content />
     </div>
   </article>

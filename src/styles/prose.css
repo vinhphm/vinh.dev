@@ -14,8 +14,8 @@ html.dark .prose {
 }
 
 .prose a {
-  --at-apply: prose-link;
   font-weight: inherit;
+  --at-apply: prose-link;
 }
 .prose strong {
   color: var(--fg-deep);

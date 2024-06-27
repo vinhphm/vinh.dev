@@ -14,14 +14,6 @@ export default defineConfig({
     assets: '_assets',
     format: 'file',
   },
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-      config: {
-        limitInputPixels: false,
-      },
-    },
-  },
   integrations: [
     mdx(),
     sitemap(),

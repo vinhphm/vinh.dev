@@ -33,7 +33,7 @@ function toggleDark(event: MouseEvent) {
     document.documentElement.animate(
       {
         clipPath: isDark.value
-          ? [...clipPath].reverse()
+          ? clipPath.reverse()
           : clipPath,
       },
       {

@@ -87,7 +87,7 @@ h6:focus .header-anchor {
   opacity: 0.5;
 }
 
-/* Theme toggle animation */
+/* Theme transition animation */
 .theme-transition::view-transition-old(root),
 .theme-transition::view-transition-new(root) {
   animation: none;
