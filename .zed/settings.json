@@ -1,9 +1,19 @@
 {
-  "format_on_save": "off",
-  "formatter": {
-    "code_actions": {
-      "source.fixAll.eslint": true,
-      "source.organizeImports": false
+  "languages": {
+    "JavaScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
     }
-  }
+  },
+  "formatter": "language_server"
 }
