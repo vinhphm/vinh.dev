@@ -1,6 +1,12 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import VinhDev from './icons/VinhDev.vue'
+
+const props = defineProps<{
+  class?: string
+}>()
+
+const mergedClass = computed(() => `${props.class || ''} text-dark dark:text-white`.trim())
 
 onMounted(async () => {
   const { PowerGlitch } = await import('powerglitch')
@@ -13,5 +19,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <VinhDev class="glitching text-dark dark:text-white" />
+  <div class="glitching">
+    <VinhDev :class="mergedClass" />
+  </div>
 </template>
