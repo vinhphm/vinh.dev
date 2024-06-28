@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import Logo from './Logo.vue'
+import GlitchingLogo from './GlitchingLogo.vue'
 import ThemeToggle from './ThemeToggle.vue'
 import siteConfig from '@/site-config'
 import { getLinkTarget } from '@/utils/link'
@@ -25,8 +25,8 @@ const socialLinks = computed(() => {
 
 <template>
   <header class="header z-40 relative">
-    <a class="w-12 h-12 absolute lg:fixed m-5 select-none outline-none" href="/" aria-label="Logo">
-      <Logo />
+    <a class="absolute lg:fixed m-7 select-none outline-none" href="/" aria-label="Logo">
+      <GlitchingLogo class="w-8 h-8" />
     </a>
     <nav class="nav">
       <div class="spacer" />
