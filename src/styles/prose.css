@@ -150,7 +150,7 @@ html.dark .prose {
   margin-top: 0.8571429em;
 }
 .prose code {
-  color: var(--fg-deeper);
+  color: var(--fg-deep);
   font-weight: 600;
   font-size: 0.875em;
 }
@@ -159,9 +159,6 @@ html.dark .prose {
 }
 .prose code::after {
   content: '`';
-}
-.prose a code {
-  color: #111827;
 }
 .prose pre {
   color: #e5e7eb;
