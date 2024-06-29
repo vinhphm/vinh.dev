@@ -46,7 +46,7 @@ wrangler secret put `KEY`
 
 Depending on your preference, you can structure your source code. For instance, I prefer splitting it into two files: **index.ts** and **spotify.ts**.
 
-In [**spotify.ts**](https://github.com/vinhphm/spotify-worker/blob/main/src/spotify.ts), you can encapsulate the logic related to Spotify API interactions. In [**index.ts**](https://github.com/vinhphm/spotify-worker/blob/main/src/index.ts), you can handle the routing and overall structure of your Cloudflare Worker.
+In [<span class="i-ph-file-ts" /> spotify.ts](https://github.com/vinhphm/spotify-worker/blob/main/src/spotify.ts), you can encapsulate the logic related to Spotify API interactions. In [<span class="i-ph-file-ts" /> index.ts](https://github.com/vinhphm/spotify-worker/blob/main/src/index.ts), you can handle the routing and overall structure of your Cloudflare Worker.
 
 ## Vite/Vue Spotify components
 
@@ -59,7 +59,7 @@ I want to archive the same style as my Spotify widget on my old site.
   </figcaption>
 </figure>
 
-It contains a `MusicEqualizer.vue` component to show an icon with a small animation to indicate a song is playing.
+It contains a **MusicEqualizer.vue** component to show an icon with a small animation to indicate a song is playing.
 
 ```vue
 <script setup lang="ts">
@@ -109,7 +109,7 @@ Aside from custom CSS classes for animation, which are shown below, I also made 
 }
 ```
 
-Now, for the main component,`NowPlaying.vue`:
+Now, for the main component, **NowPlaying.vue**:
 
 ```vue
 <script setup lang="ts">

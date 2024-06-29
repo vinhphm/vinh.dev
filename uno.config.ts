@@ -53,6 +53,8 @@ export default defineConfig({
     'i-codicon-vscode',
     'i-devicon-plain-astro',
     'i-logos-chrome',
+    'i-ph-file-ts',
+    'i-ph-file-vue',
     'i-ri-file-list-2-line',
     'i-ri-github-line',
     'i-ri-linkedin-box-line',
