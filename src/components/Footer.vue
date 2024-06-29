@@ -1,6 +1,25 @@
+<script lang="ts" setup>
+import siteConfig from '@/site-config'
+import { getLinkTarget } from '@/utils/link'
+</script>
+
 <template>
-  <div class="mt-10 mb-6 prose fw-inherit m-auto flex slide-enter animate-delay-1200!">
-    <span class="text-sm op75"><a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:inherit">CC BY-NC-SA 4.0</a> 2022-PRESENT © Vinh Pham</span>
-    <div class="flex-auto" />
-  </div>
+  <footer class="w-full mt-10 mb-6 prose max-w-3xl text-sm! flex flex-col gap-4 text-dark dark:text-white">
+    <div v-if="siteConfig.footer.navLinks && siteConfig.footer.navLinks.length > 0" class="flex flex-wrap gap-4">
+      <template v-for="(link, index) in siteConfig.footer.navLinks" :key="link.text">
+        <a
+          :aria-label="`${link.text}`" :target="getLinkTarget(link.href)" class="nav-link flex items-center"
+          :href="link.href"
+        >
+          {{ link.text }}
+        </a>
+        <span v-if="index < siteConfig.footer.navLinks.length - 1" op-70> / </span>
+      </template>
+    </div>
+    <div flex>
+      <a nav-link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+      <span op-70>&nbsp;&nbsp;&copy;&nbsp;&nbsp;{{ new Date().getFullYear() }}&nbsp;&nbsp;{{ siteConfig.author
+      }}</span>
+    </div>
+  </footer>
 </template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import useSWRV from 'swrv'
+import MusicEqualizer from '@/components/MusicEqualizer.vue'
 
 async function fetcher(url: string) {
   const res = await fetch(url)

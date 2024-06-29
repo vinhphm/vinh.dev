@@ -1,0 +1,194 @@
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: #161b22 !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  .img-light,
+  [img-light] {
+    display: none;
+  }
+}
+
+html:not(.dark) {
+  color-scheme: light;
+
+  .img-dark,
+  [img-dark] {
+    display: none;
+  }
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #888;
+  opacity: 0.75;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+img {
+  --at-apply: rd-1.5;
+}
+
+article {
+  --at-apply: sm: min-h-38 min-h-28;
+}
+
+.fw-inherit a {
+  font-weight: inherit;
+}
+
+.prose-link i {
+  --at-apply: text-sm mr-1;
+}
+
+a.header-anchor {
+  float: left;
+  margin-top: 0.125em;
+  margin-left: -1.2em;
+  padding-right: 0.5em;
+  font-size: 0.85em;
+  opacity: 0;
+  text-decoration: none !important;
+  border: 0 !important;
+}
+
+a.header-anchor:hover,
+a.header-anchor:focus {
+  text-decoration: none;
+}
+
+h1:hover .header-anchor,
+h1:focus .header-anchor,
+h2:hover .header-anchor,
+h2:focus .header-anchor,
+h3:hover .header-anchor,
+h3:focus .header-anchor,
+h4:hover .header-anchor,
+h4:focus .header-anchor,
+h5:hover .header-anchor,
+h5:focus .header-anchor,
+h6:hover .header-anchor,
+h6:focus .header-anchor {
+  opacity: 0.5;
+}
+
+/* Theme transition animation */
+.theme-transition::view-transition-old(root),
+.theme-transition::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+.theme-transition::view-transition-old(root) {
+  z-index: 1;
+}
+.theme-transition::view-transition-new(root) {
+  z-index: 9999;
+}
+.theme-transition.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.theme-transition.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* Logo */
+.logo-fill-color {
+  fill: #303030;
+}
+.dark .logo-fill-color {
+  fill: #fdfdfd;
+}
+
+/* Table of contents */
+.table-of-contents {
+  position: fixed;
+  top: 90px;
+  bottom: 0;
+  font-size: 0.8em;
+  left: 20px;
+  z-index: 200;
+  overflow: hidden;
+  --at-apply: hidden lg-flex flex-col w-100px lg-w-200px xl-w-300px;
+}
+
+.table-of-contents-anchor {
+  --at-apply: mx2 w-7 h-7 text-lg flex items-center justify-center bg-base
+    rounded text-hex-8887 border border-base shadow md: border-transparent md:
+    shadow-none transition duration-400;
+}
+
+.table-of-contents > ul {
+  text-overflow: ellipsis;
+  height: 100%;
+  overflow-y: auto;
+  --at-apply: rounded op0 important-mt1 pb-5 transition duration-700;
+}
+
+.table-of-contents:hover > .table-of-contents-anchor,
+.toc-always-on .table-of-contents > .table-of-contents-anchor {
+  --at-apply: text-inherit;
+}
+
+.toc-always-on .table-of-contents > ul {
+  opacity: 0.6;
+}
+
+.table-of-contents:hover > ul {
+  opacity: 0.75;
+}
+
+.table-of-contents ul > li::before {
+  display: none;
+}
+
+.table-of-contents ul > li {
+  padding-left: 0.8rem !important;
+  line-height: 1.5em;
+  margin-top: 0.5em;
+}
+
+.table-of-contents ul > li > a {
+  --at-apply: op75 hover-op100 transition font-normal;
+}
+
+/* Spotify Music Equalizer */
+@keyframes shrink {
+  0%, 100% {
+    height: 0.75rem;
+  }
+  50% {
+    height: 0.375rem;
+  }
+}
+
+@keyframes expand {
+  0%, 100% {
+    height: 0.375rem;
+  }
+  50% {
+    height: 0.75rem;
+  }
+}
+
+.animate-shrink {
+  animation: shrink ease-in-out 1.5s infinite;
+}
+
+.animate-expand {
+  animation: expand ease-in-out 1.5s infinite;
+}

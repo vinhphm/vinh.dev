@@ -1,0 +1,46 @@
+---
+title: Use View Transitions API for Theme Toggle Animation
+date: 2024-06-27T19:00:00+07:00
+lang: en
+duration: 3 mins
+description: Safari will soon join the Chromium browser family to support the View Transitions API, so let's use its magic.
+tag: Web
+---
+import themeTransitionAnimation from '@/assets/videos/2024/theme-transition-animation.mp4'
+import VideoEmbed from '@/components/VideoEmbed.vue'
+
+If you haven't heard about the View Transitions API, it's a new API that provides a mechanism for easily creating animated transitions between different website views. There are a few articles on the web about it already, here are some:
+
+- <span class="i-simple-icons-mdnwebdocs" /> MDN Web Docs · [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)
+- <span class="i-logos-chrome" /> Chrome for Developers · [Smooth transitions with the View Transition API](https://developer.chrome.com/docs/web-platform/view-transitions)
+- <span class="i-devicon-plain-astro" /> Astro Docs · [View Transition](https://developer.chrome.com/docs/web-platform/view-transitions)
+
+Since Safari will soon join the Chromium browser family to support the View Transitions API in version 18, so let's use its magic with the theme transition animation.
+
+<figure class="flex flex-col items-center justify-center">
+  <VideoEmbed client:load src={themeTransitionAnimation} class="rounded-xl w-2/3 md:w-1/2" />
+</figure>
+
+This animation takes inspiration from [**@hooray**'s snippets](https://github.com/vuejs/vitepress/pull/2347) with some minor tweaks to avoid comflicting with Astro's **View Transitions** feature. You can find my implementation at [ThemeToggle.vue](https://github.com/vinhphm/vinh.dev/blob/main/src/components/ThemeToggle.vue), with some additional CSS rules as shown below:
+
+```css
+.theme-transition::view-transition-old(root),
+.theme-transition::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+.theme-transition::view-transition-old(root) {
+  z-index: 1;
+}
+.theme-transition::view-transition-new(root) {
+  z-index: 9999;
+}
+.theme-transition.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.theme-transition.dark::view-transition-new(root) {
+  z-index: 1;
+}
+```
+
+Feel free reach out if you have any suggestions. But now it's your turn to have fun with it!
