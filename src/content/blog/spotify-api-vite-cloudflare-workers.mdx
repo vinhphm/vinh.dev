@@ -13,7 +13,7 @@ In a previous post, we discussed how to generate refresh tokens for Spotify API 
 
 Before we begin, make sure you have a basic understanding of Cloudflare Workers and have set up a blank Worker with a configured route. If you need guidance on this, refer to our post on [custom domains and routes in Cloudflare Workers](/posts/custom-domains-and-routes-in-cloudflare-workers).
 
-In your `wrangler.toml` file, define non-sensitive variables you'll use in your Worker. For example, let's specify a list of allowed origins:
+In your **wrangler.toml** file, define non-sensitive variables you'll use in your Worker. For example, let's specify a list of allowed origins:
 
 ```toml
 [vars]
@@ -44,9 +44,9 @@ wrangler secret put `KEY`
 
 ### Calling the APIs
 
-Depending on your preference, you can structure your source code. For instance, I prefer splitting it into two files: `index.ts` and `spotify.ts`.
+Depending on your preference, you can structure your source code. For instance, I prefer splitting it into two files: **index.ts** and **spotify.ts**.
 
-In [`spotify.ts`](https://github.com/vinhphm/spotify-worker/blob/main/src/spotify.ts), you can encapsulate the logic related to Spotify API interactions. In [`index.ts`](https://github.com/vinhphm/spotify-worker/blob/main/src/index.ts), you can handle the routing and overall structure of your Cloudflare Worker.
+In [**spotify.ts**](https://github.com/vinhphm/spotify-worker/blob/main/src/spotify.ts), you can encapsulate the logic related to Spotify API interactions. In [**index.ts**](https://github.com/vinhphm/spotify-worker/blob/main/src/index.ts), you can handle the routing and overall structure of your Cloudflare Worker.
 
 ## Vite/Vue Spotify components
 

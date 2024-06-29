@@ -36,11 +36,11 @@ You will also need to change the **Redirect URIs** in the application settings t
 
 ## Know the appropriate scopes
 
-The scopes you need depend on the API you want to use. Each API has a specific scope that grants access to it. You can find a list of scopes and their corresponding APIs [here](https://developer.spotify.com/documentation/general/guides/authorization/scopes/).
+The scopes you need depend on the API you want to use. Each API has a specific scope that grants access to it. You can find a list of scopes and their corresponding APIs at [their official documentation](https://developer.spotify.com/documentation/general/guides/authorization/scopes/).
 
 ## Create a local server to get the generated refresh token
 
-1. Save the code snippet below as `get-token.js`
+1. Save the code snippet below as **get-token.js**
 
 ```javascript
 const express = require('express')
@@ -104,7 +104,7 @@ app.listen(3000, () => {
 })
 ```
 
-2. Go to the directory where you saved your `get-token.js`. Run the following command:
+2. Go to the directory where you saved your **get-token.js**. Run the following command:
 
 ```shell
 npm install express axios cors
