@@ -1,0 +1,72 @@
+---
+title: Handle Videos Properly in Static Site Generators
+date: 2024-06-29T16:31:00+07:00
+lang: en
+duration: 4 mins
+description: It's 2024, and you're still wondering if you should use GIF or MP4/WebM for demonstrating something in your static site generator? This one might just be the answer.
+tag: Web
+---
+
+So a few days ago, I made the switch from Vite back to Astro and encountered a few issues while testing the site using Lighthouse. One of the issues was the use of GIF for demonstrating video, so it got me thinking...
+
+## GIF or video (MP4/WebM)?
+
+If you search for that question on the interet, you will find a lof of discussions with mixed opinions. The answer would likely be "it depends", but if it had been that easy, there wouldn't be a need for this article.
+
+I used GIFs on the website, and some of them are becoming pretty big because of the fact thay they're literally screen recordings. The reason I used them in the first place because I didn't give much thought to it and GIFs were always convenient and common. But now the file size and the blank screen of loading them made me find a better way to show those recordings.
+
+Lighthouse Docs does have an article on [Use video formats for animated content](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/), and now it looks like that better way is to use MP4/WebM.
+
+## Videos in Static Site Generators
+
+Normally, to show a video, you could just use the `<video>` tag like this:
+
+```html
+<video autoplay loop muted playsinline src="my-animation.mp4">
+</video>
+```
+
+But as I were writing for the [Use View Transitions API for Theme Toggle Animation](/posts/notes/use-view-transitions-api-for-theme-toggle-animation) article the other day, I found there was a trouble in using the `<video>` tag in static site generators like Astro. For example, in Astro, no matter where you store the video file, in `src/` or `public/`, when you use it in the HTML tag, browsers like Firefox will have trouble playing it and require a reload of the page. Because of this strange behavior, I spend a whole day trying to figure out how to fix that from other SSG projects that also show videos. And the solution for this (my case is Astro with Vue integration) is this video wrapper component:
+
+```vue
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+
+const props = defineProps<{
+  src: string
+}>()
+
+const videoSrc = ref<string | undefined>()
+
+function getVideoUrl(videoPath: string): string {
+  return new URL(videoPath, import.meta.url).href
+}
+
+onMounted(() => {
+  videoSrc.value = getVideoUrl(props.src)
+})
+</script>
+
+<template>
+  <video
+    v-if="videoSrc"
+    :src="videoSrc"
+    autoplay loop muted playsinline
+  />
+</template>
+```
+
+And use it in MDX like this:
+
+```mdx
+import themeTransitionAnimation from '@/assets/videos/2024/theme-transition-animation.mp4'
+import VideoEmbed from '@/components/VideoEmbed.vue'
+
+<VideoEmbed client:load src={themeTransitionAnimation} />
+```
+
+The difference is instead of using the **static `import`**, we will use **`import.meta.url`** to construct URLs dynamically so that the resource path can be determined at runtime.
+
+## Conclusion
+
+With the issue fixed, I'm glad that I can switch from GIF to MP4/WebM to improve the website performance score on Lighthouse. And I hope this article will help you with the video issue too.
