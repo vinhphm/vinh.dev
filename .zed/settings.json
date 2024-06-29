@@ -1,5 +1,19 @@
 {
   "languages": {
+    "Astro": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "CSS": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
     "JavaScript": {
       "formatter": {
         "code_actions": {
@@ -8,6 +22,13 @@
       }
     },
     "TypeScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "Vue": {
       "formatter": {
         "code_actions": {
           "source.fixAll.eslint": true
