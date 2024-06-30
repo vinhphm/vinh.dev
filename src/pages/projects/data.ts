@@ -27,6 +27,12 @@ export const projectData: ProjectData = [
     title: 'Personal Websites',
     projects: [
       {
+        text: 'Vinh.Dev - Vite version',
+        description: 'The website but powered by Vite from mid-2023 to mid-2024.',
+        icon: 'i-tabler-brand-vite',
+        href: 'https://vp-vite.pages.dev',
+      },
+      {
         text: 'Vinh.Dev - Astro version',
         description: 'The Astro version of my website in the first half of 2023.',
         icon: 'i-devicon-plain-astro',

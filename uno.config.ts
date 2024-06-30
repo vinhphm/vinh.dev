@@ -67,5 +67,6 @@ export default defineConfig({
     'i-simple-icons-netlify',
     'i-tabler-brand-nextjs',
     'i-tabler-brand-deno',
+    'i-tabler-brand-vite',
   ],
 })
