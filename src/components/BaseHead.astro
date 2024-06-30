@@ -4,6 +4,8 @@ import '@/styles/geist.css'
 import '@/styles/global.css'
 import '@/styles/prose.css'
 import '@/styles/dot.css'
+import geist from '/node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2'
+import geistMono from '/node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2'
 
 interface Props {
   title?: string
@@ -86,6 +88,22 @@ function formatCanonicalURL(url: string | URL) {
     <meta name="twitter:image:alt" content={resolvedImage?.alt} />
   )
 }
+
+<!-- Fonts -->
+<link
+  rel="preload"
+  href={geist}
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href={geistMono}
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 
 <script is:inline>
   ;(function () {
