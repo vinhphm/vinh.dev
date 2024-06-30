@@ -7,7 +7,7 @@ export default antfu(
     astro: true,
     formatters: {
       astro: true,
-      // css: true,
+      css: true,
     },
   },
   {
