@@ -24,7 +24,7 @@ export const siteConfig: SiteConfig = {
       header: 'i-ri-github-line',
     },
     {
-      text: 'Linkedin',
+      text: 'LinkedIn',
       href: 'https://www.linkedin.com/in/vinhphm/',
       icon: 'i-ri-linkedin-box-line',
     },
