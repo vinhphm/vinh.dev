@@ -1,0 +1,125 @@
+---
+title: Make Use of JavaScript's Set and Map
+date: 2024-07-06T22:00:00+07:00
+lang: en
+duration: 4 mins
+description: See how JavaScript's Set and Map might benefit you in your projects.
+tag: JavaScript
+---
+import javascriptSetMap from '@/assets/videos/2024/javascripts-set-and-map.mp4'
+import VideoEmbed from '@/components/VideoEmbed.vue'
+
+Everyone who works with JavaScript knows about **Array** (storing ordered collections) and **Object** (storing keyed collections). But not so many know about the other two data structures, **Set** and **Map**. For those who don't know:
+
+- **Set** is a special type collection – “set of values” (without keys), where each value may occur only once.
+- **Map** is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+
+If you just learn about them today, you might think, "They are not that different, how could they be useful?". Well, here is a some sort of "study case" from my own experience.
+
+## The problem
+
+I was working on a project that have a special data structure and requirements. In this data structure, there was a list of items that had a unique `id` property and other descriptive properties, one of theme was `groupId`. Many items could had the same `groupId`.
+
+Everything was still okay so far. But then there was a requirement in the front-end that when the user select an item from the table, other items in the same group should be selected as well and vice versa.
+
+I managed to had something working at the time with **react-table** but I have to honest, it wasn't very good implementation. With the dataset being quite large, the performance was kind of bad.
+
+## The solution
+
+So recently, I've got the chance to revisit the project and you know what? Things have changed. With the help of some AI assistant (\*cough* Claude 3.5 Sonnet \*cough*), there is a new solution for my problem and it's **Set** and **Map**. So let's go through on how they solve my problem.
+
+To start with, instead of **react-table**, I decided to use **Ant Design Table** instead. I fount it's still robust yet not trying to complicate stuff too much. And instead of storing the `selectedRowKeys` as an array, I used use **Set**. This provides O(1) lookup time for checking if a key is selected.
+
+```tsx
+// ...
+const [selectedRowKeys, setSelectedRowKeys] = useState<Set<number>>(
+  new Set(),
+);
+// ...
+```
+
+Next stuff was to create two maps:
+
+- `groupMap`: Maps group IDs to sets of item IDs within that group.
+- `idToGroupMap`: Maps item IDs to their group IDs. These allow for fast lookups when determining group memberships.
+
+```tsx
+// ...
+const { groupMap, idToGroupMap } = useMemo(() => {
+  const groupMap = new Map<number, Set<number>>();
+  const idToGroupMap = new Map<number, number>();
+
+  data.forEach((item) => {
+    // Populate groupMap
+    if (!groupMap.has(item.groupId)) {
+      groupMap.set(item.groupId, new Set());
+    }
+    groupMap.get(item.groupId)!.add(item.id);
+
+    // Populate idToGroupMap
+    idToGroupMap.set(item.id, item.groupId);
+  });
+
+  return { groupMap, idToGroupMap };
+}, [data]);
+// ...
+```
+
+And then, we can implement the `onSelectChange` function to use these maps to efficiently add or remove entire groups of items.
+
+```tsx
+// ...
+const onSelectChange = useCallback(
+  (newSelectedRowKeys: number[]) => {
+    const newSelectedSet = new Set(selectedRowKeys);
+    const addedKeys = newSelectedRowKeys.filter(
+      (key) => !selectedRowKeys.has(key),
+    );
+    const removedKeys = Array.from(selectedRowKeys).filter(
+      (key) => !newSelectedRowKeys.includes(key),
+    );
+
+    if (addedKeys.length > 0) {
+      // Selection
+      const groupId = idToGroupMap.get(addedKeys[0])!;
+      groupMap.get(groupId)!.forEach((id) => newSelectedSet.add(id));
+    } else if (removedKeys.length > 0) {
+      // Deselection
+      const groupId = idToGroupMap.get(removedKeys[0])!;
+      groupMap.get(groupId)!.forEach((id) => newSelectedSet.delete(id));
+    }
+
+    setSelectedRowKeys(newSelectedSet);
+  },
+  [selectedRowKeys, groupMap, idToGroupMap],
+);
+
+const rowSelection = {
+  selectedRowKeys: Array.from(selectedRowKeys),
+  onChange: (selectedRowKeys: Key[]) =>
+    onSelectChange(selectedRowKeys as number[]),
+};
+
+return (
+  <Table
+    rowKey="id"
+    dataSource={data}
+    columns={columns}
+    pagination={{ pageSize: 10 }}
+    rowSelection={rowSelection}
+    virtual
+    scroll={{ y: 700 }}
+  />
+);
+// ...
+```
+
+That's it! And to be fair, the logic behind the selection handling, in fact, is different from the previous one so the increase in performance is not entirely credited to the use of **Set** and **Map** here but they do contribute a lot to it. I'm not sure if it's the best solution, but it sure gives better results for now.
+
+<figure class="flex flex-col items-center justify-center">
+  <div class="lg:scale-120 md:scale-110">
+    <VideoEmbed client:load src={javascriptSetMap} class="rounded-md shadow-lg" />
+  </div>
+</figure>
+
+I hope this can help you in similar cases. Happy coding!
