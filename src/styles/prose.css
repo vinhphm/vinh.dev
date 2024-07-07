@@ -249,7 +249,7 @@ html.dark .prose {
   margin-bottom: 2em;
 }
 .prose figure > *,
-.prose figure > * > video {
+.prose figure video {
   margin-top: 0;
   margin-bottom: 0;
 }

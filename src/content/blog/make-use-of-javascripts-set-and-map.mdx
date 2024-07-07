@@ -16,6 +16,8 @@ Everyone who works with JavaScript knows about **Array** (storing ordered collec
 
 If you just learn about them today, you might think, "They are not that different, how could they be useful?". Well, here is a some sort of "study case" from my own experience.
 
+> Please note that this article is not about how to use **Set** and **Map** in JavaScript. It's about how they are used in a project that I've worked on.
+
 ## The problem
 
 I was working on a project that have a special data structure and requirements. In this data structure, there was a list of items that had a unique `id` property and other descriptive properties, one of theme was `groupId`. Many items could had the same `groupId`.
@@ -116,9 +118,9 @@ return (
 
 That's it! And to be fair, the logic behind the selection handling, in fact, is different from the previous one so the increase in performance is not entirely credited to the use of **Set** and **Map** here but they do contribute a lot to it. I'm not sure if it's the best solution, but it sure gives better results for now.
 
-<figure class="flex flex-col items-center justify-center">
+<figure class="flex flex-col items-center justify-center md:py-5 lg:py-10">
   <div class="lg:scale-120 md:scale-110">
-    <VideoEmbed client:load src={javascriptSetMap} class="rounded-md shadow-lg" />
+    <VideoEmbed client:load src={javascriptSetMap} class="rounded-lg shadow-lg" />
   </div>
 </figure>
 
