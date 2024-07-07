@@ -6,11 +6,7 @@ export default antfu(
     typescript: true,
     astro: true,
     unocss: true,
-    formatters: {
-      html: true,
-      css: true,
-      markdown: true,
-    },
+    formatters: true,
   },
   {
     rules: {
