@@ -5,9 +5,11 @@ export default antfu(
     vue: true,
     typescript: true,
     astro: true,
+    unocss: true,
     formatters: {
-      astro: true,
+      html: true,
       css: true,
+      markdown: true,
     },
   },
   {
