@@ -40,15 +40,15 @@ function getYear(date: Date | string | number) {
 </script>
 
 <template>
-  <ul sm:min-h-38 min-h-28 mb-18>
+  <ul mb-18 min-h-28 sm:min-h-38>
     <template v-if="!list || list.length === 0">
       <div my-12 opacity-50>
         nothing here yet.
       </div>
     </template>
     <li v-for="(post, index) in list " :key="post.data.title" mb-8>
-      <div v-if="!isSameYear(post.data.date, list[index - 1]?.data.date)" select-none relative h18 pointer-events-none>
-        <span text-7em color-transparent font-bold text-stroke-2 text-stroke-hex-aaa op14 absolute top--0.2em>
+      <div v-if="!isSameYear(post.data.date, list[index - 1]?.data.date)" pointer-events-none relative h18 select-none>
+        <span absolute top--0.2em text-7em color-transparent font-bold text-stroke-2 text-stroke-hex-aaa op14>
           {{ getYear(post.data.date) }}
         </span>
       </div>
@@ -56,20 +56,20 @@ function getYear(date: Date | string | number) {
         <div flex="~ col md:row gap-2 md:items-center">
           <div flex="~ gap-2 items-center text-wrap">
             <span lh-normal>
-              <i v-if="post.data.draft" text-base vertical-mid i-ri-draft-line />
+              <i v-if="post.data.draft" i-ri-draft-line vertical-mid text-base />
               {{ post.data.title }}
             </span>
           </div>
-          <div opacity-50 text-sm ws-nowrap flex="~ gap-2 items-center">
-            <i v-if="post.data.redirect" text-base i-ri-external-link-line />
-            <i v-if="post.data.recording || post.data.video" text-base i-ri:film-line />
+          <div ws-nowrap text-sm opacity-50 flex="~ gap-2 items-center">
+            <i v-if="post.data.redirect" i-ri-external-link-line text-base />
+            <i v-if="post.data.recording || post.data.video" i-ri:film-line text-base />
             <time v-if="post.data.date" :datetime="getDate(post.data.date)">{{ post.data.date.split(',')[0] }}</time>
             <span v-if="post.data.duration">· {{ post.data.duration }}</span>
             <span v-if="post.data.tag">· {{ post.data.tag }}</span>
             <span v-if="post.data.lang && post.data.lang.includes('vi')">· Tiếng Việt</span>
           </div>
         </div>
-        <div opacity-50 text-sm>{{ post.data.description }}</div>
+        <div text-sm opacity-50>{{ post.data.description }}</div>
       </a>
     </li>
   </ul>

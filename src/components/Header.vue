@@ -24,9 +24,9 @@ const socialLinks = computed(() => {
 </script>
 
 <template>
-  <header class="header z-40 relative">
-    <a class="absolute lg:fixed m-7 select-none outline-none" href="/" aria-label="Logo">
-      <GlitchingLogo class="w-8 h-8" />
+  <header class="header relative z-40">
+    <a class="absolute m-7 select-none outline-none lg:fixed" href="/" aria-label="Logo">
+      <GlitchingLogo class="h-8 w-8" />
     </a>
     <nav class="nav">
       <div class="spacer" />
@@ -41,7 +41,7 @@ const socialLinks = computed(() => {
           v-for="link in socialLinks" :key="link.text" :aria-label="`${link.text}`" :class="link.icon" nav-link
           :target="getLinkTarget(link.href)" :href="link.href" class="lt-md:hidden"
         />
-        <a nav-link target="_blank" href="/rss.xml" class="lt-md:hidden" i-ri-rss-line aria-label="RSS" />
+        <a target="_blank" href="/rss.xml" class="lt-md:hidden" i-ri-rss-line nav-link aria-label="RSS" />
         <ThemeToggle />
       </div>
     </nav>

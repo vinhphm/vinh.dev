@@ -4,11 +4,11 @@ import { getLinkTarget } from '@/utils/link'
 </script>
 
 <template>
-  <footer class="w-full mt-10 mb-6 prose max-w-3xl text-sm! flex flex-col gap-4 text-dark dark:text-white">
+  <footer class="mb-6 mt-10 max-w-3xl w-full flex flex-col gap-4 text-dark prose text-sm! dark:text-white">
     <div v-if="siteConfig.footer.navLinks && siteConfig.footer.navLinks.length > 0" class="flex flex-wrap gap-4">
       <template v-for="(link, index) in siteConfig.footer.navLinks" :key="link.text">
         <a
-          :aria-label="`${link.text}`" :target="getLinkTarget(link.href)" class="nav-link flex items-center"
+          :aria-label="`${link.text}`" :target="getLinkTarget(link.href)" class="flex items-center nav-link"
           :href="link.href"
         >
           {{ link.text }}
