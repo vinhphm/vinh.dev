@@ -25,11 +25,11 @@
     "rehype-external-links": "^3.0.0",
     "sharp": "^0.33.4",
     "unocss": "^0.61.5",
-    "vue": "^3.4.33"
+    "vue": "^3.4.34"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.23.0",
-    "@iconify/json": "^2.2.229",
+    "@antfu/eslint-config": "^2.23.2",
+    "@iconify/json": "^2.2.231",
     "@types/lodash-es": "^4.17.12",
     "@types/nprogress": "^0.2.3",
     "@types/prompts": "^2.4.9",
