@@ -1,0 +1,30 @@
+---
+import siteConfig from '@/site-config';
+import { getLinkTarget } from '@/utils/link';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mb-6 mt-10 max-w-3xl w-full flex flex-col gap-4 text-dark prose text-sm! dark:text-white">
+  {siteConfig.footer.navLinks && siteConfig.footer.navLinks.length > 0 && (
+    <div class="flex flex-wrap gap-4">
+      {siteConfig.footer.navLinks.map((link, index) => (
+        <>
+          <a
+            aria-label={link.text}
+            target={getLinkTarget(link.href)}
+            class="flex items-center nav-link"
+            href={link.href}
+          >
+            {link.text}
+          </a>
+          {index < siteConfig.footer.navLinks.length - 1 && <span class="opacity-70"> / </span>}
+        </>
+      ))}
+    </div>
+  )}
+  <div class="flex">
+    <a class="nav-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    <span class="opacity-70">&nbsp;&nbsp;&copy;&nbsp;&nbsp;{currentYear}&nbsp;&nbsp;{siteConfig.author}</span>
+  </div>
+</footer>
