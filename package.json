@@ -36,7 +36,6 @@
     "@unocss/eslint-plugin": "^0.61.6",
     "@vueuse/core": "^10.11.0",
     "bumpp": "^9.4.1",
-    "bun": "^1.1.21",
     "eslint": "^9.8.0",
     "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-format": "^0.1.2",
@@ -45,13 +44,12 @@
     "picocolors": "^1.0.1",
     "prettier-plugin-astro": "^0.14.1",
     "prompts": "^2.4.2",
-    "simple-git": "^3.25.0",
     "simple-git-hooks": "^2.11.1"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx lint-staged"
   },
   "lint-staged": {
-    "*": "bun run lint:fix"
+    "*": "eslint --fix"
   }
 }
