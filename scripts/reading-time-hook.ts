@@ -1,5 +1,5 @@
 import Git from 'simple-git'
-import { BLOG_DIR, processFile } from './reading-time'
+import { BLOG_DIR, processFile } from './reading-time-utils'
 
 const git = Git()
 
