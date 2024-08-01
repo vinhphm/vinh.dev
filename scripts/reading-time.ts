@@ -4,9 +4,9 @@ import calculateReadingTime from 'reading-time'
 import { fromMarkdown } from 'mdast-util-from-markdown'
 import { toString } from 'mdast-util-to-string'
 
-const BLOG_DIR = 'src/content/blog'
+export const BLOG_DIR = 'src/content/blog'
 
-function getReadingTime(text: string): string | undefined {
+export function getReadingTime(text: string): string | undefined {
   if (!text || !text.length)
     return undefined
   try {
@@ -21,7 +21,33 @@ function getReadingTime(text: string): string | undefined {
   }
 }
 
-async function processFile(filePath: string): Promise<void> {
+export function hasDurationInFrontmatter(content: string): boolean {
+  const frontmatterRegex = /^---\r?\n([\s\S]+?)\r?\n---/
+  const frontmatterMatch = content.match(frontmatterRegex)
+
+  if (frontmatterMatch) {
+    const frontmatter = frontmatterMatch[1]
+    return /^duration:/m.test(frontmatter)
+  }
+
+  return false
+}
+
+export function updateFrontmatter(content: string, readingTime: string): string {
+  const frontmatterRegex = /^---\r?\n([\s\S]+?)\r?\n---/
+  const frontmatterMatch = content.match(frontmatterRegex)
+
+  if (frontmatterMatch) {
+    const frontmatter = frontmatterMatch[1]
+    const updatedFrontmatter = `${frontmatter.trim()}\nduration: ${readingTime}`
+    return content.replace(frontmatterRegex, `---\n${updatedFrontmatter}\n---`)
+  }
+
+  // If no frontmatter found, add it
+  return `---\nduration: ${readingTime}\n---\n\n${content}`
+}
+
+export async function processFile(filePath: string): Promise<void> {
   const content = await fs.readFile(filePath, 'utf-8')
 
   if (hasDurationInFrontmatter(content)) {
@@ -40,33 +66,7 @@ async function processFile(filePath: string): Promise<void> {
   }
 }
 
-function hasDurationInFrontmatter(content: string): boolean {
-  const frontmatterRegex = /^---\r?\n([\s\S]+?)\r?\n---/
-  const frontmatterMatch = content.match(frontmatterRegex)
-
-  if (frontmatterMatch) {
-    const frontmatter = frontmatterMatch[1]
-    return /^duration:/m.test(frontmatter)
-  }
-
-  return false
-}
-
-function updateFrontmatter(content: string, readingTime: string): string {
-  const frontmatterRegex = /^---\r?\n([\s\S]+?)\r?\n---/
-  const frontmatterMatch = content.match(frontmatterRegex)
-
-  if (frontmatterMatch) {
-    const frontmatter = frontmatterMatch[1]
-    const updatedFrontmatter = `${frontmatter.trim()}\nduration: ${readingTime}`
-    return content.replace(frontmatterRegex, `---\n${updatedFrontmatter}\n---`)
-  }
-
-  // If no frontmatter found, add it
-  return `---\nduration: ${readingTime}\n---\n\n${content}`
-}
-
-async function scanAndUpdateFiles(dir: string): Promise<void> {
+export async function scanAndUpdateFiles(dir: string): Promise<void> {
   const entries = await fs.readdir(dir, { withFileTypes: true })
 
   for (const entry of entries) {
