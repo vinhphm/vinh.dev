@@ -1,0 +1,46 @@
+---
+import VinhDev from './icons/VinhDev.vue';
+import Vitest from './icons/Vitest.vue';
+
+interface ProjectItem {
+  text: string;
+  description?: string;
+  icon?: string;
+  href: string;
+}
+
+interface Props {
+  list: ProjectItem[];
+}
+
+const { list } = Astro.props;
+
+---
+
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  {!list || list.length === 0 ? (
+    <div class="py-10 text-lg opacity-50">
+      nothing here yet.
+    </div>
+  ) : (
+    list.map((project) => (
+      <li class="w-full flex items-center rounded-2 container-link">
+        <a class="flex items-center" target="_blank" href={project.href} aria-label={project.text}>
+          <div class="ml-2 mr-4 pt-2">
+            {project.icon === 'vitest' ? (
+              <Vitest client:idle class="inline-block text-4xl" />
+            ) : project.icon === 'vinh-dev' ? (
+              <VinhDev client:idle class="inline-block text-4xl" />
+            ) : (
+              <i class={`inline-block text-4xl ${project.icon || 'i-carbon-unknown'}`} />
+            )}
+          </div>
+          <div class="font-normal leading-tight">
+            <div class="text-lg hover:text-main">{project.text}</div>
+            <div class="text-sm opacity-50">{project.description}</div>
+          </div>
+        </a>
+      </li>
+    ))
+  )}
+</ul>

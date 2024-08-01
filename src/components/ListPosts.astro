@@ -1,0 +1,92 @@
+---
+interface Props {
+  list: Post[];
+}
+
+interface Post {
+  id: string
+  slug: string
+  body: string
+  data: Record<string, any>
+  collection: string
+  render: any
+}
+
+const { list: posts } = Astro.props;
+
+function getDate(date: string) {
+  return new Date(date).toISOString()
+}
+
+function getHref(post: Post) {
+  if (post.data.redirect)
+    return post.data.redirect;
+  return `/posts/${post.slug}`;
+}
+
+function getTarget(post: Post) {
+  if (post.data.redirect)
+    return '_blank';
+  return '_self';
+}
+
+function isSameYear(a: Date | string | number, b: Date | string | number) {
+  return a && b && getYear(a) === getYear(b)
+}
+
+function getYear(date: Date | string | number) {
+  return new Date(date).getFullYear()
+}
+---
+
+<ul class="mb-18 min-h-28 sm:min-h-38">
+  {posts.length === 0 ? (
+    <div class="my-12 opacity-50">
+      nothing here yet.
+    </div>
+  ) : (
+    posts.map(async (post: Post, index) => {
+      const { remarkPluginFrontmatter } = await post.render()
+
+      return (
+      <li class="mb-8">
+        {!isSameYear(post.data.date, posts[index - 1]?.data.date) && (
+          <div class="pointer-events-none relative h18 select-none">
+            <span class="absolute top--0.2em text-7em color-transparent font-bold text-stroke-2 text-stroke-hex-aaa op14">
+              {getYear(post.data.date)}
+            </span>
+          </div>
+        )}
+        <a
+          class="text-lg lh-tight nav-link flex flex-col gap-2"
+          aria-label={post.data.title}
+          target={getTarget(post)}
+          href={getHref(post)}
+        >
+          <div class="flex flex-col md:flex-row gap-2 md:items-center">
+            <div class="flex gap-2 items-center text-wrap">
+              <span class="lh-normal">
+                {post.data.draft && <i class="i-ri-draft-line vertical-mid text-base" />}
+                {post.data.title}
+              </span>
+            </div>
+            <div class="ws-nowrap text-sm opacity-50 flex gap-2 items-center">
+              {post.data.redirect && <i class="i-ri-external-link-line text-base" />}
+              {(post.data.recording || post.data.video) && <i class="i-ri:film-line text-base" />}
+              {post.data.date && <time datetime={getDate(post.data.date)}>{post.data.date.split(',')[0]}</time>}
+              {remarkPluginFrontmatter.minutesRead && <span>· {remarkPluginFrontmatter.minutesRead}</span>}
+              {post.data.tag && <span>· {post.data.tag}</span>}
+              {post.data.lang && post.data.lang.includes('vi') && (
+                <span class="rounded bg-zinc:15 px-1 py-0.5 text-zinc5">
+                  Tiếng Việt
+                </span>
+              )}
+            </div>
+          </div>
+          <div class="text-sm opacity-50">{post.data.description}</div>
+        </a>
+      </li>
+    )})
+  )}
+</ul>
+```

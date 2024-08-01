@@ -20,9 +20,9 @@ export async function getStaticPaths() {
 type Props = { post: CollectionPosts }
 
 const { post } = Astro.props
-const { title, image, description, date, duration, tag } = post.data
+const { title, image, description, date, tag } = post.data
 
-const { Content, headings } = await post.render()
+const { Content, headings, remarkPluginFrontmatter } = await post.render()
 
 function getDate(date: string) {
   return new Date(date).toISOString()
@@ -39,7 +39,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
     <h1 class="mb-0">{title}</h1>
     <p op-50 class="!-mt-6">
       {date && <time datetime={getDate(date)}>{date.split(',')}</time>}
-      {duration && <span>· {duration}</span>}
+      {remarkPluginFrontmatter.minutesRead && <span>· {remarkPluginFrontmatter.minutesRead}</span>}
       {tag && <span>· {tag}</span>}
     </p>
     {
@@ -62,7 +62,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
   </article>
   <div class="prose fw-inherit m-auto mt-8 mb-8 print:hidden">
     {
-      duration && (
+      remarkPluginFrontmatter.minutesRead && (
         <>
           <span class="font-mono op75">&gt; </span>
           <span class="op75">comment on </span>

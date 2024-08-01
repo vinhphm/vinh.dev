@@ -18,7 +18,6 @@ const blog = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string().optional(),
-    duration: z.string().optional(),
     image: z
       .object({
         src: image().refine(img => img.width >= 640, {
