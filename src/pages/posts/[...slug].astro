@@ -23,7 +23,7 @@ type Props = { post: CollectionPosts }
 const { post } = Astro.props
 const { title, image, description, date, tag } = post.data
 
-const { Content, headings, remarkPluginFrontmatter } = await post.render()
+const { Content, headings } = await post.render()
 
 function getDate(date: string) {
   return new Date(date).toISOString()
