@@ -1,4 +1,6 @@
 ---
+import { getReadingTime } from '@/utils/readTime';
+
 interface Props {
   list: Post[];
 }
@@ -45,8 +47,8 @@ function getYear(date: Date | string | number) {
       nothing here yet.
     </div>
   ) : (
-    posts.map(async (post, index) => {
-      const { remarkPluginFrontmatter } = await post.render()
+    posts.map((post, index) => {
+      const readingTime = getReadingTime(post.body);
 
       return (
       <li class="mb-8">
@@ -74,7 +76,7 @@ function getYear(date: Date | string | number) {
               {post.data.redirect && <i class="i-ri-external-link-line text-base" />}
               {(post.data.recording || post.data.video) && <i class="i-ri:film-line text-base" />}
               {post.data.date && <time datetime={getDate(post.data.date)}>{post.data.date.split(',')[0]}</time>}
-              {remarkPluginFrontmatter.minutesRead && <span>· {remarkPluginFrontmatter.minutesRead}</span>}
+              {readingTime && <span>· {readingTime}</span>}
               {post.data.tag && <span>· {post.data.tag}</span>}
               {post.data.lang && post.data.lang.includes('vi') && (
                 <span class="rounded bg-zinc:15 px-1 py-0.5 text-zinc5">

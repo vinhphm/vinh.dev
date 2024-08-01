@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import TableOfContents from '@/components/TableOfContents.astro'
 import { type CollectionPosts } from '@/types'
 import { getPosts } from '@/utils/posts'
+import { getReadingTime } from '@/utils/readTime'
 
 export async function getStaticPaths() {
   const posts = await getPosts()
@@ -28,6 +29,8 @@ function getDate(date: string) {
   return new Date(date).toISOString()
 }
 
+const readingTime = getReadingTime(post.body);
+
 const base = 'https://vinh.dev'
 const parentDir = post.slug.split('/').slice(0, -1).join('/')
 const threadUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/posts/${post.slug}\n\nI think...`)}`
@@ -39,7 +42,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
     <h1 class="mb-0">{title}</h1>
     <p op-50 class="!-mt-6">
       {date && <time datetime={getDate(date)}>{date.split(',')}</time>}
-      {remarkPluginFrontmatter.minutesRead && <span>· {remarkPluginFrontmatter.minutesRead}</span>}
+      {readingTime && <span>· {readingTime}</span>}
       {tag && <span>· {tag}</span>}
     </p>
     {
@@ -62,7 +65,7 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
   </article>
   <div class="prose fw-inherit m-auto mt-8 mb-8 print:hidden">
     {
-      remarkPluginFrontmatter.minutesRead && (
+      readingTime && (
         <>
           <span class="font-mono op75">&gt; </span>
           <span class="op75">comment on </span>

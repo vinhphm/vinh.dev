@@ -7,8 +7,6 @@ import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 
-import { remarkReadingTime } from './src/utils/readTime'
-
 export default defineConfig({
   site: 'https://vinh.dev',
   trailingSlash: 'never',
@@ -33,7 +31,6 @@ export default defineConfig({
       },
       wrap: true,
     },
-    remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: 'noopener' }],
       rehypeHeadingIds,
