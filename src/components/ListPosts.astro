@@ -71,8 +71,8 @@ function getYear(date: Date | string | number) {
               {post.data.redirect && <i class="i-ri-external-link-line text-base" />}
               {(post.data.recording || post.data.video) && <i class="i-ri:film-line text-base" />}
               {post.data.date && <time datetime={getDate(post.data.date)}>{post.data.date.split(',')[0]}</time>}
-              {post.data.duration && <span>· {post.data.duration}</span>}
-              {post.data.tag && <span>· {post.data.tag}</span>}
+              {post.data.duration && <span class="dot-space">{post.data.duration}</span>}
+              {post.data.tag && <span class="dot-space">{post.data.tag}</span>}
               {post.data.lang && post.data.lang.includes('vi') && (
                 <span class="rounded bg-slate:30 px-1 py-0.5 opacity-70">
                   Tiếng Việt

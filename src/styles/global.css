@@ -165,3 +165,12 @@ h6:focus .header-anchor {
 .table-of-contents ul > li > a {
   --at-apply: op75 hover-op100 transition font-normal;
 }
+
+.dot-space {
+  display: inline-block;
+}
+
+.dot-space::before {
+  content: '·';
+  margin-right: 0.5rem;
+}

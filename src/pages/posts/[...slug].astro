@@ -37,10 +37,10 @@ const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Re
 <BaseLayout title={title} description={description} pageType="article">
   <div class="prose mb-8 m-auto">
     <h1 class="mb-0">{title}</h1>
-    <p op-50 class="!-mt-6">
+    <p class="!-mt-6 flex gap-2 op-50">
       {date && <time datetime={getDate(date)}>{date.split(',')}</time>}
-      {duration && <span>· {duration}</span>}
-      {tag && <span>· {tag}</span>}
+      {duration && <span class="dot-space">{duration}</span>}
+      {tag && <span class="dot-space">{tag}</span>}
     </p>
     {
       image && (
