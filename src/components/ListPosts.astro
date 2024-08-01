@@ -45,7 +45,7 @@ function getYear(date: Date | string | number) {
       nothing here yet.
     </div>
   ) : (
-    posts.map(async (post: Post, index) => {
+    posts.map(async (post, index) => {
       const { remarkPluginFrontmatter } = await post.render()
 
       return (
