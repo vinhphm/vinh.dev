@@ -33,6 +33,7 @@ const blog = defineCollection({
         month: 'short',
         day: 'numeric',
       })),
+    duration: z.string().optional(),
     draft: z.boolean().default(false).optional(),
     lang: z.string().default('en-US').optional(),
     tag: z.string().optional().optional(),

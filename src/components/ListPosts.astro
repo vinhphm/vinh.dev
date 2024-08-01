@@ -1,6 +1,4 @@
 ---
-import { getReadingTime } from '@/utils/readTime';
-
 interface Props {
   list: Post[];
 }
@@ -47,10 +45,7 @@ function getYear(date: Date | string | number) {
       nothing here yet.
     </div>
   ) : (
-    posts.map((post, index) => {
-      const readingTime = getReadingTime(post.body);
-
-      return (
+    posts.map((post, index) => (
       <li class="mb-8">
         {!isSameYear(post.data.date, posts[index - 1]?.data.date) && (
           <div class="pointer-events-none relative h18 select-none">
@@ -76,7 +71,7 @@ function getYear(date: Date | string | number) {
               {post.data.redirect && <i class="i-ri-external-link-line text-base" />}
               {(post.data.recording || post.data.video) && <i class="i-ri:film-line text-base" />}
               {post.data.date && <time datetime={getDate(post.data.date)}>{post.data.date.split(',')[0]}</time>}
-              {readingTime && <span>· {readingTime}</span>}
+              {post.data.duration && <span>· {post.data.duration}</span>}
               {post.data.tag && <span>· {post.data.tag}</span>}
               {post.data.lang && post.data.lang.includes('vi') && (
                 <span class="rounded bg-zinc:15 px-1 py-0.5 text-zinc5">
@@ -88,7 +83,7 @@ function getYear(date: Date | string | number) {
           <div class="text-sm opacity-50">{post.data.description}</div>
         </a>
       </li>
-    )})
+    ))
   )}
 </ul>
 ```
