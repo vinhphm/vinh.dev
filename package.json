@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
-    "@iconify/json": "^2.2.232",
+    "@iconify/json": "^2.2.233",
     "@types/lodash-es": "^4.17.12",
     "@types/nprogress": "^0.2.3",
     "@types/prompts": "^2.4.9",
