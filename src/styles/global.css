@@ -1,3 +1,7 @@
+html {
+  --pagefind-ui-font: Geist, sans-serif;
+}
+
 html.dark .astro-code,
 html.dark .astro-code span {
   color: var(--shiki-dark) !important;
