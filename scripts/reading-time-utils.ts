@@ -1,8 +1,8 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import calculateReadingTime from 'reading-time'
 import { fromMarkdown } from 'mdast-util-from-markdown'
 import { toString } from 'mdast-util-to-string'
+import calculateReadingTime from 'reading-time'
 
 export const BLOG_DIR = 'src/content/blog'
 
