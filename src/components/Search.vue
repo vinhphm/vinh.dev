@@ -77,7 +77,7 @@ onMounted(() => {
   if (!isDev.value) {
     const onIdle = window.requestIdleCallback || (cb => setTimeout(cb, 1))
     onIdle(async () => {
-      // @ts-expect-error expected
+      // @ts-expect-error package does not export types
       const { PagefindUI } = await import('@pagefind/default-ui')
       const _pagefindUI = new PagefindUI({
         element: '#pagefind__search',
@@ -103,7 +103,7 @@ onUnmounted(() => {
     <dialog
       ref="dialog"
       aria-label="search"
-      class="h-full max-h-full max-w-full w-full border border-zinc-400 bg-white opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:max-w-[48rem] sm:min-h-[15rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
+      class="h-full max-h-full max-w-full w-full border border-zinc-400 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:max-w-[48rem] sm:min-h-[15rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
     >
       <div ref="dialogFrame" class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
         <button
