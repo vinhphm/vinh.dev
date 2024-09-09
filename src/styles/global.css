@@ -1,10 +1,15 @@
 html.dark .astro-code,
 html.dark .astro-code span {
   color: var(--shiki-dark) !important;
-  background-color: #161b22 !important;
+  background-color: #232323 !important;
   font-style: var(--shiki-dark-font-style) !important;
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+html:not(.dark) .astro-code,
+html:not(.dark) .astro-code span {
+  background-color: #fafafa !important;
 }
 
 html.dark {
