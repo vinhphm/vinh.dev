@@ -7,6 +7,7 @@
     "compress": "esno scripts/img-compress-staged.ts",
     "dev": "astro dev --host",
     "build": "astro build",
+    "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
