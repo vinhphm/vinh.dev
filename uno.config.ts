@@ -59,6 +59,7 @@ export default defineConfig({
     'i-ri-github-line',
     'i-ri-linkedin-box-line',
     'i-ri-instagram-line',
+    'i-ri-search-line',
     'i-ri-spotify-line',
     'i-ri-threads-line',
     'i-simple-icons-cloudflarepages',

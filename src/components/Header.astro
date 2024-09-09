@@ -1,10 +1,11 @@
 ---
-import { getLinkTarget } from '@/utils/link';
-import siteConfig from '@/site-config';
-import GlitchingLogo from './GlitchingLogo.vue';
-import ThemeToggle from './ThemeToggle.vue';
+import { getLinkTarget } from '@/utils/link'
+import siteConfig from '@/site-config'
+import GlitchingLogo from './GlitchingLogo.vue'
+import Search from './Search.astro'
+import ThemeToggle from './ThemeToggle.vue'
 
-const navLinks = siteConfig.header.navLinks || [];
+const navLinks = siteConfig.header.navLinks || []
 
 const socialLinks = siteConfig.socialLinks.filter((link: Record<string, any>) => {
   if (link.header && typeof link.header === 'boolean') {
@@ -17,7 +18,7 @@ const socialLinks = siteConfig.socialLinks.filter((link: Record<string, any>) =>
   else {
     return false;
   }
-});
+})
 ---
 
 <header class="header relative z-40">
@@ -47,6 +48,7 @@ const socialLinks = siteConfig.socialLinks.filter((link: Record<string, any>) =>
         />
       ))}
       <a target="_blank" href="/rss.xml" class="lt-md:hidden i-ri-rss-line nav-link" aria-label="RSS" />
+      <Search />
       <ThemeToggle client:load />
     </div>
   </nav>

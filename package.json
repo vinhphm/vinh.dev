@@ -31,6 +31,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.4.1",
     "@iconify/json": "^2.2.246",
+    "@pagefind/default-ui": "^1.1.1",
     "@types/lodash-es": "^4.17.12",
     "@types/nprogress": "^0.2.3",
     "@types/prompts": "^2.4.9",
@@ -45,6 +46,8 @@
     "lodash-es": "^4.17.21",
     "mdast-util-from-markdown": "^2.0.1",
     "mdast-util-to-string": "^4.0.0",
+    "motion": "^10.18.0",
+    "pagefind": "^1.1.1",
     "picocolors": "^1.1.0",
     "prettier-plugin-astro": "^0.14.1",
     "prompts": "^2.4.2",
