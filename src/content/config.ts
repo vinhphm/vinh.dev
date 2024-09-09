@@ -10,7 +10,8 @@ const pages = defineCollection({
           message: 'Cover image must be at least 640 pixels wide!',
         }),
         alt: z.string(),
-      }).optional(),
+      })
+      .optional(),
   }),
 })
 
@@ -24,7 +25,8 @@ const blog = defineCollection({
           message: 'Cover image must be at least 640 pixels wide!',
         }),
         alt: z.string(),
-      }).optional(),
+      })
+      .optional(),
     date: z
       .string()
       .or(z.date())
