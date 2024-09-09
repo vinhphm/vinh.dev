@@ -1,5 +1,5 @@
 :root {
-  --pagefind-ui-font: Geist, sans-serif;
+  --pagefind-ui-font: Geist, sans-serif !important;
 }
 
 html.dark .astro-code,
