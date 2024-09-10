@@ -99,14 +99,14 @@ h6:focus .header-anchor {
 kbd {
   font-family: 'Geist Mono', monospace;
   background: #8080801a;
-  border-radius: 4px;
-  padding: 3px 6px;
-  min-width: 24px;
+  border-radius: 0.25em;
+  padding: .1875em .375em;
+  min-width: 1.5em;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  border: 1px solid rgba(128,128,128,.15);
-  box-shadow: 0 2px 2px #0000001a;
+  border: .0625em solid rgba(128,128,128,.15) !important;
+  box-shadow: 0 .125em .125em #0000001a;
 }
 
 /* Theme transition animation */
