@@ -62,7 +62,7 @@ And use it in MDX like this:
 import themeTransitionAnimation from '@/assets/videos/2024/theme-transition-animation.mp4'
 import VideoEmbed from '@/components/VideoEmbed.vue'
 
-<VideoEmbed client:load src={themeTransitionAnimation} />
+<VideoEmbed client:idle src={themeTransitionAnimation} />
 ```
 
 The difference is instead of using the **static `import`**, we will use **`import.meta.url`** to construct URLs dynamically so that the resource path can be determined at runtime.
