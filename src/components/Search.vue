@@ -113,8 +113,8 @@ onUnmounted(() => {
         >
           Close
         </button> -->
-        <span class="text-center text-sm text-zinc-500 dark:text-zinc-400">
-          Press <kbd class="kbd">Esc</kbd> or click outside to close
+        <span class="text-center text-xs text-zinc-500 dark:text-zinc-400">
+          Press <kbd class="kbd kbd-sm">Esc</kbd> or click outside to close
         </span>
         <div v-if="isDev" class="mx-auto text-center dark:text-white">
           <p>

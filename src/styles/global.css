@@ -103,6 +103,8 @@ h6:focus .header-anchor {
   border-radius: var(--rounded-btn,.5rem);
   border-width: 1px;
   border-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-border-opacity)));
+  --bc: 19.1629% 0 0;
+  --b2: 89.1077% 0 0;
   --tw-border-opacity: .2;
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
@@ -111,6 +113,15 @@ h6:focus .header-anchor {
   border-bottom-width: 2px;
   min-height: 2.2em;
   min-width: 2.2em;
+}
+
+.kbd-sm {
+  padding-left: .25rem;
+  padding-right: .25rem;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  min-height: 1.6em;
+  min-width: 1.6em;
 }
 
 /* Theme transition animation */
