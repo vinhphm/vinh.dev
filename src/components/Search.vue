@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// @ts-expect-error package does not export types
 import { animate } from 'motion'
 import { onMounted, onUnmounted, ref } from 'vue'
 import '@pagefind/default-ui/css/ui.css'
@@ -113,8 +112,10 @@ onUnmounted(() => {
         >
           Close
         </button> -->
-        <span class="text-center text-xs text-zinc-500 dark:text-zinc-400">
-          Press <kbd class="kbd kbd-sm">Esc</kbd> or click outside to close
+        <span class="flex items-center justify-center gap-1 text-xs text-zinc-500 dark:text-zinc-400">
+          Press
+          <kbd>esc</kbd>
+          or click outside to dismiss
         </span>
         <div v-if="isDev" class="mx-auto text-center dark:text-white">
           <p>
