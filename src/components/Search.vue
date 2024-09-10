@@ -104,23 +104,24 @@ onUnmounted(() => {
     <dialog
       ref="dialog"
       aria-label="search"
-      class="h-max max-h-[calc(100%-8rem)] max-w-full min-h-[15rem] w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:max-w-[48rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
+      class="h-full max-h-[calc(100%-8rem)] max-w-full min-h-[15rem] w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:max-w-[48rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
     >
       <div ref="dialogFrame" class="dialog-frame h-full flex flex-col gap-4 p-6 pt-12 sm:pt-6">
-        <button
+        <!-- <button
           data-close-modal
           class="ms-auto cursor-pointer rounded-full bg-zinc-200 px-4 py-2 dark:bg-zinc-700"
         >
           Close
-        </button>
+        </button> -->
+        <small>Press <kbd>Esc</kbd> or click outside to close</small>
         <div v-if="isDev" class="mx-auto text-center dark:text-white">
           <p>
             Search is only available in production builds. <br>
             Try building and previewing the site to test it out locally.
           </p>
         </div>
-        <div v-else class="search-container flex flex-grow flex-col overflow-hidden dark:text-white">
-          <div id="pagefind__search" class="flex flex-grow flex-col overflow-hidden" />
+        <div v-else class="search-container overflow-auto dark:text-white">
+          <div id="pagefind__search" class="overflow-auto" />
         </div>
       </div>
     </dialog>
