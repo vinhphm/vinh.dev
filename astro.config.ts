@@ -1,11 +1,11 @@
-import { defineConfig } from 'astro/config'
+import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import UnoCSS from 'unocss/astro'
 import vue from '@astrojs/vue'
-import { rehypeHeadingIds } from '@astrojs/markdown-remark'
+import { defineConfig } from 'astro/config'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
+import UnoCSS from 'unocss/astro'
 
 export default defineConfig({
   site: 'https://vinh.dev',
@@ -20,7 +20,13 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => ['site-search'].includes(tag),
+        },
+      },
+    }),
   ],
   markdown: {
     smartypants: false,

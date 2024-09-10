@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// @ts-expect-error package does not export types
 import { animate } from 'motion'
 import { onMounted, onUnmounted, ref } from 'vue'
 import '@pagefind/default-ui/css/ui.css'
@@ -108,7 +109,7 @@ onUnmounted(() => {
       <div ref="dialogFrame" class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
         <button
           data-close-modal
-          class="ms-auto cursor-pointer rounded-full bg-black px-4 py-2 text-white dark:bg-white dark:text-black"
+          class="ms-auto cursor-pointer rounded-full bg-zinc-200 px-4 py-2 dark:bg-zinc-700"
         >
           Close
         </button>
