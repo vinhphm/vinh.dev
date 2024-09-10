@@ -106,14 +106,16 @@ onUnmounted(() => {
       aria-label="search"
       class="h-full max-h-[calc(100%-8rem)] max-w-full min-h-[15rem] w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:max-w-[48rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
     >
-      <div ref="dialogFrame" class="dialog-frame h-full flex flex-col gap-4 p-6 pt-12 sm:pt-6">
+      <div ref="dialogFrame" class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
         <!-- <button
           data-close-modal
           class="ms-auto cursor-pointer rounded-full bg-zinc-200 px-4 py-2 dark:bg-zinc-700"
         >
           Close
         </button> -->
-        <small>Press <kbd>Esc</kbd> or click outside to close</small>
+        <span class="text-center text-sm text-zinc-500 dark:text-zinc-400">
+          Press <kbd class="kbd">Esc</kbd> or click outside to close
+        </span>
         <div v-if="isDev" class="mx-auto text-center dark:text-white">
           <p>
             Search is only available in production builds. <br>
