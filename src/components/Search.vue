@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// @ts-expect-error package does not export types
 import { animate } from 'motion'
 import { onMounted, onUnmounted, ref } from 'vue'
 import '@pagefind/default-ui/css/ui.css'
@@ -104,23 +103,28 @@ onUnmounted(() => {
     <dialog
       ref="dialog"
       aria-label="search"
-      class="h-full max-h-full max-w-full w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:max-w-[48rem] sm:min-h-[15rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
+      class="h-full max-h-[calc(100%-8rem)] max-w-full min-h-[15rem] w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:max-w-[48rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
     >
       <div ref="dialogFrame" class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
-        <button
+        <!-- <button
           data-close-modal
           class="ms-auto cursor-pointer rounded-full bg-zinc-200 px-4 py-2 dark:bg-zinc-700"
         >
           Close
-        </button>
+        </button> -->
+        <span class="flex items-center justify-center gap-1 text-xs text-zinc-500 dark:text-zinc-400">
+          Press
+          <kbd>esc</kbd>
+          or click outside to dismiss
+        </span>
         <div v-if="isDev" class="mx-auto text-center dark:text-white">
           <p>
             Search is only available in production builds. <br>
             Try building and previewing the site to test it out locally.
           </p>
         </div>
-        <div v-else class="search-container dark:text-white">
-          <div id="pagefind__search" />
+        <div v-else class="search-container overflow-auto dark:text-white">
+          <div id="pagefind__search" class="overflow-auto" />
         </div>
       </div>
     </dialog>
