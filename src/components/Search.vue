@@ -104,7 +104,7 @@ onUnmounted(() => {
     <dialog
       ref="dialog"
       aria-label="search"
-      class="h-full max-h-full max-w-full w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:max-w-[48rem] sm:min-h-[15rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
+      class="h-full max-h-full max-w-full w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:max-h-[calc(100%-8rem)] sm:max-w-[48rem] sm:min-h-[15rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
     >
       <div ref="dialogFrame" class="dialog-frame h-full flex flex-col gap-4 p-6 pt-12 sm:pt-6">
         <button
@@ -150,12 +150,7 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
-#pagefind__search .pagefind-ui__search-input {
-  flex-shrink: 0;
-}
-
-#pagefind__search .pagefind-ui__results-container {
-  flex-grow: 1;
+#pagefind__search .pagefind-ui__results {
   overflow-y: auto;
 }
 </style>
