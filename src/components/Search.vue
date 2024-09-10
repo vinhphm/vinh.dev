@@ -136,27 +136,4 @@ onUnmounted(() => {
   --pagefind-ui-border: #152028;
   --pagefind-ui-tag: #152028;
 }
-
-.dialog-frame {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.search-container,
-#pagefind__search {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  overflow: hidden;
-}
-
-#pagefind__search .pagefind-ui__search-input {
-  flex-shrink: 0;
-}
-
-#pagefind__search .pagefind-ui__results-container {
-  flex-grow: 1;
-  overflow-y: auto;
-}
 </style>
