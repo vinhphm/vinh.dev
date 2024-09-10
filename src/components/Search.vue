@@ -103,7 +103,7 @@ onUnmounted(() => {
     <dialog
       ref="dialog"
       aria-label="search"
-      class="max-h-[calc(100%-8rem)] max-w-full min-h-[15rem] w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:max-w-[48rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
+      class="mb-auto mt-16 max-h-[calc(100%-8rem)] max-w-full min-h-[15rem] w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:max-w-[48rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
     >
       <div ref="dialogFrame" class="dialog-frame flex flex-col gap-4 p-6 pt-0">
         <!-- <button
