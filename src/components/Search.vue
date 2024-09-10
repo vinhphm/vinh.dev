@@ -104,7 +104,7 @@ onUnmounted(() => {
     <dialog
       ref="dialog"
       aria-label="search"
-      class="h-full max-w-full w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-w-[48rem] sm:min-h-[15rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
+      class="h-full max-h-full max-w-full w-full border border-zinc-500/25 bg-[#ffffffec] opacity-0 shadow sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:max-w-[48rem] sm:min-h-[15rem] sm:w-5/6 sm:rounded-md dark:bg-[#0a0910ec] backdrop:backdrop-blur"
     >
       <div ref="dialogFrame" class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
         <button
@@ -119,8 +119,8 @@ onUnmounted(() => {
             Try building and previewing the site to test it out locally.
           </p>
         </div>
-        <div v-else class="search-container max-h-[calc(100%-12rem)] dark:text-white">
-          <div id="pagefind__search" />
+        <div v-else class="search-container flex flex-grow flex-col overflow-hidden dark:text-white">
+          <div id="pagefind__search" class="flex flex-grow flex-col overflow-hidden" />
         </div>
       </div>
     </dialog>
@@ -134,5 +134,28 @@ onUnmounted(() => {
   --pagefind-ui-background: #152028;
   --pagefind-ui-border: #152028;
   --pagefind-ui-tag: #152028;
+}
+
+.dialog-frame {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.search-container,
+#pagefind__search {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+#pagefind__search .pagefind-ui__search-input {
+  flex-shrink: 0;
+}
+
+#pagefind__search .pagefind-ui__results-container {
+  flex-grow: 1;
+  overflow-y: auto;
 }
 </style>
