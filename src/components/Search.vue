@@ -139,4 +139,7 @@ onUnmounted(() => {
   --pagefind-ui-border: #151616;
   --pagefind-ui-tag: #151616;
 }
+.pagefind-ui__search-input:focus-visible {
+  outline: var(--pagefind-ui-border-width) solid var(--pagefind-ui-border);
+}
 </style>
