@@ -112,7 +112,7 @@ onUnmounted(() => {
         >
           Close
         </button> -->
-        <span class="sticky top-0 z-10 flex items-center justify-center gap-1 bg-[#ffffffec] px-6 py-4 text-xs text-zinc-500 backdrop-blur dark:bg-[#0a0910ec] dark:text-zinc-400">
+        <span class="sticky top-0 z-10 flex items-center justify-center gap-1 from-[#ffffffec] to-[#ffffff88] bg-gradient-to-b py-4 text-xs text-zinc-500 backdrop-blur -mx-6 dark:bg-[#0a0910ec] dark:text-zinc-400">
           Press
           <kbd>esc</kbd>
           or click outside to dismiss
