@@ -135,5 +135,8 @@ onUnmounted(() => {
 .dark {
   --pagefind-ui-primary: #eeeeee;
   --pagefind-ui-text: #eeeeee;
+  --pagefind-ui-background: #151616;
+  --pagefind-ui-border: #151616;
+  --pagefind-ui-tag: #151616;
 }
 </style>
