@@ -5,14 +5,13 @@ const git = Git()
 
 async function calculateAndAddReadingTimes(): Promise<void> {
   try {
-    const stagedFiles = (await git.diff(['--cached', '--name-only']))
-      .split('\n')
-      .map(i => i.trim())
-      .filter(Boolean)
+    const status = await git.status()
+    const stagedFiles = status.staged
 
     const contentFiles = stagedFiles.filter(file =>
       file.startsWith(BLOG_DIR) &&
-      (file.endsWith('.md') || file.endsWith('.mdx')),
+      (file.endsWith('.md') || file.endsWith('.mdx')) &&
+      !status.deleted.includes(file),
     )
 
     if (contentFiles.length === 0) {
