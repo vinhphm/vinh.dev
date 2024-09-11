@@ -1,0 +1,86 @@
+---
+title: Implement Search with Pagefind
+date: 2024-09-10T22:00:00+07:00
+lang: en
+description: Trying to set up a search functionality for your website? There is a excellent library for that.
+tag: Web
+---
+import pagefindSearch from '@/assets/videos/2024/pagefind-search.mp4'
+import VideoEmbed from '@/components/VideoEmbed.vue'
+
+The site is having more and more of blog posts now. And sometimes, when I need to find a specific post, it takes time. So a search function is much needed. After some quick research, I found a library called [Pagefind](https://pagefind.app/). It is a search engine that can be integrated with any static site generator. In this post, I will walk you through the basic way to integrate it so that you can have something like this:
+
+<figure class="flex flex-col items-center justify-center md:py-5 lg:py-10">
+  <div class="lg:scale-120 md:scale-110">
+    <VideoEmbed client:idle src={pagefindSearch} class="rounded shadow-lg" />
+  </div>
+</figure>
+
+## Why Pagefind?
+
+There are a few reasons why I decided to go with Pagefind:
+
+- **Static site compatibility:** Pagefind is designed specifically for static websites, making it an excellent choice for JAMstack and other static site architectures.
+- **Lightweight:** The library is very lightweight, adding minimal overhead to your site.
+- **Easy setup:** Pagefind can be implemented with minimal configuration, often requiring just a single line of JavaScript.
+- **No external dependencies:** It doesn't rely on external services or APIs, which can improve reliability and reduce costs.
+- **Automatic index generation:** Pagefind automatically generates a search index from your static site content.
+- **Fast performance:** The library offers quick search results, even on large sites. You can check out their [demo on MDN Web Docs](https://mdn.pagefind.app/), very impressive.
+- **Multilingual support:** Pagefind can handle content in multiple languages.
+
+## Installation
+
+First, you need to install the library itself and the default stylesheet. You can do it by running the following command:
+
+```shell
+npm install --save-dev pagefind @pagefind/default-ui
+```
+
+## Configuration
+
+### Indexing
+
+In order for Pagefind to work, it needs to index your site. Let's say you have your build output in the `dist` folder. You can run the following command to index it:
+
+```shell
+pagefind --source dist
+```
+
+But we want to run automatic after every build. So we need to add a script to our `package.json` file:
+
+```json
+{
+  //...
+  "scripts": {
+    //...
+    "postbuild": "pagefind --source dist"
+  }
+  //...
+}
+```
+
+### Search UI
+
+It depends on the way you want to have the search UI. In the example above, I use the default UI with very little tweaks wrapped in a modal. Inside of the modal, you can place an element with an specific `id` like:
+
+```html
+<div id="pagefind__search"></div>
+```
+
+Then in the script, you can import the default UI and initialize it :
+
+```js
+const { PagefindUI } = await import('@pagefind/default-ui')
+const _pagefindUI = new PagefindUI({
+  element: '#pagefind__search',
+  baseUrl: import.meta.env.BASE_URL,
+  bundlePath: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/pagefind/`,
+  showImages: false,
+})
+```
+
+You can also customize the styles using the CSS custom properties listed in the [documentation](https://pagefind.app/docs/ui-usage/#customising-the-styles).And if you want to see how I implemented it, check out [<span class="i-ph-file-vue" /> Search.vue](https://github.com/vinhphm/vinh.dev/blob/main/src/components/Search.vue).
+
+## Conclusion
+
+I hope this post has been helpful in setting up a search functionality for your website. If you have any questions or suggestions, feel free to reach out. I'm always happy to help!
