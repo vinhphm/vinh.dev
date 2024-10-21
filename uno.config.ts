@@ -47,6 +47,13 @@ export default defineConfig({
       },
     }),
   ],
+  theme: {
+    extend: {
+      maxWidth: {
+        '65ch': '65ch',
+      },
+    },
+  },
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [
     'i-carbon-campsite',
