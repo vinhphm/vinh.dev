@@ -2,9 +2,15 @@ import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import vue from '@astrojs/vue'
+import { transformerCopyButton } from '@rehype-pretty/transformers'
+import {
+  transformerMetaHighlight,
+  transformerNotationDiff,
+} from '@shikijs/transformers'
 import { defineConfig } from 'astro/config'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
+import rehypePrettyCode from 'rehype-pretty-code'
 import UnoCSS from 'unocss/astro'
 
 export default defineConfig({
@@ -30,13 +36,7 @@ export default defineConfig({
   ],
   markdown: {
     smartypants: false,
-    shikiConfig: {
-      themes: {
-        light: 'github-light-default',
-        dark: 'github-dark-default',
-      },
-      wrap: true,
-    },
+    syntaxHighlight: false,
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: 'noopener' }],
       rehypeHeadingIds,
@@ -52,6 +52,23 @@ export default defineConfig({
               type: 'text',
               value: '#',
             },
+          ],
+        },
+      ],
+      [
+        rehypePrettyCode,
+        {
+          theme: {
+            light: 'github-light-high-contrast',
+            dark: 'github-dark-high-contrast',
+          },
+          transformers: [
+            transformerNotationDiff(),
+            transformerMetaHighlight(),
+            transformerCopyButton({
+              visibility: 'hover',
+              feedbackDuration: 1000,
+            }),
           ],
         },
       ],

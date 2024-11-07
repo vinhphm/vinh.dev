@@ -26,6 +26,16 @@ export default defineConfig({
     {
       'hr-line': 'w-14 mx-auto my-8 border-solid border-1px !border-truegray-200 !dark:border-truegray-800',
     },
+    {
+      'code-block': 'static max-h-600px overflow-auto rounded-xl border bg-[hsl(var(--secondary))]/20 py-4 text-sm leading-loose',
+      'code-block-title': 'break-words rounded-t-xl border-x border-t px-4 py-2 text-sm font-medium text-[hsl(var(--foreground))]',
+      'code-line': 'px-4',
+      'code-line-highlighted': 'bg-[hsl(var(--foreground))]/10',
+      'code-chars-highlighted': 'bg-[hsl(var(--muted-foreground))]/40 py-1.75',
+      'code-diff-add': 'bg-[hsl(var(--additive))]/15',
+      'code-diff-remove': 'bg-[hsl(var(--destructive))]/15',
+      'code-copy-button': 'right-0.5 top-0.75 m-0 w-8 h-8 rounded-md bg-[hsl(var(--background))] p-1 transition-all',
+    },
   ],
   presets: [
     presetUno(),
