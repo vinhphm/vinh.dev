@@ -169,9 +169,9 @@ html.dark .prose {
   margin-bottom: 1.7142857em;
   border-radius: 0.375rem;
   padding-top: 0.8571429em;
-  padding-right: 1.1428571em;
+  padding-right: unset;
   padding-bottom: 0.8571429em;
-  padding-left: 1.1428571em;
+  padding-left: unset;
   --at-apply: font-mono;
 }
 .prose pre code {

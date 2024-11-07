@@ -106,10 +106,6 @@ article {
     background-color: transparent;
   }
 
-  :not(pre) > code {
-    @apply relative rounded bg-[hsl(var(--muted))]/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
-  }
-
   code[data-theme*=' '] {
     span {
       color: var(--shiki-light);
@@ -120,24 +116,35 @@ article {
     }
   }
 
+  /* Inline code */
+  :not(pre) > code {
+    @apply relative rounded bg-[hsl(var(--muted))]/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
+  }
+
+  /* Code blocks */
   figure[data-rehype-pretty-code-figure] {
     @apply relative;
 
+    /* Code block titles */
     [data-rehype-pretty-code-title] {
-      @apply code-block-title;
+      @apply break-words rounded-t-xl border-x border-t px-4 py-2 text-sm font-medium text-[hsl(var(--foreground))];
 
+      /* Remove top margin from code block if a title is present */
       & + pre {
         @apply mt-0 rounded-t-none;
       }
     }
 
+    /* Code block styles */
     pre {
-      @apply code-block;
+      @apply static max-h-[600px] overflow-auto rounded-xl border bg-[hsl(var(--secondary))]/20 py-4 text-sm leading-loose;
 
+      /* Code block content */
       > code {
         @apply whitespace-pre-wrap;
         counter-reset: line;
 
+        /* For code blocks with line numbers */
         &[data-line-numbers] {
           > [data-line]::before {
             counter-increment: line;
@@ -146,29 +153,34 @@ article {
           }
         }
 
+        /* For each line in the code block */
         > [data-line] {
-          @apply code-line;
+          @apply px-4;
         }
 
+        /* Highlighted lines */
         [data-highlighted-line] {
-          @apply code-line-highlighted;
+          @apply bg-[hsl(var(--foreground))]/10;
         }
 
+        /* Highlighted characters */
         [data-highlighted-chars] > span {
-          @apply code-chars-highlighted;
+          @apply bg-[hsl(var(--muted-foreground))/40] py-[7px];
         }
 
+        /* Diff lines */
         .diff {
           &.add {
-            @apply code-diff-add;
+            @apply bg-[hsl(var(--additive))]/15;
           }
           &.remove {
-            @apply code-diff-remove;
+            @apply bg-[hsl(var(--destructive))]/15;
           }
         }
 
+        /* Copy button */
         > button:has(> span) {
-          @apply code-copy-button;
+          @apply right-0.5 top-[3px] m-0 size-8 rounded-md bg-[hsl(var(--background))] p-1 backdrop-blur-none transition-all;
         }
       }
     }

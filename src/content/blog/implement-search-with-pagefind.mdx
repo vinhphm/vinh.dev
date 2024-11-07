@@ -49,15 +49,18 @@ pagefind --source dist
 
 But we want to run automatic after every build. So we need to add a script to our `package.json` file:
 
-```json
-{
-  //...
+```json title="package.json" showLineNumbers{6} {6}
   "scripts": {
-    //...
-    "postbuild": "pagefind --source dist"
-  }
-  //...
-}
+    "prepare": "simple-git-hooks",
+    "compress": "esno scripts/img-compress-staged.ts",
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "postbuild": "pagefind --site dist",
+    "preview": "astro preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "release": "bumpp"
+  },
 ```
 
 ### Search UI
@@ -70,7 +73,7 @@ It depends on the way you want to have the search UI. In the example above, I us
 
 Then in the script, you can import the default UI and initialize it :
 
-```js
+```ts title="src/components/Search.vue"
 const { PagefindUI } = await import('@pagefind/default-ui')
 const _pagefindUI = new PagefindUI({
   element: '#pagefind__search',
