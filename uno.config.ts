@@ -27,14 +27,14 @@ export default defineConfig({
       'hr-line': 'w-14 mx-auto my-8 border-solid border-1px !border-truegray-200 !dark:border-truegray-800',
     },
     {
-      'code-block': 'static max-h-600px overflow-auto rounded-xl border bg-secondary/20! py-4 text-sm leading-loose',
-      'code-block-title': 'break-words rounded-t-xl border-x border-t px-4 py-2 text-sm font-medium text-foreground',
+      'code-block': 'static max-h-600px overflow-auto rounded-xl border bg-[hsl(var(--secondary))]/20 py-4 text-sm leading-loose',
+      'code-block-title': 'break-words rounded-t-xl border-x border-t px-4 py-2 text-sm font-medium text-[hsl(var(--foreground))]',
       'code-line': 'px-4',
-      'code-line-highlighted': 'bg-foreground/10',
-      'code-chars-highlighted': 'bg-muted-foreground/40 py-1.75',
-      'code-diff-add': 'bg-additive/15',
-      'code-diff-remove': 'bg-destructive/15',
-      'code-copy-button': 'right-0.5 top-0.75 m-0 w-8 h-8 rounded-md bg-background p-1 transition-all',
+      'code-line-highlighted': 'bg-[hsl(var(--foreground))]/10',
+      'code-chars-highlighted': 'bg-[hsl(var(--muted-foreground))]/40 py-1.75',
+      'code-diff-add': 'bg-[hsl(var(--additive))]/15',
+      'code-diff-remove': 'bg-[hsl(var(--destructive))]/15',
+      'code-copy-button': 'right-0.5 top-0.75 m-0 w-8 h-8 rounded-md bg-[hsl(var(--background))] p-1 transition-all',
     },
   ],
   presets: [
@@ -59,36 +59,6 @@ export default defineConfig({
   ],
   theme: {
     extend: {
-      colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        additive: {
-          DEFAULT: 'hsl(var(--additive))',
-          foreground: 'hsl(var(--additive-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        border: 'hsl(var(--border))',
-        ring: 'hsl(var(--ring))',
-      },
       maxWidth: {
         '65ch': '65ch',
       },

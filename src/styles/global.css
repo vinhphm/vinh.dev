@@ -38,19 +38,21 @@
   --ring: 0 0% 83.1%;
 }
 
-/* html.dark .astro-code,
-html.dark .astro-code span {
-  color: var(--shiki-dark) !important;
-  background-color: #171717 !important;
-  font-style: var(--shiki-dark-font-style) !important;
-  font-weight: var(--shiki-dark-font-weight) !important;
-  text-decoration: var(--shiki-dark-text-decoration) !important;
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/GeistVF.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
-html:not(.dark) .astro-code,
-html:not(.dark) .astro-code span {
-  background-color: #fafafa !important;
-} */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMonoVF.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 html.dark {
   color-scheme: dark;
@@ -68,6 +70,12 @@ html:not(.dark) {
   [img-dark] {
     display: none;
   }
+}
+
+*,
+*::before,
+*::after {
+  @apply border-[hsl(var(--border))];
 }
 
 #nprogress {
@@ -99,15 +107,17 @@ article {
   }
 
   :not(pre) > code {
-    @apply relative rounded bg-muted/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
+    @apply relative rounded bg-[hsl(var(--muted))]/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
   }
 
-  code[data-theme*=' '] span {
-    color: var(--shiki-light);
-  }
+  code[data-theme*=' '] {
+    span {
+      color: var(--shiki-light);
+    }
 
-  html.dark code[data-theme*=' '] span {
-    color: var(--shiki-dark);
+    .dark & span {
+      color: var(--shiki-dark);
+    }
   }
 
   figure[data-rehype-pretty-code-figure] {
@@ -132,7 +142,7 @@ article {
           > [data-line]::before {
             counter-increment: line;
             content: counter(line);
-            @apply mr-4 inline-block w-4 text-right text-muted-foreground;
+            @apply mr-4 inline-block w-4 text-right text-[hsl(var(--muted-foreground))];
           }
         }
 
