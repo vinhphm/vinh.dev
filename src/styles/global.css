@@ -1,8 +1,44 @@
 :root {
   --pagefind-ui-font: Geist, sans-serif !important;
+
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 80.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 80.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 80.1%;
+  --accent-foreground: 0 0% 9%;
+  --additive: 112 50% 36%;
+  --additive-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
 }
 
-html.dark .astro-code,
+.dark {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --additive: 112 50% 36%;
+  --additive-foreground: 0 0% 9%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+}
+
+/* html.dark .astro-code,
 html.dark .astro-code span {
   color: var(--shiki-dark) !important;
   background-color: #171717 !important;
@@ -14,7 +50,7 @@ html.dark .astro-code span {
 html:not(.dark) .astro-code,
 html:not(.dark) .astro-code span {
   background-color: #fafafa !important;
-}
+} */
 
 html.dark {
   color-scheme: dark;
@@ -54,7 +90,79 @@ img {
 }
 
 article {
-  --at-apply: sm: min-h-38 min-h-28;
+  .katex-display {
+    @apply overflow-x-auto overflow-y-hidden py-4;
+  }
+
+  mark {
+    background-color: transparent;
+  }
+
+  :not(pre) > code {
+    @apply relative rounded bg-muted/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
+  }
+
+  code[data-theme*=' '] span {
+    color: var(--shiki-light);
+  }
+
+  html.dark code[data-theme*=' '] span {
+    color: var(--shiki-dark);
+  }
+
+  figure[data-rehype-pretty-code-figure] {
+    @apply relative;
+
+    [data-rehype-pretty-code-title] {
+      @apply code-block-title;
+
+      & + pre {
+        @apply mt-0 rounded-t-none;
+      }
+    }
+
+    pre {
+      @apply code-block;
+
+      > code {
+        @apply whitespace-pre-wrap;
+        counter-reset: line;
+
+        &[data-line-numbers] {
+          > [data-line]::before {
+            counter-increment: line;
+            content: counter(line);
+            @apply mr-4 inline-block w-4 text-right text-muted-foreground;
+          }
+        }
+
+        > [data-line] {
+          @apply code-line;
+        }
+
+        [data-highlighted-line] {
+          @apply code-line-highlighted;
+        }
+
+        [data-highlighted-chars] > span {
+          @apply code-chars-highlighted;
+        }
+
+        .diff {
+          &.add {
+            @apply code-diff-add;
+          }
+          &.remove {
+            @apply code-diff-remove;
+          }
+        }
+
+        > button:has(> span) {
+          @apply code-copy-button;
+        }
+      }
+    }
+  }
 }
 
 .fw-inherit a {
