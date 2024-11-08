@@ -15,12 +15,12 @@
     "release": "bumpp"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.9",
-    "@astrojs/rss": "^4.0.9",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/vue": "^4.5.2",
+    "@astrojs/mdx": "4.0.0-beta.3",
+    "@astrojs/rss": "4.0.9",
+    "@astrojs/sitemap": "3.2.1",
+    "@astrojs/vue": "5.0.0-beta.1",
     "@unocss/reset": "^0.64.0",
-    "astro": "^4.16.9",
+    "astro": "5.0.0-beta.7",
     "nprogress": "^0.2.0",
     "powerglitch": "^2.3.4",
     "rehype-autolink-headings": "^7.1.0",
