@@ -1,6 +1,6 @@
 ---
 import { fade } from 'astro:transitions'
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter  } from 'astro:transitions'
 import BaseHead from '@/components/BaseHead.astro'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
@@ -13,7 +13,7 @@ const { ...head } = Astro.props
 <html lang="en">
   <head>
     <BaseHead {...head} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body
     class="antialiased bg-main text-main min-h-screen font-sans w-full bg-dot"

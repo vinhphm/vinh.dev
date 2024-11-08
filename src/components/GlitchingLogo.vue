@@ -9,6 +9,7 @@ const props = defineProps<{
 const mergedClass = computed(() => `${props.class || ''} text-dark dark:text-white`.trim())
 
 onMounted(async () => {
+  // @ts-expect-error lack of types
   const { PowerGlitch } = await import('powerglitch')
   PowerGlitch.glitch('.glitching', {
     timing: {

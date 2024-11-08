@@ -2,7 +2,7 @@ import type { SiteConfig } from '@/types'
 
 export const siteConfig: SiteConfig = {
   author: 'Vinh Pham',
-  title: 'Vinh Pham',
+  title: 'vinh.dev',
   subtitle: 'Thoughts and ideas',
   description: 'Thoughts and ideas',
   image: {

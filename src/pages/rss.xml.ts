@@ -1,3 +1,4 @@
+import type { CollectionPosts } from '@/types'
 import siteConfig from '@/site-config'
 import { getPosts } from '@/utils/posts'
 import rss from '@astrojs/rss'
@@ -13,7 +14,7 @@ export async function GET(context: Context) {
     title: siteConfig.title,
     description: siteConfig.description,
     site: context.site,
-    items: posts!.map((item) => {
+    items: posts!.map((item: CollectionPosts) => {
       return {
         ...item.data,
         link: `${context.site}/posts/${item.slug}/`,
