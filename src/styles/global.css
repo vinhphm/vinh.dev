@@ -75,7 +75,7 @@ html:not(.dark) {
 *,
 *::before,
 *::after {
-  @apply border-[hsl(var(--border))];
+  @apply border-border;
 }
 
 #nprogress {
@@ -118,7 +118,7 @@ article {
 
   /* Inline code */
   :not(pre) > code {
-    @apply relative rounded bg-[hsl(var(--muted))]/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
+    @apply relative rounded bg-muted/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
   }
 
   /* Code blocks */
@@ -127,7 +127,7 @@ article {
 
     /* Code block titles */
     [data-rehype-pretty-code-title] {
-      @apply break-words rounded-t-xl border-x border-t px-4 py-2 text-sm font-medium text-[hsl(var(--foreground))];
+      @apply break-words rounded-t-xl border-x border-t px-4 py-2 text-sm font-medium text-foreground;
 
       /* Remove top margin from code block if a title is present */
       & + pre {
@@ -137,7 +137,7 @@ article {
 
     /* Code block styles */
     pre {
-      @apply static max-h-[600px] overflow-auto rounded-xl border bg-[hsl(var(--secondary))]/20 py-4 text-sm leading-loose;
+      @apply static max-h-[600px] overflow-auto rounded-xl border bg-secondary/20 py-4 text-sm leading-loose;
 
       /* Code block content */
       > code {
@@ -149,7 +149,7 @@ article {
           > [data-line]::before {
             counter-increment: line;
             content: counter(line);
-            @apply mr-4 inline-block w-4 text-right text-[hsl(var(--muted-foreground))];
+            @apply mr-4 inline-block w-4 text-right text-muted-foreground;
           }
         }
 
@@ -160,27 +160,27 @@ article {
 
         /* Highlighted lines */
         [data-highlighted-line] {
-          @apply bg-[hsl(var(--foreground))]/10;
+          @apply bg-foreground/10;
         }
 
         /* Highlighted characters */
         [data-highlighted-chars] > span {
-          @apply bg-[hsl(var(--muted-foreground))/40] py-[7px];
+          @apply bg-muted-foreground/40 py-[7px];
         }
 
         /* Diff lines */
         .diff {
           &.add {
-            @apply bg-[hsl(var(--additive))]/15;
+            @apply bg-additive/15;
           }
           &.remove {
-            @apply bg-[hsl(var(--destructive))]/15;
+            @apply bg-destructive/15;
           }
         }
 
         /* Copy button */
         > button:has(> span) {
-          @apply right-0.5 top-[3px] m-0 size-8 rounded-md bg-[hsl(var(--background))] p-1 backdrop-blur-none transition-all;
+          @apply right-0.5 top-[3px] m-0 size-8 rounded-md bg-background p-1 backdrop-blur-none transition-all;
         }
       }
     }
