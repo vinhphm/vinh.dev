@@ -179,9 +179,9 @@ article {
         }
 
         /* Copy button */
-        /* > button:has(> span) {
+        > button:has(> span) {
           @apply right-0.5 top-[3px] m-0 size-8 bg-background p-1 backdrop-blur-none transition-all;
-        } */
+        }
       }
     }
   }
