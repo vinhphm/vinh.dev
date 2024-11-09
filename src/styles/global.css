@@ -180,7 +180,7 @@ article {
 
         /* Copy button */
         > button:has(> span) {
-          @apply right-0.5 top-[3px] m-0 size-8 bg-background p-1 backdrop-blur-none transition-all;
+          @apply mr-3 bg-background backdrop-blur-none transition-all;
         }
       }
     }
