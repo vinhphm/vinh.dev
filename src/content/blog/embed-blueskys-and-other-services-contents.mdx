@@ -12,9 +12,11 @@ Everything started when I decided to be more active on [<span class="i-ri-bluesk
 
 Everthing was supposed to be simple, as the team has very [detailed documentation](https://docs.bsky.app/) at their main site. But because of the setup of this website and the perfectionist in me, it turned out a bit more complicated than I expected.
 
-## Embed Bluesky's posts (and also other services')
+## The API format
 
-Aparently, Bluesky uses the [oEmbed](https://oembed.com/) protocol to allow embedding posts on other websites. I thought it would be a great opportunity to create a more general solution that could be used to embed content from other services as well. So I started with an Astro component for oEmbed. It worked great at the first try, but then I realized I could set the theme as well. And yikes, the headache began. As I wanted it to be perfect, aside from got the theme right at the first load of the page, I want the component to be able to change the theme on the fly, meaning reload when the theme changes.
+Aparently, Bluesky uses the [oEmbed](https://oembed.com/) API format to allow embedding posts on other websites. I thought it would be a great opportunity to create a more general solution that could be used to embed content from other services as well. So I started with an Astro component for oEmbed. It worked great at the first try, but then I realized I could set the theme as well. And yikes, the headache began. As I wanted it to be perfect, aside from got the theme right at the first load of the page, I want the component to be able to change the theme on the fly, meaning reload when the theme changes.
+
+## We need a proxy endpoint?
 
 So I had to change the component to Vue to make use of prevous setup regarding theme management. But Vue component are client-side code, and most of these oEmbed endpoints won't allow the app to fetch data from them because of CORS policy. So I had to create a Cloudflare Worker to act as a proxy to fetch data from these endpoints. And here is how it looks like:
 
@@ -215,7 +217,7 @@ export default {
 };
 ```
 
-And here is how the Vue component looks like:
+## The Vue component
 
 ```vue title="stc/components/OEmbed.vue" showLineNumbers
 <script setup lang="ts">
@@ -354,10 +356,24 @@ img {
 </style>
 ```
 
-Noticed that we need a `injectContent` function to inject the HTML content into the container. This is because the HTML content returned from the oEmbed endpoint being santized by `v-html` directive. And we need to extract the scripts from the HTML content and re-add them to the container.
+Noticed that we need a `injectContent` function to inject the HTML content into the container? This is because the HTML content returned from the oEmbed endpoint being santized by `v-html` directive. And we need to extract the scripts from the HTML content and re-add them to the container.
 
-And here should be the result:
+## Usage and results
+
+Now we can use the `OEmbed` component to embed content from Bluesky and other services with the following code in MDX files:
+
+```mdx
+import OEmbed from '@/components/OEmbed.vue'
+
+<OEmbed client:only="vue" url="https://bsky.app/profile/vinh.dev/post/3lalirzsyuc2i" />
+```
+
+And we will got this:
 
 <OEmbed client:only="vue" url="https://bsky.app/profile/vinh.dev/post/3lalirzsyuc2i" />
 
 <OEmbed client:only="vue" url="https://x.com/leeerob/status/1707443239630835805" />
+
+## Conclusion
+
+This is just long story of mine to embed Bluesky's posts and other services' contents. You don't have to do exact the same. Just like I said in the beginning, there are simpler ways to do this without all these fancy stuff. So find the one that suits you most and go with it. Have fun at coding and don't forget to follow me on  [<span class="i-ri-bluesky-fill text-bluesky" /> Bluesky / vinh.dev](https://bsky.app/profile/vinh.dev). Cheers!
