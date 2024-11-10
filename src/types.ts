@@ -30,6 +30,12 @@ export interface NavLink {
   href: string
 }
 
+export interface OEmbedOptions {
+  maxWidth?: number
+  maxHeight?: number
+  theme?: 'light' | 'dark'
+}
+
 export interface Image {
   src: string
   alt: string

@@ -77,6 +77,7 @@ export default defineConfig({
       },
       border: 'hsl(var(--border))',
       ring: 'hsl(var(--ring))',
+      bluesky: 'rgb(10, 122, 255)',
     },
     extend: {
       maxWidth: {
@@ -95,7 +96,8 @@ export default defineConfig({
     'i-ri-file-list-2-line',
     'i-ri-github-line',
     'i-ri-linkedin-box-line',
-    'i-ri-instagram-line',
+    'i-ri-bluesky-fill',
+    'i-ri-bluesky-line',
     'i-ri-search-line',
     'i-ri-spotify-line',
     'i-ri-threads-line',

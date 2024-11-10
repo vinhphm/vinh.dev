@@ -1,0 +1,379 @@
+---
+title: Embed Bluesky's and Other Services' Contents
+date: 2024-11-10T18:00:00+07:00
+lang: en
+description: What started as a simple idea to embed Bluesky's posts turned into a more general solution to embed content from various services
+tag: Web
+duration: 7 min read
+---
+import OEmbed from '@/components/OEmbed.vue'
+
+Everything started when I decided to be more active on [<span class="i-ri-bluesky-fill text-bluesky" /> Bluesky](https://bsky.app) and needed a way to integrate it more seamlessly with my website. I wanted to embed my posts directly into my blog posts, and have a share/comment button that would open the post on Bluesky.
+
+Everthing was supposed to be simple, as the team has very [detailed documentation](https://docs.bsky.app/) at their main site. But because of the setup of this website and the perfectionist in me, it turned out a bit more complicated than I expected.
+
+## The API format
+
+Aparently, Bluesky uses the [oEmbed](https://oembed.com/) API format to allow embedding posts on other websites. I thought it would be a great opportunity to create a more general solution that could be used to embed content from other services as well. So I started with an Astro component for oEmbed. It worked great at the first try, but then I realized I could set the theme as well. And yikes, the headache began. As I wanted it to be perfect, aside from got the theme right at the first load of the page, I want the component to be able to change the theme on the fly, meaning reload when the theme changes.
+
+## We need a proxy endpoint?
+
+So I had to change the component to Vue to make use of prevous setup regarding theme management. But Vue component are client-side code, and most of these oEmbed endpoints won't allow the app to fetch data from them because of CORS policy. So I had to create a Cloudflare Worker to act as a proxy to fetch data from these endpoints. And here is how it looks like:
+
+```javascript title="worker.js" showLineNumbers
+// Cache for providers list
+let providersCache = null;
+let providersCacheTime = 0;
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+
+const ALLOWED_ORIGINS = [
+  // Add your allowed origins here
+];
+
+function isOriginAllowed(request) {
+  const origin = request.headers.get('Origin');
+  if (!origin) return false;
+  return ALLOWED_ORIGINS.some(allowed => origin.startsWith(allowed));
+}
+
+function corsHeaders(request) {
+  const origin = request.headers.get('Origin');
+  // Only return specific origin if it's allowed, otherwise no CORS headers
+  return isOriginAllowed(request) ? {
+    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+  } : {};
+}
+
+async function getProviders() {
+  // Return cached providers if available and not expired
+  if (providersCache && (Date.now() - providersCacheTime < CACHE_DURATION)) {
+    return providersCache;
+  }
+
+  try {
+    const response = await fetch('https://oembed.com/providers.json');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch providers: ${response.status}`);
+    }
+
+    providersCache = await response.json();
+    providersCacheTime = Date.now();
+    return providersCache;
+  } catch (error) {
+    // If we have a cached version, use it even if expired
+    if (providersCache) {
+      return providersCache;
+    }
+    throw error;
+  }
+}
+
+function findProvider(url, providers) {
+  for (const provider of providers) {
+    for (const endpoint of provider.endpoints) {
+      for (const scheme of endpoint.schemes || []) {
+        const pattern = new RegExp(
+          '^' + scheme.replace(/\*/g, '.*').replace(/\?/g, '\\?') + '$'
+        );
+        if (pattern.test(url)) {
+          return {
+            name: provider.provider_name,
+            endpoint: endpoint.url,
+            formats: endpoint.formats || ['json'],
+          };
+        }
+      }
+      
+      // If no schemes defined but url matches provider url
+      if (!endpoint.schemes && url.startsWith(provider.provider_url)) {
+        return {
+          name: provider.provider_name,
+          endpoint: endpoint.url,
+          formats: endpoint.formats || ['json'],
+        };
+      }
+    }
+  }
+  return null;
+}
+
+async function fetchOembedData(provider, targetUrl, options = {}) {
+  const embedUrl = new URL(provider.endpoint);
+  embedUrl.searchParams.set('url', targetUrl);
+  
+  // Set format preference (prefer json if available)
+  const format = provider.formats.includes('json') ? 'json' : provider.formats[0];
+  embedUrl.searchParams.set('format', format);
+  
+  // Add additional parameters if provided
+  for (const [key, value] of Object.entries(options)) {
+    if (value) {
+      embedUrl.searchParams.set(key, value);
+    }
+  }
+
+  const response = await fetch(embedUrl);
+  
+  if (!response.ok) {
+    throw new Error(`Failed to fetch oEmbed data: ${response.status}`);
+  }
+
+  return response.json();
+}
+
+export default {
+  async fetch(request, env, ctx) {
+    // Check if origin is allowed
+    if (!isOriginAllowed(request)) {
+      return new Response('Forbidden', {
+        status: 403,
+        statusText: 'Forbidden',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+    }
+
+    // Handle CORS preflight requests
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        headers: corsHeaders(request),
+      });
+    }
+
+    // Parse URL and get parameters
+    const url = new URL(request.url);
+    const targetUrl = url.searchParams.get('url');
+
+    if (!targetUrl) {
+      return new Response('Missing URL parameter', {
+        status: 400,
+        headers: {
+          'Content-Type': 'application/json',
+          ...corsHeaders(request),
+        },
+      });
+    }
+
+    try {
+      // Get providers list
+      const providers = await getProviders();
+      
+      // Find the appropriate provider
+      const provider = findProvider(targetUrl, providers);
+      
+      if (!provider) {
+        return new Response(JSON.stringify({
+          error: 'Unsupported URL format',
+          message: 'No oEmbed provider found for this URL'
+        }), {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders(request),
+          },
+        });
+      }
+
+      // Get additional options from query parameters
+      const options = {};
+      const validOptions = ['maxwidth', 'maxheight', 'theme', 'format', 'lang'];
+      
+      for (const option of validOptions) {
+        const value = url.searchParams.get(option);
+        if (value) {
+          options[option] = value;
+        }
+      }
+
+      const data = await fetchOembedData(provider, targetUrl, options);
+
+      return new Response(JSON.stringify(data), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'public, max-age=3600',
+          'X-Provider': provider.name,
+          ...corsHeaders(request),
+        },
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      
+      return new Response(JSON.stringify({
+        error: 'Error processing request',
+        message: error.message
+      }), {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          ...corsHeaders(request),
+        },
+      });
+    }
+  },
+};
+```
+
+## The Vue component
+
+```vue title="stc/components/OEmbed.vue" showLineNumbers
+<script setup lang="ts">
+import { useDark } from '@vueuse/core'
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+
+const props = defineProps<{
+  url: string
+  maxWidth?: number
+}>()
+
+const isDark = useDark()
+const oembedData = ref<any>(null)
+const containerRef = ref<HTMLElement>()
+
+async function fetchOembedData() {
+  try {
+    const response = await fetch(
+      `https://worker.vinh.dev/oembed?url=${encodeURIComponent(props.url)}&theme=${isDark.value ? 'dark' : 'light'}`,
+    )
+    oembedData.value = await response.json()
+    if (oembedData.value?.type === 'rich') {
+      nextTick(() => injectContent(oembedData.value.html))
+    }
+  } catch (error) {
+    console.error('Failed to fetch oembed data:', error)
+  }
+}
+
+function injectContent(html: string) {
+  if (!containerRef.value)
+    return
+
+  // Clear previous content
+  containerRef.value.innerHTML = ''
+
+  // Create temporary container
+  const temp = document.createElement('div')
+  temp.innerHTML = html
+
+  // Extract scripts
+  const scripts = Array.from(temp.getElementsByTagName('script'))
+
+  // Remove scripts from temp
+  scripts.forEach((oldScript) => {
+    oldScript.parentNode?.removeChild(oldScript)
+  })
+
+  // Insert HTML
+  containerRef.value.innerHTML = temp.innerHTML
+
+  // Re-add scripts
+  scripts.forEach((oldScript) => {
+    const newScript = document.createElement('script')
+    Array.from(oldScript.attributes).forEach((attr) => {
+      newScript.setAttribute(attr.name, attr.value)
+    })
+    newScript.innerHTML = oldScript.innerHTML
+    containerRef.value?.appendChild(newScript)
+  })
+}
+
+onMounted(() => {
+  fetchOembedData()
+})
+
+onUnmounted(() => {
+  if (containerRef.value) {
+    containerRef.value.innerHTML = ''
+  }
+})
+
+// Refetch when theme changes
+watch(isDark, () => {
+  fetchOembedData()
+})
+</script>
+
+<template>
+  <div v-if="oembedData" class="oembed-container">
+    <div
+      v-if="oembedData.type === 'rich'"
+      ref="containerRef"
+      :style="`max-width: ${maxWidth || 800}px;`"
+    />
+
+    <img
+      v-else-if="oembedData.type === 'photo'"
+      :src="oembedData.url"
+      :alt="oembedData.title || ''"
+      :width="oembedData.width"
+      :height="oembedData.height"
+      :style="`max-width: ${maxWidth || 800}px;`"
+    >
+
+    <div
+      v-else-if="oembedData.type === 'video'"
+      class="video-container"
+      :style="`max-width: ${maxWidth || 800}px;`"
+      v-html="oembedData.html"
+    />
+
+    <a
+      v-else-if="oembedData.type === 'link'"
+      :href="oembedData.url"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ oembedData.title || url }}
+    </a>
+  </div>
+</template>
+
+<style scoped>
+.oembed-container {
+  margin: 1rem 0;
+  width: 100%;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-container :deep(iframe) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+```
+
+Noticed that we need a `injectContent` function to inject the HTML content into the container? This is because the HTML content returned from the oEmbed endpoint being santized by `v-html` directive. And we need to extract the scripts from the HTML content and re-add them to the container.
+
+## Usage and results
+
+Now we can use the `OEmbed` component to embed content from Bluesky and other services with the following code in MDX files:
+
+```mdx
+import OEmbed from '@/components/OEmbed.vue'
+
+<OEmbed client:only="vue" url="https://bsky.app/profile/vinh.dev/post/3lalirzsyuc2i" />
+```
+
+And we will got this:
+
+<OEmbed client:only="vue" url="https://bsky.app/profile/vinh.dev/post/3lalirzsyuc2i" />
+
+<OEmbed client:only="vue" url="https://x.com/leeerob/status/1707443239630835805" />
+
+## Conclusion
+
+This is just long story of mine to embed Bluesky's posts and other services' contents. You don't have to do exact the same. Just like I said in the beginning, there are simpler ways to do this without all these fancy stuff. So find the one that suits you most and go with it. Have fun at coding and don't forget to follow me on  [<span class="i-ri-bluesky-fill text-bluesky" /> Bluesky / vinh.dev](https://bsky.app/profile/vinh.dev). Cheers!
