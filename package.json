@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
-    "@extractus/oembed-extractor": "^4.0.5",
     "@iconify/json": "^2.2.269",
     "@pagefind/default-ui": "^1.2.0",
     "@rehype-pretty/transformers": "^0.13.2",
