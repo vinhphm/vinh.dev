@@ -187,6 +187,10 @@ article {
   }
 }
 
+iframe {
+  color-scheme: light dark;
+}
+
 .fw-inherit a {
   font-weight: inherit;
 }
