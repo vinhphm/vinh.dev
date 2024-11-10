@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useDark } from '@vueuse/core'
-import { onMounted, ref, watch } from 'vue'
-import { getOembedData } from '../utils/oembed'
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 
 const props = defineProps<{
   url: string
@@ -10,15 +9,63 @@ const props = defineProps<{
 
 const isDark = useDark()
 const oembedData = ref<any>(null)
+const containerRef = ref<HTMLElement>()
 
 async function fetchOembedData() {
-  oembedData.value = await getOembedData(props.url, {
-    theme: isDark.value ? 'dark' : 'light',
+  try {
+    const response = await fetch(
+      `https://worker.vinh.dev/oembed?url=${encodeURIComponent(props.url)}&theme=${isDark.value ? 'dark' : 'light'}`,
+    )
+    oembedData.value = await response.json()
+    if (oembedData.value?.type === 'rich') {
+      nextTick(() => injectContent(oembedData.value.html))
+    }
+  } catch (error) {
+    console.error('Failed to fetch oembed data:', error)
+  }
+}
+
+function injectContent(html: string) {
+  if (!containerRef.value)
+    return
+
+  // Clear previous content
+  containerRef.value.innerHTML = ''
+
+  // Create temporary container
+  const temp = document.createElement('div')
+  temp.innerHTML = html
+
+  // Extract scripts
+  const scripts = Array.from(temp.getElementsByTagName('script'))
+
+  // Remove scripts from temp
+  scripts.forEach((oldScript) => {
+    oldScript.parentNode?.removeChild(oldScript)
+  })
+
+  // Insert HTML
+  containerRef.value.innerHTML = temp.innerHTML
+
+  // Re-add scripts
+  scripts.forEach((oldScript) => {
+    const newScript = document.createElement('script')
+    Array.from(oldScript.attributes).forEach((attr) => {
+      newScript.setAttribute(attr.name, attr.value)
+    })
+    newScript.innerHTML = oldScript.innerHTML
+    containerRef.value?.appendChild(newScript)
   })
 }
 
 onMounted(() => {
   fetchOembedData()
+})
+
+onUnmounted(() => {
+  if (containerRef.value) {
+    containerRef.value.innerHTML = ''
+  }
 })
 
 // Refetch when theme changes
@@ -31,8 +78,8 @@ watch(isDark, () => {
   <div v-if="oembedData" class="oembed-container">
     <div
       v-if="oembedData.type === 'rich'"
+      ref="containerRef"
       :style="`max-width: ${maxWidth || 800}px;`"
-      v-html="oembedData.html"
     />
 
     <img
