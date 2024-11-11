@@ -23,14 +23,14 @@ import siteConfig from '@/site-config'
     <div class="flex-auto"></div>
     <hr class="hr-line" />
     <p>Find me on</p>
-    <p class="flex mt--2! gap-x-4 gap-y-2 flex-wrap fw-inherit">
+    <p class="flex mt--2! gap-x-2 gap-y-2 flex-wrap fw-inherit">
       {
         siteConfig.socialLinks.map((link) => (
           <a
             aria-label={link.text}
             href={link.href}
             target="_blank"
-            class="prose-link"
+            class="button-link"
           >
             <span class:list={[link.icon]} />
             {link.text}

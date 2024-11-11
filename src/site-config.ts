@@ -12,31 +12,31 @@ export const siteConfig: SiteConfig = {
   email: 'vinh@vinh.dev',
   socialLinks: [
     {
-      text: 'Bluesky',
+      text: 'vinh.dev',
       href: 'https://bsky.app/profile/vinh.dev',
-      icon: 'i-ri-blueksy-line',
+      icon: 'i-ri-bluesky-fill',
       header: 'i-ri-bluesky-line',
     },
     {
-      text: 'Threads',
+      text: 'vinh.phm',
       href: 'https://threads.net/vinh.phm',
       icon: 'i-ri-threads-line',
     },
     {
-      text: 'GitHub',
+      text: 'vinhphm',
       href: 'https://github.com/vinhphm',
-      icon: 'i-ri-github-line',
+      icon: 'i-ri-github-fill',
       header: 'i-ri-github-line',
     },
     {
-      text: 'LinkedIn',
+      text: 'vinhphm',
       href: 'https://www.linkedin.com/in/vinhphm/',
-      icon: 'i-ri-linkedin-box-line',
+      icon: 'i-ri-linkedin-box-fill',
     },
     {
-      text: 'Spotify',
-      href: 'https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4?si=1567653669df4908',
-      icon: 'i-ri-spotify-line',
+      text: 'Vinh Pham',
+      href: 'https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4',
+      icon: 'i-ri-spotify-fill',
     },
   ],
   header: {
