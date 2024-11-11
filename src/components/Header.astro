@@ -7,7 +7,7 @@ import ThemeToggle from './ThemeToggle.vue'
 
 const navLinks = siteConfig.header.navLinks || []
 
-const socialLinks = siteConfig.socialLinks.filter((link: Record<string, any>) => {
+const socialLinks = structuredClone(siteConfig.socialLinks).filter((link: Record<string, any>) => {
   if (link.header && typeof link.header === 'boolean') {
     return link;
   }

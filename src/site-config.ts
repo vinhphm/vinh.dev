@@ -15,6 +15,7 @@ export const siteConfig: SiteConfig = {
       text: 'vinh.dev',
       href: 'https://bsky.app/profile/vinh.dev',
       icon: 'i-ri-bluesky-fill',
+      header: 'i-ri-bluesky-line',
     },
     {
       text: 'vinh.phm',
@@ -25,6 +26,7 @@ export const siteConfig: SiteConfig = {
       text: 'vinhphm',
       href: 'https://github.com/vinhphm',
       icon: 'i-ri-github-fill',
+      header: 'i-ri-github-line',
     },
     {
       text: 'vinhphm',
