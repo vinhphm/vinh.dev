@@ -1,6 +1,6 @@
 ---
 interface Props {
-  list: Post[];
+  list: Post[]
 }
 
 interface Post {
@@ -20,14 +20,14 @@ function getDate(date: string) {
 
 function getHref(post: Post) {
   if (post.data.redirect)
-    return post.data.redirect;
-  return `/posts/${post.slug}`;
+    return post.data.redirect
+  return `/posts/${post.slug}`
 }
 
 function getTarget(post: Post) {
   if (post.data.redirect)
-    return '_blank';
-  return '_self';
+    return '_blank'
+  return '_self'
 }
 
 function isSameYear(a: Date | string | number, b: Date | string | number) {

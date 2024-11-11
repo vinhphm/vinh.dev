@@ -9,14 +9,14 @@ const navLinks = siteConfig.header.navLinks || []
 
 const socialLinks = structuredClone(siteConfig.socialLinks).filter((link: Record<string, any>) => {
   if (link.header && typeof link.header === 'boolean') {
-    return link;
+    return link
   }
   else if (link.header && typeof link.header === 'string') {
-    link.icon = link.header.includes('i-') ? link.header : link.icon;
-    return link;
+    link.icon = link.header.includes('i-') ? link.header : link.icon
+    return link
   }
   else {
-    return false;
+    return false
   }
 })
 ---

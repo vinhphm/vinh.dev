@@ -1,19 +1,19 @@
 ---
-import VinhDev from './icons/VinhDev.vue';
-import Vitest from './icons/Vitest.vue';
+import VinhDev from './icons/VinhDev.vue'
+import Vitest from './icons/Vitest.vue'
 
 interface ProjectItem {
-  text: string;
-  description?: string;
-  icon?: string;
-  href: string;
+  text: string
+  description?: string
+  icon?: string
+  href: string
 }
 
 interface Props {
-  list: ProjectItem[];
+  list: ProjectItem[]
 }
 
-const { list } = Astro.props;
+const { list } = Astro.props
 ---
 
 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
