@@ -21,9 +21,7 @@ const blog = defineCollection({
     description: z.string().optional(),
     image: z
       .object({
-        src: image().refine(img => img.width >= 640, {
-          message: 'Cover image must be at least 640 pixels wide!',
-        }),
+        src: image(),
         alt: z.string(),
       })
       .optional(),
