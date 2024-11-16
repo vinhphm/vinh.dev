@@ -13,21 +13,25 @@ interface Props {
 
 const {
   description = '',
-  image = {
-    src: `https://worker.vinh.dev/og?title=${encodeURIComponent(
-      Astro.props.title || '',
-    )}`,
-    alt: Astro.props.title,
-  },
+  image,
   pageType = 'website',
 } = Astro.props
 
+const defaultImage = {
+  src: `https://worker.vinh.dev/og?title=${encodeURIComponent(
+    Astro.props.title || '',
+  )}`,
+  alt: Astro.props.title,
+}
+
+const imageToUse = image || defaultImage
+
 const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' / ')
 
-const resolvedImage = image?.src
+const resolvedImage = imageToUse?.src
   ? {
-      src: new URL(image.src, Astro.site).toString(),
-      alt: image.alt,
+      src: new URL(imageToUse.src, Astro.site).toString(),
+      alt: imageToUse.alt,
     }
   : undefined
 
