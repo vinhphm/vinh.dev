@@ -1,0 +1,12 @@
+---
+import OEmbedContent from '@/components/OEmbedContent.vue'
+import Skeleton from '@/components/Skeleton.astro'
+
+const { url, maxWidth } = Astro.props
+---
+
+<OEmbedContent client:only="vue" url={url} maxWidth={maxWidth}>
+  <div slot="fallback">
+    <Skeleton />
+  </div>
+</OEmbedContent>

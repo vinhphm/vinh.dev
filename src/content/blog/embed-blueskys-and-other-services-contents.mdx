@@ -6,7 +6,7 @@ description: What started as a simple idea to embed Bluesky's posts turned into 
 tag: Web
 duration: 7 min read
 ---
-import OEmbed from '@/components/OEmbed.vue'
+import OEmbed from '@/components/OEmbed.astro'
 
 Everything started when I decided to be more active on [<span class="i-ri-bluesky-fill text-bluesky" /> Bluesky](https://bsky.app) and needed a way to integrate it more seamlessly with my website. I wanted to embed my posts directly into my blog posts, and have a share/comment button that would open the post on Bluesky.
 
@@ -370,8 +370,9 @@ import OEmbed from '@/components/OEmbed.vue'
 
 And we will got this (sadly, Bluesky's emebed itself does not support dark theme yet):
 
-<OEmbed client:only="vue" url="https://bsky.app/profile/vinh.dev/post/3lalirzsyuc2i" />
+<OEmbed url="https://bsky.app/profile/vinh.dev/post/3lalirzsyuc2i" />
 
 ## Conclusion
 
 This is just long story of mine to embed Bluesky's posts and other services' contents. You don't have to do exact the same. Just like I said in the beginning, there are simpler ways to do this without all these fancy stuff. So find the one that suits you most and go with it. Have fun at coding and don't forget to follow me on  [<span class="i-ri-bluesky-fill text-bluesky" /> Bluesky / vinh.dev](https://bsky.app/profile/vinh.dev). Cheers!
+@/components/OEmbedContent.vue
