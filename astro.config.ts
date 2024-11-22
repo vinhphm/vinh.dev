@@ -20,6 +20,9 @@ export default defineConfig({
     assets: '_assets',
     format: 'file',
   },
+  experimental: {
+    svg: true,
+  },
   integrations: [
     mdx(),
     sitemap(),
