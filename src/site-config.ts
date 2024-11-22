@@ -18,11 +18,6 @@ export const siteConfig: SiteConfig = {
       header: 'i-ri-bluesky-line',
     },
     {
-      text: 'vinh.phm',
-      href: 'https://threads.net/vinh.phm',
-      icon: 'i-ri-threads-line',
-    },
-    {
       text: 'vinhphm',
       href: 'https://github.com/vinhphm',
       icon: 'i-ri-github-fill',

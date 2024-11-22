@@ -102,7 +102,6 @@ export default defineConfig({
     'i-ri-bluesky-line',
     'i-ri-search-line',
     'i-ri-spotify-fill',
-    'i-ri-threads-line',
     'i-simple-icons-cloudflarepages',
     'i-simple-icons-github',
     'i-simple-icons-mdnwebdocs',
