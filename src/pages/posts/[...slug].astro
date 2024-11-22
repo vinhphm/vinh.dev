@@ -31,7 +31,6 @@ function getDate(date: string) {
 const base = 'https://vinh.dev'
 const parentDir = post.slug.split('/').slice(0, -1).join('/')
 const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/posts/${post.slug}\n\nI think...`)}`
-const threadUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/posts/${post.slug}\n\nI think...`)}`
 ---
 
 <BaseLayout title={title} description={description} image={image?.src} pageType="article">
@@ -68,10 +67,6 @@ const threadUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent
           <span class="op75">comment on </span>
           <a href={blueskyUrl} target="_blank" class="op75">
             bluesky
-          </a>
-          <span class="op40"> / </span>
-          <a href={threadUrl} target="_blank" class="op75">
-            threads
           </a>
         </>
       )
