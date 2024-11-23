@@ -1,5 +1,5 @@
 ---
-title: Custom Domains and Routes in Cloudflare Workers
+title: Custom domains and routes in Cloudflare Workers
 date: 2023-08-25T22:00:00+07:00
 lang: en
 description: A beginner's guide to Cloudflare Workers, a serverless platform that runs your code on the edge. Learn how to use custom domains and routes to trigger your Workers.
@@ -14,13 +14,13 @@ So a Worker is like a mini-application with a small piece of code that you would
 
 By default, when creating a Worker, you will be assigned to a domain like this `<worker-name>.<subdomain>.workers.dev`. It will show up in the **Routes** list, meaning that any request sent to that domain should trigger your Worker (if you haven't disabled it). I don't know about you but I personally don't like lengthy subdomain routes like that. So I chose one of the options below.
 
-### Use Custom Domains
+### Use custom domains
 
 Using the dashboard interface to add Custom Domains is super quick and easy. It's a one-click operation for websites on Cloudflare or using Cloudflare DNS (which is the requirement here).
 
 > You should note that custom domains point all paths of a domain or subdomain to your Worker, so be wise to choose a domain that won't conflict with your main website. For example, if you have your website at `abc.dev`, you should not add `abc.dev` to your Worker again, instead you can use `<subdomain>.abc.dev`.
 
-### Use Routes
+### Use routes
 
 If you're not a fan of the note above, then you can consider using **Routes** instead.
 

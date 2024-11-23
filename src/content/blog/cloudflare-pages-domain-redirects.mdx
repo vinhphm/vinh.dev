@@ -15,7 +15,7 @@ import redirectParameters from '@/assets/images/2023/redirect-parameters.png';
 
 [<span class="i-simple-icons-cloudflarepages" /> Cloudflare Pages](https://pages.cloudflare.com/) is a new player in the JAMstack world, alongside Netlify and Vercel. Despite being a newcomer, Cloudflare is a well-known name, so many people are starting to shift to this Cloudflare service. Cloudflare Pages offers numerous advantages that many consider, but there are also aspects you need to adjust and configure to achieve your desired outcomes. One of these aspects is redirects.
 
-## The Issue
+## The issue
 
 Cloudflare Pages supports redirect functionality through the `_redirects` file, similar to Netlify. You can create a file like this:
 
@@ -53,7 +53,7 @@ When you deploy your project on Cloudflare Pages, the initial domain address you
 
    <Image src={createNewBulkRedirect} alt="Create new Bulk Redirects" class="rounded-lg dark:invert-95" />
 
-## Redirect from `www` Domain to Non-`www` Domain (Apex Domain)
+## Redirect from `www` domain to non-`www` domain (apex domain)
 
 In some cases, instead of wanting a `www.example.com` domain, users prefer a shorter domain like ```example.com` in the address bar. Achieving this consistent display is crucial in web development. Typically, services like Netlify or Vercel support this through DNS settings along with visual adjustments in their dashboard. With Cloudflare Pages, you need to set up this feature yourself, using **Bulk Redirects**, as follows:
 
