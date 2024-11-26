@@ -2,7 +2,7 @@
   "name": "vinh-dev",
   "type": "module",
   "version": "1.2.2",
-  "packageManager": "bun@1.1.36",
+  "packageManager": "bun@1.1.37",
   "scripts": {
     "prepare": "simple-git-hooks",
     "compress": "esno scripts/img-compress-staged.ts",
@@ -30,8 +30,8 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.9.2",
-    "@iconify/json": "^2.2.275",
+    "@antfu/eslint-config": "^3.10.0",
+    "@iconify/json": "^2.2.276",
     "@pagefind/default-ui": "^1.2.0",
     "@rehype-pretty/transformers": "^0.13.2",
     "@shikijs/transformers": "^1.23.1",
