@@ -6,44 +6,41 @@ import siteConfig from "@/site-config";
 <BaseLayout description={siteConfig.description}>
   <article class="prose">
     <h1 class="text-title">Vinh Pham</h1>
+    <p>Curious Mind. Software Engineer. Explorer.</p>
     <p>
-      Curious Mind. Software Engineer. Explorer.
-      </p>
-      <p>
-        I spend my days building things that make work easier for others. But
-        sometimes the most exciting ideas don't fit in a 9-to-5 box – that's
-        what this little corner of the internet is for! A place for my
-        playground of side works, random thoughts, and happy accidents that come
-        from tinkering with code.
-      </p>
-      <p>
-        Beyond coding, you'll find me enjoying a good cup of coffee ☕️ or tea
-        🧋, and exploring new destinations 🚐.
-      </p>
-      <div class="flex-auto"></div>
-      <hr class="hr-line" />
-      <p>Find me on</p>
-      <p class="flex mt--2! gap-x-2 gap-y-2 flex-wrap fw-inherit">
-        {
-          siteConfig.socialLinks.map((link) => (
-            <a
-              aria-label={link.text}
-              href={link.href}
-              target="_blank"
-              class="button-link"
-            >
-              <span class:list={[link.icon]} />
-              {link.text}
-            </a>
-          ))
-        }
-      </p>
-      <p>
-        Or mail me at
-        <span font-mono>
-          vinh<span align-text-bottom i-carbon-at></span>vinh.dev
-        </span>
-      </p>
+      I spend my days building things that make work easier for others. But
+      sometimes the most exciting ideas don't fit in a 9-to-5 box – that's what
+      this little corner of the internet is for! A place for my playground of
+      side works, random thoughts, and happy accidents that come from tinkering
+      with code.
+    </p>
+    <p>
+      Beyond coding, you'll find me enjoying a good cup of coffee ☕️ or tea 🧋,
+      and exploring new destinations 🚐.
+    </p>
+    <div class="flex-auto"></div>
+    <hr class="hr-line" />
+    <p>Find me on</p>
+    <p class="flex mt--2! gap-x-2 gap-y-2 flex-wrap fw-inherit">
+      {
+        siteConfig.socialLinks.map((link) => (
+          <a
+            aria-label={link.text}
+            href={link.href}
+            target="_blank"
+            class="button-link"
+          >
+            <span class:list={[link.icon]} />
+            {link.text}
+          </a>
+        ))
+      }
+    </p>
+    <p>
+      Or mail me at
+      <span font-mono>
+        vinh<span align-text-bottom i-carbon-at></span>vinh.dev
+      </span>
     </p>
   </article>
 </BaseLayout>
