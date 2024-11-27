@@ -91,14 +91,39 @@ function formatCanonicalURL(url: string | URL) {
 }
 
 <script is:inline>
-  ;(function () {
+  function preloadTheme() {
     const prefersDark =
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
     if (setting === 'dark' || (prefersDark && setting !== 'light'))
       document.documentElement.classList.toggle('dark', true)
-  })()
+
+    void window.getComputedStyle(css).opacity
+    document.head.removeChild(css)
+  }
+
+  document.addEventListener("DOMContentLoaded", () => preloadTheme());
+  document.addEventListener("astro:after-swap", () => preloadTheme());
+  preloadTheme()
 </script>
 
 <script>
