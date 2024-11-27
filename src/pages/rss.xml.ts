@@ -17,7 +17,7 @@ export async function GET(context: Context) {
     items: posts!.map((item: CollectionPosts) => {
       return {
         ...item.data,
-        link: `${context.site}/posts/${item.slug}/`,
+        link: `${context.site}posts/${item.slug}`,
         pubDate: new Date(item.data.date),
         content: item.body,
         author: `${siteConfig.author} <${siteConfig.email}>`,
