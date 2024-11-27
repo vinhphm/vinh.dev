@@ -1,3 +1,4 @@
+import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local'
 import {
   defineConfig,
   presetAttributify,
@@ -46,6 +47,11 @@ export default defineConfig({
         sans: 'Inter',
         mono: 'Roboto Mono',
       },
+      processors: createLocalFontProcessor({
+        cacheDir: 'node_modules/.cache/unocss/fonts',
+        fontAssetsDir: 'public/assets/fonts',
+        fontServeBaseUrl: '/assets/fonts',
+      }),
     }),
   ],
   theme: {
