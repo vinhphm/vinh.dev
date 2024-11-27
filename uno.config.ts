@@ -42,16 +42,11 @@ export default defineConfig({
     }),
     presetTypography(),
     presetWebFonts({
-      provider: 'google',
       fonts: {
         sans: ['Inter:100..900'],
         mono: ['Roboto Mono:100..700'],
       },
-      processors: createLocalFontProcessor({
-        cacheDir: 'node_modules/.cache/unocss/fonts',
-        fontAssetsDir: 'public/assets/fonts',
-        fontServeBaseUrl: '/assets/fonts',
-      }),
+      processors: createLocalFontProcessor(),
     }),
   ],
   theme: {
