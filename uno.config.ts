@@ -1,3 +1,4 @@
+import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local'
 import {
   defineConfig,
   presetAttributify,
@@ -41,11 +42,16 @@ export default defineConfig({
     }),
     presetTypography(),
     presetWebFonts({
-      provider: 'google',
+      provider: 'none',
       fonts: {
         sans: ['Inter:100..900'],
         mono: ['Roboto Mono:100..900'],
       },
+      processors: createLocalFontProcessor({
+        cacheDir: 'node_modules/.cache/unocss/fonts',
+        fontAssetsDir: 'public/assets/fonts',
+        fontServeBaseUrl: '/assets/fonts',
+      }),
     }),
   ],
   theme: {
