@@ -2,7 +2,7 @@
 import VinhDev from './icons/VinhDev.vue'
 import Vitest from './icons/Vitest.vue'
 
-interface ProjectItem {
+interface WorkItem {
   text: string
   description?: string
   icon?: string
@@ -10,7 +10,7 @@ interface ProjectItem {
 }
 
 interface Props {
-  list: ProjectItem[]
+  list: WorkItem[]
 }
 
 const { list } = Astro.props
@@ -22,21 +22,21 @@ const { list } = Astro.props
       nothing here yet.
     </div>
   ) : (
-    list.map((project) => (
+    list.map((work) => (
       <li class="w-full flex items-center rounded-2 container-link">
-        <a class="flex items-center" target="_blank" href={project.href} aria-label={project.text}>
+        <a class="flex items-center" target="_blank" href={work.href} aria-label={work.text}>
           <div class="ml-2 mr-4 pt-2">
-            {project.icon === 'vitest' ? (
+            {work.icon === 'vitest' ? (
               <Vitest client:idle class="inline-block text-4xl" />
-            ) : project.icon === 'vinh-dev' ? (
+            ) : work.icon === 'vinh-dev' ? (
               <VinhDev client:idle class="inline-block text-4xl" />
             ) : (
-              <i class={`inline-block text-4xl ${project.icon || 'i-carbon-unknown'}`} />
+              <i class={`inline-block text-4xl ${work.icon || 'i-carbon-unknown'}`} />
             )}
           </div>
           <div class="font-normal leading-tight">
-            <div class="text-lg hover:text-main">{project.text}</div>
-            <div class="text-sm opacity-50">{project.description}</div>
+            <div class="text-lg hover:text-main">{work.text}</div>
+            <div class="text-sm opacity-50">{work.description}</div>
           </div>
         </a>
       </li>

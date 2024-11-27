@@ -1,9 +1,9 @@
-import type { ProjectData } from '@/types'
+import type { WorkData } from '@/types'
 
-export const projectData: ProjectData = [
+export const workData: WorkData = [
   {
     title: 'Current Focus',
-    projects: [
+    works: [
       {
         text: 'Vinh.Dev',
         description: 'My place to share things out with the world. Astro/Vite edition',
@@ -14,7 +14,7 @@ export const projectData: ProjectData = [
   },
   {
     title: 'VS Code Extension',
-    projects: [
+    works: [
       {
         text: 'Subessense Theme',
         description: 'A subjectively revamped, more electrifying version of awesome `Subliminal Next` theme made by Konrad Keska.',
@@ -25,7 +25,7 @@ export const projectData: ProjectData = [
   },
   {
     title: 'Personal Websites',
-    projects: [
+    works: [
       {
         text: 'Vinh.Dev - Vite version',
         description: 'The website but powered by Vite from mid-2023 to mid-2024.',
@@ -48,7 +48,7 @@ export const projectData: ProjectData = [
   },
   {
     title: 'Fresh/Deno',
-    projects: [
+    works: [
       {
         text: 'Paste',
         description: 'A minimal plain text storage service powered by Fresh framework, Deno, and Supabase',
