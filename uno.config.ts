@@ -41,10 +41,10 @@ export default defineConfig({
     }),
     presetTypography(),
     presetWebFonts({
-      provider: 'none',
+      provider: 'google',
       fonts: {
-        sans: 'Geist',
-        mono: 'Geist Mono',
+        sans: ['Inter:100..900'],
+        mono: ['Roboto Mono:100..900'],
       },
     }),
   ],
