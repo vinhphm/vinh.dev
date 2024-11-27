@@ -43,8 +43,8 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: ['Inter:100..900'],
-        mono: ['Roboto Mono:100..700'],
+        sans: 'Inter:100..900',
+        mono: 'Roboto Mono:100..700',
       },
       processors: createLocalFontProcessor(),
     }),
