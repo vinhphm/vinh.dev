@@ -45,7 +45,7 @@ export default defineConfig({
       provider: 'google',
       fonts: {
         sans: ['Inter:100..900'],
-        mono: ['Roboto Mono:100..900'],
+        mono: ['Roboto Mono:100..700'],
       },
       processors: createLocalFontProcessor({
         cacheDir: 'node_modules/.cache/unocss/fonts',
