@@ -5,10 +5,10 @@ export const workData: WorkData = [
     title: 'Current Focus',
     works: [
       {
-        text: 'Vinh.Dev',
-        description: 'My place to share things out with the world. Astro/Vite edition',
-        icon: 'vinh-dev',
-        href: '/',
+        text: 'PwC\'s works',
+        description: '9-to-5 day job. I work on various projects, mostly internal data solutions.',
+        icon: 'i-duo-icons-user-card',
+        href: 'https://www.linkedin.com/in/vinhphm/',
       },
     ],
   },
@@ -27,13 +27,19 @@ export const workData: WorkData = [
     title: 'Personal Websites',
     works: [
       {
+        text: 'Vinh.Dev',
+        description: 'My place to share things out with the world. Astro/Vite edition',
+        icon: 'vinh-dev',
+        href: '/',
+      },
+      {
         text: 'Vinh.Dev - Vite version',
         description: 'The website but powered by Vite from mid-2023 to mid-2024.',
         icon: 'i-tabler-brand-vite',
         href: 'https://vp-vite.pages.dev',
       },
       {
-        text: 'Vinh.Dev - Astro version',
+        text: 'Vinh.Dev - 2023 Astro version',
         description: 'The Astro version of my website in the first half of 2023.',
         icon: 'i-devicon-plain-astro',
         href: 'https://github.com/vinhphm/vp-astro',

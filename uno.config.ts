@@ -92,6 +92,7 @@ export default defineConfig({
     'i-carbon-campsite',
     'i-codicon-vscode',
     'i-devicon-plain-astro',
+    'i-duo-icons-user-card',
     'i-logos-chrome',
     'i-ph-file-ts',
     'i-ph-file-vue',
