@@ -14,7 +14,7 @@ Here’s another example of a simple if statement:
 
 **Hugo**
 
-```
+```txt
 {{ if (and (eq .Type "blog") (isset .Params "hascaniuse")) }}
 <--! Do something if condition is true -->
 {{ end }}
@@ -22,7 +22,7 @@ Here’s another example of a simple if statement:
 
 **Jekyll**
 
-```
+```txt
 {% if page.is_post and page.hascaniuse %}
 {% comment %}
 Do something if condition is true
