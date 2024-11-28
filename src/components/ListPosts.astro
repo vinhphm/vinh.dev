@@ -46,7 +46,7 @@ function getYear(date: Date | string | number) {
     </div>
   ) : (
     posts.map((post, index) => (
-      <li class="mb-8">
+      <li class="mb-6 mt-2">
         {!isSameYear(post.data.date, posts[index - 1]?.data.date) && (
           <div class="pointer-events-none relative h18 select-none">
             <span class="absolute top--0.2em text-7em color-transparent font-bold text-stroke-2 text-stroke-hex-aaa op14">
@@ -62,6 +62,11 @@ function getYear(date: Date | string | number) {
         >
           <div class="flex flex-col md:flex-row gap-2 md:items-center">
             <div class="flex gap-2 items-center text-wrap">
+              {post.data.lang && post.data.lang.includes('vi') && (
+                <span class="text-xs bg-zinc:15 text-zinc5 rounded px-1 py-0.5 ml--12 mr2 my-auto hidden md:block align-middle flex-none">
+                  Việt
+                </span>
+              )}
               <span class="lh-normal">
                 {post.data.draft && <i class="i-ri-draft-line vertical-mid text-base" />}
                 {post.data.title}
@@ -74,13 +79,12 @@ function getYear(date: Date | string | number) {
               {post.data.duration && <span class="dot-space">{post.data.duration}</span>}
               {post.data.tag && <span class="dot-space">{post.data.tag}</span>}
               {post.data.lang && post.data.lang.includes('vi') && (
-                <span class="rounded bg-slate:30 px-1 py-0.5 opacity-70">
-                  Tiếng Việt
+                <span class="text-xs bg-zinc:15 text-zinc5 rounded px-1 py-0.5 my-auto md:hidden align-middle flex-none">
+                  Việt
                 </span>
               )}
             </div>
           </div>
-          <div class="text-sm opacity-50">{post.data.description}</div>
         </a>
       </li>
     ))
