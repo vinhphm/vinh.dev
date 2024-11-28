@@ -67,22 +67,22 @@ function getYear(date: Date | string | number) {
                   Việt
                 </span>
               )}
-              <span class="lh-normal">
+              <div class="lh-normal">
                 {post.data.draft && <i class="i-ri-draft-line vertical-mid text-base" />}
                 {post.data.title}
-              </span>
-            </div>
-            <div class="ws-nowrap text-sm opacity-50 flex gap-2 items-center">
-              {post.data.redirect && <i class="i-ri-external-link-line text-base" />}
-              {(post.data.recording || post.data.video) && <i class="i-ri:film-line text-base" />}
-              {post.data.date && <time datetime={getDate(post.data.date)}>{post.data.date.split(',')[0]}</time>}
-              {post.data.duration && <span class="dot-space">{post.data.duration}</span>}
-              {post.data.tag && <span class="dot-space">{post.data.tag}</span>}
-              {post.data.lang && post.data.lang.includes('vi') && (
-                <span class="text-xs bg-zinc:15 text-zinc5 rounded px-1 py-0.5 my-auto md:hidden align-middle flex-none">
-                  Việt
-                </span>
-              )}
+                <div class="ws-nowrap text-sm opacity-50 inline-flex gap-2 items-center">
+                  {post.data.redirect && <i class="i-ri-external-link-line text-base" />}
+                  {(post.data.recording || post.data.video) && <i class="i-ri:film-line text-base" />}
+                  {post.data.date && <time datetime={getDate(post.data.date)}>{post.data.date.split(',')[0]}</time>}
+                  {post.data.duration && <span class="dot-space">{post.data.duration}</span>}
+                  {post.data.tag && <span class="dot-space">{post.data.tag}</span>}
+                  {post.data.lang && post.data.lang.includes('vi') && (
+                    <span class="text-xs bg-zinc:15 text-zinc5 rounded px-1 py-0.5 my-auto md:hidden align-middle flex-none">
+                      Việt
+                    </span>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </a>
