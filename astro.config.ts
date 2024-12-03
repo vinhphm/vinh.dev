@@ -38,7 +38,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    smartypants: false,
+    // smartypants: false,
     syntaxHighlight: false,
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: 'noopener' }],
