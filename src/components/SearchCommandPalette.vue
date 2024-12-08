@@ -66,6 +66,14 @@ async function search() {
   results.value = newResults
 }
 
+function focusInput() {
+  if (!input.value)
+    return
+  input.value.focus()
+  const length = input.value.value.length
+  input.value.setSelectionRange(length, length)
+}
+
 watch(() => value.value, (newValue) => {
   if (!newValue.trim()) {
     results.value = []
@@ -78,9 +86,7 @@ watch(() => value.value, (newValue) => {
 watch(showSearch, (newValue) => {
   if (newValue) {
     currentSelection.value = 0
-    setTimeout(() => {
-      input.value?.focus()
-    }, 200)
+    requestAnimationFrame(focusInput)
   } else {
     value.value = ''
   }
@@ -99,6 +105,18 @@ onMounted(() => {
       showSearch.value = false
     }
   })
+
+  const searchButton = document.querySelector('[aria-label="search"]')
+  if (searchButton) {
+    searchButton.addEventListener('touchend', (event) => {
+      event.preventDefault()
+      showSearch.value = true
+      // Use requestAnimationFrame for more reliable focus on mobile
+      requestAnimationFrame(() => {
+        input.value?.focus()
+      })
+    })
+  }
 })
 </script>
 
