@@ -96,27 +96,14 @@ onMounted(() => {
   setupSearch()
 
   window.addEventListener('keydown', (event) => {
-    if (event.key === 'k' && event.metaKey) {
-      showSearch.value = !showSearch.value
+    if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
       event.preventDefault()
+      showSearch.value = !showSearch.value
     }
-
     if (event.key === 'Escape' && showSearch.value) {
       showSearch.value = false
     }
   })
-
-  const searchButton = document.querySelector('[aria-label="search"]')
-  if (searchButton) {
-    searchButton.addEventListener('touchend', (event) => {
-      event.preventDefault()
-      showSearch.value = true
-      // Use requestAnimationFrame for more reliable focus on mobile
-      requestAnimationFrame(() => {
-        input.value?.focus()
-      })
-    })
-  }
 })
 </script>
 
