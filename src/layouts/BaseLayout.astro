@@ -22,6 +22,7 @@ const { ...head } = Astro.props
     <main
       class="grow max-w-65ch mx-auto py-10 px-7 relative"
       transition:animate={fade({ duration: '0.4s' })}
+      data-pagefind-body
     >
       <slot />
       <ScrollToTop client:only="vue" />
