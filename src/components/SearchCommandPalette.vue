@@ -20,6 +20,7 @@ interface SearchResult {
 
 const input = ref<HTMLInputElement>()
 const value = ref('')
+const isLoading = ref(false)
 const showResults = ref(true)
 const currentSelection = ref(0)
 const results = ref<SearchResult[]>([])
@@ -40,30 +41,37 @@ async function search() {
 
   showResults.value = true
   results.value = []
+  isLoading.value = true
 
-  const searchResults = await pagefind.debouncedSearch(value.value)
-  if (!searchResults)
-    return
+  try {
+    const searchResults = await pagefind.debouncedSearch(value.value)
+    if (!searchResults)
+      return
 
-  const newResults = []
+    const newResults = []
 
-  for (let i = 0; i < searchResults.results.length && i < 5; i++) {
-    const result = await searchResults.results[i].data()
-    let excerpt = result.excerpt
-    excerpt = excerpt.replaceAll(
-      '<mark>',
-      '<span class="bg-blue-500/20 rounded-md p-0.5">',
-    )
-    excerpt = excerpt.replaceAll('</mark>', '</span>')
+    for (let i = 0; i < searchResults.results.length && i < 5; i++) {
+      const result = await searchResults.results[i].data()
+      let excerpt = result.excerpt
+      excerpt = excerpt.replaceAll(
+        '<mark>',
+        '<span class="bg-blue-500/20 rounded-md p-0.5">',
+      )
+      excerpt = excerpt.replaceAll('</mark>', '</span>')
 
-    newResults[i] = {
-      title: result.meta.title,
-      content: excerpt,
-      href: result.url,
+      newResults[i] = {
+        title: result.meta.title,
+        content: excerpt,
+        href: result.url,
+      }
     }
-  }
 
-  results.value = newResults
+    results.value = newResults
+  } catch (error) {
+    console.error('Search failed:', error)
+  } finally {
+    isLoading.value = false
+  }
 }
 
 watch(() => value.value, (newValue) => {
@@ -164,7 +172,11 @@ onMounted(() => {
           </div>
 
           <Transition name="slide">
-            <div v-if="showResults && value.trim()">
+            <div v-if="isLoading" class="flex items-center justify-center p-4 text-sm text-stone-500 dark:text-stone-400">
+              <span class="i-ri-loader-4-line mr-2 animate-spin" />
+              Searching...
+            </div>
+            <div v-else-if="showResults && value.trim()">
               <div v-if="results.length > 0" class="flex flex-col scroll-py-2 overflow-y-auto text-sm text-stone-800 divide-y divide-stone-100 dark:text-stone-200 dark:divide-white/5">
                 <a
                   v-for="(result, i) in results"
