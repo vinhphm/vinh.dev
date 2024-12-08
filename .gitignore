@@ -5,3 +5,5 @@ node_modules
 .eslintcache
 .env
 *.log
+
+public/pagefind/

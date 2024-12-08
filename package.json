@@ -7,8 +7,7 @@
     "prepare": "simple-git-hooks",
     "compress": "esno scripts/img-compress-staged.ts",
     "dev": "astro dev --host",
-    "build": "astro build",
-    "postbuild": "pagefind --site dist",
+    "build": "astro build && pagefind",
     "preview": "astro preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
@@ -18,6 +17,7 @@
     "@astrojs/mdx": "^4.0.1",
     "@astrojs/rss": "4.0.9",
     "@astrojs/sitemap": "3.2.1",
+    "@astrojs/svelte": "^7.0.1",
     "@astrojs/vue": "^5.0.1",
     "@unocss/reset": "^0.65.1",
     "astro": "^5.0.2",
@@ -26,6 +26,7 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
     "sharp": "^0.33.5",
+    "svelte": "^5.8.1",
     "unocss": "^0.65.1",
     "vue": "^3.5.13"
   },
@@ -57,7 +58,8 @@
     "reading-time": "^1.5.0",
     "rehype-pretty-code": "^0.14.0",
     "simple-git": "^3.27.0",
-    "simple-git-hooks": "^2.11.1"
+    "simple-git-hooks": "^2.11.1",
+    "vite-plugin-pagefind": "^0.2.10"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx esno scripts/reading-time-hook.ts && bunx lint-staged"
