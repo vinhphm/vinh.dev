@@ -12,9 +12,11 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypePrettyCode from 'rehype-pretty-code'
 import UnoCSS from 'unocss/astro'
+import pagefind from 'vite-plugin-pagefind'
+import siteConfig from './src/site-config'
 
 export default defineConfig({
-  site: 'https://vinh.dev',
+  site: siteConfig.site,
   trailingSlash: 'never',
   build: {
     assets: '_assets',
@@ -22,6 +24,17 @@ export default defineConfig({
   },
   experimental: {
     svg: true,
+  },
+  vite: {
+    ssr: {
+      noExternal: [`${siteConfig.site}/pagefind/pagefind.js`],
+    },
+    plugins: [pagefind()],
+    build: {
+      rollupOptions: {
+        external: [`${siteConfig.site}/pagefind/pagefind.js`],
+      },
+    },
   },
   integrations: [
     mdx(),

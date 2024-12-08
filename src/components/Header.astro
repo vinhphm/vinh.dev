@@ -3,6 +3,7 @@ import { getLinkTarget } from '@/utils/link'
 import siteConfig from '@/site-config'
 import GlitchingLogo from './GlitchingLogo.vue'
 import Search from './Search.vue'
+import CommandPalette from './SearchCommandPalette.vue'
 import ThemeToggle from './ThemeToggle.vue'
 
 const navLinks = siteConfig.header.navLinks || []
@@ -48,11 +49,12 @@ const socialLinks = structuredClone(siteConfig.socialLinks).filter((link: Record
         />
       ))}
       <a target="_blank" href="/rss.xml" class="lt-md:hidden i-ri-rss-line nav-link" aria-label="RSS" />
-      <Search  client:load />
+      <Search  client:visible />
       <ThemeToggle client:load />
     </div>
   </nav>
 </header>
+<CommandPalette client:load />
 
 <style>
 .header h1 {

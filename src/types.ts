@@ -57,6 +57,7 @@ export interface Footer {
 export interface SiteConfig {
   author: string
   title: string
+  site: string
   subtitle: string
   description: string
   image: Image
