@@ -1,7 +1,6 @@
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 import {
@@ -50,7 +49,6 @@ export default defineConfig({
         },
       },
     }),
-    svelte(),
   ],
   markdown: {
     // smartypants: false,

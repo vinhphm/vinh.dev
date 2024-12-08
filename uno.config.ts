@@ -1,4 +1,3 @@
-import { colors } from '@unocss/preset-mini'
 import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local'
 import {
   defineConfig,
@@ -52,8 +51,6 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      accent: colors.bluegray,
-      base: colors.stone,
       background: 'hsl(var(--background))',
       foreground: 'hsl(var(--foreground))',
       primary: {

@@ -2,12 +2,6 @@
 import { showSearch } from '@/stores/search'
 import { onMounted, ref, watch } from 'vue'
 
-interface SearchResult {
-  title: string
-  content: string
-  href: string
-}
-
 const _props = withDefaults(defineProps<{
   placeholder?: string
   noResults?: string
@@ -15,6 +9,14 @@ const _props = withDefaults(defineProps<{
   placeholder: 'Search...',
   noResults: 'No results found',
 })
+
+declare const window: Window & typeof globalThis
+
+interface SearchResult {
+  title: string
+  content: string
+  href: string
+}
 
 const input = ref<HTMLInputElement>()
 const value = ref('')
@@ -25,11 +27,10 @@ let pagefind: any
 
 async function setupSearch() {
   try {
-    // @ts-expect-error test '/pagefind/pagefind.js'.
+    // @ts-expect-error - Ignore TS error for dynamic import
     pagefind = await import('/pagefind/pagefind.js')
-  // eslint-disable-next-line unused-imports/no-unused-vars
   } catch (error) {
-    console.error('Pagefind module not found, will retry after build')
+    console.error('Pagefind module not found, will retry after build:', error)
   }
 }
 
@@ -51,7 +52,7 @@ async function search() {
     let excerpt = result.excerpt
     excerpt = excerpt.replaceAll(
       '<mark>',
-      '<span class="bg-accent-500/20 rounded-md p-0.5">',
+      '<span class="bg-blue-500/20 rounded-md p-0.5">',
     )
     excerpt = excerpt.replaceAll('</mark>', '</span>')
 
@@ -110,20 +111,20 @@ onMounted(() => {
         class="fixed inset-0 z-10 w-screen overflow-y-auto p-4 pt-20 md:p-20"
       >
         <button
-          class="bg-base-500/30 dark:bg-base-950/70 fixed inset-0 z-0 cursor-default backdrop-blur-sm transition-opacity"
+          class="fixed inset-0 z-0 cursor-default bg-stone-500/30 backdrop-blur-sm transition-opacity dark:bg-stone-950/70"
           @click="showSearch = false"
         >
           <span class="sr-only">hide search</span>
         </button>
 
-        <div class="divide-base-100 dark:bg-base-900 mx-auto max-w-xl transform overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all divide-y dark:ring-white/20 dark:divide-white/10">
+        <div class="mx-auto max-w-xl transform overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all divide-y divide-stone-100 dark:bg-stone-900 dark:ring-white/20 dark:divide-white/10">
           <div class="relative flex flex-grow items-stretch focus-within:z-10">
             <input
               ref="input"
               v-model="value"
               type="text"
               :placeholder="placeholder"
-              class="text-base-900 placeholder:text-base-400 dark:text-base-100 h-12 w-full border-0 bg-transparent pl-4 pr-4 sm:text-sm focus:ring-0"
+              class="h-12 w-full border-0 bg-transparent pl-4 pr-4 text-stone-900 sm:text-sm dark:text-stone-100 placeholder:text-stone-400 focus:outline-none focus:ring-0"
               role="combobox"
               aria-expanded="false"
               aria-controls="options"
@@ -150,11 +151,21 @@ onMounted(() => {
                 }
               }"
             >
+            <button
+              type="button"
+              class="relative inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm text-stone-900 font-semibold -ml-px dark:bg-stone-900 hover:bg-stone-50 dark:hover:bg-stone-800"
+              @click="search"
+            >
+              <slot name="icon">
+                <span class="i-ri-search-line text-stone-400" />
+              </slot>
+              <slot />
+            </button>
           </div>
 
           <Transition name="slide">
             <div v-if="showResults && value.trim()">
-              <div v-if="results.length > 0" class="divide-base-100 text-base-800 dark:text-base-200 flex flex-col scroll-py-2 overflow-y-auto text-sm divide-y dark:divide-white/5">
+              <div v-if="results.length > 0" class="flex flex-col scroll-py-2 overflow-y-auto text-sm text-stone-800 divide-y divide-stone-100 dark:text-stone-200 dark:divide-white/5">
                 <a
                   v-for="(result, i) in results"
                   :key="i"
@@ -162,12 +173,13 @@ onMounted(() => {
                   class="w-full select-none px-4 py-2 text-left" :class="[
                     currentSelection === i ? 'bg-white/5' : 'hover:bg-white/5',
                   ]"
+                  @click="showSearch = false"
                 >
                   <div class="font-semibold">{{ result.title }}</div>
                   <div class="line-clamp-2 mt-2 text-xs" v-html="result.content" />
                 </a>
               </div>
-              <p v-else class="text-base-500 dark:text-base-400 p-4 text-sm">
+              <p v-else class="p-4 text-sm text-stone-500 dark:text-stone-400">
                 {{ noResults }}
               </p>
             </div>
