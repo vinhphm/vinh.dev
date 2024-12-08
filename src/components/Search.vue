@@ -3,7 +3,7 @@ import { showSearch } from '@/stores/search'
 </script>
 
 <template>
-  <button aria-label="search" @click="showSearch = true">
+  <button @click="showSearch = true">
     <span class="sr-only">search</span>
     <span class="i-ri-search-line" />
   </button>
