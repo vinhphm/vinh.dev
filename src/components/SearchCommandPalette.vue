@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { showSearch } from '@/stores/search'
+import { debounce } from 'lodash-es'
 import { onMounted, ref, watch } from 'vue'
 
 interface PagefindResult {
@@ -43,7 +44,7 @@ async function setupSearch() {
   }
 }
 
-async function search() {
+const debouncedSearch = debounce(async () => {
   if (!value.value.trim())
     return
 
@@ -79,14 +80,14 @@ async function search() {
   } finally {
     isLoading.value = false
   }
-}
+}, 300) // 300ms delay
 
 watch(() => value.value, (newValue) => {
   if (!newValue.trim()) {
     results.value = []
     showResults.value = false
   } else {
-    search()
+    debouncedSearch()
   }
 })
 
