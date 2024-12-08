@@ -2,6 +2,14 @@
 import { showSearch } from '@/stores/search'
 import { onMounted, ref, watch } from 'vue'
 
+interface PagefindResult {
+  data: () => Promise<{
+    meta: { title: string }
+    excerpt: string
+    url: string
+  }>
+}
+
 const _props = withDefaults(defineProps<{
   placeholder?: string
   noResults?: string
@@ -48,25 +56,24 @@ async function search() {
     if (!searchResults)
       return
 
-    const newResults = []
+    const processedResults = await Promise.all(
+      searchResults.results
+        .slice(0, 5)
+        .map(async (result: PagefindResult) => {
+          const data = await result.data()
+          const excerpt = data.excerpt
+            .replace(/<mark>/g, '<span class="bg-blue-500/20 rounded-md p-0.5">')
+            .replace(/<\/mark>/g, '</span>')
 
-    for (let i = 0; i < searchResults.results.length && i < 5; i++) {
-      const result = await searchResults.results[i].data()
-      let excerpt = result.excerpt
-      excerpt = excerpt.replaceAll(
-        '<mark>',
-        '<span class="bg-blue-500/20 rounded-md p-0.5">',
-      )
-      excerpt = excerpt.replaceAll('</mark>', '</span>')
+          return {
+            title: data.meta.title,
+            content: excerpt,
+            href: data.url,
+          }
+        }),
+    )
 
-      newResults[i] = {
-        title: result.meta.title,
-        content: excerpt,
-        href: result.url,
-      }
-    }
-
-    results.value = newResults
+    results.value = processedResults
   } catch (error) {
     console.error('Search failed:', error)
   } finally {
