@@ -34,7 +34,7 @@ const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(`R
 ---
 
 <BaseLayout title={title} description={description} image={image?.src} pageType="article">
-  <div class="prose mb-8 m-auto">
+  <div class="prose mb-8 m-auto" data-pagefind-body>
     <h1 class="mb-0">{title}</h1>
     <p class="!-mt-6 flex gap-2 op-50">
       {date && <time datetime={getDate(date)}>{date.split(',')}</time>}

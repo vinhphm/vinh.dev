@@ -3,6 +3,7 @@ import { getLinkTarget } from '@/utils/link'
 import siteConfig from '@/site-config'
 import GlitchingLogo from './GlitchingLogo.vue'
 import Search from './search/Search.svelte'
+import CommandPalette from './search/CommandPalette.svelte'
 import ThemeToggle from './ThemeToggle.vue'
 
 const navLinks = siteConfig.header.navLinks || []
@@ -53,6 +54,7 @@ const socialLinks = structuredClone(siteConfig.socialLinks).filter((link: Record
     </div>
   </nav>
 </header>
+<CommandPalette client:load />
 
 <style>
 .header h1 {
