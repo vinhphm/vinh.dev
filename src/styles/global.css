@@ -214,19 +214,6 @@ h6:focus .header-anchor {
   opacity: 0.5;
 }
 
-kbd {
-  font-family: 'Roboto Mono', monospace;
-  background: #8080801a;
-  border-radius: 0.25em;
-  padding: .1875em .375em;
-  min-width: 1.5em;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  border: .0625em solid rgba(128,128,128,.15) !important;
-  box-shadow: 0 .125em .125em #0000001a;
-}
-
 /* Theme transition animation */
 .theme-transition::view-transition-old(root),
 .theme-transition::view-transition-new(root) {
