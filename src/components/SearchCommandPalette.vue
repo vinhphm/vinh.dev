@@ -44,7 +44,7 @@ async function setupSearch() {
   }
 }
 
-const debouncedSearch = debounce(async () => {
+async function search() {
   if (!value.value.trim())
     return
 
@@ -80,7 +80,9 @@ const debouncedSearch = debounce(async () => {
   } finally {
     isLoading.value = false
   }
-}, 300) // 300ms delay
+}
+
+const debouncedSearch = debounce(search, 300) // 300ms delay
 
 watch(() => value.value, (newValue) => {
   if (!newValue.trim()) {
