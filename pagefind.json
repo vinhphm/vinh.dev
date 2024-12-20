@@ -1,4 +1,6 @@
 {
   "site": "dist",
-  "vite_plugin_pagefind": {}
+  "vite_plugin_pagefind": {
+    "build_command": "bun run build"
+  }
 }
