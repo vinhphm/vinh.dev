@@ -25,6 +25,10 @@ const currentYear = new Date().getFullYear()
   )}
   <div class="flex">
     <a class="nav-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
-    <span class="opacity-70">&nbsp;&nbsp;&copy;&nbsp;&nbsp;{currentYear}&nbsp;&nbsp;{siteConfig.author}</span>
+    <span class="opacity-70">&nbsp;&nbsp;&copy;&nbsp;&nbsp;<span id="footer-year">{currentYear}</span>&nbsp;&nbsp;{siteConfig.author}</span>
   </div>
 </footer>
+
+<script is:inline>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
