@@ -1,15 +1,8 @@
 <script setup lang="ts">
+import type { Pagefind } from 'vite-plugin-pagefind/types'
 import { showSearch } from '@/stores/search'
 import { debounce } from 'lodash-es'
 import { onMounted, ref, watch } from 'vue'
-
-interface PagefindResult {
-  data: () => Promise<{
-    meta: { title: string }
-    excerpt: string
-    url: string
-  }>
-}
 
 const _props = withDefaults(defineProps<{
   placeholder?: string
@@ -33,11 +26,11 @@ const isLoading = ref(false)
 const showResults = ref(true)
 const currentSelection = ref(0)
 const results = ref<SearchResult[]>([])
-let pagefind: any
+let pagefind: Pagefind
 
 async function setupSearch() {
   try {
-    // @ts-expect-error - Ignore TS error for dynamic import
+    // @ts-expect-error - dynamic import
     pagefind = await import('/pagefind/pagefind.js')
   } catch (error) {
     console.error('Pagefind module not found, will retry after build:', error)
@@ -60,7 +53,7 @@ async function search() {
     const processedResults = await Promise.all(
       searchResults.results
         .slice(0, 5)
-        .map(async (result: PagefindResult) => {
+        .map(async (result) => {
           const data = await result.data()
           const excerpt = data.excerpt
             .replace(/<mark>/g, '<span class="bg-blue-500/20 rounded-md p-0.5">')

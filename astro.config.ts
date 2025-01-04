@@ -27,12 +27,18 @@ export default defineConfig({
   },
   vite: {
     ssr: {
-      noExternal: [`${siteConfig.site}/pagefind/pagefind.js`],
+      noExternal: [
+        `${siteConfig.site}/pagefind/pagefind.js`,
+        `${siteConfig.site}/pagefind/pagefind-highlight.js`,
+      ],
     },
     plugins: [pagefind()],
     build: {
       rollupOptions: {
-        external: [`${siteConfig.site}/pagefind/pagefind.js`],
+        external: [
+          `${siteConfig.site}/pagefind/pagefind.js`,
+          `${siteConfig.site}/pagefind/pagefind-highlight.js`,
+        ],
       },
     },
   },
