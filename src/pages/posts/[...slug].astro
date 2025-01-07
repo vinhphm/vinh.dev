@@ -1,140 +1,35 @@
 ---
-import { Image } from 'astro:assets'
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import TableOfContents from '@/components/TableOfContents.astro'
-import { type CollectionPosts } from '@/types'
-import { getPosts } from '@/utils/posts'
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../lib/utils";
 
 export async function getStaticPaths() {
-  const posts = await getPosts()
-  return posts.map((post: CollectionPosts) => {
-    return {
-      params: { slug: post.slug },
-      props: {
-        post,
-      },
-    }
-  })
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
+type Props = CollectionEntry<"posts">;
 
-type Props = { post: CollectionPosts }
-
-const { post } = Astro.props
-const { title, image, description, date, tag, duration } = post.data
-
-const { Content, headings } = await post.render()
-
-function getDate(date: string) {
-  return new Date(date).toISOString()
-}
-
-const base = 'https://vinh.dev'
-const parentDir = post.slug.split('/').slice(0, -1).join('/')
-const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(`Reading @vinh.dev's ${base}/posts/${post.slug}\n\nI think...`)}`
+const post = Astro.props;
+const { Content } = await post.render();
 ---
 
-<BaseLayout title={title} description={description} image={image?.src} pageType="article">
-  <div class="prose mb-8 m-auto">
-    <h1 class="pb-2">{title}</h1>
-    <p class="!-mt-6 flex gap-2 op-50">
-      {date && <time datetime={getDate(date)}>{date.split(',')}</time>}
-      {duration && <span class="dot-space">{duration}</span>}
-      {tag && <span class="dot-space">{tag}</span>}
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image}
+>
+  <main>
+    <h1 class="mb-5 text-xl font-medium">
+      {post.data.title}
+    </h1>
+    <p class="mb-1 font-medium text-zinc-500">
+      {formatDate(post.data.date)}
     </p>
-    {
-      image && (
-        <p>
-          <Image width="640" height="360" src={image.src} alt={image.alt} />
-        </p>
-      )
-    }
-  </div>
-  <article id="content">
-    <div class="prose m-auto">
-      {
-        headings.length > 0 && (
-          <TableOfContents headings={headings} />
-        )
-      }
+    <article>
       <Content />
-    </div>
-  </article>
-  <div class="prose fw-inherit m-auto mt-8 mb-8 print:hidden">
-    {
-      duration && (
-        <>
-          <span class="font-mono op75">&gt; </span>
-          <span class="op75">comment on </span>
-          <a href={blueskyUrl} target="_blank" class="op75">
-            bluesky
-          </a>
-        </>
-      )
-    }
-    <br />
-    <span class="font-mono op75">&gt; </span>
-    <a
-      href={'/blog' + (parentDir ? '/' + parentDir : '')}
-      class="font-mono op80 hover:op85"
-    >
-      cd ..
-    </a>
-  </div>
-</BaseLayout>
-
-<script is:inline type="module">
-function navigate() {
-  if (location.hash) {
-    const el = document.querySelector(decodeURIComponent(location.hash))
-    if (el) {
-      const rect = el.getBoundingClientRect()
-      const y = window.scrollY + rect.top - 40
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth',
-      })
-      return true
-    }
-  }
-  return false
-}
-
-function handleAnchors(event) {
-  const link = event.target.closest('a')
-
-  if (
-    !event.defaultPrevented
-    && link
-    && event.button === 0
-    && link.target !== '_blank'
-    && link.rel !== 'external'
-    && !link.download
-    && !event.metaKey
-    && !event.ctrlKey
-    && !event.shiftKey
-    && !event.altKey
-  ) {
-    const url = new URL(link.href)
-    if (url.origin !== window.location.origin)
-      return
-
-    event.preventDefault()
-    const { pathname, hash } = url
-    if (hash && (!pathname || pathname === location.pathname)) {
-      window.history.replaceState({}, '', hash)
-      navigate()
-    }
-    else {
-      window.location.href = `${pathname}${hash}`
-    }
-  }
-}
-
-window.addEventListener('hashchange', navigate, { passive: true })
-document.getElementById('content')?.addEventListener('click', handleAnchors)
-
-setTimeout(() => {
-  if (!navigate())
-    setTimeout(navigate, 1000)
-}, 1)
-</script>
+    </article>
+  </main>
+</Layout>

@@ -1,6 +1,4 @@
 :root {
-  --pagefind-ui-font: Inter, sans-serif !important;
-
   --background: 0 0% 100%;
   --foreground: 0 0% 3.9%;
   --primary: 0 0% 9%;
@@ -38,50 +36,53 @@
   --ring: 0 0% 83.1%;
 }
 
-html.dark {
-  color-scheme: dark;
-
-  .img-light,
-  [img-light] {
-    display: none;
-  }
-}
-
-html:not(.dark) {
-  color-scheme: light;
-
-  .img-dark,
-  [img-dark] {
-    display: none;
-  }
-}
-
 *,
 *::before,
 *::after {
   @apply border-border;
 }
 
-#nprogress {
-  pointer-events: none;
-}
-
-#nprogress .bar {
-  background: #888;
-  opacity: 0.75;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-}
-
-img {
-  --at-apply: rd-1.5;
-}
-
 article {
+  p {
+    @apply my-4 leading-relaxed;
+  }
+  h1 {
+    @apply my-4 text-xl font-medium dark:text-white;
+  }
+  h2 {
+    @apply my-4 text-lg font-medium dark:text-white;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-4 font-medium dark:text-white;
+  }
+
+  blockquote {
+    @apply my-4 border-l-2 pl-4;
+  }
+  a {
+    @apply text-blue-500 underline;
+  }
+  table {
+    @apply my-4 w-full table-auto border-collapse text-sm;
+    th {
+      @apply border-b p-4 text-left font-medium dark:border-zinc-700;
+    }
+    td {
+      @apply border-b bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800;
+    }
+  }
+  ol {
+    @apply my-1 list-inside list-decimal space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
+  }
+  ul {
+    @apply my-1 list-inside list-disc space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
+  }
+  kbd {
+    @apply rounded border border-b-2 bg-zinc-100 px-1 py-0.5 font-mono text-xs font-medium text-black dark:border-zinc-700 dark:bg-zinc-800 dark:text-white;
+  }
   .katex-display {
     @apply overflow-x-auto overflow-y-hidden py-4;
   }
@@ -125,7 +126,7 @@ article {
 
       /* Code block content */
       > code {
-        @apply whitespace-pre-wrap;
+        @apply whitespace-pre-wrap font-mono;
         counter-reset: line;
 
         /* For code blocks with line numbers */
@@ -171,49 +172,6 @@ article {
   }
 }
 
-iframe {
-  color-scheme: light;
-}
-
-.fw-inherit a {
-  font-weight: inherit;
-}
-
-.prose-link i {
-  --at-apply: text-sm mr-1;
-}
-
-a.header-anchor {
-  float: left;
-  margin-top: 0.125em;
-  margin-left: -1.2em;
-  padding-right: 0.5em;
-  font-size: 0.85em;
-  opacity: 0;
-  text-decoration: none !important;
-  border: 0 !important;
-}
-
-a.header-anchor:hover,
-a.header-anchor:focus {
-  text-decoration: none;
-}
-
-h1:hover .header-anchor,
-h1:focus .header-anchor,
-h2:hover .header-anchor,
-h2:focus .header-anchor,
-h3:hover .header-anchor,
-h3:focus .header-anchor,
-h4:hover .header-anchor,
-h4:focus .header-anchor,
-h5:hover .header-anchor,
-h5:focus .header-anchor,
-h6:hover .header-anchor,
-h6:focus .header-anchor {
-  opacity: 0.5;
-}
-
 /* Theme transition animation */
 .theme-transition::view-transition-old(root),
 .theme-transition::view-transition-new(root) {
@@ -231,73 +189,4 @@ h6:focus .header-anchor {
 }
 .theme-transition.dark::view-transition-new(root) {
   z-index: 1;
-}
-
-/* Logo */
-.logo-fill-color {
-  fill: #303030;
-}
-.dark .logo-fill-color {
-  fill: #fdfdfd;
-}
-
-/* Table of contents */
-.table-of-contents {
-  position: fixed;
-  top: 90px;
-  bottom: 0;
-  font-size: 0.8em;
-  left: 20px;
-  z-index: 200;
-  overflow: hidden;
-  --at-apply: hidden lg-flex flex-col w-100px lg-w-200px xl-w-300px;
-}
-
-.table-of-contents-anchor {
-  --at-apply: mx2 w-7 h-7 text-lg flex items-center justify-center bg-base
-    rounded text-hex-8887 border border-base shadow md: border-transparent md:
-    shadow-none transition duration-400;
-}
-
-.table-of-contents > ul {
-  text-overflow: ellipsis;
-  height: 100%;
-  overflow-y: auto;
-  --at-apply: rounded op0 important-mt1 pb-5 transition duration-700;
-}
-
-.table-of-contents:hover > .table-of-contents-anchor,
-.toc-always-on .table-of-contents > .table-of-contents-anchor {
-  --at-apply: text-inherit;
-}
-
-.toc-always-on .table-of-contents > ul {
-  opacity: 0.6;
-}
-
-.table-of-contents:hover > ul {
-  opacity: 0.75;
-}
-
-.table-of-contents ul > li::before {
-  display: none;
-}
-
-.table-of-contents ul > li {
-  padding-left: 0.8rem !important;
-  line-height: 1.5em;
-  margin-top: 0.5em;
-}
-
-.table-of-contents ul > li > a {
-  --at-apply: op75 hover-op100 transition font-normal;
-}
-
-.dot-space {
-  display: inline-block;
-}
-
-.dot-space::before {
-  content: '·';
-  margin-right: 0.5rem;
 }

@@ -1,0 +1,95 @@
+---
+import { ClientRouter } from "astro:transitions"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import { cn } from "../lib/utils"
+import siteConfig from "@/site-config"
+import "../styles/global.css"
+
+interface Props {
+  title?: string
+  description: string
+  image?: string
+  className?: string
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const {
+  description,
+  image,
+  className,
+} = Astro.props
+
+const defaultImage = `https://worker.vinh.dev/og?title=${encodeURIComponent(
+    Astro.props.title || '',
+  )}`
+
+const imageToUse = image || defaultImage
+
+const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' / ')
+
+const resolvedImage = new URL(imageToUse, Astro.site).toString()
+---
+
+<html lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {resolvedImage && <meta property="og:image" content={resolvedImage} />}
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    {
+      resolvedImage && (
+        <meta property="twitter:image" content={resolvedImage} />
+      )
+    }
+
+    <ClientRouter />
+  </head>
+  <body
+    class="font-sans text-zinc-900 antialiased transition-colors dark:bg-zinc-900 dark:text-zinc-200"
+  >
+    <div class={cn("max-w-xl mx-auto p-4", className)}>
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<script is:inline>
+  function preloadTheme() {
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+
+    if (setting === 'dark' || (prefersDark && setting !== 'light'))
+      document.documentElement.classList.toggle('dark', true)
+  }
+
+  document.addEventListener("astro:after-swap", () => preloadTheme())
+  preloadTheme()
+</script>

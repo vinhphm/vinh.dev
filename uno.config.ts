@@ -19,7 +19,7 @@ export default defineConfig({
       'border-main': 'border-truegray-300 dark:border-truegray-600',
     },
     {
-      'text-title': 'text-link text-2xl font-500 tracking-tighter',
+      'text-title': 'text-link text-4xl font-500 tracking-tighter',
       'nav-link': 'text-link opacity-70 hover:opacity-100 transition-opacity duration-200 cursor-pointer',
       'prose-link': 'text-link cursor-pointer border-b-1 !border-opacity-30 hover:!border-opacity-100 border-neutral-500 hover:border-truegray-600 dark:border-neutral-500 hover:dark:border-truegray-400 transition-border-color duration-200 decoration-none',
       'button-link': 'text-link px-2 py-0.5 cursor-pointer rounded-2xl border-1 !border-opacity-30 hover:!border-opacity-100 border-neutral-500 hover:border-truegray-600 dark:border-neutral-500 hover:dark:border-truegray-400 transition-border-color duration-200 decoration-none',
@@ -44,9 +44,11 @@ export default defineConfig({
     presetWebFonts({
       fonts: {
         sans: 'Inter:100..900',
-        mono: 'Roboto Mono:100..700',
+        mono: 'Roboto Mono:400..700',
       },
-      processors: createLocalFontProcessor(),
+      processors: [
+        createLocalFontProcessor(),
+      ],
     }),
   ],
   theme: {

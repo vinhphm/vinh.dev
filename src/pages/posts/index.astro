@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content"
+import siteConfig from "@/site-config"
+import Layout from "../../layouts/Layout.astro"
+import { formatDate } from "../../lib/utils"
+
+const collection = await getCollection("posts")
+const posts = collection.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+---
+
+<Layout title="Posts" description={siteConfig.description}>
+  <main>
+    <ul class="flex flex-col gap-1.5">
+      {
+        posts.map((post) => (
+          <li>
+            <a
+              href={`/posts/${post.slug}`}
+              class="group flex justify-between gap-3"
+            >
+              <span class="group-hover:underline">{post.data.title}</span>
+              <span class="text-nowrap text-zinc-500">
+                {formatDate(post.data.date)}
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

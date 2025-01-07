@@ -13,26 +13,21 @@ export const siteConfig: SiteConfig = {
   email: 'vinh@vinh.dev',
   socialLinks: [
     {
-      text: 'vinh.dev',
+      text: '@vinh.dev',
       href: 'https://bsky.app/profile/vinh.dev',
       icon: 'i-ri-bluesky-fill',
       header: 'i-ri-bluesky-line',
     },
     {
-      text: 'vinhphm',
+      text: 'github',
       href: 'https://github.com/vinhphm',
       icon: 'i-ri-github-fill',
       header: 'i-ri-github-line',
     },
     {
-      text: 'vinhphm',
+      text: 'linkedin',
       href: 'https://www.linkedin.com/in/vinhphm/',
       icon: 'i-ri-linkedin-box-fill',
-    },
-    {
-      text: 'Vinh Pham',
-      href: 'https://open.spotify.com/user/ozy5u927y3y4xj2lss3sh26j4',
-      icon: 'i-ri-spotify-fill',
     },
   ],
   header: {

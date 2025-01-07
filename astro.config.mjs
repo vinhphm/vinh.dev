@@ -1,4 +1,3 @@
-import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import vue from '@astrojs/vue'
@@ -8,11 +7,9 @@ import {
   transformerNotationDiff,
 } from '@shikijs/transformers'
 import { defineConfig } from 'astro/config'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypePrettyCode from 'rehype-pretty-code'
 import UnoCSS from 'unocss/astro'
-import pagefind from 'vite-plugin-pagefind'
 import siteConfig from './src/site-config'
 
 export default defineConfig({
@@ -25,29 +22,10 @@ export default defineConfig({
   experimental: {
     svg: true,
   },
-  vite: {
-    ssr: {
-      noExternal: [
-        `${siteConfig.site}/pagefind/pagefind.js`,
-        `${siteConfig.site}/pagefind/pagefind-highlight.js`,
-      ],
-    },
-    plugins: [pagefind()],
-    build: {
-      rollupOptions: {
-        external: [
-          `${siteConfig.site}/pagefind/pagefind.js`,
-          `${siteConfig.site}/pagefind/pagefind-highlight.js`,
-        ],
-      },
-    },
-  },
   integrations: [
     mdx(),
     sitemap(),
-    UnoCSS({
-      injectReset: true,
-    }),
+    UnoCSS({ injectReset: true }),
     vue({
       template: {
         compilerOptions: {
@@ -61,22 +39,6 @@ export default defineConfig({
     syntaxHighlight: false,
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: 'noopener' }],
-      rehypeHeadingIds,
-      [
-        rehypeAutolinkHeadings,
-        {
-          properties: {
-            className: 'header-anchor',
-            ariaHidden: true,
-          },
-          content: [
-            {
-              type: 'text',
-              value: '#',
-            },
-          ],
-        },
-      ],
       [
         rehypePrettyCode,
         {

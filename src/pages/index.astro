@@ -1,11 +1,14 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import siteConfig from "@/site-config";
+import Layout from "../layouts/Layout.astro"
+import siteConfig from "@/site-config"
 ---
 
-<BaseLayout description={siteConfig.description}>
-  <article class="prose">
-    <h1 class="text-title">Vinh Pham</h1>
+<Layout
+  description={siteConfig.description}
+  className="flex h-svh max-w-sm flex-col justify-center"
+>
+  <main class="space-y-4">
+    <h1 class="font-medium text-xl">{siteConfig.author}</h1>
     <p>/ curious mind · developer · explorer /</p>
     <p>
       I spend my days building things that make work easier for others. But
@@ -18,29 +21,5 @@ import siteConfig from "@/site-config";
       Beyond coding, you'll find me enjoying a good cup of coffee ☕️ or tea 🧋,
       and exploring new destinations 🚐
     </p>
-    <div class="flex-auto"></div>
-    <hr class="hr-line" />
-    <p>Find me on</p>
-    <p class="flex mt--2! gap-x-2 gap-y-2 flex-wrap fw-inherit">
-      {
-        siteConfig.socialLinks.map((link) => (
-          <a
-            aria-label={link.text}
-            href={link.href}
-            target="_blank"
-            class="button-link"
-          >
-            <span class:list={[link.icon]} />
-            {link.text}
-          </a>
-        ))
-      }
-    </p>
-    <p>
-      Or mail me at
-      <span font-mono>
-        vinh<span align-text-bottom i-carbon-at></span>vinh.dev
-      </span>
-    </p>
-  </article>
-</BaseLayout>
+  </main>
+</Layout>
