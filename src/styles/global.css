@@ -60,7 +60,7 @@ article {
   }
 
   blockquote {
-    @apply my-4 border-l-2 pl-4;
+    @apply my-4 border-l-2 pl-4 border-border;
   }
   a {
     @apply text-blue-500 underline;
@@ -68,10 +68,10 @@ article {
   table {
     @apply my-4 w-full table-auto border-collapse text-sm;
     th {
-      @apply border-b p-4 text-left font-medium dark:border-zinc-700;
+      @apply border-b p-4 text-left font-medium border-border;
     }
     td {
-      @apply border-b bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800;
+      @apply border-b p-4 bg-secondary/20 border-border;
     }
   }
   ol {
@@ -81,7 +81,7 @@ article {
     @apply my-1 list-inside list-disc space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
   }
   kbd {
-    @apply rounded border border-b-2 bg-zinc-100 px-1 py-0.5 font-mono text-xs font-medium text-black dark:border-zinc-700 dark:bg-zinc-800 dark:text-white;
+    @apply rounded border border-b-2 border-border bg-secondary/20 px-1 py-0.5 font-mono text-xs font-medium text-black dark:text-white;
   }
   .katex-display {
     @apply overflow-x-auto overflow-y-hidden py-4;
@@ -103,12 +103,12 @@ article {
 
   /* Inline code */
   :not(pre) > code {
-    @apply relative rounded bg-muted/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
+    @apply relative rounded border border-border bg-secondary/20 px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium;
   }
 
   /* Code blocks */
   figure[data-rehype-pretty-code-figure] {
-    @apply relative;
+    @apply relative my-4;
 
     /* Code block titles */
     [data-rehype-pretty-code-title] {

@@ -26,7 +26,7 @@ Normally, to show a video, you could just use the `<video>` tag like this:
 </video>
 ```
 
-But as I were writing for the [Use View Transitions API for Theme Toggle Animation](/posts/notes/use-view-transitions-api-for-theme-toggle-animation) article the other day, I found there was a trouble in using the `<video>` tag in static site generators like Astro. For example, in Astro, no matter where you store the video file, in `src/` or `public/`, when you use it in the HTML tag, browsers like Firefox will have trouble playing it and require a reload of the page. Because of this strange behavior, I spend a whole day trying to figure out how to fix that from other SSG projects that also show videos. And the solution for this (my case is Astro with Vue integration) is this video wrapper component:
+But as I were writing for the [Use View Transitions API for Theme Toggle Animation](/posts/use-view-transitions-api-for-theme-toggle-animation) article the other day, I found there was a trouble in using the `<video>` tag in static site generators like Astro. For example, in Astro, no matter where you store the video file, in `src/` or `public/`, when you use it in the HTML tag, browsers like Firefox will have trouble playing it and require a reload of the page. Because of this strange behavior, I spend a whole day trying to figure out how to fix that from other SSG projects that also show videos. And the solution for this (my case is Astro with Vue integration) is this video wrapper component:
 
 ```vue title="src/components/VideoEmbed.vue" showLineNumbers
 <script setup lang="ts">
