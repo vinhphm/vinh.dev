@@ -1,4 +1,12 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M512 0H0V512H512V0Z" fill="black"/>
-<path d="M251.4 379.8V424.6H206.6V335H161.8V200.6H117V111H206.6V200.6H251.4V335H296.2V379.8H251.4ZM385.8 200.6H341V111H430.6V155.8H385.8V200.6ZM341 245.4V290.2H296.2V245.4H341Z" fill="white"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="512" height="512"><svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_2)">
+<path d="M415.464 256C415.464 344.072 344.072 415.464 256 415.464C167.928 415.464 96.5358 344.072 96.5358 256C96.5358 167.928 167.928 96.5358 256 96.5358C344.072 96.5358 415.464 167.928 415.464 256Z" fill="#292929" stroke="#D6D6D6" stroke-width="24"></path>
+</g>
+<defs>
+<clipPath id="SvgjsClipPath1001">
+<rect width="344" height="344" fill="white" transform="translate(84 84)"></rect>
+</clipPath>
+</defs>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
