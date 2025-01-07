@@ -1,12 +1,10 @@
 import type { CollectionEntry } from 'astro:content'
 
-export type PostKey = 'blog'
+export type PostKey = 'posts'
 
 export type CollectionPosts = CollectionEntry<PostKey>
 
 export type Pages = 'pages'
-
-export type CollectionPages = CollectionEntry<Pages>
 
 export type WorkData = Array<{
   title: string
