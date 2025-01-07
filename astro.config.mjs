@@ -1,3 +1,4 @@
+import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import vue from '@astrojs/vue'
@@ -7,6 +8,7 @@ import {
   transformerNotationDiff,
 } from '@shikijs/transformers'
 import { defineConfig } from 'astro/config'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypePrettyCode from 'rehype-pretty-code'
 import UnoCSS from 'unocss/astro'
@@ -39,6 +41,22 @@ export default defineConfig({
     syntaxHighlight: false,
     rehypePlugins: [
       [rehypeExternalLinks, { target: '_blank', rel: 'noopener' }],
+      rehypeHeadingIds,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: 'header-anchor',
+            ariaHidden: true,
+          },
+          content: [
+            {
+              type: 'text',
+              value: '#',
+            },
+          ],
+        },
+      ],
       [
         rehypePrettyCode,
         {

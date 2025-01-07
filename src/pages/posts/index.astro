@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content"
 import siteConfig from "@/site-config"
-import Layout from "../../layouts/Layout.astro"
-import { formatDate } from "../../lib/utils"
+import Layout from "@/layouts/Layout.astro"
+import { formatDate } from "@/lib/utils"
 
 const collection = await getCollection("posts")
 const posts = collection.sort(

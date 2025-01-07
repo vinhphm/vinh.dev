@@ -54,5 +54,7 @@ function toggleDark(event: MouseEvent) {
 </script>
 
 <template>
-  <button :aria-label="isDark ? 'Dark Theme' : 'Light Theme'" i-ri-circle-fill nav-link @click="toggleDark" />
+  <button :aria-label="isDark ? 'Dark Theme' : 'Light Theme'" i-ri-circle-fill nav-link @click="toggleDark">
+    <span class="sr-only">Toggle theme</span>
+  </button>
 </template>
