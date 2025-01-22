@@ -12,7 +12,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypePrettyCode from 'rehype-pretty-code'
 import UnoCSS from 'unocss/astro'
-import pagefind from 'vite-plugin-pagefind'
+import { pagefind } from 'vite-plugin-pagefind'
 import siteConfig from './src/site-config'
 
 export default defineConfig({
@@ -32,7 +32,9 @@ export default defineConfig({
         `${siteConfig.site}/pagefind/pagefind-highlight.js`,
       ],
     },
-    plugins: [pagefind()],
+    plugins: [pagefind({
+      outputDirectory: 'dist',
+    })],
     build: {
       rollupOptions: {
         external: [
